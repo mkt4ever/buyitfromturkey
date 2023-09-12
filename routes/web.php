@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::group(['prefix' => 'buyitadmin'], function () {
+    Voyager::routes();
+    
+    Route::post('/changeImagesSort', [VoyagerHelperController::class, 'changeImagesSort'])->name('changeImagesSort');
+    
+    Route::post('/setLastLang', function(Request $request) {
+        $lastLang = $request->lastLang;
+        session()->put('lastLang', $lastLang);
+        return response('done', 200);
+    })->name('setLastLang');
 });
