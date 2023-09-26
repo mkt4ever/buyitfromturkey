@@ -15,6 +15,20 @@ class CreateContactUsTable extends Migration
     {
         Schema::create('contact_us', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->nullable();
+            $table->string('phone1')->nullable();
+            $table->string('phone2')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('address', 500)->nullable();
+            $table->string('map', 500)->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('site_logo_tr')->nullable();
+            $table->string('site_logo_en')->nullable();
+            $table->string('linkedin')->nullable();
+            
             $table->timestamps();
         });
     }

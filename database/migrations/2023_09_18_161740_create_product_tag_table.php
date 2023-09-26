@@ -15,6 +15,10 @@ class CreateProductTagTable extends Migration
     {
         Schema::create('product_tag', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->on('products')->references('id');
+            $table->unsignedBigInteger('product_tag_id');
+            $table->foreign('product_tag_id')->on('product_tags')->references('id');
             $table->timestamps();
         });
     }

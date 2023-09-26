@@ -15,6 +15,10 @@ class CreateContactOrdersTable extends Migration
     {
         Schema::create('contact_orders', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('telephone');
+            $table->text('cover_letter');
             $table->timestamps();
         });
     }

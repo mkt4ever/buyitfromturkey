@@ -15,6 +15,10 @@ class CreateAdvantagesTable extends Migration
     {
         Schema::create('advantages', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longtext('content')->nullable();
+            $table->boolean('active')->nullable();
+            $table->integer('order')->nullable();
             $table->timestamps();
         });
     }

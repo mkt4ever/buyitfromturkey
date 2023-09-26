@@ -15,6 +15,7 @@ class CreateBultensTable extends Migration
     {
         Schema::create('bultens', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

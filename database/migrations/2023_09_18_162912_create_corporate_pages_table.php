@@ -15,6 +15,14 @@ class CreateCorporatePagesTable extends Migration
     {
         Schema::create('corporate_pages', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('content')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keyword')->nullable();
+            $table->string('meta_canonical')->nullable();
+            $table->string('meta_ogimage')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ class CreateProductSectorsTable extends Migration
     {
         Schema::create('product_sectors', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }
