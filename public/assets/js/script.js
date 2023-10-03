@@ -153,3 +153,22 @@ $(document).ready(function() {
     }, 2000);
 });
   // blog  --------------------
+
+
+  $(document).ready(function(){
+    $(window).scroll(function () {   
+       
+     if($(window).scrollTop() > 60) {
+        $('.page-content .prfile-sec .sidebar .content.desktop').css('position','fixed');
+        $('.page-content .prfile-sec .sidebar .content.desktop').css('top','100px'); 
+     }
+    
+     else if ($(window).scrollTop() <= 200) {
+        $('.page-content .prfile-sec .sidebar .content.desktop').css('position','');
+        $('.page-content .prfile-sec .sidebar .content.desktop').css('top','');
+     }  
+        if ($('.page-content .prfile-sec .sidebar .content.desktop').offset().top + $(".page-content .prfile-sec .sidebar .content.desktop").height() > $(".footer-section").offset().top) {
+            $('.page-content .prfile-sec .sidebar .content.desktop').css('top',-($(".page-content .prfile-sec .sidebar .content.desktop").offset().top + $(".page-content .prfile-sec .sidebar .content").height() - $(".footer-section").offset().top));
+        }
+    });
+    });

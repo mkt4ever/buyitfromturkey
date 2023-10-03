@@ -69,7 +69,7 @@
 
                             </ul>
                         </div>
-                        <div class="col-md-6 image">
+                        <div class="col-md-6 images">
                             <div class="row">
                                 <div class="col-md-3 item">
                                     <div class="image">
@@ -109,7 +109,7 @@
             <div class="detailing-sec">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-5 text-sec">
+                        <div class="col-md-12 col-lg-5 text-sec">
                             <div class="sectors">
                                 <h3>Sectors</h3>
                                 <ul>
@@ -145,10 +145,10 @@
                             </div>
 
                         </div>
-                        <div class="icon col-md-2">
+                        <div class="icon col-md-12 col-lg-2">
                             <img src="assets/img/illustrations/amblem.svg" alt="">
                         </div>
-                        <div class="col-md-5 discreption">
+                        <div class="col-md-12 col-lg-5 discreption">
                             <h4>Detailing</h4>
                             <p>Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus.
                                 Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet
@@ -219,7 +219,7 @@
                     </div>
                     <div class="boxes">
                         <div class="row">
-                            <div class="col-md-3 item">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -237,7 +237,7 @@
                                     </div>
                                 </div> 
                             </div>
-                            <div class="col-md-3 item">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -255,7 +255,7 @@
                                     </div>
                                 </div> 
                             </div>
-                            <div class="col-md-3 item">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -274,7 +274,7 @@
                                 </div> 
                             </div>
 
-                            <div class="col-md-3 item">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -351,16 +351,16 @@
         ],
         responsive: {
             0: {
-                items: 4,
+                items: 1,
             },
             400: {
-                items: 5,
+                items: 1,
             },
             600: {
-                items: 5,
+                items: 2,
             },
             768: {
-                items: 6,
+                items: 3,
             },
             1000: {
                 items: 3,

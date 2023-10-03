@@ -27,8 +27,8 @@
 
 <body class="">
     <!-- header ==---------------------------- -->
-    <div class="transparent">
-        <?php include('_header.php') ?>
+    <div class="inner-page">
+        <?php include('_header-inner.php') ?>
 
 
     </div>
