@@ -24,8 +24,9 @@ function parse_file($fileSerializedObject, $fileName = false): string
 }
 
 function text($key){
+
     $texts = Session::get('siteTexts');
-    
+
     return isset($texts[$key]) ? nl2br($texts[$key]) : $key;
 }
 
@@ -37,7 +38,7 @@ function localeRoute($name, $params = array()){
     //     $params = ["locale" => app()->getLocale(), $params];
     // else
     //     $params["locale"] = app()->getLocale();
-    
+
     $name = app()->getLocale() . "." . $name;
 
     return route($name, $params);
