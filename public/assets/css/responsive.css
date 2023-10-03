@@ -1,0 +1,1125 @@
+/* 1500px==------------------------------ */
+@media (max-width:1500px) {
+    .slider-section .right-search-bar{
+        width: 380px;
+    }
+    .header-section .top{
+        width: 319px;
+    }
+    .slider-section .right-search-bar .m-content .bottom .title h3{
+        font-size: 24px;
+    }
+    .slider-section .right-search-bar .m-content{
+        padding: 30px 27px;
+    }
+    .slider-section .right-search-bar .m-content .bottom .boxes .item .content a{
+        padding: 15px 10px;
+    }
+    .slider-section .right-search-bar .m-content .bottom .boxes .item .content .action i{
+        width: 35px;
+  height: 35px;
+    }
+    .header-section .hidden-menu{
+        width: 380px;
+    }
+    .slider-section .social-media .content{
+        width: calc(100% - 401px);
+    }
+    .slider-section .item .text .content{
+        padding-left: 70px;
+    }
+    /* inner pages ------------ */
+    .page-banner .content .image {
+        height: 375px;
+    }
+    .page-content .whychoose .right img{
+        margin-left: -60px;
+    }
+    .page-content .whychoose .right{
+        right: -390px;
+    }
+    .page-banner.blog-banner .content .image{
+        height: 515px;
+    }
+    .page-content .contact-sec .text::after {
+        left: -80px;
+    }
+    /* inner pages ------------ */
+
+
+}
+/* 1500px==------------------------------ */
+
+/* 1400px==------------------------------ */
+@media (max-width:1400px) {
+    .header-section .navbar .links {
+        padding-left: 0;
+    }
+    .header-section .navbar .mail{
+        padding-right: 60px;
+    }
+    .slider-section .social-media .content {
+        width: calc(100% - 371px);
+    }
+    .page-content .team-section .team-carousel .boxes .item .content{
+        height: 370px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content .bottom-s{
+        padding: 15px 10px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content .bottom-s h4{
+        font-size: 18px;
+    }
+}
+/* 1400px==------------------------------ */
+
+/* 1300px==------------------------------ */
+@media (max-width: 1300px) {
+    .header-section .navbar .mail{
+        display: none;
+    }
+    .header-section .hidden-menu .mail-sec{
+        display: flex;
+    }
+    .brans-section .boxes .item .image{
+        padding: 20px 0px;
+        margin: 22px;
+    }
+    /* inner pages ------------ */
+    .page-content .whychoose .center{
+        padding-right: 50px;
+    }
+    /* inner pages ------------ */
+
+    
+}
+/* 1300px==------------------------------ */
+
+
+/* 1200px==------------------------------ */
+@media (max-width:1199px) {
+    .slider-section .item .text .content{
+        width: calc(100% - 380px);
+        padding-left: 70px;
+    }
+    .questions-section .faq .content{
+        padding-right: 5em;
+    }
+    .footerbanner-section .right .content .text h1{
+        font-size: 24px;
+    }
+    .footerbanner-section .left .content .text h1{
+        font-size: 24px;
+    }
+    .header-section .hidden-menu .links {
+        padding-top: 9em;
+    }
+    /* inner pages ------------ */
+    .page-content .whychoose .center {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+    } 
+    .page-content .whychoose .right img {
+        margin-left: -20px;
+    }
+    .page-content .video-sec .content{
+        width: 100%;
+    }
+    .page-content .world-article {
+        padding-top: 4em;
+    }
+    .page-content .ourvalue-section .discreption {
+        width: 90%;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content {
+        height: 470px;
+    }
+    .blog-details .intro-sec .bottom .text-sec {
+        padding-right: 10px;
+    }
+    .blog-details .intro-sec .bottom .image .content {
+        height: 430px;
+    }
+    .blog-details .blog-details-sec .bottom .center{
+        display: none;
+    }
+    .blog-details .blog-details-sec .bottom .left{
+        width: 50%;
+    }
+    .blog-details .blog-details-sec .bottom .right{
+        width: 50%;
+    }
+    .blog-details .blog-details-sec .bottom.responsive{
+        display: block;
+        padding-top: 4em;
+    }
+    
+    .blog-details .blog-details-sec .bottom.responsive .center{
+        display: block;
+        width: 100%;
+    }
+    .blog-details .blog-details-sec .bottom {
+        padding-top: 3em;
+    }
+    .page-content .blog-carousel .item .text-sec .discreption h3{
+        font-size: 20px;
+    }
+    .page-content .login-page{
+        background-size: 130%;
+    }
+    .page-content .contact-sec .text::after {
+        left: initial;
+    right: 0;
+    background-image: url("../img/illustrations/manleft.svg");
+    width: 210px;
+    top: 40px;
+    }
+    .page-content .contact-sec .text{
+        padding-bottom: 80px;
+    }
+    .page-content .contact-sec .form::after{
+        top: -760px;
+        left: 0;
+        right: 0;
+        width: 39em;
+        height: 39em;
+        background-size: contain;
+        margin: auto;
+    }
+    .page-content .contact-sec{
+        padding-top: 7em;
+    }
+    .page-content .faq-sec .boxes .main-content {
+        width: 68%;
+    }
+    /* inner pages ------------ */
+
+}
+/* 1200px==------------------------------ */
+
+/* 1024px==------------------------------ */
+@media (max-width:1024px) {
+    /* inner pages ------------ */
+    .page-content .whychoose .right {
+        right: -420px;
+    }
+    .page-content .video-sec .content{
+        height: 31em;
+    }
+    /* inner pages ------------ */
+
+}
+/* 1024px==------------------------------ */
+
+/* 991px==------------------------------ */
+@media (max-width:991px) {
+    .slider-section .item .text .content {
+        width: calc(100% - 290px); 
+        padding-left: 0;
+        padding-right: 70px; 
+    }
+    .slider-section .item .text h3{
+        font-size: 36px;
+    }
+    .header-section .navbar .links > ul{
+        display: none;
+    }
+    /* right menu ------------- */
+   
+    .slider-section .right-search-bar{
+        display: none;
+
+    }
+    .slider-section .right-search-bar{
+        background-color: initial;
+        backdrop-filter: initial;
+    }
+    .slider-section .item .text .content{
+        width: 100%;
+        padding-left: 0;
+    }
+    .slider-section .social-media{
+        display: none;
+    }
+    .slider-section .main-slider .owl-nav{
+        top: initial;
+        bottom: 48vh;
+        left: initial;
+        width: 50px;
+        height: 110px;
+        right: 40px;
+    }
+    .slider-section .main-slider .owl-dots{
+        transform: rotate(0);
+        left: 39px;
+    }
+    /* right menu ------------- */
+
+    /* categories -------- */
+    .categories-sec{
+        display: block;
+        background-color: #04194A0F;
+        backdrop-filter: blur(15px);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 17px 0;
+    }
+    .categories-sec .boxes .itemm .content a{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 12px 10px;
+    }
+    .categories-sec .boxes .itemm{
+        width: auto;
+    }
+    .categories-sec .boxes .itemm .content h5{
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .categories-sec .boxes .itemm .content .action i{
+        width: 35px;
+        height: 35px;
+        margin-left: 0;
+    }
+    .categories-sec .boxes .itemm .content .icon img {
+        max-width: 71%;
+    }
+    .categories-sec .boxes .itemm .content .action {
+        margin-top: 0;
+    }
+    /* categories -------- */
+    .aboutus-section .boxes .top .main-image img{
+        display: block;
+    }
+    .aboutus-section .boxes .top .main-image::after{
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 450px;
+        display: block;
+        background-size: cover;
+        margin-bottom: -160px;
+        background-position: -30px -10px;
+    }
+    .aboutus-section .boxes .top .main-image::before {
+        top: -520px;
+        height: 19em;
+        width: 39em;
+        right: -8em;
+    }
+    .aboutus-section{
+        padding-top: 6em;
+    }
+    
+    .works-section .items .item{ 
+        width: 460px;
+    }
+    .works-section .boxes .container{
+        display: block;
+        padding-top: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        overflow-y: hidden;
+    }
+    .works-section .items{
+        display: inline-block;
+    }
+    .works-section .items > .row{
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+    .works-section .items .item > .row{
+    }
+    .works-section .items .item .text{
+        width: 100%;
+    }
+    .works-section .items .item .image{
+        width: 100%;
+        margin-bottom: 40px;
+        height: 270px;
+    }
+    .works-section .items .item .image img{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    .works-section .items .item .text .accordion{
+        position: relative;
+    }
+    .works-section .items.right {
+        margin-right: 50px;
+    }
+    .works-section .items .item .text .accordion{
+        width: 100%;
+    }
+    .works-section .items .item .accordion-button{
+        
+    }
+    .works-section .items .item .accordion-button p{
+        width: calc(100% - 50px);
+        white-space: initial;
+    }
+    .blog-section .top .nav-sec .nav-tabs .nav-item{
+        margin-bottom: 10px;
+    }
+    .blog-section .top {
+        padding-bottom: 3em;
+    }
+    .questions-section .faq .content {
+        padding-right: 0;
+    }
+    .footerbanner-section .right .content .action{
+        text-align: left;
+        margin-top: 20px;
+    }
+    .footerbanner-section .left .content .action{
+        text-align: left;
+        margin-top: 20px;
+    } 
+    .footerbanner-section .right .content .text h1{
+        font-size: 20px;
+    }
+    .footerbanner-section .left .content .text h1{
+        font-size: 20px; 
+    } 
+    .footer-section .items-2 .text{
+        display: none;
+    }
+    .footer-section .items-2 .links{
+        display: none;
+    }
+    .footer-section .items-2 .form-sec{
+        width: 100%;
+    }
+    .footer-section .items-1 .text::after{
+        background-image: url("../img/png/footerline.svg");
+        height: 180px;
+        right: -420px;
+    }
+    .slider-section .main-slider .owl-dots{
+        display: none;
+    }
+    .whoweare{
+        position: absolute;
+        bottom: 130px;
+    }
+    .omline-support{
+        position: absolute;
+        bottom: 130px;
+    }
+    .slider-other{
+        position: relative;
+    }
+    .slider-other .container{
+        position: relative;
+    }
+    .omline-support{
+        left: 0;
+    }
+    .whoweare{
+        right: 0;
+    }
+    .footer-section .items-4 .center{
+        display: none;
+    }
+    .footer-section .items-4 .left{
+        width: 100%;
+    }
+    .footer-section .items-4 .right{
+        width: 100%;
+    }
+    .footer-section .items-4 .row{
+        flex-direction: column-reverse;
+    }
+    .footer-section .items-4 .left{
+        justify-content: center;
+    }
+    .footer-section .items-4 .right{
+        text-align: center;
+    }
+    .footer-section .items-4 .right ul{
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    .page-content .text.terms {
+        padding-top: 5em;
+    }
+    /* inner pages ------------ */
+    .page-content .whychoose .right{
+        width: 420px;
+        right: -150px;
+    }
+    .page-content .whychoose .center{
+        margin-top: 6em;
+    }
+    .page-content .whychoose {
+        padding-bottom: 6em;
+    }
+    .page-content .world-article{
+        padding-top: 5em;
+    }
+    .page-content .world-article .image{
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+    .page-content .ourvalue-section .boxes .item .icon{
+        width: 100%;
+        height: 100px;
+    }
+    .page-content .ourvalue-section .discreption {
+        width: 100%;
+    }
+    .page-content .team-section{
+        background-size: 68em;
+        padding-top: 6em;
+    }
+    .page-content .team-section .main-title h3{
+        font-size: 29px;
+    }
+    .page-content .team-section .team-carousel {
+        padding-top: 4em;
+    }
+    .page-content .team-section .main-title .line {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    .page-content .team-section .team-carousel .owl-nav{
+        position: relative;
+        left: initial;
+        bottom: initial;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 38px;
+    }
+    .page-content .team-section .team-carousel .owl-nav{
+        margin-bottom: 50px;
+    }
+    .blog-details .intro-sec .bottom .text-sec{
+        padding-bottom: 30px;
+    }
+    .blog-details .intro-sec .top .right .tree-links ul li::before {
+        top: 5px;
+    }
+    .page-banner .details .search-sec .content{
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .page-banner .details .search-sec .content .input-sec {
+        width: calc(100% - 170px);
+    }
+    .page-banner .details .lists ul{
+        display: block;
+        padding-top: 0;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .page-banner .details .lists ul li{
+        display: inline-block;
+    }
+    .page-banner .details{
+        width: 100%;
+        padding-top: 7em;
+    }
+    .page-banner .details .search-sec {
+        padding-top: 2em;
+    }
+    .page-banner .content .image{
+        height: 435px;
+    }
+    .page-banner.blog-banner .content .image {
+        height: 415px;
+    }
+    .page-content .blog-carousel .item .row{
+        flex-direction: column-reverse;
+    }
+    .page-content .blog-carousel .item .text-sec .discreption {
+        padding-top: 0;
+    }
+    .page-content .blog-carousel .item .text-sec {
+        padding-bottom: 10px;
+
+    }
+    .page-content .blog-carousel .item .text-sec .discreption h3 {
+        font-size: 23px;
+    }
+    .page-content .blog-carousel .owl-nav{
+        bottom: -20px;
+        justify-content: center;
+    }
+    .page-content .blog-carousel .item .image .content {
+        height: 310px;
+    }
+    .page-content .login-signup.register .content .box {
+        width: 100%;
+    }
+    .page-content .faq-sec .boxes .main-content {
+        width: 88%;
+    }
+
+    /* inner pages ------------ */
+
+
+}
+/* 991px==------------------------------ */
+
+/* 767px==------------------------------ */
+@media (max-width:767px) {
+    .aboutus-section .boxes .top .text .right p{
+        padding-left: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .aboutus-section .boxes .top .text .right{
+        padding-top: 30px;
+    }
+    .aboutus-section .boxes .top .text{
+        position: relative;
+    }
+    .aboutus-section .boxes .top .row > .text::before {
+        content: " ";
+        background-image: url('../img/map.png');
+        position: absolute;
+        top: -10px;
+        height: 41em;
+        width: 70em;
+        right: -26em;
+        background-repeat: no-repeat;
+        background-position: right;
+        z-index: -1;
+        background-size: contain;
+    }
+    .aboutus-section .boxes .top .main-image::before {
+        display: none;
+    }
+    .aboutus-section .boxes .top .main-image::after {
+        height: 350px;
+    }
+    .aboutus-section .boxes .top .row > .text::before {
+        top: 35px;
+        height: 31em;
+        width: 30em;
+        right: -5em;
+    }
+    .blog-section .top .text {
+        padding-bottom: 20px;
+    }
+    .blog-section .top .nav-sec .nav-tabs{
+        justify-content: left;
+    }
+    .blog-section .top .nav-sec .nav-tabs .nav-item {
+        margin-bottom: 10px;
+        margin-left: 0;
+        margin-right: 12px;
+
+    }
+    .blog-section .owl-carousel .owl-nav{
+        position: relative;
+        height: auto;
+        width: auto;
+        right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blog-section .owl-carousel .owl-nav button{
+        background-color: #002069;
+        margin: 0 10px !important;
+    }
+    .blog-section .tab-content .item .content .image{
+        height: 260px;
+    } 
+    .footerbanner-section .right .content .action .btn{
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+    .footerbanner-section .content .action .btn{
+        height: 57px;
+    }
+    .footer-section .items-1 .text::after{
+        right: -40px;
+        width: 290px;
+        height: 120px;
+        top: 40px;
+    }
+    .footer-section .items-2 .form-sec .inp-sec{
+        width: 100%;
+    }
+    .footer-section .items-2 .form-sec .action{
+        margin-left: 0;
+    }
+    .footer-section .items-1 .text h4{
+        font-size: 26px;
+    }
+    .page-content .error-section .bottom .text {
+        text-align: center;
+    }
+    .page-content .error-section .bottom .image img{
+        width: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+    .page-content .error-section .bottom .text h3{
+        font-size: 32px;
+    }
+    .page-content .error-section .bottom{
+        padding-top: 8em;
+    }
+    /* inner pages ------------ */
+    .page-content .whychoose .right{
+        width: 390px;
+    }
+    .page-content .whychoose .right{
+        top: -110px;
+    }
+    .page-banner .content .image {
+        height: 315px;
+    }
+    .page-content .whatweoffer-section .item .content{
+        display: block;
+    }
+    .page-content .whatweoffer-section .item .content .text{
+        width: 100%;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .page-content .whatweoffer-section .item .content .icon{
+        width: 70px;
+        height: 70px;
+    }
+    .page-content .whatweoffer-section .item .content .icon img {
+        width: 39px;
+    }
+    .page-content .whatweoffer-section .item .content .text h6{
+        font-size: 21px;
+        padding-bottom: 10px;
+    }
+    .page-content .whatweoffer-section .item .content{
+        text-align: center;
+    }
+    .page-content .whatweoffer-section .item .content .icon{
+        margin: 0 auto;
+    }
+    .page-content .video-sec .content {
+        height: 21em;
+    }
+    .page-content .video-sec{
+        padding-bottom: 0;
+    }
+    .page-content .world-article {
+        padding-top: 3em;
+    }
+    .page-content .ourvalue-section .boxes .item {
+        width: 20%;
+    }
+    .page-content .ourvalue-section .boxes .item .icon img {
+        width: 63%;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content .bottom-s h4{
+        font-size: 22px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content {
+        height: 350px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content .bottom-s h4 {
+        font-size: 17px;
+    }
+    .blog-details .intro-sec .top .right{
+        width: 100%;
+        padding-top: 20px;
+    }
+    .blog-details .intro-sec .top .right .tree-links ul{
+        justify-content: left;
+    }
+    .blog-details .intro-sec{
+        padding-top: 4em;
+    }
+    .blog-details .intro-sec .bottom .image .content {
+        height: 340px;
+    }
+    .blog-details .blog-details-sec .text-sec .image .content {
+        height: 350px;
+    }
+    .page-content .login-signup .content .box{
+        width: 100%;
+    }
+    .page-content .login-signup.register .content .box{
+        width: 100%;
+    }
+    .page-content .login-signup .content .box {
+        margin-top: 1em;
+    }
+    .page-content .faq-sec .boxes .main-content {
+        width: 100%;
+    }
+    .page-content .faq-sec .boxes .main-content::before {
+        left: -80px;
+    }
+    .page-content .faq-sec .boxes .main-content::after {
+        right: -190px;
+        bottom: 0;
+        top: initial;
+    }
+    .page-content .faq-sec .boxes .main-content .accordion {
+        position: relative;
+        z-index: 9;
+    }
+
+    /* inner pages ------------ */
+
+}
+/* 767px==------------------------------ */
+
+/* 600px==------------------------------ */
+@media (max-width:600px) {
+    .header-section .top {
+        width: 209px;
+    }
+    .header-section .top .login {
+        padding-right: 0;
+    }
+    .header-section .top .lang {
+        padding-right: 0;
+    }
+    .header-section .logo {
+        width: 180px;
+    }
+    .header-section .navbar{
+        width: calc(100% - 180px);
+        z-index: 0;
+    }
+    .header-section.menu-active .top{
+        display: none;
+    }
+    .header-section .hidden-menu .menu-top{
+        display: block;
+    }
+    .header-section .hidden-menu .menu-top .top{
+        display: flex;
+        width: 100%;
+    }
+    .header-section .hidden-menu{
+        padding: 34px 20px;
+    }
+        .header-section .hidden-menu .menu2 {
+        overflow: hidden;
+    }
+        .header-section .hidden-menu .menu2 button {
+        background-color: transparent;
+        border: 0;
+        width: 34px;
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        cursor: pointer;
+        position: relative;
+        height: 39px;
+    }
+        .header-section .hidden-menu .menu2 button img {
+        position: absolute;
+        top: 0;
+        transition: 0.3s;
+        width: 27px;
+        visibility: visible;
+    }
+    .header-section .top .menu button.active img.menu{
+        opacity: 1;
+        visibility: visible;
+    }
+    .header-section .top .menu button.active img.close{
+        display: none;
+    }
+    .header-section .hidden-menu{
+        width: 100%;
+        z-index: 9999999;
+    }
+    .header-section .hidden-menu .links ul{
+        text-align: center;
+    }
+    .header-section .hidden-menu .action{
+        text-align: center;
+    }
+    .header-section .hidden-menu .mail-sec{
+        justify-content: center;
+    }
+    .header-section .hidden-menu .social-media ul{
+        justify-content: center;
+    }
+    .slider-section .item .text h3 {
+        font-size: 30px;
+    }
+
+
+    .aboutus-section .boxes .top .row > .text::before {
+        top: 35px;
+        height: 31em;
+        width: 30em;
+        right: -5em;
+    }
+    .works-section .items .item {
+        width: 400px;
+    }
+    .works-section .items.right .item:nth-child(1) .text::after{
+        display: none;
+    } 
+    .brans-section .boxes {
+        padding-top: 2em;
+    }
+    .brans-section .boxes .item .image{
+        padding: 17px 0px;
+        margin: 10px 10px;
+        height: 103px;
+    }
+    .questions-section .faq::after {
+        background-position: 50px 0;
+        width: 30em;
+        height: 28em;
+        bottom: 60px;
+    }
+    .footerbanner-section .right .content{
+        display: block;
+        padding: 20px 11px;
+        text-align: center;
+    }
+    .footerbanner-section .right .content .text{
+        width: 100%;
+        padding-left: 0;
+        padding-top: 17px;
+    }
+    .footerbanner-section .right .content > .icon{
+        margin: 0 auto;
+    }
+    .footerbanner-section .right .content .action{
+        text-align: center;
+    }
+
+    .footerbanner-section .left .content{
+        display: block;
+        padding: 20px 11px;
+        text-align: center;
+    }
+    .footerbanner-section .left .content .text{
+        width: 100%;
+        padding-left: 0;
+        padding-top: 17px;
+    }
+    .footerbanner-section .left .content > .icon{
+        margin: 0 auto;
+    }
+    .footerbanner-section .left .content .action{
+        text-align: center;
+    } 
+    .footerbanner-section .right .content .text h1{
+        font-size: 18px;
+    }
+    .footerbanner-section .left .content .text h1{
+        font-size: 18px;
+
+    }
+    .btn.icon-btn .icon{
+        margin-left: 13px;
+    }
+    .footer-section .items-3 .item a{
+        font-size: 22px;
+    }
+    .whoweare .content .image {
+        width: 100px;
+        height: 120px;
+    }
+    .whoweare .content .title h3 {
+        font-size: 12px;
+    }
+    .omline-support a {
+        width: 70px;
+        height: 70px;
+    }
+    .slider-other .container{
+        width: 95%;
+    }
+    .slider-section .item .text .content{
+        padding-right: 90px;
+    }
+    .slider-section .main-slider .owl-nav{
+        right: 30px;
+    }
+    .works-section{
+        padding-bottom: 5em;
+    }
+    .header-section .hidden-menu .action {
+        margin-bottom: 3em;
+    }
+    .aboutus-section .boxes .top .main-image::after {
+        height: 270px;
+    }
+    .page-content .error-section .bottom .image img {
+        width: 270px;
+    }
+    .page-content .error-section .bottom .text h3 {
+        font-size: 28px;
+    }
+    /* inner pages ------------ */
+    .page-content .text.terms {
+        padding-top: 4em;
+    }
+    .page-content .whychoose .right{
+        top: -110px;
+        width: 360px;
+    }
+    .page-banner .content .image {
+        height: 315px;
+    }
+    .page-content{
+        padding-top: 4em;
+    }
+    .page-content .whychoose .left h5{
+        font-size: 26px;
+    }
+    .page-content .ourvalue-section .boxes .item .icon img {
+        width: 68%;
+    }
+    .page-content .team-section .main-title h3 {
+        font-size: 26px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content .bottom-s .icon{
+        width: 33px;
+  height: 33px;
+    }
+    .page-content .team-section .team-carousel .boxes .item .content {
+        height: 290px;
+    }
+    .page-content .team-section .team-carousel .text h3 {
+        font-size: 23px;
+    }
+    .blog-details .intro-sec .bottom .image .content {
+        height: 300px;
+    }
+    .blog-details .intro-sec .bottom .text-sec h3{
+        font-size: 23px;
+    }
+    .blog-details .blog-details-sec .text-sec .image .content {
+        height: 290px;
+    }
+    .blog-details .blog-details-sec .bottom .box-item .content{
+        padding: 10px 10px;
+        height: 120px;
+    }
+    .blog-details .blog-details-sec .bottom .box-item .content .top-s h3{
+        font-weight: 500;
+  font-size: 16px;
+    }
+    .blog-details .blog-details-sec .bottom .box-item .content .bottom-s h4{
+        font-size: 16px;
+    }
+    .blog-details .blog-details-sec .bottom .box-item .content .bottom-s .icon i{
+        font-size: 19px;
+    }
+    .blog-details .blog-details-sec{
+        padding-bottom: 1em;
+    }
+    .page-banner .details .search-sec .content .categoty-sec .nice-select{
+        min-width: 120px;
+    }
+    .page-banner .details .text h3 {
+        font-size: 24px;
+    }
+    .page-content .blog-carousel .item .text-sec .discreption h3 {
+        font-size: 19px;
+    }
+    .page-content .blog-carousel .item .text-sec .bottom .tags ul li a{
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 9px;
+        padding-left: 7px;
+        
+    }
+    .page-content .blog-carousel .item .text-sec .top ul li .date span {
+        font-size: 16px;
+    }
+    .page-content .blog-carousel .item .text-sec .bottom .tags ul li em{
+        font-size: 15px;
+    }
+    .page-content .blog-carousel .item .text-sec .bottom .tags ul li h3{
+        font-size: 18px;
+    }
+    .page-banner .details .lists ul li a{
+        padding: 2px 16px;
+        font-size: 15px;
+    }
+    .page-banner .details .search-sec .content .action-sec button{
+        height: 51px;
+    }
+    .page-banner .details .search-sec .content .input-sec .form-control{
+        height: 51px;
+    }
+    .page-banner .details .search-sec .content .categoty-sec .nice-select{
+        height: 51px;
+        font-size: 15px;
+    }
+    .page-banner .details .search-sec .content .categoty-sec .nice-select span{
+        font-size: 15px;
+    }
+    .page-content .login-page {
+        background-size: 110em;
+    }
+    .page-content .login-signup .content .other ul li{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .page-content .login-signup .content .title h3 {
+        font-size: 25px;
+    }
+    .page-content .login-signup{
+        padding-top: 1em;
+    }
+    .page-content .login-signup .content .box{
+        padding: 20px 10px;
+    }
+    .page-content .contact-sec .text::after {
+        width: 160px;
+        right: 10px;
+    }
+    /* inner pages ------------ */
+
+}
+/* 600px==------------------------------ */
+
+/* 575px==------------------------------ */
+@media (max-width:575px) { 
+    .slider-section .main-slider .owl-dots{
+        left: 11px;
+    }
+}
+/* 575px==------------------------------ */
+
+/* 430px==------------------------------ */
+@media (max-width:450px) {
+    .header-section .logo {
+        width: 160px;
+    }
+    .header-section .navbar{
+        width: calc(100% - 160px);
+    }
+    .header-section .top {
+        width: 199px;
+    }
+    .header-section .top .lang .dropdown span i{
+        font-size: 14px;
+    }
+    .header-section .top .login .icon img {
+        width: 24px;
+    }
+}
+
+/* 430px==------------------------------ */
+
+/* 350px==------------------------------ */
+@media (max-width:375px) {
+
+}
+/* 350px==------------------------------ */
