@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\SiteText;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,7 @@ Route::group(['prefix' => 'buyitadmin'], function () {
 
 Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translations){
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 
 });

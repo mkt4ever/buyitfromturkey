@@ -37,6 +37,6 @@ class CreateSEOTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s_e_o_s');
+        Schema::dropIfExists('seo');
     }
 }
