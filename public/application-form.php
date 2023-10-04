@@ -46,28 +46,28 @@
                 </div>
                 <div class="form-box">
                     <div class="row">
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
 
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
 
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
 
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item inputicon">
+                        <div class="col-md-6 col-xl-3 item inputicon">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <div class="icon">
@@ -76,14 +76,14 @@
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
 
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <input type="email" class="form-control" required="">
@@ -98,13 +98,13 @@
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <input type="email" class="form-control" required="">
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <select class="nice-select">
@@ -116,7 +116,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <select class="nice-select">
@@ -128,7 +128,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 item">
+                        <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
                             <div class="inp-box">
                                 <select class="nice-select">
@@ -215,7 +215,45 @@
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
-
+    <script>
+        
+    $('.footer').owlCarousel({
+            dots: false,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            nav: false, // Show next and prev buttons
+            slideSpeed: 500,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
+            responsiveClass: true,
+            navText: [
+                "<i class='fa-solid fa-chevron-left'></i>",
+                "<i class='fa-solid fa-chevron-right'></i>"
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                400: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                1000: {
+                    items: 2,
+                },
+                1200: {
+                    items: 3,
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

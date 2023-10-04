@@ -39,8 +39,8 @@
             <div class="prfile-sec">
 
                 <div class="row">
-                    <div class="col-md-3 sidebar">
-                        <div class="content">
+                    <div class="col-md-12 col-lg-3 sidebar">
+                        <div class="content desktop">
                             <div class="details">
 
                                 <div class="links-tree">
@@ -67,8 +67,36 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="content mobile">
+                            <div class="details">
+
+                                <div class="links-tree">
+                                    <ul>
+                                        <li>
+                                            <a href=""><i class="fa-solid fa-house"></i></a>
+                                        </li>
+                                        <li><a href="">Your Profile</a></li>
+                                    </ul>
+                                    <div class="bottom">
+                                    <a href="">
+                                        <span>Log out</span>
+                                        <img src="assets/img/icon/logout.svg" alt="">
+                                    </a>
+                                </div>
+                                </div>
+                                <div class="links">
+                                    <ul>
+                                        <li class="active"><a href="">Account Settings</a></li>
+                                        <li class=""><a href="">Billing Details</a></li>
+                                        <li class=""><a href="">My Offers</a></li>
+                                        <li class=""><a href="">My Applications</a></li>
+                                    </ul>
+                                </div>
+                              
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9 rightbar">
+                    <div class="col-md-12 col-lg-9 rightbar">
                         <div class="main-title">
                             <h3>Billing Details</h3>
                             <div class="add-addres">
@@ -83,7 +111,7 @@
                         <div class="sec-content">
                             <div class="addreses">
                                 <div class="row">
-                                    <div class="item col-md-4">
+                                    <div class="item col-md-6 col-lg-6 col-xl-4">
                                         <div class="content">
                                             <div class="top">
                                                 <div class="dropdown">
@@ -116,6 +144,40 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="item col-md-6 col-lg-6 col-xl-4">
+                                        <div class="content">
+                                            <div class="top">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="center">
+                                                <ul>
+                                                    <li>
+                                                        <span>Address Definition</span>
+                                                        <em>House</em>
+                                                    </li>
+                                                    <li>
+                                                        <span>Address</span>
+                                                        <em>2320 N Career Ave Sioux Falls SD 57107-1301 USA</em>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bottom">
+                                                <a href="">Detail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -131,31 +193,31 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" tabindex="0">
                                         <div class="row">
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Billing Title</label>
                                                 <input type="email" class="form-control" required="" placeholder="Home/Work/Other">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Name</label>
                                                 <input type="email" class="form-control" required="" placeholder="Name">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Last Name</label>
                                                 <input type="email" class="form-control" required="" placeholder="Last Name">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Country</label>
                                                 <input type="email" class="form-control" required="" placeholder="Country">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">City</label>
                                                 <input type="email" class="form-control" required="" placeholder="City">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">District</label>
                                                 <input type="email" class="form-control" required="" placeholder="District">
                                             </div>
-                                            <div class="col-md-8 mb-2 item">
+                                            <div class="col-md-12 col-lg-8 mb-2 item">
                                                 <label class="form-label">Address</label>
                                                 <textarea class="form-control" name="" id="" cols="30" rows="4" placeholder="Your Adress"></textarea>
                                             </div>
@@ -163,31 +225,31 @@
                                     </div>
                                     <div class="tab-pane fade" id="tab2" role="tabpanel" tabindex="0">
                                     <div class="row">
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Billing Title 02</label>
                                                 <input type="email" class="form-control" required="" placeholder="Home/Work/Other">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Name</label>
                                                 <input type="email" class="form-control" required="" placeholder="Name">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Last Name</label>
                                                 <input type="email" class="form-control" required="" placeholder="Last Name">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">Country</label>
                                                 <input type="email" class="form-control" required="" placeholder="Country">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">City</label>
                                                 <input type="email" class="form-control" required="" placeholder="City">
                                             </div>
-                                            <div class="col-md-4 mb-2 item">
+                                            <div class="col-md-6 col-lg-4 mb-2 item">
                                                 <label class="form-label">District</label>
                                                 <input type="email" class="form-control" required="" placeholder="District">
                                             </div>
-                                            <div class="col-md-8 mb-2 item">
+                                            <div class="col-md-12 col-lg-8 mb-2 item">
                                                 <label class="form-label">Address</label>
                                                 <textarea class="form-control" name="" id="" cols="30" rows="4" placeholder="Your Adress"></textarea>
                                             </div>
@@ -235,7 +297,45 @@
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
-
+    <script>
+        
+    $('.footer').owlCarousel({
+            dots: false,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            nav: false, // Show next and prev buttons
+            slideSpeed: 500,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
+            responsiveClass: true,
+            navText: [
+                "<i class='fa-solid fa-chevron-left'></i>",
+                "<i class='fa-solid fa-chevron-right'></i>"
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                400: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                1000: {
+                    items: 2,
+                },
+                1200: {
+                    items: 3,
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

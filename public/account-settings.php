@@ -42,8 +42,8 @@
             <div class="prfile-sec">
 
                 <div class="row">
-                    <div class="col-md-3 sidebar">
-                        <div class="content">
+                <div class="col-md-12 col-lg-3 sidebar">
+                        <div class="content desktop">
                             <div class="details">
 
                                 <div class="links-tree">
@@ -56,10 +56,10 @@
                                 </div>
                                 <div class="links">
                                     <ul>
-                                        <li class="active"><a href="">Account Settings</a></li>
-                                        <li class=""><a href="">Billing Details</a></li>
-                                        <li class=""><a href="">My Offers</a></li>
-                                        <li class=""><a href="">My Applications</a></li>
+                                        <li><a href="">Account Settings</a></li>
+                                        <li><a href="">Billing Details</a></li>
+                                        <li><a href="">My Offers</a></li>
+                                        <li><a href="">My Applications</a></li>
                                     </ul>
                                 </div>
                                 <div class="bottom">
@@ -70,8 +70,36 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="content mobile">
+                            <div class="details">
+
+                                <div class="links-tree">
+                                    <ul>
+                                        <li>
+                                            <a href=""><i class="fa-solid fa-house"></i></a>
+                                        </li>
+                                        <li><a href="">Your Profile</a></li>
+                                    </ul>
+                                    <div class="bottom">
+                                    <a href="">
+                                        <span>Log out</span>
+                                        <img src="assets/img/icon/logout.svg" alt="">
+                                    </a>
+                                </div>
+                                </div>
+                                <div class="links">
+                                    <ul>
+                                        <li class="active"><a href="">Account Settings</a></li>
+                                        <li class=""><a href="">Billing Details</a></li>
+                                        <li class=""><a href="">My Offers</a></li>
+                                        <li class=""><a href="">My Applications</a></li>
+                                    </ul>
+                                </div>
+                              
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9 rightbar">
+                    <div class="col-md-12 col-lg-9 rightbar">
                         <div class="main-title">
                             <h3>Account Settings <a href="">Edit</a></h3>
                             <div class="add-addres">
@@ -86,24 +114,24 @@
                         <div class="sec-content">
                             <div class="from-sec border-bottom">
                                 <div class="row">
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Name</label>
                                         <input type="email" class="form-control" required="Name"
                                             placeholder="Home/Work/Other">
                                     </div>
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Last Name</label>
                                         <input type="email" class="form-control" required="" placeholder="Last Name">
                                     </div>
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">E-mail</label>
                                         <input type="email" class="form-control" required="" placeholder="E-mail">
                                     </div>
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Phone</label>
                                         <input class="form-control phone-code" list="datalistOptions" type="text" placeholder="">
                                     </div>
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Birth</label>
                                         <div class="input-group date" id="datepicker">
                                             <input type="text" class="form-control" value=".. /.. /....">
@@ -114,7 +142,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 mb-2 item">
+                                    <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Country</label>
                                         <input type="email" class="form-control" required="" placeholder="Country">
                                     </div>
@@ -131,7 +159,7 @@
                                 </div>
                                 <div class="row">
 
-                                    <div class="col-md-4 mb-2 item inputicon">
+                                    <div class="col-md-6 col-lg-4 mb-2 item inputicon">
                                         <label class="form-label">Current Password </label>
                                         <div class="inp-box">
                                             <div class="icon">
@@ -141,7 +169,7 @@
                                             <input type="password" class="form-control" required="">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 mb-2 item inputicon">
+                                    <div class="col-md-6 col-lg-4 mb-2 item inputicon">
                                         <label class="form-label">New Password </label>
                                         <div class="inp-box">
                                             <div class="icon">
@@ -151,7 +179,7 @@
                                             <input type="password" class="form-control" required="">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 mb-2 item inputicon">
+                                    <div class="col-md-6 col-lg-4 mb-2 item inputicon">
                                         <label class="form-label">New Password Again </label>
                                         <div class="inp-box">
                                             <div class="icon">
@@ -220,6 +248,43 @@
                nationalMode: false, 
             });
          });
+         
+    $('.footer').owlCarousel({
+            dots: false,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            nav: false, // Show next and prev buttons
+            slideSpeed: 500,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
+            responsiveClass: true,
+            navText: [
+                "<i class='fa-solid fa-chevron-left'></i>",
+                "<i class='fa-solid fa-chevron-right'></i>"
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                400: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                1000: {
+                    items: 2,
+                },
+                1200: {
+                    items: 3,
+                }
+            }
+        });
     </script>
 </body>
 

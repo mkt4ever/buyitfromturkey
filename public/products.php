@@ -37,7 +37,7 @@
     <div class="page-content gray-bg">
         <div class="products-section">
             <div class="row">
-                <div class="col-md-6 map-sec">
+                <div class="col-md-12 col-xl-6 map-sec">
                     <div class="content">
 
                         <iframe
@@ -51,7 +51,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 search-box">
+                <div class="col-md-12 col-xl-6 search-box">
                     <div class="top">
                         <div class="title">
                             <h3>
@@ -107,6 +107,11 @@
                             <div class="search-inp">
                                 <input type="email" class="form-control" placeholder="Searching">
 
+                            </div>
+                            <div class="action mobile">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="actions">
@@ -164,7 +169,7 @@
                     </div>
                     <div class="boxes">
                         <div class="row">
-                            <div class="item col-md-3">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -182,7 +187,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item col-md-3">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -200,7 +205,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item col-md-3">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -219,7 +224,7 @@
                                 </div>
                             </div>
 
-                            <div class="item col-md-3">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -237,7 +242,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item col-md-3">
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
                                         <a href="">
@@ -313,19 +318,19 @@
         ],
         responsive: {
             0: {
-                items: 4,
+                items: 1,
             },
             400: {
-                items: 5,
+                items: 1,
             },
             600: {
-                items: 5,
+                items: 1,
             },
             768: {
-                items: 6,
+                items: 1,
             },
             1000: {
-                items: 3,
+                items: 1,
             },
             1200: {
                 items: 1,
