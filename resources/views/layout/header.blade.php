@@ -82,6 +82,21 @@
         <link rel="alternate" hreflang="{{$lang->code}}" href="{{getLangLink($lang->code)}}" />
    @endforeach
 
+   <link rel="shortcut icon" type="image/icon" href="{{ asset('img/fave.ico') }}" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{{ asset('lib/fontawesome-free-6.2.0-web/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap-5.2.0/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/humberger.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/animate.css-main/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/fancybox/dist/jquery.fancybox.min.css') }}">
+    <link href="{{ asset('lib/aos-master/dist/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/select2-4.1.0-rc.0/dist/css/select2.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('lib/jquery-nice-select-1.1.0/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+
      {!! $seo->header_bottom !!}
 </head>
 
