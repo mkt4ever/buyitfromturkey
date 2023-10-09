@@ -2,5 +2,6 @@
 
 @section('content')
 
+    @include('homepage.slider')
 
 @endsection
