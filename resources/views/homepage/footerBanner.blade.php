@@ -1,4 +1,3 @@
-
 <section class="footerbanner-section">
     <div class="background">
         <div class="col-6 col-md-6 item left"></div>
