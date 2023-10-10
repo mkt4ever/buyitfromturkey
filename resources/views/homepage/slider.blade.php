@@ -38,42 +38,30 @@
         </div>
     </div>
     <div class="owl-carousel owl-theme main-slider" id="slider">
-        <div class="item">
-            <div class="image">
-                <img src="{{asset('img/slider.png')}}" alt="">
-            </div>
-            <div class="text">
-                <div class="container">
-                    <div class="content">
-                        <h3>What Would You Like To <em>Get From Türkiye ?</em></h3>
-                        <p>We Assist You In Buying Homes Or Land In Turkey. Request A Quote Now, Let Us Find Your
-                            Perfect Property!</p>
-                        <ul>
-                            <li><a href="" class="btn btn-primary icon-btn">Get an Offer <div class="icon"><i
-                                            class="fa-solid fa-arrow-right"></i></div></a></li>
-                        </ul>
+        @foreach ($sliders as $slider)
+
+            <div class="item">
+                <div class="image">
+                    <img src="{{ Voyager::image($slider->image) }}" alt="{{ $slider->slug }}">
+                </div>
+                <div class="text">
+                    <div class="container">
+                        <div class="content">
+                            <h3>{!! $slider->title !!}</h3>
+                            <p>{{ $slider->brief }}</p>
+                            <ul>
+                                <li><a href="{{ $slider->slug }}" class="btn btn-primary icon-btn">Get an Offer <div class="icon"><i
+                                                class="fa-solid fa-arrow-right"></i></div></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="image">
-                <img src="{{asset('img/slider2.png')}}" alt="">
-            </div>
-            <div class="text">
-                <div class="container">
-                    <div class="content">
-                        <h3>What Would You Like To <em>Get From Türkiye ?</em></h3>
-                        <p>We Assist You In Buying Homes Or Land In Turkey. Request A Quote Now, Let Us Find Your
-                            Perfect Property!</p>
-                        <ul>
-                            <li><a href="" class="btn btn-primary icon-btn">Get an Offer <div class="icon"><i
-                                            class="fa-solid fa-arrow-right"></i></div></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        @endforeach
+
+
+
 
     </div>
 
@@ -81,9 +69,9 @@
         <div class="content">
 
             <ul>
-                <li><a href=""><img src="{{asset('img/icon/facebook.svg')}}" alt=""></a></li>
-                <li><a href=""><img src="{{asset('img/icon/youtube.svg')}}" alt=""></a></li>
-                <li><a href=""><img src="{{asset('img/icon/instagram.svg')}}" alt=""></a></li>
+                <li><a href=""><img src="{{asset('img/icon/facebook.svg')}}" alt="{{ $contactUs->facebook }}"></a></li>
+                <li><a href=""><img src="{{asset('img/icon/youtube.svg')}}" alt="{{ $contactUs->youtube }}"></a></li>
+                <li><a href=""><img src="{{asset('img/icon/instagram.svg')}}" alt="{{ $contactUs->instagram }}"></a></li>
             </ul>
         </div>
 
@@ -92,84 +80,25 @@
         <div class="container">
             <div class="items">
                 <div class="boxes">
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Real Estate</h5>
-                                <div class="icon">
-                                    <img src="{{asset('img/icon/realestate.svg')}}" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
+                    @foreach ($services as $service)
+
+                        <div class="itemm">
+                            <div class="content">
+                                <a href="{{ $service->slug }}">
+                                    <h5>{{ $service->title }}</h5>
+                                    <div class="icon">
+                                        <img src="{{ parse_file($service->image) }}" alt="">
+                                    </div>
+                                    <div class="action">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Travel Around</h5>
-                                <div class="icon">
-                                    <img src="assets/img/icon/travel.svg" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Get Beauty Service</h5>
-                                <div class="icon">
-                                    <img src="assets/img/icon/beauty.svg" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Import Woman Bags</h5>
-                                <div class="icon">
-                                    <img src="assets/img/icon/bag.svg" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Get Healthy</h5>
-                                <div class="icon">
-                                    <img src="{{asset('img/icon/healthy.svg')}}" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="itemm">
-                        <div class="content">
-                            <a href="">
-                                <h5>Others</h5>
-                                <div class="icon">
-                                    <img src="{{asset('img/icon/basket.svg')}}" alt="">
-                                </div>
-                                <div class="action">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+
+                    @endforeach
+
+
                 </div>
             </div>
         </div>

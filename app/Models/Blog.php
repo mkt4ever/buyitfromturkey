@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use TCG\Voyager\Traits\Translatable;
 
-class Blog extends Model
+class Blog extends Model implements Auditable
 {
     use HasFactory, \OwenIt\Auditing\Auditable, Translatable;
     protected $translatable = [

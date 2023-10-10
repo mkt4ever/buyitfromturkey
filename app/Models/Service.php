@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use TCG\Voyager\Traits\Translatable;
 
-class Service extends Model
+class Service extends Model implements Auditable
 {
-    use HasFactory, Translatable;
+    use HasFactory, \OwenIt\Auditing\Auditable, Translatable;
 
     protected $translatable = [
         'title',
