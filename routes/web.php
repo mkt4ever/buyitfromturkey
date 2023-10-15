@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\SiteText;
 use App\Http\Controllers\HomeController;
+use App\Models\Language;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +37,20 @@ Route::group(['prefix' => 'buyitadmin'], function () {
 Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translations){
 
     Route::get('/', [HomeController::class, 'index'])->name('homepage');
+
+    foreach(Language::all() as $lang){
+        $langTranslations = $translations->translate($lang->code);
+        Route::group(['prefix' => $lang->code], function () use ($lang, $langTranslations){
+
+            Route::get('/', [HomeController::class, 'index'])->name($lang->code.'.homepage');
+
+            Route::get('/'.transRoute('routeBlogs', $langTranslations).'/{slug?}', [BlogController::class, 'index'])->name($lang->code.'.blogs.index');
+            Route::get('/'.transRoute('routeBlogDetails', $langTranslations).'/{slug}', [BlogController::class, 'show'])->name($lang->code.'.blogs.show');
+
+        });
+
+    }
+
 
 
 });
