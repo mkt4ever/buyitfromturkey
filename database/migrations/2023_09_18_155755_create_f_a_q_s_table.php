@@ -13,11 +13,12 @@ class CreateFAQSTable extends Migration
      */
     public function up()
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->longtext('content');
             $table->integer('order')->nullable();
+            $table->boolean('is_homepage')->default(false)->nullable();
             $table->timestamps();
         });
     }

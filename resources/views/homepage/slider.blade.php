@@ -69,9 +69,9 @@
         <div class="content">
 
             <ul>
-                <li><a href=""><img src="{{asset('img/icon/facebook.svg')}}" alt="{{ $contactUs->facebook }}"></a></li>
-                <li><a href=""><img src="{{asset('img/icon/youtube.svg')}}" alt="{{ $contactUs->youtube }}"></a></li>
-                <li><a href=""><img src="{{asset('img/icon/instagram.svg')}}" alt="{{ $contactUs->instagram }}"></a></li>
+                <li><a href="{{ $contactUs->facebook }}"><img src="{{asset('img/icon/facebook.svg')}}" alt="{{ $contactUs->facebook }}"></a></li>
+                <li><a href="{{ $contactUs->youtube }}"><img src="{{asset('img/icon/youtube.svg')}}" alt="{{ $contactUs->youtube }}"></a></li>
+                <li><a href="{{ $contactUs->instagram }}"><img src="{{asset('img/icon/instagram.svg')}}" alt="{{ $contactUs->instagram }}"></a></li>
             </ul>
         </div>
 
@@ -119,7 +119,7 @@
                             <img src="{{asset('img/weare.png')}}" alt="">
                         </div>
                         <div class="title">
-                            <h3>Who are we?</h3>
+                            <h3>{{ text('Who_are_we?') }}</h3>
                         </div>
                         <div class="icon">
                             <img src="{{asset('img/icon/zoom.png')}}" alt="">

@@ -1,61 +1,26 @@
 <section class="brans-section">
     <div class="title">
-        <h3>Brands</h3>
+        <h3>{{ text('homepage_brands_title') }}</h3>
     </div>
     <div class="boxes">
-        <div class="owl-carousel owl-theme brans-carousel">
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand1.png" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand2.png" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand3.png" alt="">
-                </div>
-            </div>
+        @php
+            $totalBrands = count($brands);
+            $brandsPerRow = 8;
+            $rows = ceil($totalBrands / $brandsPerRow);
 
-        </div>
-        <div class="owl-carousel owl-theme brans-carousel">
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand1.png" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand2.png" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand3.png" alt="">
-                </div>
-            </div>
+            $brandChunks = array_chunk($brands->all(), $brandsPerRow);
+        @endphp
 
-        </div>
+        @for ($i = 0; $i < $rows; $i++)
         <div class="owl-carousel owl-theme brans-carousel">
+            @foreach ($brandChunks[$i] as $brand)
             <div class="item">
                 <div class="image">
-                    <img src="assets/img/brand1.png" alt="">
+                    <img src="{{ Voyager::image($brand->image) }}" alt="{{ $brand->title }}">
                 </div>
             </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand2.png" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="image">
-                    <img src="assets/img/brand3.png" alt="">
-                </div>
-            </div>
-
+            @endforeach
         </div>
+        @endfor
     </div>
 </section>

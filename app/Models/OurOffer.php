@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use TCG\Voyager\Traits\Translatable;
 
-class FAQ extends Model implements Auditable
+class OurOffer extends Model implements Auditable
 {
     use HasFactory, \OwenIt\Auditing\Auditable, Translatable;
 
@@ -15,5 +15,4 @@ class FAQ extends Model implements Auditable
         'title',
         'content',
     ];
-    
 }
