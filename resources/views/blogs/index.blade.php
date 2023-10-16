@@ -131,7 +131,7 @@
                 </div>
                 <div class="blog-items">
                     <div class="row">
-
+                        @foreach ($latest_blogs as $blog)
                         <div class="col-md-6 col-lg-4 col-xl-3 item">
                             <div class="content">
                                 <div class="details">
@@ -139,59 +139,59 @@
                                         <a href=""><img src="assets/img/icon/right.svg" alt=""></a>
                                     </div>
                                     <div class="tag">
-                                        <span class="budge warning">Beauty</span>
+                                        <span class="budge {{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                     </div>
                                     <div class="title">
                                         <a href="">
-                                            Why Do You Choose Bags In Turkey?
+                                            {{$blog->title}}
                                         </a>
                                     </div>
                                     <div class="disc">
                                         <p>
-                                            Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id
-                                            massa. Fusce eu lorem sodales, elementum augue nec, fringilla leo. Phasellus
-                                            metus mi,
+                                            {{$blog->brief}}
                                         </p>
                                     </div>
                                     <div class="image">
-                                        <img src="assets/img/blog1.png" alt="">
+                                        <img src="{{Voyager::image($blog->thumbnail_image)}}" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        
 
                         <div class="hidden-blog">
                             <div class="row">
+                                @foreach ($hiddenBlogs as $blog) 
 
-                                <div class="col-md-6 col-lg-4 col-xl-3 item">
-                                    <div class="content">
-                                        <div class="details">
-                                            <div class="link">
-                                                <a href=""><img src="assets/img/icon/right.svg" alt=""></a>
-                                            </div>
-                                            <div class="tag">
-                                                <span class="success">Beauty</span>
-                                            </div>
-                                            <div class="title">
-                                                <a href="">
-                                                    Why Do You Choose Bags In Turkey?
-                                                </a>
-                                            </div>
-                                            <div class="disc">
-                                                <p>
-                                                    Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis
-                                                    at id
-                                                    massa. Fusce eu lorem sodales, elementum augue nec, fringilla leo.
-                                                    Phasellus
-                                                    metus mi,
-                                                </p>
-                                            </div>
-                                            <div class="image">
-                                                <img src="assets/img/blog1.png" alt="">
+                                    <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                        <div class="content">
+                                            <div class="details">
+                                                <div class="link">
+                                                    <a href=""><img src="assets/img/icon/right.svg" alt=""></a>
+                                                </div>
+                                                <div class="tag">
+                                                    <span class="budge {{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
+                                                </div>
+                                                <div class="title">
+                                                    <a href="">
+                                                        {{$blog->title}}
+                                                    </a>
+                                                </div>
+                                                <div class="disc">
+                                                    <p>
+                                                        {{$blog->brief}}
+                                                    </p>
+                                                </div>
+                                                <div class="image">
+                                                    <img src="{{Voyager::image($blog->thumbnail_image)}}" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    
+                                @endforeach
+                                
 
                             </div>
                         </div>
