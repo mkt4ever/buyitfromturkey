@@ -97,6 +97,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+    <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
+
      {!! $seo->header_bottom !!}
 </head>
 

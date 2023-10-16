@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\BlogTag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
@@ -29,12 +30,12 @@ class Blog extends Model implements Auditable
 
     public function blog_category()
     {
-        return $this->belongsTo(blog_category::class);
+        return $this->belongsTo(BlogCategory::class);
     }
 
     public function blog_tags()
     {
-        return $this->belongsToMany(blog_tags::class,'blog_tag');
+        return $this->belongsToMany(BlogTag::class,'blog_tag');
     }
 
     public function comments(){

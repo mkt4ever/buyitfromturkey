@@ -86,7 +86,6 @@
 
 <!-- page content ==---------------------------------------- -->
 
-<script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
@@ -94,6 +93,7 @@
 <script src="{{asset('lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{asset('lib/aos-master/dist/aos.js')}}"></script>
+
 
 <script>
 AOS.init();
