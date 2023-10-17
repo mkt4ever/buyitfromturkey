@@ -12,6 +12,8 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
+        "monarobase/country-list": "^3.4",
         "owen-it/laravel-auditing": "^13.5",
         "tcg/voyager": "^1.6"
     },

@@ -94,7 +94,11 @@
     <link href="{{ asset('lib/aos-master/dist/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('lib/select2-4.1.0-rc.0/dist/css/select2.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('lib/jquery-nice-select-1.1.0/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{asset('lib/DatePicker/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('lib/DatePicker/bootstrap-datetimepicker.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('lib/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
     <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
@@ -105,13 +109,13 @@
 
 <body>
     {{-- {!! $seo->body_top !!} --}}
-    <div class="trnsparent">
+    <div class="{{isset($header) ? $header : 'trnsparent'}}">
       <div class="header-section">
          <div class=" container">
              <div class="bottom">
                  <div class="row">
                      <div class="logo">
-                         <a href="./"><img src="{{asset('img/logo.svg')}}" alt=""></a>
+                         <a href="{{localeRoute('homepage')}}"><img src="{{asset('img/logo'. (isset($header) && $header == "inner-page" ? '-main' : '') .'.svg')}}" alt=""></a>
                      </div>
                      <div class="navbar">
                          <div class="overlay"></div>
@@ -153,16 +157,16 @@
                                      <a href="">info@buyitfromturkiye.com</a>
                                  </div>
                                  <div class="icon">
-                                     <img src="{{asset('img/icon/eposta.svg')}}" alt="">
+                                     <img src="{{asset('img/icon/eposta'. (isset($header) && $header == "inner-page" ? 'red' : '') .'.svg')}}" alt="">
                                  </div>
                              </div>
                              <div class="top">
                                  <div class="login">
-                                     <a href="">
+                                     <a href="@auth{{localeRoute('profile')}}@else{{localeRoute('login')}}@endauth">
                                          <div class="icon">
-                                             <img src="{{asset('img/icon/profile.svg')}}" alt="">
+                                             <img src="{{asset('img/icon/profile'. (isset($header) && $header == "inner-page" ? 'sticky' : '') .'.svg')}}" alt="profile">
                                          </div>
-                                         <span>Log in</span>
+                                         <span>@auth {{Auth::user()->name}} @else Login @endauth</span>
                                      </a>
                                  </div>
                                  <div class="lang">
@@ -186,7 +190,8 @@
                                  </div>
                                  <div class="menu">
                                      <button>
-                                         <img class="menu" src="{{asset('img/icon/menu.svg')}}" alt="">
+                                         <img class="menu menu_white" src="{{asset('img/icon/menu'. (isset($header) && $header == "inner-page" ? 'b' : '') .'.svg')}}" alt="">
+                                         <img class="menu menu_blue" src="{{asset('img/icon/menub.svg')}}" alt="">
                                          <img class="close" src="{{asset('img/icon/close.png')}}" alt="">
                                      </button>
                                  </div>
@@ -248,7 +253,7 @@
              </div>
              <div class="mail-sec">
                  <div class="icon">
-                     <img src="{{asset('img/icon/eposta.svg')}}" alt="">
+                     <img src="{{asset('img/icon/eposta'. (isset($header) && $header == "inner-page" ? 'red' : '') .'.svg')}}" alt="">
                  </div>
                  <a href="">info@buyitfromturkiye.com</a>
              </div>
@@ -270,3 +275,32 @@
          </div>
      </div>
   </div>
+
+<!-- loading --------------------- -->
+<div class="loader">
+    <div class="gooey">
+    <span class="dot"></span>
+    <div class="dots">
+       <span></span>
+       <span></span>
+       <span></span>
+    </div>
+    </div>
+ </div>
+ <!-- loading --------------------- -->
+ 
+ <!-- cookie --------------------- -->
+ <div class="card cookie-alert">
+   <div class="card-body">
+      <div class="text-content">
+      <h5 class="card-title">We Value Your Privacy</h5>
+      <p class="card-text">We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+      </div>
+      <div class="btn-toolbar"> 
+      <button class="btn btn-primary accept-cookies">Customize</button>
+            <button class="btn btn-secondary ">Accept All</button>
+            <button class="btn btn-secondary ">Reject All</button>
+      </div>
+   </div>
+ </div>     
+ <!-- cookie --------------------- -->

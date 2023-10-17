@@ -86,15 +86,36 @@
 
 <!-- page content ==---------------------------------------- -->
 
-
+<script>
+    let msg_done = "{{text('msg_done')}}", msg_sent = "{{text('msg_sent')}}", msg_error = "{{text('msg_error')}}";
+</script>
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('lib/select2-4.1.0-rc.0/dist/js/select2.min.js')}}"></script>
+<script src="{{asset('lib/DatePicker/bootstrap-datepicker.min.js')}}"></script>  
+<script src="{{asset('lib/DatePicker/bootstrap-datetimepicker.min.js')}}"></script> 
 <script src="{{asset('lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('lib/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/cookies.js')}}"></script>
 <script src="{{asset('lib/aos-master/dist/aos.js')}}"></script>
 
-
+<script>
+    $(document).ready(function(){
+            @if(session('msg') == "msg-sent")
+              toastr.success(msg_sent);
+            @elseif(session('msg') == "done")
+              toastr.success(msg_done);
+            @elseif($errors && $errors->count() > 0)
+                @foreach($errors->all() as $error)
+                toastr.error("{{$error}}");
+                @endforeach
+            @endif
+            // toastr.warning("nedir");
+            // toastr.info("nedir");
+        });
+  </script>
 <script>
 AOS.init();
 $('#slider').owlCarousel({
@@ -244,6 +265,8 @@ $('.footer').owlCarousel({
     }
 });
 </script>
+@yield('js')
+@stack('js')
 {{-- {!! $seo->body_bottom !!} --}}
 </body>
 

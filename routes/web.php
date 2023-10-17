@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\SiteText;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoyagerHelperController;
 use App\Models\Language;
 
@@ -36,6 +37,7 @@ Route::group(['prefix' => 'buyitadmin'], function () {
 });
 
 
+Auth::routes();
 Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translations){
 
     Route::get('/', [HomeController::class, 'index'])->name('homepage');
@@ -43,6 +45,9 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
     foreach(Language::all() as $lang){
         $langTranslations = $translations->translate($lang->code);
         Route::group(['prefix' => $lang->code], function () use ($lang, $langTranslations){
+            Route::group(["as" => "$lang->code."], function(){
+                Auth::routes();
+            });
 
             Route::get('/', [HomeController::class, 'index'])->name($lang->code.'.homepage');
 
@@ -51,6 +56,8 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
 
             Route::get('/'.transRoute('routeProducts', $langTranslations).'/{slug?}', [ProductController::class, 'index'])->name($lang->code.'.products.index');
             Route::get('/'.transRoute('routeProductDetails', $langTranslations).'/{slug}', [ProductController::class, 'show'])->name($lang->code.'.products.show');
+
+            Route::get('/'.transRoute('routeProfile', $langTranslations), [UserController::class, 'profile'])->name($lang->code.'.profile');
 
         });
 
