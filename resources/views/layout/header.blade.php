@@ -175,16 +175,17 @@
                                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
                                              id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="true">
                                              <span>
-                                                 <img src="{{asset('img/icon/en.svg')}}" alt="">
+                                                 <img src="{{asset('img/icon/'.app()->getLocale().'.png')}}" alt="{{app()->getLocale()}}">
                                                  <i>
-                                                     DE
+                                                     {{strtoupper(app()->getLocale())}}
                                                  </i>
                                              </span>
                                          </a>
                                          <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink"
                                              data-bs-popper="static">
-                                             <li><a href="">English</a></li>
-                                             <li><a href="">Arabic</a></li>
+                                             @foreach($langs as $lang)
+                                            <li><a @class(["dropdown-item", "active" => $lang->code == app()->getLocale()]) href="{{getLangLink($lang->code)}}">{{$lang->title}}</a></li>
+                                            @endforeach
                                          </ul>
      
                                      </div>

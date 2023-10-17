@@ -112,6 +112,9 @@ return [
         'locales' => [
             'tr',
             'en',
+            'fr',
+            'de',
+            'ar',
             //'pt',
         ],
     ],
