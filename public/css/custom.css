@@ -1,0 +1,9 @@
+.nice-select .list{
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll !important;
+  }
+  .nice-select .current{
+    overflow: hidden;
+    display: block;
+  }
