@@ -86,7 +86,7 @@
 
 <!-- page content ==---------------------------------------- -->
 
-<script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
+
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('lib/select2-4.1.0-rc.0/dist/js/select2.min.js')}}"></script>

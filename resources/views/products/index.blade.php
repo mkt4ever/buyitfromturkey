@@ -13,7 +13,7 @@
                         style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="zoom-btn">
-                        <a href="" class="btn btn-primary icon-btn">Haritayı Genişlet <div class="icon"><i
+                        <a href="" class="btn btn-primary icon-btn">{{text('Expand_Map')}}<div class="icon"><i
                                     class="fa-solid fa-up-right-and-down-left-from-center"></i></div></a>
                     </div>
                 </div>
@@ -23,11 +23,7 @@
                 <div class="top">
                     <div class="title">
                         <h3>
-                            Products
-                            <br>
-                            AND
-                            <br>
-                            SERVICES
+                            {!! text('products_and_services') !!}
                         </h3>
                     </div>
                     <div class="smsearch-box">
@@ -39,7 +35,7 @@
                         <div class="item">
                             <div class="content">
                                 <select class="nice-select">
-                                    <option data-display="Sectors">Sectors</option>
+                                    <option data-display="Sectors">{{text('Sectors')}}</option>
 
                                     @foreach ($products_sectores as $sector)
                                         <option value="{{$sector->id}}">{{$sector->title}}</option>
@@ -52,7 +48,7 @@
                         <div class="item">
                             <div class="content">
                                 <select class="nice-select">
-                                    <option data-display="Category">Category</option>
+                                    <option data-display="Category">{{text('Category')}}</option>
                                     @foreach ($products_category as $category)
                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                     @endforeach
@@ -62,7 +58,7 @@
                         <div class="item">
                             <div class="content">
                                 <select class="nice-select">
-                                    <option data-display="Tags">Tags</option>
+                                    <option data-display="Tags">{{text('Tags')}}</option>
                                     @foreach ($products_tags as $tag)
                                         <option value="{{$tag->id}}">{{$tag->title}}</option>
                                     @endforeach
@@ -70,7 +66,7 @@
                             </div>
                         </div>
                         <div class="search-inp">
-                            <input type="email" class="form-control" placeholder="Searching">
+                            <input type="email" class="form-control" placeholder="{{text('Searching')}}">
 
                         </div>
                         <div class="action mobile">
@@ -81,37 +77,26 @@
                     </div>
                     <div class="actions">
                         <ul>
-                            <li><a href="" class="direction">Clear Selection</a></li>
-                            <li><button>See Results (12) <i class="fa-solid fa-arrow-down"></i></button></li>
+                            <li><a href="" class="direction">{{text('Clear_Selection')}}</a></li>
+                            <li><button>{{text('See_Results')}} (12) <i class="fa-solid fa-arrow-down"></i></button></li>
                         </ul>
                     </div>
                 </div>
                 <div class="bottom">
                     <div class="owl-carousel owl-theme" id="product-carousel">
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                                <div class="title-sec">
-                                    <h3>Buy it From Turkiye</h3>
+
+                        @foreach ($products_sliders as $slider)
+                            <div class="item">
+                                <div class="image">
+                                    <img src="{{Voyager::image($slider->image)}}" alt="{{$slider->title}}">
+                                    <div class="title-sec">
+                                        <h3>{{$slider->title}}</h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel2.png" alt="">
-                                <div class="title-sec">
-                                    <h3>Buy it From Turkiye</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/slider2.png" alt="">
-                                <div class="title-sec">
-                                    <h3>Buy it From Turkiye</h3>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        
+
 
                     </div>
                 </div>
@@ -234,5 +219,45 @@
     </div>
 
 </div>
+
+<script>
+    $('#product-carousel').owlCarousel({
+        dots: false,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        nav: false, // Show next and prev buttons
+        slideSpeed: 500,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        mouseDrag: false,
+        responsiveClass: true,
+        navText: [
+            "<i class='fa-solid fa-chevron-left'></i>",
+            "<i class='fa-solid fa-chevron-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            400: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            768: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+            1200: {
+                items: 1,
+            }
+        }
+    });
+    </script>
 
 @endsection
