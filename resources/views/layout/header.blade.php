@@ -58,13 +58,13 @@
     @if(isset($robots) && $robots == "noindex")
         <meta name="robots" content="noindex">
     @else
-        {!! $seo->meta !!}
+        {{-- {!! $seo->meta !!} --}}
     @endif
    @if($description)<meta name="description" content="{{ $description }}">@endif
    @if($keywords)<meta name="keywords" content="{{ $keywords }}">@endif
    @if($canonical)<link rel="canonical" href="{{ $canonical }}" />@endif
    @if($ogimage)<meta property="og:image" content="{{ $ogimage }}" />@endif
-   <!-- <meta name="author" content="smartwork.com.tr"> -->
+   <meta name="author" content="smartwork.com.tr"> 
    <meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="300">
 	<meta property="og:image:height" content="300">
@@ -99,11 +99,11 @@
 
     <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
 
-     {!! $seo->header_bottom !!}
+     {{-- {!! $seo->header_bottom !!} --}}
 </head>
 
 <body>
-    {!! $seo->body_top !!}
+    {{-- {!! $seo->body_top !!} --}}
     <div class="trnsparent">
       <div class="header-section">
          <div class=" container">
@@ -120,8 +120,7 @@
                                      <a href="how.php">Why Choose Türkiye?</a>
                                      <ul class="sub-menu">
                                          <li>
-                                             <a href="
-                                      ">
+                                             <a href="">
                                                  منيو</a>
                                              <ul>
                                                  <li><a href="">العلامات التجارية</a></li>
@@ -238,7 +237,7 @@
                      <li><a href="">How it works?</a></li>
                      <li><a href="">What we offer?</a></li>
                      <li><a href="">Who Are We?</a></li>
-                     <li><a href="">Blog</a></li>
+                     <li><a href="{{ localeRoute('blogs.index') }}">{{text('Blog')}}</a></li>
                      <li><a href="">Contact</a></li>
                  </ul>
              </div>

@@ -65,9 +65,9 @@
             </div>
             <div class="col-md-4 center">
             <ul>
-                <li><a href=""><img src="assets/img/icon/facebook.svg" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/youtube.svg" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/instagram.svg" alt=""></a></li>
+                <li><a href=""><img src="{{asset('img/icon/facebook.svg')}}" alt=""></a></li>
+                <li><a href=""><img src="{{asset('img/icon/youtube.svg')}}" alt=""></a></li>
+                <li><a href=""><img src="{{asset('img/icon/instagram.svg')}}" alt=""></a></li>
             </ul>
             </div>
             <div class="col-md-4 right">
@@ -244,7 +244,7 @@ $('.footer').owlCarousel({
     }
 });
 </script>
-{!! $seo->body_bottom !!}
+{{-- {!! $seo->body_bottom !!} --}}
 </body>
 
 </html>
