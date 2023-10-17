@@ -4,8 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
+use TCG\Voyager\Traits\Translatable;
 
-class ProductCategory extends Model
+class ProductCategory extends Model implements Auditable
 {
-    use HasFactory;
+    use HasFactory, \OwenIt\Auditing\Auditable, Translatable;
+    
+    protected $translatable= ['title','slug'];
+    protected $with= ['translations'];
 }

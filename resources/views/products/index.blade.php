@@ -40,11 +40,12 @@
                             <div class="content">
                                 <select class="nice-select">
                                     <option data-display="Sectors">Sectors</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
+
+                                    @foreach ($products_sectores as $sector)
+                                        <option value="{{$sector->id}}">{{$sector->title}}</option>
+                                    @endforeach
+                                    
+
                                 </select>
                             </div>
                         </div>
@@ -52,11 +53,9 @@
                             <div class="content">
                                 <select class="nice-select">
                                     <option data-display="Category">Category</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
+                                    @foreach ($products_category as $category)
+                                        <option value="{{$category->id}}">{{$category->title}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -64,11 +63,9 @@
                             <div class="content">
                                 <select class="nice-select">
                                     <option data-display="Tags">Tags</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
-                                    <option value="1">Test</option>
+                                    @foreach ($products_tags as $tag)
+                                        <option value="{{$tag->id}}">{{$tag->title}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

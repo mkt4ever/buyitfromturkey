@@ -20,6 +20,19 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('product_sector_id');
             $table->foreign('product_sector_id')->on('product_sectors')->references('id');
 
+            $table->string('title');
+            $table->string('thumbnail_image')->nullable();
+            $table->longText('Images')->nullable();
+            $table->string('phone')->nullable();
+            $table->longText('brief')->nullable();
+            $table->longText('content')->nullable();
+
+            $table->string('meta_title', 255)->nullable();
+            $table->string('meta_description', 255)->nullable();
+            $table->string('meta_keyword', 255)->nullable();
+            $table->string('meta_canonical', 255)->nullable();
+            $table->string('meta_ogimage', 255)->nullable();
+
 
             $table->timestamps();
         });
