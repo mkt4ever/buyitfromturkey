@@ -96,6 +96,8 @@
 <script src="{{asset('lib/DatePicker/bootstrap-datetimepicker.min.js')}}"></script> 
 <script src="{{asset('lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js')}}"></script>
 <script src="{{asset('lib/toastr/toastr.min.js')}}"></script>
+<script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput-jquery.min.js')}}"></script>
+<script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput.min.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/cookies.js')}}"></script>

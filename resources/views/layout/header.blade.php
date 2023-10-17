@@ -97,6 +97,7 @@
     <link rel="stylesheet" href="{{asset('lib/DatePicker/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('lib/DatePicker/bootstrap-datetimepicker.min.css')}}">
     <link rel="stylesheet" href="{{ asset('lib/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{asset('lib/intl-tel-input-master/build/css/intlTelInput.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
