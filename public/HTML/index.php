@@ -61,6 +61,7 @@
                                 </a>
                             </div>
                         </div>
+                        
                         <div class="item">
                             <div class="content">
                                 <a href="">
@@ -293,9 +294,18 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+
+            <div class="slider-dots">
+                <ul>
+                    <li><a href="" class="active">01</a></li>
+                    <li><a href="" class="">02</a></li>
+                    <li><a href="" class="">03</a></li>
+                    <li><a href="" class="">04</a></li>
+                </ul>
+            </div>
+
     </section>
-    
 
 
     <!-- slider ==---------------------------- -->
@@ -305,15 +315,15 @@
     <section class="aboutus-section">
         <div class="container">
             <div class="boxes">
-                <div class="top">
+                <div class="top"> 
                     <div class="row">
-                        <div class="col-md-12 col-lg-9 col-xl-8 text">
-                            <div class="left col-md-4 col-xl-3">
+                        <div class="col-md-12 col-lg-9 col-xl-8 text" >
+                            <div class="left col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="1000">
                                 <h5>
                                     Why Choose <span>Türkiye?</span>
                                 </h5>
                             </div>
-                            <div class="right col-md-8 col-xl-9">
+                            <div class="right col-md-8 col-xl-9" data-aos="fade-up" data-aos-duration="1000">
                                 <p>
                                     <em>Turkey</em> is an attractive option for international buyers with competitive
                                     prices and high-quality products. Its strategic location and technological expertise
@@ -323,7 +333,7 @@
                                 <a href="" class="btn btn-primary icon-btn">More info <div class="icon"><i
                                             class="fa-solid fa-arrow-right"></i></div></a>
                             </div>
-                            <div class="sm-boxes col-md-12">
+                            <div class="sm-boxes col-md-12" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="m-title">
                                     <h3>What We Offer?</h3>
                                 </div>
@@ -432,14 +442,14 @@
 
     <!-- works section ==---------------------------- -->
     <section class="works-section">
-        <div class="title">
+        <div class="title" data-aos="fade-up" data-aos-duration="1500">
             <h3>How It <span>Works?</span></h3>
         </div>
         <div class="boxes">
             <div class="container">
                 <div class="items right">
                     <div class="row">
-                        <div class="col-md-6 item">
+                        <div class="col-md-6 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                             <div class="row">
                                 <div class="image col-md-5">
                                     <img src="assets/img/illustrations/works1.svg" alt="">
@@ -475,7 +485,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 item">
+                        <div class="col-md-6 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
                             <div class="row">
                                 <div class="image col-md-5">
                                     <img src="assets/img/illustrations/works2.svg" alt="">
@@ -514,7 +524,7 @@
                 </div>
                 <div class="items left">
                     <div class="row">
-                        <div class="col-md-6 item">
+                        <div class="col-md-6 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1500">
                             <div class="row">
                                 <div class="image col-md-5">
                                     <img src="assets/img/illustrations/works3.svg" alt="">
@@ -548,7 +558,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 item">
+                        <div class="col-md-6 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="2000">
                             <div class="row">
                                 <div class="image col-md-5">
                                     <img src="assets/img/illustrations/works4.svg" alt="">
@@ -593,9 +603,9 @@
     <!-- blog section ==---------------------------- -->
     <section class="blog-section">
         <div class="container">
-            <div class="top">
+            <div class="top" data-aos="fade-up" data-aos-duration="1000">
                 <div class="row">
-                    <div class="text col-md-2">
+                    <div class="text col-md-2" >
                         <h3>Blog</h3>
                     </div>
                     <div class="nav-sec col-md-10">
@@ -630,7 +640,7 @@
                 </div>
 
             </div>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content" id="myTabContent" data-aos="fade-up" data-aos-duration="1000">
                 <div class="tab-pane fade show active" id="tab1" role="tabpanel" tabindex="0">
                     <div class="owl-carousel owl-theme  categories-carousel">
                         <div class="item">
@@ -924,10 +934,10 @@
 
     <!-- brands section ==---------------------------- -->
     <section class="brans-section">
-        <div class="title">
+        <div class="title" data-aos="fade-up" data-aos-duration="1000">
             <h3>Brands</h3>
         </div>
-        <div class="boxes">
+        <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
             <div class="owl-carousel owl-theme brans-carousel">
                 <div class="item">
                     <div class="image">
@@ -990,7 +1000,7 @@
     <section class="questions-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-6 faq">
+                <div class="col-md-12 col-lg-6 faq" data-aos="fade-up" data-aos-duration="1500">
                     <div class="content">
                         <h3>FAQ</h3>
                         <p>Send us your questions and we'll answer them. All the answers you are looking for are here
@@ -1017,7 +1027,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-6 questions">
+                <div class="col-md-12 col-lg-6 questions" data-aos="fade-up" data-aos-duration="1000">
                     <div class="main-content">
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -1209,6 +1219,7 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
 
     <script>
@@ -1220,7 +1231,7 @@
         autoplay: true,
         autoplayTimeout: 6000,
         nav: true, // Show next and prev buttons
-        dots: true,
+        dots: false,
         slideSpeed: 500,
         autoplayHoverPause: true,
         smartSpeed: 1000,
@@ -1291,11 +1302,11 @@
         loop: true,
         margin: 10,
         autoplay: true,
-        autoplayTimeout: 6000,
+        autoplayTimeout: 2000,
         nav: false, // Show next and prev buttons
-        slideSpeed: 500,
-        autoplayHoverPause: true,
-        smartSpeed: 1000,
+        slideSpeed: 2000,
+        autoplayHoverPause: false,
+        smartSpeed: 2000,
         responsiveClass: true,
         navText: [
             "<i class='fa-solid fa-chevron-left'></i>",
@@ -1303,7 +1314,7 @@
         ],
         responsive: {
             0: {
-                items: 3,
+                items: 2,
             },
             400: {
                 items: 3,
@@ -1328,11 +1339,11 @@
         loop: true,
         margin: 10,
         autoplay: true,
-        autoplayTimeout: 6000,
+        autoplayTimeout: 4000,
         nav: false, // Show next and prev buttons
-        slideSpeed: 500,
-        autoplayHoverPause: true,
-        smartSpeed: 1000,
+        slideSpeed: 4000,
+        autoplayHoverPause: false,
+        smartSpeed: 4000,
         responsiveClass: true,
         navText: [
             "<i class='fa-solid fa-chevron-left'></i>",
@@ -1349,13 +1360,13 @@
                 items: 1,
             },
             768: {
-                items: 2,
+                items: 1,
             },
             1000: {
                 items: 2,
             },
             1200: {
-                items: 3,
+                items: 2,
             }
         }
     });

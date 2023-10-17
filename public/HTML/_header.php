@@ -3,7 +3,7 @@
         <div class="bottom">
             <div class="row">
                 <div class="logo">
-                    <a href="./"><img src="assets/img/logo.svg" alt=""></a>
+                    <a href="./"><img src="assets/img/Logo.svg" alt=""></a>
                 </div>
                 <div class="navbar">
                     <div class="overlay"></div>
@@ -11,26 +11,7 @@
                         <ul class="menu">
                             <li class="submenulist">
                                 <a href="how.php">Why Choose Türkiye?</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="
-                                 ">
-                                            منيو</a>
-                                        <ul>
-                                            <li><a href="">العلامات التجارية</a></li>
-                                            <li><a href="">عروض</a></li>
-                                            <li><a href="">منتجات</a></li>
-                                            <li><a href="">المدونة</a></li>
-                                            <li><a href="">العلامات التجارية</a></li>
-                                            <li><a href="">عروض</a></li>
-                                            <li><a href="">منتجات</a></li>
-                                            <li><a href="">المدونة</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="" target="_blank">
-                                            منيو 2</a>
-                                    </li>
-                                </ul>
+                              
 
                             </li>
                             <li class="">
@@ -79,7 +60,8 @@
                             </div>
                             <div class="menu">
                                 <button>
-                                    <img class="menu" src="assets/img/icon/menu.svg" alt="">
+                                    <img class="menu menu_white" src="assets/img/icon/menu.svg" alt="">
+                                    <img class="menu menu_blue" src="assets/img/icon/menu_blue.svg" alt="">
                                     <img class="close" src="assets/img/icon/close.png" alt="">
                                 </button>
                             </div>
@@ -162,3 +144,34 @@
         </div>
     </div>
 </div>
+
+<!-- loading --------------------- -->
+<div class="loader">
+   <div class="gooey">
+   <span class="dot"></span>
+   <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+   </div>
+</div>
+<!-- loading --------------------- -->
+
+
+
+<!-- cookie --------------------- -->
+<div class="card cookie-alert">
+  <div class="card-body">
+     <div class="text-content">
+     <h5 class="card-title">We Value Your Privacy</h5>
+     <p class="card-text">We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+     </div>
+     <div class="btn-toolbar"> 
+     <button class="btn btn-primary accept-cookies">Customize</button>
+           <button class="btn btn-secondary ">Accept All</button>
+           <button class="btn btn-secondary ">Reject All</button>
+     </div>
+  </div>
+</div>     
+<!-- cookie --------------------- -->

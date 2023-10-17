@@ -27,7 +27,7 @@
 
 <body class="">
     <!-- header ==---------------------------- -->
-    <div class="transparent">
+    <div class="trnsparent">
         <?php include('_header.php') ?>
 
 
@@ -48,13 +48,13 @@
         <div class="container">
             <div class="whychoose">
                 <div class="row">
-                    <div class="col-5 col-md-5 col-lg-2 left">
+                    <div class="col-5 col-md-5 col-lg-2 left" data-aos="fade-up" data-aos-duration="1000">
                         <h5>
                             WHO
                             ARE <span>WE?</span>
                         </h5>
                     </div>
-                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center">
+                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center" data-aos="fade-up" data-aos-duration="1000">
                         <h3>About Us</h3>
                         <p>
                             <strong>Turkey</strong> is an attractive option for international buyers with competitive
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="video-sec">
+            <div class="video-sec" data-aos="fade-up" data-aos-duration="1000">
                 <div class="content">
                     <a href="https://www.youtube.com/embed/5qZ2u7ZratM" data-fancybox="gallery">
                         <img src="assets/img/video.png" alt="">
@@ -99,7 +99,7 @@
             </div>
         </div>
 
-        <div class="world-article">
+        <div class="world-article" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
 
                 <div class="row">
@@ -133,54 +133,131 @@
 
 
 
-        <div class="ourvalue-section">
+        <div class="ourvalue-section" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
                 <div class="m-title">
                     <h3>Our Values</h3>
                 </div>
                 <div class="boxes">
-                    <div class="row">
-                        <div class="item col-md-2">
+                    <div class="nav nav-tabs" id="myTab" role="tablist">
+                        <div class="item col-md-2 nav-item">
                             <div class="icon">
-                                <img src="assets/img/icon/global.svg" alt="">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home-tab-pane" type="button" role="tab"
+                                    aria-controls="home-tab-pane" aria-selected="true">
+
+                                    <img src="assets/img/icon/global.svg" alt="">
+
+                                </button>
+
                             </div>
                         </div>
-                        <div class="item col-md-2">
+                        <div class="item col-md-2 nav-item">
                             <div class="icon">
-                                <img src="assets/img/icon/satisfaction.svg" alt="">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                    aria-controls="profile-tab-pane" aria-selected="false">
+                                    <img src="assets/img/icon/satisfaction.svg" alt="">
+
+                                </button>
+
                             </div>
                         </div>
-                        <div class="item col-md-2">
+                        <div class="item col-md-2 nav-item">
                             <div class="icon">
-                                <img src="assets/img/icon/quality.svg" alt="">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                    aria-controls="contact-tab-pane" aria-selected="false">
+                                    <img src="assets/img/icon/quality.svg" alt="">
+
+                                </button>
                             </div>
                         </div>
-                        <div class="item col-md-2">
+
+                        <div class="item col-md-2 nav-item">
                             <div class="icon">
-                                <img src="assets/img/icon/security.svg" alt="">
+                                <button class="nav-link" id="contact-tab2" data-bs-toggle="tab"
+                                    data-bs-target="#contact-tab2-pane" type="button" role="tab"
+                                    aria-controls="contact-tab2-pane" aria-selected="false">
+                                    <img src="assets/img/icon/security.svg" alt="">
+
+
+                                </button>
                             </div>
                         </div>
-                        <div class="item col-md-2">
+                        <div class="item col-md-2 nav-item">
                             <div class="icon">
-                                <img src="assets/img/icon/sustanability.svg" alt="">
+                                <button class="nav-link" id="contact-tab3" data-bs-toggle="tab"
+                                    data-bs-target="#contact-tab3-pane" type="button" role="tab"
+                                    aria-controls="contact-tab3-pane" aria-selected="false">
+                                    <img src="assets/img/icon/sustanability.svg" alt="">
+
+                                </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="discreption">
-                    <h4>Global Experience</h4>
-                    <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,
-                        pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis
-                        sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                            aria-labelledby="home-tab" tabindex="0">
+                            <h4>Global Experience 1</h4>
+                            <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
+                                elementum,
+                                pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet,
+                                sagittis
+                                sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                            tabindex="0">
+                            <h4>Global Experience 2</h4>
+                            <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
+                                elementum,
+                                pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet,
+                                sagittis
+                                sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                            tabindex="0">
+                            <h4>Global Experience 3</h4>
+                            <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
+                                elementum,
+                                pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet,
+                                sagittis
+                                sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab2-pane" role="tabpanel" aria-labelledby="contact-tab2"
+                            tabindex="0">
+                            <h4>Global Experience 4</h4>
+                            <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
+                                elementum,
+                                pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet,
+                                sagittis
+                                sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab3-pane" role="tabpanel" aria-labelledby="contact-tab3"
+                            tabindex="0">
+                            <h4>Global Experience 5</h4>
+                            <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
+                                elementum,
+                                pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet,
+                                sagittis
+                                sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
 
         </div>
 
 
-        <div class="team-section">
+ 
+        <div class="team-section" >
             <div class="container">
-                <div class="main-title">
+                <div class="main-title" data-aos="fade-up" data-aos-duration="1000">
                     <h3>
                         You can reliably reach <span>the product or service</span> you want <br> <em>from all over
                             Turkey</em> through us.
@@ -193,7 +270,7 @@
                                     class="fa-solid fa-arrow-right"></i></div></a>
                     </div>
                 </div>
-                <div class="team-carousel">
+                <div class="team-carousel" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row">
                         <div class="col-md-12 col-lg-3 text">
                             <div class="text-content">
@@ -326,10 +403,11 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
 
     <script> 
-
+AOS.init();
 
     $('#whoweare').owlCarousel({
         dots: false,

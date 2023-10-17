@@ -39,7 +39,7 @@
     <div class="page-content gray-bg">
         <div class="login-page">
             <div class="container">
-                <div class="login-signup register">
+                <div class="login-signup register" data-aos="fade-up" data-aos-duration="1000">
                     <div class="content">
                         <div class="title">
                             <h3>
@@ -197,8 +197,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
+        AOS.init();
         
     $('.footer').owlCarousel({
             dots: false,

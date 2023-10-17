@@ -27,7 +27,7 @@
 
 <body class="">
     <!-- header ==---------------------------- -->
-    <div class="transparent">
+    <div class="trnsparent">
         <?php include('_header.php') ?>
 
 
@@ -44,17 +44,17 @@
     <!-- banner ==---------------------------- -->
 
     <!-- page content  ==---------------------------- -->
-    <div class="page-content">
+    <div class="page-content bg2">
         <div class="container">
-            <div class="whychoose">
+            <div class="whychoose howitworks" >
                 <div class="row">
-                    <div class="col-5 col-md-5 col-lg-2 left">
+                    <div class="col-5 col-md-5 col-lg-2 left" data-aos="fade-up" data-aos-duration="1000">
                         <h5>
                             HOW
                             IT <span>WORKS?</span>
                         </h5>
                     </div>
-                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center">
+                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center" data-aos="fade-up" data-aos-duration="1000">
                         <p>
                             Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia
                             orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.
@@ -78,7 +78,7 @@
                     <div class="">
                         <div class="row">
                             <div class=" items right">
-                                <div class="col-md-12 col-lg-8 item">
+                                <div class="col-md-12 col-lg-8 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                                     <div class="row">
                                         <div class="image  col-7 col-md-5 col-lg-5">
                                             <img src="assets/img/illustrations/works1.svg" alt="">
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                             <div class=" items left">
-                                <div class="col-md-12 col-lg-8 item">
+                                <div class="col-md-12 col-lg-8 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
                                     <div class="row">
                                         <div class="image  col-7 col-md-5 col-lg-5">
                                             <img src="assets/img/illustrations/works2.svg" alt="">
@@ -162,7 +162,7 @@
                                 </div>
                             </div>
                             <div class="items right">
-                                <div class="col-md-12 col-lg-8 item">
+                                <div class="col-md-12 col-lg-8 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                                     <div class="row">
                                         <div class="image  col-7 col-md-5 col-lg-5">
                                             <img src="assets/img/illustrations/works4.svg" alt="">
@@ -203,7 +203,7 @@
                                 </div>
                             </div>
                             <div class="items left">
-                                <div class="col-md-12 col-lg-8 item">
+                                <div class="col-md-12 col-lg-8 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
                                     <div class="row">
                                         <div class="image  col-7 col-md-5 col-lg-5">
                                             <img src="assets/img/illustrations/works3.svg" alt="">
@@ -302,9 +302,11 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
 
     <script>
+        AOS.init();
     $('#whoweare').owlCarousel({
         dots: false,
         loop: true,

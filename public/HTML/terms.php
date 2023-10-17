@@ -36,7 +36,7 @@
     <!-- page content  ==---------------------------- -->
     <div class="page-content">
         <div class="container">
-            <div class="text terms">
+            <div class="text terms" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Terms Of Use</h3>
                 <h5>Use of our website</h5>
                 <p>
@@ -95,9 +95,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
-        
+        AOS.init();
     $('.footer').owlCarousel({
         dots: false,
         loop: true,

@@ -32,15 +32,15 @@
     <div class="error-section">
         <div class="container">
             <div class="main-content"> 
-            <div class="logo">
+            <div class="logo" >
                 <img src="assets/img/logo-main.svg" alt="">
             </div>
-            <div class="bottom">
+            <div class="bottom" data-aos="fade-up" data-aos-duration="1000">
                 <div class="row">
                     <div class="col-md-6 image">
                         <img src="assets/img/illustrations/404.svg" alt="">
                     </div>
-                    <div class="col-md-6 text">
+                    <div class="col-md-4 text">
                         <h3>Page Not Found</h3>
                         <p>Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.</p>
                         <a href="" class="btn btn-primary icon-btn">Homepage <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></a>
@@ -77,8 +77,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
+      AOS.init();
         
     $('.footer').owlCarousel({
         dots: false,

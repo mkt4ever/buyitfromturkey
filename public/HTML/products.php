@@ -35,23 +35,29 @@
 
     <!-- page content  ==---------------------------- -->
     <div class="page-content gray-bg">
-        <div class="products-section">
+        <div class="products-section" >
             <div class="row">
-                <div class="col-md-12 col-xl-6 map-sec">
+                <div class="col-md-12 col-xl-6 map-sec" data-aos="fade-up" data-aos-duration="1000">
                     <div class="content">
 
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d96305.2103368212!2d28.921036800000003!3d41.03536640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1695209146020!5m2!1sen!2str"
                             style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="zoom-btn">
-                            <a href="" class="btn btn-primary icon-btn">Haritayı Genişlet <div class="icon"><i
-                                        class="fa-solid fa-up-right-and-down-left-from-center"></i></div></a>
+                        <div class="zoom-btn d-xl-block">
+                            <button class="btn btn-primary icon-btn large">
+                                Haritayı Genişlet
+                                <div class="icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+                            </button>
+                            <button class="btn btn-primary icon-btn small">
+                                Haritayı Küçült
+                                <div class="icon"><i class="fa-solid fa-down-left-and-up-right-to-center"></i></div>
+                            </button>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-md-12 col-xl-6 search-box">
+                <div class="col-md-12 col-xl-6 search-box" data-aos="fade-up" data-aos-duration="1000">
                     <div class="top">
                         <div class="title">
                             <h3>
@@ -122,32 +128,13 @@
                         </div>
                     </div>
                     <div class="bottom">
-                        <div class="owl-carousel owl-theme" id="product-carousel">
-                            <div class="item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                    <div class="title-sec">
-                                        <h3>Buy it From Turkiye</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel2.png" alt="">
-                                    <div class="title-sec">
-                                        <h3>Buy it From Turkiye</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="image">
-                                    <img src="assets/img/slider2.png" alt="">
-                                    <div class="title-sec">
-                                        <h3>Buy it From Turkiye</h3>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="video">
+                        <video  width="" height="" muted autoplay loop>
+                            <source src="assets/img/video/turkey.mp4" type="video/mp4">  
+                        </video> 
+                        </div>
+                        <div class="text">
+                            <h3>Buy it From Turkiye</h3>
                         </div>
                     </div>
                 </div>
@@ -155,7 +142,7 @@
             </div>
 
 
-            <div class="products-boxes">
+            <div class="products-boxes" data-aos="fade-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="title">
                         <h3>Search Results</h3>
@@ -167,7 +154,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="boxes">
+                    <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
                         <div class="row">
                             <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
@@ -260,7 +247,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -298,8 +285,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
+AOS.init();
     $('#product-carousel').owlCarousel({
         dots: false,
         loop: true,

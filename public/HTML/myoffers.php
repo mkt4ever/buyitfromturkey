@@ -32,14 +32,31 @@
 
     </div>
     <!-- header ==---------------------------- -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered logout-modal">
+            <div class="modal-content"> 
+                <div class="modal-body">
+                   <div class="text">
+                   <h3>Are you about logout</h3>
+                    <p>Turkey is an attractive option for international buyers with</p>
+                   </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <a href="" class="btn btn-primary">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- logout ==---------------------------- -->
     <!-- page content  ==---------------------------- -->
     <div class="page-content gray-bg">
         <div class="container">
             <div class="prfile-sec">
 
                 <div class="row">
-                    <div class="col-md-12 col-lg-3 sidebar">
+                    <div class="col-md-12 col-lg-3 sidebar" data-aos="fade-up" data-aos-duration="1000">
                         <div class="content desktop">
                             <div class="details">
 
@@ -59,11 +76,13 @@
                                         <li><a href="">My Applications</a></li>
                                     </ul>
                                 </div>
-                                <div class="bottom">
-                                    <a href="">
+                              <div class="bottom">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
                                         <span>Log out</span>
                                         <img src="assets/img/icon/logout.svg" alt="">
-                                    </a>
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -77,11 +96,13 @@
                                         </li>
                                         <li><a href="">Your Profile</a></li>
                                     </ul>
-                                    <div class="bottom">
-                                    <a href="">
+                                  <div class="bottom">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
                                         <span>Log out</span>
                                         <img src="assets/img/icon/logout.svg" alt="">
-                                    </a>
+                                    </button>
+
                                 </div>
                                 </div>
                                 <div class="links">
@@ -96,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-9 rightbar">
+                    <div class="col-md-12 col-lg-9 rightbar" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                         <div class="main-title">
                             <h3>Billing Details</h3>
                             <div class="add-addres">
@@ -296,9 +317,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
-        
+        AOS.init();
     $('.footer').owlCarousel({
             dots: false,
             loop: true,

@@ -27,7 +27,7 @@
 
 <body class="">
     <!-- header ==---------------------------- -->
-    <div class="transparent">
+    <div class="trnsparent">
         <?php include('_header.php') ?>
 
 
@@ -46,14 +46,14 @@
     <!-- page content  ==---------------------------- -->
     <div class="page-content">
         <div class="container">
-            <div class="whychoose">
+            <div class="whychoose" >
                 <div class="row">
-                    <div class="col-5 col-md-5 col-lg-2 left">
+                    <div class="col-5 col-md-5 col-lg-2 left" data-aos="fade-up" data-aos-duration="1000">
                         <h5>
                             What We <span>Offer?</span>
                         </h5>
                     </div>
-                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center">
+                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center" data-aos="fade-up" data-aos-duration="1000">
                         <p>
                             <strong>Turkey</strong> is an attractive option for international buyers with competitive
                             prices and high-quality products. Its strategic location and technological expertise are
@@ -77,7 +77,7 @@
             </div>
 
             <div class="whatweoffer-section">
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -90,7 +90,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -103,7 +103,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -116,7 +116,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -129,7 +129,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -142,7 +142,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -155,7 +155,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -168,7 +168,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="item">
+                <div class="item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="container">
                         <div class="content">
                             <div class="icon">
@@ -213,9 +213,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
-        
+        AOS.init();
     $('.footer').owlCarousel({
         dots: false,
         loop: true,

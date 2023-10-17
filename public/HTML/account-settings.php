@@ -29,6 +29,29 @@
 </head>
 
 <body class="">
+    <!-- logout ==---------------------------- -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered logout-modal">
+            <div class="modal-content"> 
+                <div class="modal-body">
+                   <div class="text">
+                   <h3>Are you about logout</h3>
+                    <p>Turkey is an attractive option for international buyers with</p>
+                   </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <a href="" class="btn btn-primary">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- logout ==---------------------------- -->
+
+
+
     <!-- header ==---------------------------- -->
     <div class="inner-page">
         <?php include('_header-inner.php') ?>
@@ -42,7 +65,7 @@
             <div class="prfile-sec">
 
                 <div class="row">
-                <div class="col-md-12 col-lg-3 sidebar">
+                    <div class="col-md-12 col-lg-3 sidebar" data-aos="fade-up" data-aos-duration="1000">
                         <div class="content desktop">
                             <div class="details">
 
@@ -63,10 +86,12 @@
                                     </ul>
                                 </div>
                                 <div class="bottom">
-                                    <a href="">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
                                         <span>Log out</span>
                                         <img src="assets/img/icon/logout.svg" alt="">
-                                    </a>
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -81,10 +106,12 @@
                                         <li><a href="">Your Profile</a></li>
                                     </ul>
                                     <div class="bottom">
-                                    <a href="">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
                                         <span>Log out</span>
                                         <img src="assets/img/icon/logout.svg" alt="">
-                                    </a>
+                                    </button>
+
                                 </div>
                                 </div>
                                 <div class="links">
@@ -95,11 +122,11 @@
                                         <li class=""><a href="">My Applications</a></li>
                                     </ul>
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-9 rightbar">
+                    <div class="col-md-12 col-lg-9 rightbar" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                         <div class="main-title">
                             <h3>Account Settings <a href="">Edit</a></h3>
                             <div class="add-addres">
@@ -129,7 +156,8 @@
                                     </div>
                                     <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Phone</label>
-                                        <input class="form-control phone-code" list="datalistOptions" type="text" placeholder="">
+                                        <input class="form-control phone-code" list="datalistOptions" type="text"
+                                            placeholder="">
                                     </div>
                                     <div class="col-md-6 col-lg-4 mb-2 item">
                                         <label class="form-label">Birth</label>
@@ -147,7 +175,7 @@
                                         <input type="email" class="form-control" required="" placeholder="Country">
                                     </div>
                                     <div class="col-md-8 mb-2 item mt-3">
-                                        <a href="" class="btn btn-secondary icon-btn">Send <div class="icon"><i
+                                        <a href="" class="btn btn-secondary icon-btn">Submit <div class="icon"><i
                                                     class="fa-solid fa-arrow-right"></i></div></a>
                                     </div>
                                 </div>
@@ -192,7 +220,7 @@
                                     <div class="col-md-12 mb-2 item inputicon mt-3">
                                         <p>I Don't Remember My Current Password <a href="" class="link">(send to my
                                                 email!)</a></p>
-                                        <a href="" class="btn btn-secondary icon-btn">Send <div class="icon"><i
+                                        <a href="" class="btn btn-secondary icon-btn">Submit <div class="icon"><i
                                                     class="fa-solid fa-arrow-right"></i></div></a>
                                     </div>
                                 </div>
@@ -235,56 +263,57 @@
     <script src="assets/lib/DatePicker/bootstrap-datetimepicker.min.js"></script>
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
-    <script src="assets/lib/intl-tel-input-master/build/js/intlTelInput-jquery.min.js"></script> 
-      <script src="assets/lib/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+    <script src="assets/lib/intl-tel-input-master/build/js/intlTelInput-jquery.min.js"></script>
+    <script src="assets/lib/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
 
     <script>
-          $(document).ready(function(){
-            // $('#details').modal('show');
-            $(".phone-code").intlTelInput({  
-               autoHideDialCode: false, 
-               nationalMode: false, 
-            });
-         });
-         
-    $('.footer').owlCarousel({
-            dots: false,
-            loop: true,
-            margin: 10,
-            autoplay: true,
-            autoplayTimeout: 6000,
-            nav: false, // Show next and prev buttons
-            slideSpeed: 500,
-            autoplayHoverPause: true,
-            smartSpeed: 1000,
-            responsiveClass: true,
-            navText: [
-                "<i class='fa-solid fa-chevron-left'></i>",
-                "<i class='fa-solid fa-chevron-right'></i>"
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                400: {
-                    items: 1,
-                },
-                600: {
-                    items: 1,
-                },
-                768: {
-                    items: 2,
-                },
-                1000: {
-                    items: 2,
-                },
-                1200: {
-                    items: 3,
-                }
-            }
+    $(document).ready(function() {
+        // $('#details').modal('show');
+        $(".phone-code").intlTelInput({
+            autoHideDialCode: false,
+            nationalMode: false,
         });
+    });
+    AOS.init();
+    $('.footer').owlCarousel({
+        dots: false,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        nav: false, // Show next and prev buttons
+        slideSpeed: 500,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+            "<i class='fa-solid fa-chevron-left'></i>",
+            "<i class='fa-solid fa-chevron-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            400: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            1000: {
+                items: 2,
+            },
+            1200: {
+                items: 3,
+            }
+        }
+    });
     </script>
 </body>
 

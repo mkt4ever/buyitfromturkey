@@ -37,7 +37,7 @@
     <!-- page content  ==---------------------------- -->
     <div class="page-content">
         <div class="blog-details">
-            <div class="intro-sec">
+            <div class="intro-sec" data-aos="fade-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="top">
                         <div class="left">
@@ -115,10 +115,11 @@
                 </div>
             </div>
 
-            <div class="blog-details-sec">
+            <div class="blog-details-sec" >
                 <div class="container">
 
                     <div class="text-sec">
+                        <div class="" data-aos="fade-up" data-aos-duration="1000">
                         <h3>1.Title About Blog Articles</h3>
                         <p>
                             Taculis vulputate nisi. Curabitur et accumsan orci. Integer id erat vulputate, cursus ex
@@ -134,7 +135,8 @@
                             quam. Donec a malesuada sem. Donec finibus volutpat justo sit amet porta.
 
                         </p>
-                        <div class="image ">
+                        </div>
+                        <div class="image " data-aos="fade-up" data-aos-duration="1000">
                             <div class="col-md-12 col-lg-10 col-xl-6">
                                 <div class="content">
                                     <img src="assets/img/blogtravel2.png" alt="">
@@ -143,6 +145,7 @@
 
                             </div>
                         </div>
+                        <div class="" data-aos="fade-up" data-aos-duration="1000">
                         <h3>2. Title About Blog Articles</h3>
                         <p>
                             Sed fringilla rhoncus felis sed feugiat. Proin condimentum sapien lorem, posuere porttitor
@@ -164,8 +167,10 @@
                             vel facilisis. Sed at augue eu massa eleifend bibendum. Phasellus sodales auctor mi ut
                             gravida.
                         </p>
+                        </div>
+                        
                     </div>
-                    <div class="bottom responsive">
+                    <div class="bottom responsive" data-aos="fade-up" data-aos-duration="1000">
                         <div class="row"> 
                             <div class=" col-md-6 center">
                                 <div class="social-media">
@@ -180,7 +185,7 @@
                         </div>
 
                     </div>
-                    <div class="bottom">
+                    <div class="bottom" data-aos="fade-up" data-aos-duration="1000">
                         <div class="row">
 
                             <div class=" col-md-3 left ">
@@ -266,8 +271,11 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
+    AOS.init();
+
             $('.footer').owlCarousel({
             dots: false,
             loop: true,

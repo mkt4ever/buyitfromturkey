@@ -11,26 +11,7 @@
                         <ul class="menu">
                             <li class="submenulist">
                                 <a href="how.php">Why Choose Türkiye?</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="
-                                 ">
-                                            منيو</a>
-                                        <ul>
-                                            <li><a href="">العلامات التجارية</a></li>
-                                            <li><a href="">عروض</a></li>
-                                            <li><a href="">منتجات</a></li>
-                                            <li><a href="">المدونة</a></li>
-                                            <li><a href="">العلامات التجارية</a></li>
-                                            <li><a href="">عروض</a></li>
-                                            <li><a href="">منتجات</a></li>
-                                            <li><a href="">المدونة</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="" target="_blank">
-                                            منيو 2</a>
-                                    </li>
-                                </ul>
+                               
 
                             </li>
                             <li class="">
@@ -121,3 +102,29 @@
         </div>
     </div>
 </div>
+
+<!-- loading --------------------- -->
+<div class="loader">
+   <div class="gooey">
+   <span class="dot"></span>
+   <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+   </div>
+</div>
+<!-- loading --------------------- -->
+
+<!-- cookie --------------------- -->
+<div class="card cookie-alert">
+  <div class="card-body">
+     <h5 class="card-title">Wir verwenden Cookies!</h5>
+     <p class="card-text">um Ihnen ein großartiges Benutzererlebnis zu bieten.</p>
+     <div class="btn-toolbar"> 
+           <button class="btn btn-secondary accept-cookies">Annehmen</button>
+           <a href="/page/22" class="btn btn-link">Mehr erfahren</a> 
+     </div>
+  </div>
+</div>     
+<!-- cookie --------------------- -->

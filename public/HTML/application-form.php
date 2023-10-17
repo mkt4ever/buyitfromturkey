@@ -37,14 +37,14 @@
     <div class="page-content gray-bg">
         <div class="applicationf-page">
             <div class="container">
-                <div class="main-title">
+                <div class="main-title" data-aos="fade-up" data-aos-duration="1000">
                     <h3>
                         Applıcatıon
                         <span>for sell</span>
                     </h3>
                     <p>Send us your questions and we'll answer them. All the answers you are looking for are here</p>
                 </div>
-                <div class="form-box">
+                <div class="form-box"     data-aos="fade-up" data-aos-duration="1500" data-aos-delay="50">
                     <div class="row">
                         <div class="col-md-6 col-xl-3 item">
                             <label class="form-label">Enter your email</label>
@@ -214,9 +214,10 @@
     <script src="assets/lib/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="assets/lib/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/lib/aos-master/dist/aos.js"></script>
     <script>
-        
+            AOS.init();
     $('.footer').owlCarousel({
             dots: false,
             loop: true,
