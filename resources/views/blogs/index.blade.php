@@ -79,7 +79,7 @@
                                                         </li>
                                                         <li>
                                                             <div class="date">
-                                                                <span>{{$blog->date}}</span>
+                                                                <span>{{formatDate($blog->date)}}</span>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -90,7 +90,7 @@
                                                             <h3>{{$blog->title}}</h3>
                                                         </div>
                                                         <div class="right">
-                                                            <a href=""><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
+                                                            <a href="{{ localeRoute('blogs.show', $blog->translate(app()->getLocale())->slug) }}"><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
                                                         </div>
                                                     </div>
 
@@ -136,13 +136,13 @@
                             <div class="content">
                                 <div class="details">
                                     <div class="link">
-                                        <a href=""><img src="assets/img/icon/right.svg" alt=""></a>
+                                        <a href="{{ localeRoute('blogs.show', $blog->translate(app()->getLocale())->slug) }}"><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
                                     </div>
                                     <div class="tag">
                                         <span class="budge {{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                     </div>
                                     <div class="title">
-                                        <a href="">
+                                        <a href="{{ localeRoute('blogs.show', $blog->translate(app()->getLocale())->slug) }}">
                                             {{$blog->title}}
                                         </a>
                                     </div>
@@ -168,13 +168,13 @@
                                         <div class="content">
                                             <div class="details">
                                                 <div class="link">
-                                                    <a href=""><img src="assets/img/icon/right.svg" alt=""></a>
+                                                    <a href="{{ localeRoute('blogs.show', $blog->translate(app()->getLocale())->slug) }}"><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
                                                 </div>
                                                 <div class="tag">
                                                     <span class="budge {{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                                 </div>
                                                 <div class="title">
-                                                    <a href="">
+                                                    <a href="{{ localeRoute('blogs.show', $blog->translate(app()->getLocale())->slug) }}">
                                                         {{$blog->title}}
                                                     </a>
                                                 </div>

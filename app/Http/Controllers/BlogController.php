@@ -64,6 +64,20 @@ class BlogController extends Controller
 
     public function show(Request $request){
 
-        return view('blogs.show');
+        $compact = Cache::rememberForever("blogs_show_{$request->slug}_".app()->getLocale(), function() use ($request){
+            $blog = Blog::with(['author', 'blog_tags','blog_category'])->whereTranslation('slug', '=', $request->slug, [app()->getLocale()], app()->getLocale() == 'tr')->firstOrFail()->translate(app()->getLocale());
+            $prevBlog = Blog::withTranslations(app()->getLocale())->where('created_at', '<', $blog->created_at)->orderBy('created_at', 'desc')->first();
+            $nextBlog = Blog::withTranslations(app()->getLocale())->where('created_at', '>', $blog->created_at)->orderBy('created_at', 'asc')->first();
+
+
+            return [
+                "blog" => $blog,
+                "prevBlog" => $prevBlog,
+                "nextBlog" => $nextBlog,
+            ];
+
+
+        });
+        return view('blogs.show')->with($compact);
     }
 }
