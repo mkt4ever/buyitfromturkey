@@ -1,12 +1,12 @@
 <section class="works-section">
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-duration="1500">
         <h3>{{text('homepage_works_title')}}</h3>
     </div>
     <div class="boxes">
         <div class="container">
             <div class="items right">
                 <div class="row">
-                    <div class="col-md-6 item">
+                    <div class="col-md-6 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                         <div class="row">
                             <div class="image col-md-5">
                                 <img src="{{asset('img/illustrations/works1.svg')}}" alt="">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 item">
+                    <div class="col-md-6 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
                         <div class="row">
                             <div class="image col-md-5">
                                 <img src="{{asset('img/illustrations/works2.svg')}}" alt="">
@@ -77,7 +77,7 @@
             </div>
             <div class="items left">
                 <div class="row">
-                    <div class="col-md-6 item">
+                    <div class="col-md-6 item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="2000">
                         <div class="row">
                             <div class="image col-md-5">
                                 <img src="{{asset('img/illustrations/works3.svg')}}" alt="">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 item">
+                    <div class="col-md-6 item" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1500">
                         <div class="row">
                             <div class="image col-md-5">
                                 <img src="{{asset('img/illustrations/works4.svg')}}" alt="">

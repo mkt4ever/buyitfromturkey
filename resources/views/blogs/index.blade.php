@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="action-sec">
                                     <button>
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <img src="assets/img/icon/search-red.svg" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
     <div class="page-content">
         <div class="container">
             <div class="blog-page">
-                <div class="blog-carousel">
+                <div class="blog-carousel" data-aos="fade-up" data-aos-duration="1000">
                     <div class="owl-carousel owl-theme" id="blog">
                         @foreach ($featured_blogs as $blog)
                             <div class="item">
@@ -132,7 +132,7 @@
                 <div class="blog-items">
                     <div class="row">
                         @foreach ($latest_blogs as $blog)
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
+                        <div class="col-md-6 col-lg-4 col-xxl-3 item" data-aos="fade-up" data-aos-duration="1000">
                             <div class="content">
                                 <div class="details">
                                     <div class="link">
@@ -160,11 +160,11 @@
                         @endforeach
                         
 
-                        <div class="hidden-blog">
+                        <div class="hidden-blog" data-aos="fade-up" data-aos-duration="1000">
                             <div class="row">
                                 @foreach ($hiddenBlogs as $blog) 
 
-                                    <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                    <div class="col-md-6 col-lg-4 col-xxl-3 item">
                                         <div class="content">
                                             <div class="details">
                                                 <div class="link">

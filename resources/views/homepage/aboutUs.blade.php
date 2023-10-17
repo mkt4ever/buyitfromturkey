@@ -4,19 +4,19 @@
             <div class="top">
                 <div class="row">
                     <div class="col-md-12 col-lg-9 col-xl-8 text">
-                        <div class="left col-md-4 col-xl-3">
+                        <div class="left col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="1000">
                             <h5>
                                 {!! text('homepage_aboutUs_title') !!}
                             </h5>
                         </div>
-                        <div class="right col-md-8 col-xl-9">
+                        <div class="right col-md-8 col-xl-9" data-aos="fade-up" data-aos-duration="1000">
                             <p>
                                 {!! text('homepage_aboutUs_brief') !!}
                             </p>
                             <a href="" class="btn btn-primary icon-btn">{{ text('More_info') }} <div class="icon"><i
                                         class="fa-solid fa-arrow-right"></i></div></a>
                         </div>
-                        <div class="sm-boxes col-md-12">
+                        <div class="sm-boxes col-md-12" data-aos="fade-up" data-aos-duration="1000">
                             <div class="m-title">
                                 <h3>{{text('homepage_aboutUs_offers_title')}}</h3>
                             </div>

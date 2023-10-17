@@ -1,7 +1,7 @@
 <section class="questions-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-lg-6 faq">
+            <div class="col-md-12 col-lg-6 faq" data-aos="fade-up" data-aos-duration="1500">
                 <div class="content">
                     <h3>{{text('homepage_faq_title')}}</h3>
                     <p>{{text('homepage_faq_content')}}
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-6 questions">
+            <div class="col-md-12 col-lg-6 questions" data-aos="fade-up" data-aos-duration="1000">
                 <div class="main-content">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         @foreach ($faqs as $key => $faq)

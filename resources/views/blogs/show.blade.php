@@ -5,7 +5,7 @@
 <!-- page content  ==---------------------------- -->
 <div class="page-content">
     <div class="blog-details">
-        <div class="intro-sec">
+        <div class="intro-sec" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
                 <div class="top">
                     <div class="left">
@@ -81,10 +81,10 @@
         <div class="blog-details-sec">
             <div class="container">
 
-                <div class="text-sec">
+                <div class="text-sec" data-aos="fade-up" data-aos-duration="1000">
                     {!! $blog->content !!}
                 </div>
-                <div class="bottom responsive">
+                <div class="bottom responsive" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row"> 
                         <div class=" col-md-6 center">
                             <div class="social-media">
@@ -99,7 +99,7 @@
                     </div>
 
                 </div>
-                <div class="bottom">
+                <div class="bottom" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row">
                         @if($prevBlog)
                         <div class=" col-md-3 left ">

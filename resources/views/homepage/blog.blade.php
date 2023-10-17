@@ -1,6 +1,6 @@
 <section class="blog-section">
     <div class="container">
-        <div class="top">
+        <div class="top" data-aos="fade-up" data-aos-duration="1000">
             <div class="row">
                 <div class="text col-md-2">
                     <h3>Blog</h3>
@@ -37,7 +37,7 @@
             </div>
 
         </div>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content" id="myTabContent" data-aos="fade-up" data-aos-duration="1000">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" tabindex="0">
                 <div class="owl-carousel owl-theme  categories-carousel">
                     <div class="item">

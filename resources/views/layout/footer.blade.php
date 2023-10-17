@@ -127,7 +127,6 @@ $('#slider').owlCarousel({
     autoplay: true,
     autoplayTimeout: 6000,
     nav: true, // Show next and prev buttons
-    dots: true,
     slideSpeed: 500,
     autoplayHoverPause: true,
     smartSpeed: 1000,
@@ -198,11 +197,11 @@ $('.brans-carousel').owlCarousel({
     loop: true,
     margin: 10,
     autoplay: true,
-    autoplayTimeout: 6000,
+    autoplayTimeout: 2000,
     nav: false, // Show next and prev buttons
-    slideSpeed: 500,
-    autoplayHoverPause: true,
-    smartSpeed: 1000,
+    slideSpeed: 2000,
+    autoplayHoverPause: false,
+    smartSpeed: 2000,
     responsiveClass: true,
     navText: [
         "<i class='fa-solid fa-chevron-left'></i>",
@@ -210,7 +209,7 @@ $('.brans-carousel').owlCarousel({
     ],
     responsive: {
         0: {
-            items: 3,
+            items: 2,
         },
         400: {
             items: 3,
@@ -235,11 +234,11 @@ $('.footer').owlCarousel({
     loop: true,
     margin: 10,
     autoplay: true,
-    autoplayTimeout: 6000,
+    autoplayTimeout: 4000,
     nav: false, // Show next and prev buttons
-    slideSpeed: 500,
-    autoplayHoverPause: true,
-    smartSpeed: 1000,
+    slideSpeed: 4000,
+    autoplayHoverPause: false,
+    smartSpeed: 4000,
     responsiveClass: true,
     navText: [
         "<i class='fa-solid fa-chevron-left'></i>",
@@ -256,13 +255,13 @@ $('.footer').owlCarousel({
             items: 1,
         },
         768: {
-            items: 2,
+            items: 1,
         },
         1000: {
             items: 2,
         },
         1200: {
-            items: 3,
+            items: 2,
         }
     }
 });

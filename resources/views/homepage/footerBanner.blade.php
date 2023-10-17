@@ -9,7 +9,7 @@
                 <div class="col-6 col-md-6 left">
                     <div class="content">
                         <div class="icon">
-                            <img src="assets/img/icon/shopper.svg" alt="">
+                            <img src="{{asset('img/icon/shopper.svg')}}" alt="shopper">
                         </div>
                         <div class="text">
                             <h1>What Would You Like To Get <br> From Türkiye ?</h1>
@@ -23,7 +23,7 @@
                 <div class="col-6 col-md-6 right">
                     <div class="content">
                         <div class="icon">
-                            <img src="assets/img/icon/seller.svg" alt="">
+                            <img src="{{asset('img/icon/seller.svg')}}" alt="seller">
                         </div>
                         <div class="text">
                             <h1>What Would You Like To Get <br> From Türkiye ?</h1>

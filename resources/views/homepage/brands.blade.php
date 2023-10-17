@@ -1,8 +1,8 @@
 <section class="brans-section">
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-duration="1000">
         <h3>{{ text('homepage_brands_title') }}</h3>
     </div>
-    <div class="boxes">
+    <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
         @php
             $totalBrands = count($brands);
             $brandsPerRow = 8;

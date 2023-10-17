@@ -129,4 +129,12 @@
             </div>
         </div>
     </div>
+    <div class="slider-dots">
+        <ul>
+            <li><a href="" class="active">01</a></li>
+            <li><a href="" class="">02</a></li>
+            <li><a href="" class="">03</a></li>
+            <li><a href="" class="">04</a></li>
+        </ul>
+    </div>
 </section>
