@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 16, 2023 at 04:55 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 18 Eki 2023, 03:11:48
+-- Sunucu sürümü: 10.4.22-MariaDB
+-- PHP Sürümü: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,34 +18,77 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `buyitfromturkey`
+-- Veritabanı: `buyitfromturkey`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `audits`
+-- Tablo için tablo yapısı `admins`
 --
 
-CREATE TABLE `audits` (
+CREATE TABLE `admins` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_type` varchar(255) DEFAULT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `event` varchar(255) NOT NULL,
-  `auditable_type` varchar(255) NOT NULL,
-  `auditable_id` bigint(20) UNSIGNED NOT NULL,
-  `old_values` text DEFAULT NULL,
-  `new_values` text DEFAULT NULL,
-  `url` text DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` varchar(1023) DEFAULT NULL,
-  `tags` varchar(255) DEFAULT NULL,
+  `role_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
+  `settings` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `audits`
+-- Tablo döküm verisi `admins`
+--
+
+INSERT INTO `admins` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `avatar`, `settings`, `created_at`, `updated_at`) VALUES
+(1, 1, 'admin', 'admin@smartwork.com.tr', '2023-10-17 20:15:40', '$2y$10$LW1XM91iMM6lNUwZdhVf3.amspnZwHqF/rNCdDXQJuj209Oc9l4TK', NULL, 'users/default.png', NULL, '2023-10-17 20:15:40', '2023-10-17 20:15:40');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `advantages`
+--
+
+CREATE TABLE `advantages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(1) DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `audits`
+--
+
+CREATE TABLE `audits` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `event` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `auditable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `auditable_id` bigint(20) UNSIGNED NOT NULL,
+  `old_values` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `new_values` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` varchar(1023) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tags` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `audits`
 --
 
 INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `auditable_id`, `old_values`, `new_values`, `url`, `ip_address`, `user_agent`, `tags`, `created_at`, `updated_at`) VALUES
@@ -109,26 +152,36 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (58, 'App\\Models\\User', 2, 'updated', 'App\\Models\\BlogCategory', 4, '{\"color\":null}', '{\"color\":\"info\"}', 'http://buyitfromturkey.localhost/buyitadmin/blog-categories/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-16 09:49:49', '2023-10-16 09:49:49'),
 (59, 'App\\Models\\User', 2, 'updated', 'App\\Models\\BlogCategory', 2, '{\"color\":null}', '{\"color\":\"success\"}', 'http://buyitfromturkey.localhost/buyitadmin/blog-categories/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-16 09:49:54', '2023-10-16 09:49:54'),
 (60, 'App\\Models\\User', 2, 'updated', 'App\\Models\\Blog', 3, '{\"blog_category_id\":2,\"date\":\"10-Jul-1985\"}', '{\"blog_category_id\":\"3\",\"date\":\"1985-07-09T21:00:00.000000Z\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/3', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(61, 'App\\Models\\User', 2, 'updated', 'App\\Models\\BlogCategory', 2, '{\"color\":\"success\"}', '{\"color\":\"bblue\"}', 'http://buyitfromturkey.localhost/buyitadmin/blog-categories/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-16 09:52:27', '2023-10-16 09:52:27');
+(61, 'App\\Models\\User', 2, 'updated', 'App\\Models\\BlogCategory', 2, '{\"color\":\"success\"}', '{\"color\":\"bblue\"}', 'http://buyitfromturkey.localhost/buyitadmin/blog-categories/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-16 09:52:27', '2023-10-16 09:52:27'),
+(62, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 29, '[]', '{\"content\":\"Sayfa Bulunamad\\u0131\",\"key\":\"404title\",\"place\":\"404\",\"id\":29}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:06:10', '2023-10-18 00:06:10'),
+(63, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 30, '[]', '{\"key\":\"404content\",\"content\":\"\",\"place\":\"404\",\"id\":30}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:06:26', '2023-10-18 00:06:26'),
+(64, 'App\\Models\\User', 3, 'updated', 'App\\Models\\SiteText', 30, '{\"content\":\"\"}', '{\"content\":\"Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.\"}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts/30', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:06:36', '2023-10-18 00:06:36'),
+(65, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 31, '[]', '{\"content\":\"Anasayfaya D\\u00f6n\",\"key\":\"404backToHomepage\",\"place\":\"404\",\"id\":31}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:07:03', '2023-10-18 00:07:03'),
+(66, 'App\\Models\\User', 3, 'created', 'App\\Models\\StaticPage', 1, '[]', '{\"title\":\"Kullan\\u0131m Ko\\u015fullar\\u0131\",\"slug\":\"kullanim-kosullari\",\"content\":\"<h5>Use of our website<\\/h5>\\n<p>These Conditions are the only conditions applicable to the use of this website and replace any other, except with the prior express written consent of the Seller. These Terms are important to both you and us as they are designed to create a legally binding agreement between us protecting your rights as a customer and our rights as a company. You declare that, by placing your order, you have read and accept these Conditions without reservation.<\\/p>\\n<h5>You agree that:<\\/h5>\\n<ul>\\n<li>You may only use the website to make legally valid queries or orders<\\/li>\\n<li>You may only use the website to make legally valid queries or orders<\\/li>\\n<li>You may only use the website to make legally valid queries or orders<\\/li>\\n<li>You may only use the website to make legally valid queries or orders<\\/li>\\n<li>You may only use the website to make legally valid queries or orders<\\/li>\\n<\\/ul>\\n<p>Donec rutrum, metus non aliquet aliquam, diam elit ornare arcu, sed facilisis neque sem vel mauris. In tristique orci urna, sit amet faucibus leo ultrices eget. Phasellus ac erat mauris. Aliquam erat volutpat. Nulla leo diam, dignissim ut viverra quis, lobortis eget enim. Ut suscipit erat ac neque pellentesque, ut luctus nisl lacinia. Vivamus dignissim at eros at interdum. Curabitur ultricies mauris dui, id suscipit neque lacinia iaculis. Fusce placerat libero arcu, nec ultrices purus interdum ac. Nulla malesuada tristique ante id sodales. Mauris nec finibus nibh, quis euismod ex. Pellentesque id sollicitudin nisl. <br><br>Nam vitae quam elit. Pellentesque nisi massa, fermentum id ligula quis, dignissim malesuada eros. Aliquam fermentum imperdiet varius. Ut tristique luctus dui volutpat dapibus. Donec fermentum tempus nibh, quis rhoncus tortor fringilla eu. Aliquam nulla ligula, luctus cursus massa ut, tincidunt interdum eros. Cras varius ac est vel cursus. Donec a ligula gravida tellus commodo eleifend id nec tellus. Maecenas facilisis nunc ut elit ullamcorper auctor. Sed quam ante, rutrum sit amet porttitor in, molestie quis orci. <br><br>Donec nulla erat, tempor et laoreet sed, eleifend at orci. Duis mattis nisi vitae augue malesuada, dapibus feugiat nisi feugiat. Aenean mauris lacus, tempor quis imperdiet sed, auctor in dui. In iaculis ipsum arcu, non dictum elit suscipit eget. Quisque mattis nisl condimentum ligula mollis, vel imperdiet eros dapibus. Etiam volutpat eget eros non tincidunt. Pellentesque at sollicitudin velit, ac condimentum nisi. Nam mattis, est nec ultrices sollicitudin, nulla sem sodales orci, vel hendrerit ipsum odio congue nunc. Proin molestie in tortor id lacinia. Ut pretium nunc et eleifend lacinia. Praesent quis eleifend nibh. Integer iaculis pulvinar eros, ac consequat ex efficitur in. Aliquam nec fermentum leo. Etiam placerat hendrerit iaculis. Vestibulum finibus ex vel accumsan fringilla. <br><br>Integer massa elit, porttitor vel pulvinar ac, pretium vitae enim. Proin porttitor efficitur nulla, at lobortis ex tempor a. Morbi egestas leo ac mauris posuere, eu congue est tincidunt. Vivamus vel leo vulputate, dictum arcu sed, lobortis nulla. In viverra arcu molestie magna tempor aliquet. Nam eget congue dui. Proin vitae mauris ac dui ultricies feugiat. Aliquam erat volutpat. Nunc vel vehicula dolor. Curabitur sagittis dictum porta. Morbi non laoreet velit. Curabitur semper dolor et dictum euismod.<\\/p>\",\"meta_title\":\"Kullan\\u0131m Ko\\u015fullar\\u0131\",\"meta_description\":\"\",\"meta_keyword\":\"\",\"meta_canonical\":\"\",\"meta_ogimage\":\"\",\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/static-pages', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:24:49', '2023-10-18 00:24:49'),
+(67, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 32, '[]', '{\"content\":\"profil\",\"key\":\"routeProfile\",\"place\":\"profil route\",\"id\":32}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:26:35', '2023-10-18 00:26:35'),
+(68, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 33, '[]', '{\"content\":\"sayfa\",\"key\":\"routePage\",\"place\":\"sabit sayfa route\",\"id\":33}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:26:52', '2023-10-18 00:26:52'),
+(69, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 34, '[]', '{\"content\":\"iletisim\",\"key\":\"routeContact\",\"place\":\"iletisim sayfasi route\",\"id\":34}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:29:22', '2023-10-18 00:29:22'),
+(70, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 35, '[]', '{\"content\":\"\\u0130leti\\u015fim Formunuz Ba\\u015far\\u0131yla G\\u00f6nderilmi\\u015ftir!\",\"key\":\"Contact_Order_submitted\",\"place\":\"\\u0130leti\\u015fim Sayfas\\u0131\",\"id\":35}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:39:22', '2023-10-18 00:39:22'),
+(71, 'App\\Models\\User', 3, 'updated', 'App\\Models\\ContactUs', 1, '{\"email\":\"belisipos@mailinator.com\",\"phone1\":\"+1 (203) 292-4061\",\"phone2\":\"+1 (593) 826-4718\",\"whatsapp\":\"Ea iure aut voluptat\",\"address\":\"Dolores a qui occaec\",\"facebook\":\"Iure eligendi simili\",\"youtube\":\"Ex corrupti asperna\",\"twitter\":\"Fugiat aut adipisci\",\"instagram\":\"Reprehenderit eu in\"}', '{\"email\":\"info@buyitfromturkiye.com\",\"phone1\":\"+90 500 000 00 00\",\"phone2\":\"+90 500 000 00 00\",\"whatsapp\":\"+90 500 000 00 00\",\"address\":\"Istanbul \\/ Turkiye\",\"facebook\":\"#\",\"youtube\":\"#\",\"twitter\":\"#\",\"instagram\":\"#\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:41:52', '2023-10-18 00:41:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `authors`
+-- Tablo için tablo yapısı `authors`
 --
 
 CREATE TABLE `authors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `brief` text DEFAULT NULL,
-  `slug` text DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `authors`
+-- Tablo döküm verisi `authors`
 --
 
 INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `updated_at`) VALUES
@@ -137,32 +190,44 @@ INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blogs`
+-- Tablo için tablo yapısı `billing_details`
+--
+
+CREATE TABLE `billing_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `blogs`
 --
 
 CREATE TABLE `blogs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `author_id` bigint(20) UNSIGNED NOT NULL,
   `blog_category_id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(500) DEFAULT NULL,
-  `slug` varchar(500) NOT NULL,
-  `brief` text DEFAULT NULL,
-  `date` varchar(255) DEFAULT NULL,
-  `thumbnail_image` varchar(255) DEFAULT NULL,
-  `cover_image` varchar(255) DEFAULT NULL,
-  `content` longtext DEFAULT NULL,
+  `title` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `thumbnail_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cover_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_featured` tinyint(1) NOT NULL DEFAULT 0,
-  `meta_title` varchar(255) DEFAULT NULL,
-  `meta_description` varchar(255) DEFAULT NULL,
-  `meta_keyword` varchar(255) DEFAULT NULL,
-  `meta_canonical` varchar(255) DEFAULT NULL,
-  `meta_ogimage` varchar(255) DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blogs`
+-- Tablo döküm verisi `blogs`
 --
 
 INSERT INTO `blogs` (`id`, `author_id`, `blog_category_id`, `title`, `slug`, `brief`, `date`, `thumbnail_image`, `cover_image`, `content`, `is_featured`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `created_at`, `updated_at`) VALUES
@@ -182,20 +247,20 @@ INSERT INTO `blogs` (`id`, `author_id`, `blog_category_id`, `title`, `slug`, `br
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_categories`
+-- Tablo için tablo yapısı `blog_categories`
 --
 
 CREATE TABLE `blog_categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `color` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_categories`
+-- Tablo döküm verisi `blog_categories`
 --
 
 INSERT INTO `blog_categories` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
@@ -206,7 +271,7 @@ INSERT INTO `blog_categories` (`id`, `title`, `slug`, `color`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_tag`
+-- Tablo için tablo yapısı `blog_tag`
 --
 
 CREATE TABLE `blog_tag` (
@@ -218,7 +283,7 @@ CREATE TABLE `blog_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_tag`
+-- Tablo döküm verisi `blog_tag`
 --
 
 INSERT INTO `blog_tag` (`id`, `blog_id`, `blog_tag_id`, `created_at`, `updated_at`) VALUES
@@ -229,20 +294,20 @@ INSERT INTO `blog_tag` (`id`, `blog_id`, `blog_tag_id`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_tags`
+-- Tablo için tablo yapısı `blog_tags`
 --
 
 CREATE TABLE `blog_tags` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `color` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_tags`
+-- Tablo döküm verisi `blog_tags`
 --
 
 INSERT INTO `blog_tags` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
@@ -252,13 +317,13 @@ INSERT INTO `blog_tags` (`id`, `title`, `slug`, `color`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Tablo için tablo yapısı `brands`
 --
 
 CREATE TABLE `brands` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -266,7 +331,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `brands`
+-- Tablo döküm verisi `brands`
 --
 
 INSERT INTO `brands` (`id`, `title`, `image`, `active`, `order`, `created_at`, `updated_at`) VALUES
@@ -284,45 +349,123 @@ INSERT INTO `brands` (`id`, `title`, `image`, `active`, `order`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_us`
+-- Tablo için tablo yapısı `bultens`
+--
+
+CREATE TABLE `bultens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `blog_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `contact_orders`
+--
+
+CREATE TABLE `contact_orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `contact_orders`
+--
+
+INSERT INTO `contact_orders` (`id`, `first_name`, `last_name`, `email`, `message`, `subject`, `created_at`, `updated_at`) VALUES
+(1, 'Lesley', 'Bradshaw', 'tytut@mailinator.com', 'Ex ut reprehenderit', 'Kristen Kemp', '2023-10-18 00:50:48', '2023-10-18 00:50:48'),
+(2, 'Robin', 'Walter', 'qylyw@mailinator.com', 'Optio nisi vel iste', 'Ruth Bell', '2023-10-18 00:52:03', '2023-10-18 00:52:03'),
+(3, 'Zane', '', 'kiluvifud@mailinator.com', 'Nostrud non ipsum nu', '', '2023-10-18 00:54:15', '2023-10-18 00:54:15'),
+(4, 'Colby', '', 'navutoleno@mailinator.com', 'Temporibus deleniti', '', '2023-10-18 01:09:21', '2023-10-18 01:09:21'),
+(5, 'Paki', 'Mccoy', 'hykynu@mailinator.com', 'Sint tenetur enim a', 'Fiona Noel', '2023-10-18 01:11:33', '2023-10-18 01:11:33');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `contact_us`
 --
 
 CREATE TABLE `contact_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phone1` varchar(255) DEFAULT NULL,
-  `phone2` varchar(255) DEFAULT NULL,
-  `whatsapp` varchar(255) DEFAULT NULL,
-  `address` varchar(500) DEFAULT NULL,
-  `map` varchar(500) DEFAULT NULL,
-  `facebook` varchar(255) DEFAULT NULL,
-  `youtube` varchar(255) DEFAULT NULL,
-  `twitter` varchar(255) DEFAULT NULL,
-  `instagram` varchar(255) DEFAULT NULL,
-  `site_logo_tr` varchar(255) DEFAULT NULL,
-  `site_logo_en` varchar(255) DEFAULT NULL,
-  `linkedin` varchar(255) DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `whatsapp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `map` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `site_logo_tr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `site_logo_en` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `contact_us`
+-- Tablo döküm verisi `contact_us`
 --
 
 INSERT INTO `contact_us` (`id`, `email`, `phone1`, `phone2`, `whatsapp`, `address`, `map`, `facebook`, `youtube`, `twitter`, `instagram`, `site_logo_tr`, `site_logo_en`, `linkedin`, `created_at`, `updated_at`) VALUES
-(1, 'belisipos@mailinator.com', '+1 (203) 292-4061', '+1 (593) 826-4718', 'Ea iure aut voluptat', 'Dolores a qui occaec', 'Animi voluptates fa', 'Iure eligendi simili', 'Ex corrupti asperna', 'Fugiat aut adipisci', 'Reprehenderit eu in', 'Excepturi deserunt v', 'Ea ut consequuntur n', 'Vel deserunt totam s', '2023-10-04 06:39:00', '2023-10-04 06:39:00');
+(1, 'info@buyitfromturkiye.com', '+90 500 000 00 00', '+90 500 000 00 00', '+90 500 000 00 00', 'Istanbul / Turkiye', 'Animi voluptates fa', '#', '#', '#', '#', 'Excepturi deserunt v', 'Ea ut consequuntur n', 'Vel deserunt totam s', '2023-10-04 06:39:00', '2023-10-18 00:41:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cover_images`
+-- Tablo için tablo yapısı `corporate_pages`
+--
+
+CREATE TABLE `corporate_pages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `cover_images`
 --
 
 CREATE TABLE `cover_images` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -330,27 +473,27 @@ CREATE TABLE `cover_images` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_rows`
+-- Tablo için tablo yapısı `data_rows`
 --
 
 CREATE TABLE `data_rows` (
   `id` int(10) UNSIGNED NOT NULL,
   `data_type_id` int(10) UNSIGNED NOT NULL,
-  `field` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `display_name` varchar(255) NOT NULL,
+  `field` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `required` tinyint(1) NOT NULL DEFAULT 0,
   `browse` tinyint(1) NOT NULL DEFAULT 1,
   `read` tinyint(1) NOT NULL DEFAULT 1,
   `edit` tinyint(1) NOT NULL DEFAULT 1,
   `add` tinyint(1) NOT NULL DEFAULT 1,
   `delete` tinyint(1) NOT NULL DEFAULT 1,
-  `details` text DEFAULT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `data_rows`
+-- Tablo döküm verisi `data_rows`
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
@@ -500,34 +643,66 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (242, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
 (243, 28, 'blog_belongsto_author_relationship', 'relationship', 'authors', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Author\",\"table\":\"authors\",\"type\":\"belongsTo\",\"column\":\"author_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"audits\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
 (244, 28, 'blog_belongsto_blog_category_relationship', 'relationship', 'blog_categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\BlogCategory\",\"table\":\"blog_categories\",\"type\":\"belongsTo\",\"column\":\"blog_category_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"audits\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(245, 28, 'blog_belongstomany_blog_tag_relationship', 'relationship', 'blog_tags', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\BlogTag\",\"table\":\"blog_tags\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"blog_tag\",\"pivot\":\"1\",\"taggable\":\"on\"}', 21);
+(245, 28, 'blog_belongstomany_blog_tag_relationship', 'relationship', 'blog_tags', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\BlogTag\",\"table\":\"blog_tags\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"blog_tag\",\"pivot\":\"1\",\"taggable\":\"on\"}', 21),
+(246, 30, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(247, 30, 'role_id', 'text', 'Role Id', 0, 0, 0, 0, 0, 0, '{}', 2),
+(248, 30, 'name', 'text', 'Ad', 1, 1, 1, 1, 1, 1, '{}', 3),
+(249, 30, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 4),
+(250, 30, 'email_verified_at', 'timestamp', 'Email Verified At', 0, 0, 0, 0, 0, 0, '{}', 5),
+(251, 30, 'password', 'text', 'Password', 1, 0, 0, 0, 0, 0, '{}', 6),
+(252, 30, 'remember_token', 'text', 'Remember Token', 0, 0, 0, 0, 0, 0, '{}', 7),
+(253, 30, 'avatar', 'text', 'Resim', 0, 1, 1, 1, 1, 1, '{}', 8),
+(254, 30, 'settings', 'text', 'Settings', 0, 0, 0, 0, 0, 0, '{}', 9),
+(255, 30, 'created_at', 'timestamp', 'Oluşturma Tarihi', 0, 1, 1, 0, 0, 0, '{}', 10),
+(256, 30, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 11),
+(257, 30, 'user_belongsto_role_relationship', 'relationship', 'Rol', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsTo\",\"column\":\"role_id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"roles\",\"pivot\":0}', 10),
+(258, 30, 'user_belongstomany_role_relationship', 'relationship', 'Roller', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"user_roles\",\"pivot\":\"1\",\"taggable\":\"0\"}', 11),
+(259, 31, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(260, 31, 'title', 'text', 'Başlık', 0, 1, 1, 1, 1, 1, '{}', 2),
+(261, 31, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{}', 3),
+(262, 31, 'content', 'rich_text_box', 'İçerik', 1, 1, 1, 1, 1, 1, '{}', 4),
+(263, 31, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 5),
+(264, 31, 'meta_description', 'text', 'Meta Description', 0, 1, 1, 1, 1, 1, '{}', 6),
+(265, 31, 'meta_keyword', 'text', 'Meta Keyword', 0, 1, 1, 1, 1, 1, '{}', 7),
+(266, 31, 'meta_canonical', 'text', 'Meta Canonical', 0, 1, 1, 1, 1, 1, '{}', 8),
+(267, 31, 'meta_ogimage', 'text', 'Meta Ogimage', 0, 1, 1, 1, 1, 1, '{}', 9),
+(268, 31, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 10),
+(269, 31, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 11),
+(270, 32, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(271, 32, 'first_name', 'text', 'Ad', 1, 1, 1, 1, 1, 1, '{}', 2),
+(272, 32, 'last_name', 'text', 'Soyad', 1, 1, 1, 1, 1, 1, '{}', 3),
+(275, 32, 'created_at', 'timestamp', 'Oluşturma Tarihi', 0, 1, 1, 0, 0, 0, '{}', 7),
+(276, 32, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(277, 32, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 4),
+(278, 32, 'message', 'text_area', 'Message', 1, 1, 1, 1, 1, 1, '{}', 6),
+(279, 32, 'subject', 'text', 'Subject', 0, 1, 1, 1, 1, 1, '{}', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_types`
+-- Tablo için tablo yapısı `data_types`
 --
 
 CREATE TABLE `data_types` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `display_name_singular` varchar(255) NOT NULL,
-  `display_name_plural` varchar(255) NOT NULL,
-  `icon` varchar(255) DEFAULT NULL,
-  `model_name` varchar(255) DEFAULT NULL,
-  `policy_name` varchar(255) DEFAULT NULL,
-  `controller` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name_singular` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name_plural` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `model_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `policy_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `controller` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `generate_permissions` tinyint(1) NOT NULL DEFAULT 0,
   `server_side` tinyint(4) NOT NULL DEFAULT 0,
-  `details` text DEFAULT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `data_types`
+-- Tablo döküm verisi `data_types`
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
@@ -547,34 +722,53 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (25, 'cover_images', 'cover-images', 'Cover Image', 'Cover Images', 'voyager-photo', 'App\\Models\\CoverImage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-15 10:55:32', '2023-10-15 10:55:32'),
 (27, 'blog_tags', 'blog-tags', 'Blog Tag', 'Blog Tags', 'voyager-tag', 'App\\Models\\BlogTag', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-16 06:37:18', '2023-10-16 06:37:18'),
 (28, 'blogs', 'blogs', 'Blog', 'Blogs', 'voyager-file-text', 'App\\Models\\Blog', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-16 06:39:01', '2023-10-16 09:36:15'),
-(29, 'authors', 'authors', 'Author', 'Authors', 'voyager-person', 'App\\Models\\Author', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-16 06:41:26', '2023-10-16 06:41:26');
+(29, 'authors', 'authors', 'Author', 'Authors', 'voyager-person', 'App\\Models\\Author', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
+(30, 'admins', 'admins', 'Admin', 'Admins', 'voyager-people', 'App\\Models\\Admin', NULL, 'App\\Http\\Controllers\\VoyagerAdminController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":\"currentUser\"}', '2023-10-17 20:22:10', '2023-10-17 20:22:32'),
+(31, 'static_pages', 'static-pages', 'Sabit Sayfa', 'Sabit Sayfalar', 'voyager-file-text', 'App\\Models\\StaticPage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(32, 'contact_orders', 'contact-orders', 'İletişim Formu', 'İletişim Formları', 'voyager-mail', 'App\\Models\\ContactOrder', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-18 00:31:02', '2023-10-18 00:33:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Tablo için tablo yapısı `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `f_a_q_s`
+-- Tablo için tablo yapısı `founders`
+--
+
+CREATE TABLE `founders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `f_a_q_s`
 --
 
 CREATE TABLE `f_a_q_s` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `order` int(11) DEFAULT NULL,
   `is_homepage` tinyint(1) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -582,7 +776,7 @@ CREATE TABLE `f_a_q_s` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `f_a_q_s`
+-- Tablo döküm verisi `f_a_q_s`
 --
 
 INSERT INTO `f_a_q_s` (`id`, `title`, `content`, `order`, `is_homepage`, `created_at`, `updated_at`) VALUES
@@ -595,21 +789,45 @@ INSERT INTO `f_a_q_s` (`id`, `title`, `content`, `order`, `is_homepage`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Tablo için tablo yapısı `get_offers`
+--
+
+CREATE TABLE `get_offers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `institutionals`
+--
+
+CREATE TABLE `institutionals` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `languages`
 --
 
 CREATE TABLE `languages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `code` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `locale` varchar(255) DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `locale` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `languages`
+-- Tablo döküm verisi `languages`
 --
 
 INSERT INTO `languages` (`id`, `code`, `title`, `locale`, `active`, `created_at`, `updated_at`) VALUES
@@ -623,18 +841,18 @@ INSERT INTO `languages` (`id`, `code`, `title`, `locale`, `active`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Tablo için tablo yapısı `menus`
 --
 
 CREATE TABLE `menus` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menus`
+-- Tablo döküm verisi `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -643,69 +861,90 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_items`
+-- Tablo için tablo yapısı `menu_items`
 --
 
 CREATE TABLE `menu_items` (
   `id` int(10) UNSIGNED NOT NULL,
   `menu_id` int(10) UNSIGNED DEFAULT NULL,
-  `title` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `target` varchar(255) NOT NULL DEFAULT '_self',
-  `icon_class` varchar(255) DEFAULT NULL,
-  `color` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `target` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '_self',
+  `icon_class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `order` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `route` varchar(255) DEFAULT NULL,
-  `parameters` text DEFAULT NULL
+  `route` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parameters` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menu_items`
+-- Tablo döküm verisi `menu_items`
 --
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.dashboard', NULL),
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.media.index', NULL),
-(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.users.index', NULL),
+(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 4, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2023-09-12 07:29:31', '2023-09-12 07:29:31', NULL, NULL),
-(6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 10, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.menus.index', NULL),
-(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 11, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.database.index', NULL),
-(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.compass.index', NULL),
-(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2023-09-12 07:29:31', '2023-09-12 07:29:31', 'voyager.settings.index', NULL),
-(11, 1, 'Site Texts', '', '_self', 'voyager-character', NULL, NULL, 15, '2023-10-03 05:50:23', '2023-10-03 05:50:23', 'voyager.site-texts.index', NULL),
-(12, 1, 'Contact Us', '', '_self', 'voyager-telephone', NULL, NULL, 16, '2023-10-04 06:38:40', '2023-10-04 06:38:40', 'voyager.contact-us.index', NULL),
-(20, 1, 'SEO', '', '_self', 'voyager-world', NULL, NULL, 17, '2023-10-04 10:11:56', '2023-10-04 10:11:56', 'voyager.seo.index', NULL),
-(21, 1, 'Services', '', '_self', 'voyager-trophy', NULL, NULL, 18, '2023-10-10 09:48:35', '2023-10-10 09:48:35', 'voyager.services.index', NULL),
-(22, 1, 'Sliders', '', '_self', 'voyager-dot-3', NULL, NULL, 19, '2023-10-10 11:19:32', '2023-10-10 11:19:32', 'voyager.sliders.index', NULL),
-(23, 1, 'Our Offers', '', '_self', 'voyager-medal-rank-star', NULL, NULL, 20, '2023-10-11 06:45:03', '2023-10-11 06:45:03', 'voyager.our-offers.index', NULL),
-(24, 1, 'Brands', '', '_self', 'voyager-ticket', NULL, NULL, 21, '2023-10-15 03:48:44', '2023-10-15 03:48:44', 'voyager.brands.index', NULL),
-(28, 1, 'F A Q', '', '_self', 'voyager-question', NULL, NULL, 22, '2023-10-15 04:48:25', '2023-10-15 04:48:25', 'voyager.f-a-q-s.index', NULL),
-(29, 1, 'Languages', '', '_self', 'voyager-font', NULL, NULL, 23, '2023-10-15 10:16:51', '2023-10-15 10:16:51', 'voyager.languages.index', NULL),
-(30, 1, 'Blog Categories', '', '_self', 'voyager-categories', NULL, NULL, 24, '2023-10-15 10:45:51', '2023-10-15 10:45:51', 'voyager.blog-categories.index', NULL),
-(31, 1, 'Cover Images', '', '_self', 'voyager-photo', NULL, NULL, 25, '2023-10-15 10:55:32', '2023-10-15 10:55:32', 'voyager.cover-images.index', NULL),
-(32, 1, 'Blog Tags', '', '_self', 'voyager-tag', NULL, NULL, 26, '2023-10-16 06:37:18', '2023-10-16 06:37:18', 'voyager.blog-tags.index', NULL),
-(33, 1, 'Blogs', '', '_self', 'voyager-file-text', NULL, NULL, 27, '2023-10-16 06:39:01', '2023-10-16 06:39:01', 'voyager.blogs.index', NULL),
-(34, 1, 'Authors', '', '_self', 'voyager-person', NULL, NULL, 28, '2023-10-16 06:41:26', '2023-10-16 06:41:26', 'voyager.authors.index', NULL);
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 6, '2023-09-12 07:29:31', '2023-10-17 20:22:48', NULL, NULL),
+(6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.menus.index', NULL),
+(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.database.index', NULL),
+(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.compass.index', NULL),
+(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.bread.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 7, '2023-09-12 07:29:31', '2023-10-17 20:22:48', 'voyager.settings.index', NULL),
+(11, 1, 'Site Texts', '', '_self', 'voyager-character', NULL, NULL, 8, '2023-10-03 05:50:23', '2023-10-17 20:22:48', 'voyager.site-texts.index', NULL),
+(12, 1, 'Contact Us', '', '_self', 'voyager-telephone', NULL, NULL, 9, '2023-10-04 06:38:40', '2023-10-17 20:22:48', 'voyager.contact-us.index', NULL),
+(20, 1, 'SEO', '', '_self', 'voyager-world', NULL, NULL, 10, '2023-10-04 10:11:56', '2023-10-17 20:22:48', 'voyager.seo.index', NULL),
+(21, 1, 'Services', '', '_self', 'voyager-trophy', NULL, NULL, 11, '2023-10-10 09:48:35', '2023-10-17 20:22:48', 'voyager.services.index', NULL),
+(22, 1, 'Sliders', '', '_self', 'voyager-dot-3', NULL, NULL, 12, '2023-10-10 11:19:32', '2023-10-17 20:22:48', 'voyager.sliders.index', NULL),
+(23, 1, 'Our Offers', '', '_self', 'voyager-medal-rank-star', NULL, NULL, 13, '2023-10-11 06:45:03', '2023-10-17 20:22:48', 'voyager.our-offers.index', NULL),
+(24, 1, 'Brands', '', '_self', 'voyager-ticket', NULL, NULL, 14, '2023-10-15 03:48:44', '2023-10-17 20:22:48', 'voyager.brands.index', NULL),
+(28, 1, 'F A Q', '', '_self', 'voyager-question', NULL, NULL, 15, '2023-10-15 04:48:25', '2023-10-17 20:22:48', 'voyager.f-a-q-s.index', NULL),
+(29, 1, 'Languages', '', '_self', 'voyager-font', NULL, NULL, 16, '2023-10-15 10:16:51', '2023-10-17 20:22:48', 'voyager.languages.index', NULL),
+(30, 1, 'Blog Categories', '', '_self', 'voyager-categories', NULL, NULL, 17, '2023-10-15 10:45:51', '2023-10-17 20:22:48', 'voyager.blog-categories.index', NULL),
+(31, 1, 'Cover Images', '', '_self', 'voyager-photo', NULL, NULL, 18, '2023-10-15 10:55:32', '2023-10-17 20:22:48', 'voyager.cover-images.index', NULL),
+(32, 1, 'Blog Tags', '', '_self', 'voyager-tag', NULL, NULL, 19, '2023-10-16 06:37:18', '2023-10-17 20:22:48', 'voyager.blog-tags.index', NULL),
+(33, 1, 'Blogs', '', '_self', 'voyager-file-text', NULL, NULL, 20, '2023-10-16 06:39:01', '2023-10-17 20:22:48', 'voyager.blogs.index', NULL),
+(34, 1, 'Authors', '', '_self', 'voyager-person', NULL, NULL, 21, '2023-10-16 06:41:26', '2023-10-17 20:22:48', 'voyager.authors.index', NULL),
+(35, 1, 'Admins', '', '_self', 'voyager-people', NULL, NULL, 3, '2023-10-17 20:22:10', '2023-10-17 20:22:48', 'voyager.admins.index', NULL),
+(36, 1, 'Sabit Sayfalar', '', '_self', 'voyager-file-text', NULL, NULL, 22, '2023-10-18 00:23:26', '2023-10-18 00:23:26', 'voyager.static-pages.index', NULL),
+(37, 1, 'İletişim Formları', '', '_self', 'voyager-mail', NULL, NULL, 23, '2023-10-18 00:31:02', '2023-10-18 00:31:02', 'voyager.contact-orders.index', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Tablo için tablo yapısı `metas`
+--
+
+CREATE TABLE `metas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Tablo döküm verisi `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -749,19 +988,41 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (51, '2023_09_13_175447_create_authors_table', 16),
 (52, '2023_09_18_144119_create_blogs_table', 17),
 (53, '2023_09_18_144044_create_blog_tags_table', 18),
-(54, '2023_09_18_152241_create_blog_tag_table', 19);
+(54, '2023_09_18_152241_create_blog_tag_table', 19),
+(55, '2023_09_18_152631_create_comments_table', 20),
+(56, '2023_09_18_155917_create_bultens_table', 20),
+(57, '2023_09_18_160428_create_contact_orders_table', 20),
+(58, '2023_09_18_160519_create_institutionals_table', 20),
+(59, '2023_09_18_160549_create_founders_table', 20),
+(60, '2023_09_18_160725_create_sell_offers_table', 20),
+(61, '2023_09_18_160944_create_get_offers_table', 20),
+(62, '2023_09_18_161449_create_product_tags_table', 20),
+(63, '2023_09_18_161511_create_product_categories_table', 20),
+(64, '2023_09_18_161528_create_product_sectors_table', 20),
+(65, '2023_09_18_161701_create_products_table', 20),
+(66, '2023_09_18_161740_create_product_tag_table', 20),
+(67, '2023_09_18_162107_create_advantages_table', 20),
+(68, '2023_09_18_162757_create_billing_details_table', 20),
+(69, '2023_09_18_162912_create_corporate_pages_table', 20),
+(70, '2023_09_26_171444_create_metas_table', 20),
+(71, '2023_10_17_161702_create_similar_products_table', 20),
+(72, '2023_10_17_181458_create_products_sliders_table', 20),
+(73, '2023_10_17_225949_create_admins_table', 20),
+(74, '2023_10_17_230016_drop_role_id_column_from_users_table', 20),
+(75, '2023_10_18_004239_add_info_to_users_table', 21),
+(76, '2023_10_18_033125_add_email_to_contact_orders_table', 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `our_offers`
+-- Tablo için tablo yapısı `our_offers`
 --
 
 CREATE TABLE `our_offers` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `logo` varchar(255) DEFAULT NULL,
-  `content` longtext DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -769,7 +1030,7 @@ CREATE TABLE `our_offers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `our_offers`
+-- Tablo döküm verisi `our_offers`
 --
 
 INSERT INTO `our_offers` (`id`, `title`, `logo`, `content`, `active`, `order`, `created_at`, `updated_at`) VALUES
@@ -779,31 +1040,31 @@ INSERT INTO `our_offers` (`id`, `title`, `logo`, `content`, `active`, `order`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Tablo için tablo yapısı `password_resets`
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Tablo için tablo yapısı `permissions`
 --
 
 CREATE TABLE `permissions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `key` varchar(255) NOT NULL,
-  `table_name` varchar(255) DEFAULT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Tablo döküm verisi `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`) VALUES
@@ -901,12 +1162,27 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (142, 'read_authors', 'authors', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
 (143, 'edit_authors', 'authors', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
 (144, 'add_authors', 'authors', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
-(145, 'delete_authors', 'authors', '2023-10-16 06:41:26', '2023-10-16 06:41:26');
+(145, 'delete_authors', 'authors', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
+(146, 'browse_admins', 'admins', '2023-10-17 20:22:10', '2023-10-17 20:22:10'),
+(147, 'read_admins', 'admins', '2023-10-17 20:22:10', '2023-10-17 20:22:10'),
+(148, 'edit_admins', 'admins', '2023-10-17 20:22:10', '2023-10-17 20:22:10'),
+(149, 'add_admins', 'admins', '2023-10-17 20:22:10', '2023-10-17 20:22:10'),
+(150, 'delete_admins', 'admins', '2023-10-17 20:22:10', '2023-10-17 20:22:10'),
+(151, 'browse_static_pages', 'static_pages', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(152, 'read_static_pages', 'static_pages', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(153, 'edit_static_pages', 'static_pages', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(154, 'add_static_pages', 'static_pages', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(155, 'delete_static_pages', 'static_pages', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
+(156, 'browse_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
+(157, 'read_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
+(158, 'edit_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
+(159, 'add_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
+(160, 'delete_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission_role`
+-- Tablo için tablo yapısı `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -915,11 +1191,12 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permission_role`
+-- Tablo döküm verisi `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 3),
 (2, 1),
 (3, 1),
 (4, 1),
@@ -935,8 +1212,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (14, 1),
 (15, 1),
 (16, 1),
+(16, 3),
 (17, 1),
+(17, 3),
 (18, 1),
+(18, 3),
 (19, 1),
 (20, 1),
 (21, 1),
@@ -945,89 +1225,171 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (24, 1),
 (25, 1),
 (26, 1),
+(26, 3),
 (27, 1),
+(27, 3),
 (28, 1),
+(28, 3),
 (29, 1),
 (30, 1),
 (31, 1),
+(31, 3),
 (32, 1),
+(32, 3),
 (33, 1),
+(33, 3),
 (34, 1),
 (35, 1),
 (71, 1),
+(71, 3),
 (72, 1),
+(72, 3),
 (73, 1),
+(73, 3),
 (74, 1),
 (75, 1),
 (76, 1),
+(76, 3),
 (77, 1),
+(77, 3),
 (78, 1),
+(78, 3),
 (79, 1),
+(79, 3),
 (80, 1),
+(80, 3),
 (81, 1),
+(81, 3),
 (82, 1),
+(82, 3),
 (83, 1),
+(83, 3),
 (84, 1),
+(84, 3),
 (85, 1),
+(85, 3),
 (86, 1),
+(86, 3),
 (87, 1),
+(87, 3),
 (88, 1),
+(88, 3),
 (89, 1),
+(89, 3),
 (90, 1),
+(90, 3),
 (91, 1),
+(91, 3),
 (92, 1),
+(92, 3),
 (93, 1),
+(93, 3),
 (94, 1),
+(94, 3),
 (95, 1),
+(95, 3),
 (111, 1),
+(111, 3),
 (112, 1),
+(112, 3),
 (113, 1),
+(113, 3),
 (114, 1),
+(114, 3),
 (115, 1),
+(115, 3),
 (116, 1),
+(116, 3),
 (117, 1),
+(117, 3),
 (118, 1),
+(118, 3),
 (119, 1),
 (120, 1),
 (121, 1),
+(121, 3),
 (122, 1),
+(122, 3),
 (123, 1),
+(123, 3),
 (124, 1),
+(124, 3),
 (125, 1),
+(125, 3),
 (126, 1),
+(126, 3),
 (127, 1),
+(127, 3),
 (128, 1),
+(128, 3),
 (129, 1),
+(129, 3),
 (130, 1),
+(130, 3),
 (131, 1),
+(131, 3),
 (132, 1),
+(132, 3),
 (133, 1),
+(133, 3),
 (134, 1),
+(134, 3),
 (135, 1),
+(135, 3),
 (136, 1),
+(136, 3),
 (137, 1),
+(137, 3),
 (138, 1),
+(138, 3),
 (139, 1),
+(139, 3),
 (140, 1),
+(140, 3),
 (141, 1),
+(141, 3),
 (142, 1),
+(142, 3),
 (143, 1),
+(143, 3),
 (144, 1),
-(145, 1);
+(144, 3),
+(145, 1),
+(145, 3),
+(146, 1),
+(146, 3),
+(147, 1),
+(147, 3),
+(148, 1),
+(148, 3),
+(149, 1),
+(149, 3),
+(150, 1),
+(150, 3),
+(151, 1),
+(152, 1),
+(153, 1),
+(154, 1),
+(155, 1),
+(156, 1),
+(157, 1),
+(158, 1),
+(159, 1),
+(160, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Tablo için tablo yapısı `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1036,50 +1398,163 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Tablo için tablo yapısı `products`
 --
 
-CREATE TABLE `roles` (
+CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `display_name` varchar(255) NOT NULL,
+  `product_category_id` bigint(20) UNSIGNED NOT NULL,
+  `product_sector_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Images` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brief` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `roles`
---
-
-INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Administrator', '2023-09-12 07:29:31', '2023-09-12 07:29:31'),
-(2, 'user', 'Normal User', '2023-09-12 07:29:31', '2023-09-12 07:29:31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seo`
+-- Tablo için tablo yapısı `products_sliders`
 --
 
-CREATE TABLE `seo` (
+CREATE TABLE `products_sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `meta` longtext DEFAULT NULL,
-  `header_bottom` longtext DEFAULT NULL,
-  `body_top` longtext DEFAULT NULL,
-  `body_bottom` longtext DEFAULT NULL,
-  `meta_title` varchar(255) DEFAULT NULL,
-  `meta_description` varchar(255) DEFAULT NULL,
-  `meta_keyword` varchar(255) DEFAULT NULL,
-  `meta_canonical` varchar(255) DEFAULT NULL,
-  `meta_ogimage` varchar(255) DEFAULT NULL,
-  `site_name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 1,
+  `order` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `product_categories`
+--
+
+CREATE TABLE `product_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `product_sectors`
+--
+
+CREATE TABLE `product_sectors` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `product_tag`
+--
+
+CREATE TABLE `product_tag` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `product_tag_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `product_tags`
+--
+
+CREATE TABLE `product_tags` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `seo`
+-- Tablo döküm verisi `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'Administrator', '2023-09-12 07:29:31', '2023-09-12 07:29:31'),
+(2, 'user', 'Normal User', '2023-09-12 07:29:31', '2023-09-12 07:29:31'),
+(3, 'panel_admin', 'Panel Admin', '2023-10-17 20:20:17', '2023-10-17 20:20:17');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `sell_offers`
+--
+
+CREATE TABLE `sell_offers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `seo`
+--
+
+CREATE TABLE `seo` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `header_bottom` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body_top` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body_bottom` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `site_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `seo`
 --
 
 INSERT INTO `seo` (`id`, `title`, `meta`, `header_bottom`, `body_top`, `body_bottom`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `site_name`, `created_at`, `updated_at`) VALUES
@@ -1088,21 +1563,21 @@ INSERT INTO `seo` (`id`, `title`, `meta`, `header_bottom`, `body_top`, `body_bot
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Tablo için tablo yapısı `services`
 --
 
 CREATE TABLE `services` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `color` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `slug` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `services`
+-- Tablo döküm verisi `services`
 --
 
 INSERT INTO `services` (`id`, `title`, `color`, `image`, `slug`, `created_at`, `updated_at`) VALUES
@@ -1112,22 +1587,22 @@ INSERT INTO `services` (`id`, `title`, `color`, `image`, `slug`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Tablo için tablo yapısı `settings`
 --
 
 CREATE TABLE `settings` (
   `id` int(10) UNSIGNED NOT NULL,
-  `key` varchar(255) NOT NULL,
-  `display_name` varchar(255) NOT NULL,
-  `value` text DEFAULT NULL,
-  `details` text DEFAULT NULL,
-  `type` varchar(255) NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `order` int(11) NOT NULL DEFAULT 1,
-  `group` varchar(255) DEFAULT NULL
+  `group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Tablo döküm verisi `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
@@ -1145,20 +1620,34 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `site_texts`
+-- Tablo için tablo yapısı `similar_products`
+--
+
+CREATE TABLE `similar_products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `semi_product_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `site_texts`
 --
 
 CREATE TABLE `site_texts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `key` varchar(255) NOT NULL,
-  `place` varchar(255) DEFAULT NULL,
-  `content` text NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `place` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `site_texts`
+-- Tablo döküm verisi `site_texts`
 --
 
 INSERT INTO `site_texts` (`id`, `key`, `place`, `content`, `created_at`, `updated_at`) VALUES
@@ -1186,20 +1675,27 @@ INSERT INTO `site_texts` (`id`, `key`, `place`, `content`, `created_at`, `update
 (25, 'blogs_index_title', NULL, 'OUR<span>BLOG</span>', '2023-10-15 10:34:57', '2023-10-15 10:34:57'),
 (26, 'Category', NULL, 'Category', '2023-10-16 05:21:27', '2023-10-16 05:21:27'),
 (27, 'Show_More', NULL, 'Show More', '2023-10-16 07:29:18', '2023-10-16 07:29:18'),
-(28, 'Show_Less', NULL, 'Show Less', '2023-10-16 07:29:30', '2023-10-16 07:29:30');
+(28, 'Show_Less', NULL, 'Show Less', '2023-10-16 07:29:30', '2023-10-16 07:29:30'),
+(29, '404title', '404', 'Sayfa Bulunamadı', '2023-10-18 00:06:10', '2023-10-18 00:06:10'),
+(30, '404content', '404', 'Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-18 00:06:00', '2023-10-18 00:06:36'),
+(31, '404backToHomepage', '404', 'Anasayfaya Dön', '2023-10-18 00:07:03', '2023-10-18 00:07:03'),
+(32, 'routeProfile', 'profil route', 'profil', '2023-10-18 00:26:35', '2023-10-18 00:26:35'),
+(33, 'routePage', 'sabit sayfa route', 'sayfa', '2023-10-18 00:26:52', '2023-10-18 00:26:52'),
+(34, 'routeContact', 'iletisim sayfasi route', 'iletisim', '2023-10-18 00:29:22', '2023-10-18 00:29:22'),
+(35, 'Contact_Order_submitted', 'İletişim Sayfası', 'İletişim Formunuz Başarıyla Gönderilmiştir!', '2023-10-18 00:39:22', '2023-10-18 00:39:22');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sliders`
+-- Tablo için tablo yapısı `sliders`
 --
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `brief` longtext DEFAULT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brief` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1207,7 +1703,7 @@ CREATE TABLE `sliders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sliders`
+-- Tablo döküm verisi `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `title`, `brief`, `slug`, `image`, `order`, `active`, `created_at`, `updated_at`) VALUES
@@ -1217,42 +1713,49 @@ INSERT INTO `sliders` (`id`, `title`, `brief`, `slug`, `image`, `order`, `active
 -- --------------------------------------------------------
 
 --
--- Table structure for table `static_pages`
+-- Tablo için tablo yapısı `static_pages`
 --
 
 CREATE TABLE `static_pages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `content` longtext NOT NULL,
-  `meta_title` varchar(255) DEFAULT NULL,
-  `meta_description` varchar(255) DEFAULT NULL,
-  `meta_keyword` varchar(255) DEFAULT NULL,
-  `meta_canonical` varchar(255) DEFAULT NULL,
-  `meta_ogimage` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `static_pages`
+--
+
+INSERT INTO `static_pages` (`id`, `title`, `slug`, `content`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `created_at`, `updated_at`) VALUES
+(1, 'Kullanım Koşulları', 'kullanim-kosullari', '<h5>Use of our website</h5>\n<p>These Conditions are the only conditions applicable to the use of this website and replace any other, except with the prior express written consent of the Seller. These Terms are important to both you and us as they are designed to create a legally binding agreement between us protecting your rights as a customer and our rights as a company. You declare that, by placing your order, you have read and accept these Conditions without reservation.</p>\n<h5>You agree that:</h5>\n<ul>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n</ul>\n<p>Donec rutrum, metus non aliquet aliquam, diam elit ornare arcu, sed facilisis neque sem vel mauris. In tristique orci urna, sit amet faucibus leo ultrices eget. Phasellus ac erat mauris. Aliquam erat volutpat. Nulla leo diam, dignissim ut viverra quis, lobortis eget enim. Ut suscipit erat ac neque pellentesque, ut luctus nisl lacinia. Vivamus dignissim at eros at interdum. Curabitur ultricies mauris dui, id suscipit neque lacinia iaculis. Fusce placerat libero arcu, nec ultrices purus interdum ac. Nulla malesuada tristique ante id sodales. Mauris nec finibus nibh, quis euismod ex. Pellentesque id sollicitudin nisl. <br><br>Nam vitae quam elit. Pellentesque nisi massa, fermentum id ligula quis, dignissim malesuada eros. Aliquam fermentum imperdiet varius. Ut tristique luctus dui volutpat dapibus. Donec fermentum tempus nibh, quis rhoncus tortor fringilla eu. Aliquam nulla ligula, luctus cursus massa ut, tincidunt interdum eros. Cras varius ac est vel cursus. Donec a ligula gravida tellus commodo eleifend id nec tellus. Maecenas facilisis nunc ut elit ullamcorper auctor. Sed quam ante, rutrum sit amet porttitor in, molestie quis orci. <br><br>Donec nulla erat, tempor et laoreet sed, eleifend at orci. Duis mattis nisi vitae augue malesuada, dapibus feugiat nisi feugiat. Aenean mauris lacus, tempor quis imperdiet sed, auctor in dui. In iaculis ipsum arcu, non dictum elit suscipit eget. Quisque mattis nisl condimentum ligula mollis, vel imperdiet eros dapibus. Etiam volutpat eget eros non tincidunt. Pellentesque at sollicitudin velit, ac condimentum nisi. Nam mattis, est nec ultrices sollicitudin, nulla sem sodales orci, vel hendrerit ipsum odio congue nunc. Proin molestie in tortor id lacinia. Ut pretium nunc et eleifend lacinia. Praesent quis eleifend nibh. Integer iaculis pulvinar eros, ac consequat ex efficitur in. Aliquam nec fermentum leo. Etiam placerat hendrerit iaculis. Vestibulum finibus ex vel accumsan fringilla. <br><br>Integer massa elit, porttitor vel pulvinar ac, pretium vitae enim. Proin porttitor efficitur nulla, at lobortis ex tempor a. Morbi egestas leo ac mauris posuere, eu congue est tincidunt. Vivamus vel leo vulputate, dictum arcu sed, lobortis nulla. In viverra arcu molestie magna tempor aliquet. Nam eget congue dui. Proin vitae mauris ac dui ultricies feugiat. Aliquam erat volutpat. Nunc vel vehicula dolor. Curabitur sagittis dictum porta. Morbi non laoreet velit. Curabitur semper dolor et dictum euismod.</p>', 'Kullanım Koşulları', '', '', '', '', '2023-10-18 00:24:49', '2023-10-18 00:24:49');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `translations`
+-- Tablo için tablo yapısı `translations`
 --
 
 CREATE TABLE `translations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `table_name` varchar(255) NOT NULL,
-  `column_name` varchar(255) NOT NULL,
+  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `column_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `foreign_key` int(10) UNSIGNED NOT NULL,
-  `locale` varchar(255) NOT NULL,
-  `value` text NOT NULL,
+  `locale` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `translations`
+-- Tablo döküm verisi `translations`
 --
 
 INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
@@ -1351,39 +1854,88 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (99, 'blogs', 'meta_description', 3, 'en', 'Eum laborum Eligend', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
 (100, 'blogs', 'meta_keyword', 3, 'en', 'Voluptatibus anim be', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
 (101, 'blogs', 'meta_canonical', 3, 'en', 'Fugiat delectus fug', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(102, 'blogs', 'meta_ogimage', 3, 'en', 'Quo earum magnam ea ', '2023-10-16 09:50:26', '2023-10-16 09:50:26');
+(102, 'blogs', 'meta_ogimage', 3, 'en', 'Quo earum magnam ea ', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
+(103, 'data_rows', 'display_name', 246, 'en', 'Id', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(104, 'data_rows', 'display_name', 247, 'en', 'Role Id', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(105, 'data_rows', 'display_name', 248, 'en', 'Ad', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(106, 'data_rows', 'display_name', 249, 'en', 'Email', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(107, 'data_rows', 'display_name', 250, 'en', 'Email Verified At', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(108, 'data_rows', 'display_name', 251, 'en', 'Password', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(109, 'data_rows', 'display_name', 252, 'en', 'Remember Token', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(110, 'data_rows', 'display_name', 253, 'en', 'Resim', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(111, 'data_rows', 'display_name', 254, 'en', 'Settings', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(112, 'data_rows', 'display_name', 255, 'en', 'Oluşturma Tarihi', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(113, 'data_rows', 'display_name', 256, 'en', 'Updated At', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(114, 'data_types', 'display_name_singular', 30, 'en', 'Admin', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(115, 'data_types', 'display_name_plural', 30, 'en', 'Admins', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
+(116, 'site_texts', 'content', 29, 'en', 'Page Not Found', '2023-10-18 00:06:10', '2023-10-18 00:06:10'),
+(117, 'site_texts', 'content', 30, 'en', 'Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-18 00:06:26', '2023-10-18 00:06:26'),
+(118, 'site_texts', 'content', 30, 'fr', 'Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-18 00:06:36', '2023-10-18 00:06:36'),
+(119, 'site_texts', 'content', 30, 'de', 'Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-18 00:06:36', '2023-10-18 00:06:36'),
+(120, 'site_texts', 'content', 30, 'ar', 'Ncinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-18 00:06:36', '2023-10-18 00:06:36'),
+(121, 'site_texts', 'content', 31, 'en', 'Back to homepage', '2023-10-18 00:07:03', '2023-10-18 00:07:03'),
+(122, 'static_pages', 'title', 1, 'en', 'Terms Of Use', '2023-10-18 00:24:49', '2023-10-18 00:24:49'),
+(123, 'static_pages', 'slug', 1, 'en', 'terms-of-use', '2023-10-18 00:24:51', '2023-10-18 00:24:51'),
+(124, 'static_pages', 'content', 1, 'en', '<h5>Use of our website</h5>\n<p>These Conditions are the only conditions applicable to the use of this website and replace any other, except with the prior express written consent of the Seller. These Terms are important to both you and us as they are designed to create a legally binding agreement between us protecting your rights as a customer and our rights as a company. You declare that, by placing your order, you have read and accept these Conditions without reservation.</p>\n<h5>You agree that:</h5>\n<ul>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n<li>You may only use the website to make legally valid queries or orders</li>\n</ul>\n<p>Donec rutrum, metus non aliquet aliquam, diam elit ornare arcu, sed facilisis neque sem vel mauris. In tristique orci urna, sit amet faucibus leo ultrices eget. Phasellus ac erat mauris. Aliquam erat volutpat. Nulla leo diam, dignissim ut viverra quis, lobortis eget enim. Ut suscipit erat ac neque pellentesque, ut luctus nisl lacinia. Vivamus dignissim at eros at interdum. Curabitur ultricies mauris dui, id suscipit neque lacinia iaculis. Fusce placerat libero arcu, nec ultrices purus interdum ac. Nulla malesuada tristique ante id sodales. Mauris nec finibus nibh, quis euismod ex. Pellentesque id sollicitudin nisl. <br><br>Nam vitae quam elit. Pellentesque nisi massa, fermentum id ligula quis, dignissim malesuada eros. Aliquam fermentum imperdiet varius. Ut tristique luctus dui volutpat dapibus. Donec fermentum tempus nibh, quis rhoncus tortor fringilla eu. Aliquam nulla ligula, luctus cursus massa ut, tincidunt interdum eros. Cras varius ac est vel cursus. Donec a ligula gravida tellus commodo eleifend id nec tellus. Maecenas facilisis nunc ut elit ullamcorper auctor. Sed quam ante, rutrum sit amet porttitor in, molestie quis orci. <br><br>Donec nulla erat, tempor et laoreet sed, eleifend at orci. Duis mattis nisi vitae augue malesuada, dapibus feugiat nisi feugiat. Aenean mauris lacus, tempor quis imperdiet sed, auctor in dui. In iaculis ipsum arcu, non dictum elit suscipit eget. Quisque mattis nisl condimentum ligula mollis, vel imperdiet eros dapibus. Etiam volutpat eget eros non tincidunt. Pellentesque at sollicitudin velit, ac condimentum nisi. Nam mattis, est nec ultrices sollicitudin, nulla sem sodales orci, vel hendrerit ipsum odio congue nunc. Proin molestie in tortor id lacinia. Ut pretium nunc et eleifend lacinia. Praesent quis eleifend nibh. Integer iaculis pulvinar eros, ac consequat ex efficitur in. Aliquam nec fermentum leo. Etiam placerat hendrerit iaculis. Vestibulum finibus ex vel accumsan fringilla. <br><br>Integer massa elit, porttitor vel pulvinar ac, pretium vitae enim. Proin porttitor efficitur nulla, at lobortis ex tempor a. Morbi egestas leo ac mauris posuere, eu congue est tincidunt. Vivamus vel leo vulputate, dictum arcu sed, lobortis nulla. In viverra arcu molestie magna tempor aliquet. Nam eget congue dui. Proin vitae mauris ac dui ultricies feugiat. Aliquam erat volutpat. Nunc vel vehicula dolor. Curabitur sagittis dictum porta. Morbi non laoreet velit. Curabitur semper dolor et dictum euismod.</p>', '2023-10-18 00:24:51', '2023-10-18 00:24:51'),
+(125, 'static_pages', 'meta_title', 1, 'en', 'Terms Of Use', '2023-10-18 00:24:51', '2023-10-18 00:24:51'),
+(126, 'site_texts', 'content', 32, 'en', 'profile', '2023-10-18 00:26:36', '2023-10-18 00:26:36'),
+(127, 'site_texts', 'content', 33, 'en', 'page', '2023-10-18 00:26:54', '2023-10-18 00:26:54'),
+(128, 'site_texts', 'content', 34, 'en', 'contact', '2023-10-18 00:29:23', '2023-10-18 00:29:23'),
+(129, 'data_rows', 'display_name', 270, 'en', 'Id', '2023-10-18 00:33:35', '2023-10-18 00:33:35'),
+(130, 'data_rows', 'display_name', 271, 'en', 'Ad', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(131, 'data_rows', 'display_name', 272, 'en', 'Soyad', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(132, 'data_rows', 'display_name', 277, 'en', 'email', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(133, 'data_rows', 'display_name', 278, 'en', 'Mesaj', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(134, 'data_rows', 'display_name', 279, 'en', 'Konu', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(135, 'data_rows', 'display_name', 275, 'en', 'Oluşturma Tarihi', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(136, 'data_rows', 'display_name', 276, 'en', 'Updated At', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(137, 'data_types', 'display_name_singular', 32, 'en', 'İletişim Formu', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(138, 'data_types', 'display_name_plural', 32, 'en', 'İletişim Formları', '2023-10-18 00:33:37', '2023-10-18 00:33:37'),
+(139, 'site_texts', 'content', 35, 'en', 'Contact Form submitted successfully', '2023-10-18 00:39:23', '2023-10-18 00:39:23'),
+(140, 'contact_us', 'email', 1, 'en', 'belisipos@mailinator.com', '2023-10-18 00:41:52', '2023-10-18 00:41:52'),
+(141, 'contact_us', 'phone1', 1, 'en', '+1 (203) 292-4061', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(142, 'contact_us', 'phone2', 1, 'en', '+1 (593) 826-4718', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(143, 'contact_us', 'whatsapp', 1, 'en', 'Ea iure aut voluptat', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(144, 'contact_us', 'address', 1, 'en', 'Dolores a qui occaec', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(145, 'contact_us', 'map', 1, 'en', 'Animi voluptates fa', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(146, 'contact_us', 'facebook', 1, 'en', 'Iure eligendi simili', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(147, 'contact_us', 'youtube', 1, 'en', 'Ex corrupti asperna', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(148, 'contact_us', 'twitter', 1, 'en', 'Fugiat aut adipisci', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(149, 'contact_us', 'instagram', 1, 'en', 'Reprehenderit eu in', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(150, 'contact_us', 'linkedin', 1, 'en', 'Vel deserunt totam s', '2023-10-18 00:41:53', '2023-10-18 00:41:53');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tablo için tablo yapısı `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `role_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `avatar` varchar(255) DEFAULT 'users/default.png',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
-  `settings` text DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Tablo döküm verisi `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(2, 1, 'admin', 'admin@smartwork.com.tr', 'users/default.png', NULL, '$2y$10$LlJ0Sy9JyUZ3eG./X1cdnekFTvGVLKUUooyflpA6OhPExhaTXpT/6', NULL, NULL, '2023-09-25 06:06:17', '2023-09-25 06:06:17');
+INSERT INTO `users` (`id`, `name`, `email`, `birth_date`, `country`, `phone`, `avatar`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'MKT3', 'mktarakji@smartwork.com.tr', '10/01/2023', 'US', '+90563523432', 'users/default.png', NULL, '$2y$10$TlsQ/YH6wo/mPmQNCWteGuyHk3D8PvVySkLzXYsiWH3LQt/HDBvi2', 'XIqb2WXbRJRFFlrpMuPkC12lfvW9j6AMeqTVNJmt5TOZJogJdgIOiXUMYrLp', '2023-10-17 21:51:39', '2023-10-17 23:22:19');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_roles`
+-- Tablo için tablo yapısı `user_roles`
 --
 
 CREATE TABLE `user_roles` (
@@ -1392,11 +1944,25 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Dökümü yapılmış tablolar için indeksler
 --
 
 --
--- Indexes for table `audits`
+-- Tablo için indeksler `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_email_unique` (`email`),
+  ADD KEY `admins_role_id_foreign` (`role_id`);
+
+--
+-- Tablo için indeksler `advantages`
+--
+ALTER TABLE `advantages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `audits`
 --
 ALTER TABLE `audits`
   ADD PRIMARY KEY (`id`),
@@ -1404,13 +1970,19 @@ ALTER TABLE `audits`
   ADD KEY `audits_user_id_user_type_index` (`user_id`,`user_type`);
 
 --
--- Indexes for table `authors`
+-- Tablo için indeksler `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blogs`
+-- Tablo için indeksler `billing_details`
+--
+ALTER TABLE `billing_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `blogs`
 --
 ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`),
@@ -1418,13 +1990,13 @@ ALTER TABLE `blogs`
   ADD KEY `blogs_blog_category_id_foreign` (`blog_category_id`);
 
 --
--- Indexes for table `blog_categories`
+-- Tablo için indeksler `blog_categories`
 --
 ALTER TABLE `blog_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blog_tag`
+-- Tablo için indeksler `blog_tag`
 --
 ALTER TABLE `blog_tag`
   ADD PRIMARY KEY (`id`),
@@ -1432,38 +2004,64 @@ ALTER TABLE `blog_tag`
   ADD KEY `blog_tag_blog_tag_id_foreign` (`blog_tag_id`);
 
 --
--- Indexes for table `blog_tags`
+-- Tablo için indeksler `blog_tags`
 --
 ALTER TABLE `blog_tags`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `brands`
+-- Tablo için indeksler `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact_us`
+-- Tablo için indeksler `bultens`
+--
+ALTER TABLE `bultens`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comments_blog_id_foreign` (`blog_id`),
+  ADD KEY `comments_parent_id_foreign` (`parent_id`);
+
+--
+-- Tablo için indeksler `contact_orders`
+--
+ALTER TABLE `contact_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `contact_us`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cover_images`
+-- Tablo için indeksler `corporate_pages`
+--
+ALTER TABLE `corporate_pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `cover_images`
 --
 ALTER TABLE `cover_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_rows`
+-- Tablo için indeksler `data_rows`
 --
 ALTER TABLE `data_rows`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_rows_data_type_id_foreign` (`data_type_id`);
 
 --
--- Indexes for table `data_types`
+-- Tablo için indeksler `data_types`
 --
 ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
@@ -1471,65 +2069,89 @@ ALTER TABLE `data_types`
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
 
 --
--- Indexes for table `failed_jobs`
+-- Tablo için indeksler `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `f_a_q_s`
+-- Tablo için indeksler `founders`
+--
+ALTER TABLE `founders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `f_a_q_s`
 --
 ALTER TABLE `f_a_q_s`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `languages`
+-- Tablo için indeksler `get_offers`
+--
+ALTER TABLE `get_offers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `institutionals`
+--
+ALTER TABLE `institutionals`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menus`
+-- Tablo için indeksler `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `menus_name_unique` (`name`);
 
 --
--- Indexes for table `menu_items`
+-- Tablo için indeksler `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `menu_items_menu_id_foreign` (`menu_id`);
 
 --
--- Indexes for table `migrations`
+-- Tablo için indeksler `metas`
+--
+ALTER TABLE `metas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `our_offers`
+-- Tablo için indeksler `our_offers`
 --
 ALTER TABLE `our_offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Tablo için indeksler `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `permissions`
+-- Tablo için indeksler `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `permissions_key_index` (`key`);
 
 --
--- Indexes for table `permission_role`
+-- Tablo için indeksler `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
@@ -1537,7 +2159,7 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_role_role_id_index` (`role_id`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Tablo için indeksler `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1545,66 +2167,119 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `roles`
+-- Tablo için indeksler `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `products_product_category_id_foreign` (`product_category_id`),
+  ADD KEY `products_product_sector_id_foreign` (`product_sector_id`);
+
+--
+-- Tablo için indeksler `products_sliders`
+--
+ALTER TABLE `products_sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `product_categories`
+--
+ALTER TABLE `product_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `product_sectors`
+--
+ALTER TABLE `product_sectors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `product_tag`
+--
+ALTER TABLE `product_tag`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_tag_product_id_foreign` (`product_id`),
+  ADD KEY `product_tag_product_tag_id_foreign` (`product_tag_id`);
+
+--
+-- Tablo için indeksler `product_tags`
+--
+ALTER TABLE `product_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Indexes for table `seo`
+-- Tablo için indeksler `sell_offers`
+--
+ALTER TABLE `sell_offers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `seo`
 --
 ALTER TABLE `seo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `services`
+-- Tablo için indeksler `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Tablo için indeksler `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `settings_key_unique` (`key`);
 
 --
--- Indexes for table `site_texts`
+-- Tablo için indeksler `similar_products`
+--
+ALTER TABLE `similar_products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `similar_products_product_id_foreign` (`product_id`),
+  ADD KEY `similar_products_semi_product_id_foreign` (`semi_product_id`);
+
+--
+-- Tablo için indeksler `site_texts`
 --
 ALTER TABLE `site_texts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sliders`
+-- Tablo için indeksler `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `static_pages`
+-- Tablo için indeksler `static_pages`
 --
 ALTER TABLE `static_pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `translations`
+-- Tablo için indeksler `translations`
 --
 ALTER TABLE `translations`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `translations_table_name_column_name_foreign_key_locale_unique` (`table_name`,`column_name`,`foreign_key`,`locale`);
 
 --
--- Indexes for table `users`
+-- Tablo için indeksler `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD KEY `users_role_id_foreign` (`role_id`);
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `user_roles`
+-- Tablo için indeksler `user_roles`
 --
 ALTER TABLE `user_roles`
   ADD PRIMARY KEY (`user_id`,`role_id`),
@@ -1612,228 +2287,370 @@ ALTER TABLE `user_roles`
   ADD KEY `user_roles_role_id_index` (`role_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
 --
--- AUTO_INCREMENT for table `audits`
+-- Tablo için AUTO_INCREMENT değeri `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `advantages`
+--
+ALTER TABLE `advantages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT for table `authors`
+-- Tablo için AUTO_INCREMENT değeri `authors`
 --
 ALTER TABLE `authors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `blogs`
+-- Tablo için AUTO_INCREMENT değeri `billing_details`
+--
+ALTER TABLE `billing_details`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `blogs`
 --
 ALTER TABLE `blogs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `blog_categories`
+-- Tablo için AUTO_INCREMENT değeri `blog_categories`
 --
 ALTER TABLE `blog_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `blog_tag`
+-- Tablo için AUTO_INCREMENT değeri `blog_tag`
 --
 ALTER TABLE `blog_tag`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `blog_tags`
+-- Tablo için AUTO_INCREMENT değeri `blog_tags`
 --
 ALTER TABLE `blog_tags`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `brands`
+-- Tablo için AUTO_INCREMENT değeri `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `contact_us`
+-- Tablo için AUTO_INCREMENT değeri `bultens`
+--
+ALTER TABLE `bultens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `contact_orders`
+--
+ALTER TABLE `contact_orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `contact_us`
 --
 ALTER TABLE `contact_us`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `cover_images`
+-- Tablo için AUTO_INCREMENT değeri `corporate_pages`
+--
+ALTER TABLE `corporate_pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `cover_images`
 --
 ALTER TABLE `cover_images`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `data_rows`
+-- Tablo için AUTO_INCREMENT değeri `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
 
 --
--- AUTO_INCREMENT for table `data_types`
+-- Tablo için AUTO_INCREMENT değeri `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- Tablo için AUTO_INCREMENT değeri `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `f_a_q_s`
+-- Tablo için AUTO_INCREMENT değeri `founders`
+--
+ALTER TABLE `founders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `f_a_q_s`
 --
 ALTER TABLE `f_a_q_s`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `languages`
+-- Tablo için AUTO_INCREMENT değeri `get_offers`
+--
+ALTER TABLE `get_offers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `institutionals`
+--
+ALTER TABLE `institutionals`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `menus`
+-- Tablo için AUTO_INCREMENT değeri `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `menu_items`
+-- Tablo için AUTO_INCREMENT değeri `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- Tablo için AUTO_INCREMENT değeri `metas`
+--
+ALTER TABLE `metas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT for table `our_offers`
+-- Tablo için AUTO_INCREMENT değeri `our_offers`
 --
 ALTER TABLE `our_offers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `permissions`
+-- Tablo için AUTO_INCREMENT değeri `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- Tablo için AUTO_INCREMENT değeri `products`
 --
-ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `seo`
+-- Tablo için AUTO_INCREMENT değeri `products_sliders`
+--
+ALTER TABLE `products_sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `product_categories`
+--
+ALTER TABLE `product_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `product_sectors`
+--
+ALTER TABLE `product_sectors`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `product_tag`
+--
+ALTER TABLE `product_tag`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `product_tags`
+--
+ALTER TABLE `product_tags`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `sell_offers`
+--
+ALTER TABLE `sell_offers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `seo`
 --
 ALTER TABLE `seo`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `services`
+-- Tablo için AUTO_INCREMENT değeri `services`
 --
 ALTER TABLE `services`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- Tablo için AUTO_INCREMENT değeri `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `site_texts`
+-- Tablo için AUTO_INCREMENT değeri `similar_products`
 --
-ALTER TABLE `site_texts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+ALTER TABLE `similar_products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sliders`
+-- Tablo için AUTO_INCREMENT değeri `site_texts`
+--
+ALTER TABLE `site_texts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `static_pages`
+-- Tablo için AUTO_INCREMENT değeri `static_pages`
 --
 ALTER TABLE `static_pages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `translations`
+-- Tablo için AUTO_INCREMENT değeri `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
--- AUTO_INCREMENT for table `users`
+-- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Dökümü yapılmış tablolar için kısıtlamalar
 --
 
 --
--- Constraints for table `blogs`
+-- Tablo kısıtlamaları `admins`
+--
+ALTER TABLE `admins`
+  ADD CONSTRAINT `admins_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+
+--
+-- Tablo kısıtlamaları `blogs`
 --
 ALTER TABLE `blogs`
   ADD CONSTRAINT `blogs_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`),
   ADD CONSTRAINT `blogs_blog_category_id_foreign` FOREIGN KEY (`blog_category_id`) REFERENCES `blog_categories` (`id`);
 
 --
--- Constraints for table `blog_tag`
+-- Tablo kısıtlamaları `blog_tag`
 --
 ALTER TABLE `blog_tag`
   ADD CONSTRAINT `blog_tag_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`),
   ADD CONSTRAINT `blog_tag_blog_tag_id_foreign` FOREIGN KEY (`blog_tag_id`) REFERENCES `blog_tags` (`id`);
 
 --
--- Constraints for table `data_rows`
+-- Tablo kısıtlamaları `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`),
+  ADD CONSTRAINT `comments_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `comments` (`id`);
+
+--
+-- Tablo kısıtlamaları `data_rows`
 --
 ALTER TABLE `data_rows`
   ADD CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `menu_items`
+-- Tablo kısıtlamaları `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `permission_role`
+-- Tablo kısıtlamaları `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `users`
+-- Tablo kısıtlamaları `products`
 --
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_product_category_id_foreign` FOREIGN KEY (`product_category_id`) REFERENCES `product_categories` (`id`),
+  ADD CONSTRAINT `products_product_sector_id_foreign` FOREIGN KEY (`product_sector_id`) REFERENCES `product_sectors` (`id`);
 
 --
--- Constraints for table `user_roles`
+-- Tablo kısıtlamaları `product_tag`
+--
+ALTER TABLE `product_tag`
+  ADD CONSTRAINT `product_tag_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `product_tag_product_tag_id_foreign` FOREIGN KEY (`product_tag_id`) REFERENCES `product_tags` (`id`);
+
+--
+-- Tablo kısıtlamaları `similar_products`
+--
+ALTER TABLE `similar_products`
+  ADD CONSTRAINT `similar_products_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `similar_products_semi_product_id_foreign` FOREIGN KEY (`semi_product_id`) REFERENCES `products` (`id`);
+
+--
+-- Tablo kısıtlamaları `user_roles`
 --
 ALTER TABLE `user_roles`
   ADD CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
