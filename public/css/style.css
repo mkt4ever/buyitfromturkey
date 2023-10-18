@@ -3678,7 +3678,7 @@ textarea.form-control {
 
 /* error ------------------------ */
 .page-content .error-section {
-  background-image: url('../img/error.png');
+  background-image: url('/img/error.png');
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
