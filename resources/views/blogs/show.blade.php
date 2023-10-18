@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.app', ["header" => "inner-page"])
 
 @section('content')
 

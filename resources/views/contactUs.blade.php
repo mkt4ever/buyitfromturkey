@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-md-12 col-lg-12 col-xl-6 form" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                     <div class="content">
-                        <form action="{{localeRoute('contactUs.store')}}" method="post">
+                        <form action="{{localeRoute('contactUs.store')}}" method="post" id="contact-form">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 col-xl-6 col-lg-6  mb-3 item">
@@ -89,10 +89,9 @@
                             </div>
                             <div class="col-md-12 mb-3 item">
                                 <div class="row">
-                                    <div class="col-md-6 captcha">captcha</div>
+                                    <div class="col-md-6"></div>
                                     <div class="col-md-6 action">
-                                        <button type="submit" class="btn btn-primary icon-btn">Send <div class="icon"><i
-                                                    class="fa-solid fa-arrow-right"></i></div></button>
+                                        {!! htmlFormButton('Send <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                                     </div>
                                 </div>
                             </div>

@@ -7,3 +7,7 @@
     overflow: hidden;
     display: block;
   }
+
+  .grecaptcha-badge{
+    display: none !important;
+  }

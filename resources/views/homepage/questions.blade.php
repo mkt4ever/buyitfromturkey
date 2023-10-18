@@ -6,7 +6,7 @@
                     <h3>{{text('homepage_faq_title')}}</h3>
                     <p>{{text('homepage_faq_content')}}
                     </p>
-                    <form action="{{localeRoute('contactUs.store')}}" method="post">
+                    <form action="{{localeRoute('contactUs.store')}}" method="post" id="contact-form">
                         @csrf
                     <div class="boxes">
                         <div class="row">
@@ -25,8 +25,7 @@
                                     placeholder="Write a your question"></textarea>
                             </div>
                         </div>
-                        <button class="btn btn-secondary icon-btn">Send <div class="icon"><i
-                                    class="fa-solid fa-arrow-right"></i></div></button>
+                        {!! htmlFormButton('Send <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-secondary icon-btn"]) !!}
                     </div>
                     </form>
                 </div>

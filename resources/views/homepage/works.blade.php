@@ -1,6 +1,6 @@
 <section class="works-section">
     <div class="title" data-aos="fade-up" data-aos-duration="1500">
-        <h3>{{text('homepage_works_title')}}</h3>
+        <h3>{!! text('homepage_works_title') !!}</h3>
     </div>
     <div class="boxes">
         <div class="container">

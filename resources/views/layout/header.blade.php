@@ -106,6 +106,7 @@
     <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
 
      {{-- {!! $seo->header_bottom !!} --}}
+     {!! htmlScriptTagJsApi(['lang' => app()->getLocale()]) !!}
 </head>
 
 <body>
