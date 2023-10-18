@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactOrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\SiteText;
@@ -62,6 +63,9 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::post('/'.transRoute('routeProfile', $langTranslations).'/changePassword', [UserController::class, 'changePassword'])->name($lang->code.'.profile.changePassword');
 
             Route::get('/'.transRoute('routePage', $langTranslations).'/{slug}', [HomeController::class, 'staticPage'])->name($lang->code.'.staticPage');
+
+            Route::get('/'.transRoute('routeContact', $langTranslations).'', [ContactOrderController::class, 'index'])->name($lang->code.'.contactUs.index');
+            Route::post('/'.transRoute('routeContact', $langTranslations).'', [ContactOrderController::class, 'store'])->name($lang->code.'.contactUs.store');
 
         });
 

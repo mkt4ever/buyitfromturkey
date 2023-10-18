@@ -109,6 +109,8 @@
               toastr.success(msg_sent);
             @elseif(session('msg') == "done")
               toastr.success(msg_done);
+            @elseif(session('msg'))
+              toastr.success("{{session('msg')}}");
             @elseif($errors && $errors->count() > 0)
                 @foreach($errors->all() as $error)
                 toastr.error("{{$error}}");

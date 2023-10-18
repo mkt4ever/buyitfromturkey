@@ -155,7 +155,7 @@
                              <div class="mail">
                                  <div class="text">
                                      <h4>Contact Us</h4>
-                                     <a href="">info@buyitfromturkiye.com</a>
+                                     <a href="">{{$contactUs->email}}</a>
                                  </div>
                                  <div class="icon">
                                      <img src="{{asset('img/icon/eposta'. (isset($header) && $header == "inner-page" ? 'red' : '') .'.svg')}}" alt="">
@@ -246,7 +246,7 @@
                      <li><a href="">What we offer?</a></li>
                      <li><a href="">Who Are We?</a></li>
                      <li><a href="{{ localeRoute('blogs.index') }}">{{text('Blog')}}</a></li>
-                     <li><a href="">Contact</a></li>
+                     <li><a href="{{localeRoute('contactUs.index')}}">Contact</a></li>
                  </ul>
              </div>
              <div class="action">
@@ -257,7 +257,7 @@
                  <div class="icon">
                      <img src="{{asset('img/icon/eposta'. (isset($header) && $header == "inner-page" ? 'red' : '') .'.svg')}}" alt="">
                  </div>
-                 <a href="">info@buyitfromturkiye.com</a>
+                 <a href="">{{$contactUs->email}}</a>
              </div>
              <div class="social-media">
                  <ul>

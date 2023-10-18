@@ -6,26 +6,29 @@
                     <h3>{{text('homepage_faq_title')}}</h3>
                     <p>{{text('homepage_faq_content')}}
                     </p>
+                    <form action="{{localeRoute('contactUs.store')}}" method="post">
+                        @csrf
                     <div class="boxes">
                         <div class="row">
 
                             <div class="item col-md-12 col-xl-6">
                                 <label for="" class="form-label">Name</label>
-                                <input type="text" class="form-control" placeholder="Your name">
+                                <input name="first_name" type="text" required class="form-control" placeholder="Your name">
                             </div>
                             <div class="item col-md-12 col-xl-6">
                                 <label for="" class="form-label">Email</label>
-                                <input type="text" class="form-control" placeholder="@">
+                                <input name="email" type="email" required class="form-control" placeholder="@">
                             </div>
                             <div class="item col-md-12">
                                 <label for="" class="form-label">Your Question</label>
-                                <textarea name="" id="" cols="30" rows="3" class="form-control"
+                                <textarea name="message" required id="" cols="30" rows="3" class="form-control"
                                     placeholder="Write a your question"></textarea>
                             </div>
                         </div>
-                        <a href="" class="btn btn-secondary icon-btn">Send <div class="icon"><i
-                                    class="fa-solid fa-arrow-right"></i></div></a>
+                        <button class="btn btn-secondary icon-btn">Send <div class="icon"><i
+                                    class="fa-solid fa-arrow-right"></i></div></button>
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="col-md-12 col-lg-6 questions" data-aos="fade-up" data-aos-duration="1000">
