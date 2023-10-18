@@ -8,6 +8,7 @@ use App\Models\Language;
 use App\Models\SEO;
 use App\Models\SiteText;
 use App\Observers\AdminObserver;
+use App\Observers\CacheObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

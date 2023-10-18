@@ -72,9 +72,9 @@
             </div>
             <div class="col-md-4 right">
                 <ul>
-                    <li><a href="">Terms of Use</a></li>
-                    <li><a href="">Refund Policy</a></li>
-                    <li><a href="">Privacy Policy</a></li>
+                    @foreach ($pages as $page)
+                        <li><a href="{{ localeRoute('staticPage', $page->slug) }}">{{ $page->title }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
