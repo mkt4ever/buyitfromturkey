@@ -147,7 +147,7 @@
      
                                  </li>
                                  <li class="">
-                                     <a href="brands.php">Products and Services</a>
+                                     <a href="{{localeRoute('products.index')}}">{{text('Products_and_Services')}}</a>
      
                                  </li>
                              </ul>

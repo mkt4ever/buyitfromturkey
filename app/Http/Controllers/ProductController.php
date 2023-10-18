@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function index(Request $request){
 
-        $compact = Cache::rememberForever('blogs_index_'.app()->getLocale(), function(){
+        $compact = Cache::rememberForever('products_index_'.app()->getLocale(), function(){
 
             $products_tags = ProductTag::get()->translate(app()->getLocale()); 
             $products_sectores = ProductSector::get()->translate(app()->getLocale());
