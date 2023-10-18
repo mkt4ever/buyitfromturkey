@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Facades\Session;
 
 class Authenticate extends Middleware
 {
@@ -15,7 +16,11 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            $locale = request()->segment(1);
+            if(!$locale || !in_array($locale, config('voyager.multilingual.locales')))
+                $locale = "tr";
+            
+            return route($locale.'.login');
         }
     }
 }

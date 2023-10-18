@@ -58,9 +58,11 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::get('/'.transRoute('routeProducts', $langTranslations).'/{slug?}', [ProductController::class, 'index'])->name($lang->code.'.products.index');
             Route::get('/'.transRoute('routeProductDetails', $langTranslations).'/{slug}', [ProductController::class, 'show'])->name($lang->code.'.products.show');
 
-            Route::get('/'.transRoute('routeProfile', $langTranslations), [UserController::class, 'profile'])->name($lang->code.'.profile');
-            Route::post('/'.transRoute('routeProfile', $langTranslations).'/update', [UserController::class, 'updateProfile'])->name($lang->code.'.profile.update');
-            Route::post('/'.transRoute('routeProfile', $langTranslations).'/changePassword', [UserController::class, 'changePassword'])->name($lang->code.'.profile.changePassword');
+            Route::group(['middleware'=>['auth']], function () use($langTranslations, $lang){
+                Route::get('/'.transRoute('routeProfile', $langTranslations), [UserController::class, 'profile'])->name($lang->code.'.profile');
+                Route::post('/'.transRoute('routeProfile', $langTranslations).'/update', [UserController::class, 'updateProfile'])->name($lang->code.'.profile.update');
+                Route::post('/'.transRoute('routeProfile', $langTranslations).'/changePassword', [UserController::class, 'changePassword'])->name($lang->code.'.profile.changePassword');
+            });
 
             Route::get('/'.transRoute('routePage', $langTranslations).'/{slug}', [HomeController::class, 'staticPage'])->name($lang->code.'.staticPage');
 
