@@ -65,9 +65,9 @@
             </div>
             <div class="col-md-4 center">
             <ul>
-                <li><a href=""><img src="{{asset('img/icon/facebook.svg')}}" alt=""></a></li>
-                <li><a href=""><img src="{{asset('img/icon/youtube.svg')}}" alt=""></a></li>
-                <li><a href=""><img src="{{asset('img/icon/instagram.svg')}}" alt=""></a></li>
+                <li><a href="{{$contactUs->facebook}}"><img src="{{asset('img/icon/facebook.svg')}}" alt=""></a></li>
+                <li><a href="{{$contactUs->youtube}}"><img src="{{asset('img/icon/youtube.svg')}}" alt=""></a></li>
+                <li><a href="{{$contactUs->instagram}}"><img src="{{asset('img/icon/instagram.svg')}}" alt=""></a></li>
             </ul>
             </div>
             <div class="col-md-4 right">
@@ -89,6 +89,7 @@
 <script>
     let msg_done = "{{text('msg_done')}}", msg_sent = "{{text('msg_sent')}}", msg_error = "{{text('msg_error')}}";
 </script>
+
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('lib/select2-4.1.0-rc.0/dist/js/select2.min.js')}}"></script>
@@ -98,10 +99,9 @@
 <script src="{{asset('lib/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput-jquery.min.js')}}"></script>
 <script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput.min.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
-<script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/cookies.js')}}"></script>
 <script src="{{asset('lib/aos-master/dist/aos.js')}}"></script>
+
 
 <script>
     $(document).ready(function(){

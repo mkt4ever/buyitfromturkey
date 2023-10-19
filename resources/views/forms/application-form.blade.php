@@ -11,36 +11,35 @@
         <div class="container">
             <div class="main-title">
                 <h3>
-                GET AN 
-                    <span>OFFER</span>
+                    {!!text('application_form_page_title')!!}
                 </h3>
-                <p>Send us your questions and we'll answer them. All the answers you are looking for are here</p>
+                <p>{{text('application_form_page_brief')}}</p>
             </div>
             <div class="form-box">
                 <div class="row">
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Name</label>
                         <div class="inp-box">
 
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Last Name</label>
                         <div class="inp-box">
 
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Company Name</label>
                         <div class="inp-box">
 
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item inputicon">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Email</label>
                         <div class="inp-box">
                             <div class="icon">
                                 <img src="assets/img/icon/loginat.svg" alt="">
@@ -49,20 +48,20 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Sectors</label>
                         <div class="inp-box">
 
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Products & Services</label>
                         <div class="inp-box">
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 item inputicon">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Link</label>
                         <div class="inp-box">
                             <div class="icon">
                                 <img src="assets/img/icon/copy.svg" alt="">
@@ -71,13 +70,13 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Quanitity</label>
                         <div class="inp-box">
                             <input type="email" class="form-control" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Price & Terms</label>
                         <div class="inp-box">
                             <select class="nice-select">
                                 <option data-display="Select">Nothing</option>
@@ -89,7 +88,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Select Payment</label>
                         <div class="inp-box">
                             <select class="nice-select">
                                 <option data-display="Select">Nothing</option>
@@ -101,7 +100,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3 item">
-                        <label class="form-label">Enter your email</label>
+                        <label class="form-label">Which Country do you reside in?</label>
                         <div class="inp-box">
                             <select class="nice-select">
                                 <option data-display="Select">Nothing</option>
@@ -113,7 +112,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 item">
-                        <label class="form-label">Request</label> 
+                        <label class="form-label">Details</label> 
                         <textarea class="form-control" name="" id="" cols="30" rows="3" placeholder="Write a your Request"></textarea>
                     </div>
                     <div class="col-md-6 item">

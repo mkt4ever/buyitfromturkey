@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactOrderController;
 use Illuminate\Http\Request;
@@ -73,6 +74,9 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::get('/'.transRoute('routeWhyChoose', $langTranslations).'', [HomeController::class, 'WhyChoose'])->name($lang->code.'.WhyChoose');
             Route::get('/'.transRoute('routeWhoweare', $langTranslations).'', [HomeController::class, 'Whoweare'])->name($lang->code.'.Whoweare');
             Route::get('/'.transRoute('routeWhatweoffer', $langTranslations).'', [HomeController::class, 'Whatweoffer'])->name($lang->code.'.Whatweoffer');
+
+            Route::get('/'.transRoute('routeApplicationForm', $langTranslations).'', [ApplicationController::class, 'index'])->name($lang->code.'.application.index');
+            Route::post('/'.transRoute('routeApplicationForm', $langTranslations).'', [ApplicationController::class, 'store'])->name($lang->code.'.application.store');
 
         });
 
