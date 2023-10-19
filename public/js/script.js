@@ -199,3 +199,117 @@ $(window).on('load', function () {
 }) 
 
 // loader  --------------------
+
+
+$('#whoweare').owlCarousel({
+  dots: false,
+  loop: true,
+  margin: 10,
+  autoplay: true,
+  autoplayTimeout: 6000,
+  nav: true, // Show next and prev buttons
+  slideSpeed: 500,
+  autoplayHoverPause: true,
+  smartSpeed: 1000,
+  responsiveClass: true,
+  navText: [
+      "<i class='fa-solid fa-chevron-left'></i>",
+      "<i class='fa-solid fa-chevron-right'></i>"
+  ],
+  responsive: {
+      0: {
+          items: 2,
+      },
+      400: {
+          items: 2,
+      },
+      600: {
+          items: 2,
+      },
+      768: {
+          items: 2,
+      },
+      1000: {
+          items: 2,
+      },
+      1200: {
+          items: 3,
+      },
+      1400: {
+          items: 3,
+      }
+  }
+});
+$('.footer').owlCarousel({
+      dots: false,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 6000,
+      nav: false, // Show next and prev buttons
+      slideSpeed: 500,
+      autoplayHoverPause: true,
+      smartSpeed: 1000,
+      responsiveClass: true,
+      navText: [
+          "<i class='fa-solid fa-chevron-left'></i>",
+          "<i class='fa-solid fa-chevron-right'></i>"
+      ],
+      responsive: {
+          0: {
+              items: 1,
+          },
+          400: {
+              items: 1,
+          },
+          600: {
+              items: 1,
+          },
+          768: {
+              items: 2,
+          },
+          1000: {
+              items: 2,
+          },
+          1200: {
+              items: 3,
+          }
+      }
+  });
+  $('#blog').owlCarousel({
+    dots: false,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    nav: true, // Show next and prev buttons
+    slideSpeed: 500,
+    autoplayHoverPause: true,
+    smartSpeed: 1000,
+    responsiveClass: true,
+    navText: [
+        "<i class='fa-solid fa-chevron-left'></i>",
+        "<i class='fa-solid fa-chevron-right'></i>"
+    ],
+    responsive: {
+        0: {
+            items: 1,
+        },
+        400: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        768: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+        1200: {
+            items: 1,
+        }
+    }
+});
+

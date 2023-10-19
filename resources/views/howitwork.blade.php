@@ -6,7 +6,7 @@
 <!-- banner ==---------------------------- -->
 <section class="page-banner">
     <div class="content">
-        <div class="image" style="background-image: url('assets/img/banner1.png');">
+        <div class="image" style="background-image: url('{{Voyager::image($coverImage->image)}}');">
         </div>
     </div>
 </section>
@@ -19,23 +19,16 @@
             <div class="row">
                 <div class="col-5 col-md-5 col-lg-2 left">
                     <h5>
-                        HOW
-                        IT <span>WORKS?</span>
+                        {!! text('homepage_works_title') !!}
                     </h5>
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center">
                     <p>
-                        Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia
-                        orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.
-                        Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur
-                        elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec
-                        eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit
-                        amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam
-                        interdum.
+                        {!! text('how_it_works_brief') !!}
                     </p>
                 </div>
                 <div class="right">
-                    <img src="assets/img/png/dddd.png" alt="">
+                    <img src="{{asset('img/png/dddd.png')}}" alt="">
                 </div>
             </div>
         </div>
@@ -50,7 +43,7 @@
                             <div class="col-md-12 col-lg-8 item">
                                 <div class="row">
                                     <div class="image  col-7 col-md-5 col-lg-5">
-                                        <img src="assets/img/illustrations/works1.svg" alt="">
+                                        <img src="{{asset('img/illustrations/works1.svg')}}" alt="">
                                     </div>
                                     <div class="text col-md-12 col-lg-7">
                                         <div class="accordion" id="accordionExample">
@@ -60,9 +53,7 @@
                                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                                         aria-expanded="false" aria-controls="collapseTwo">
 
-                                                        Write to us to get a quote for the product or service you
-                                                        have
-                                                        chosen.
+                                                        {{text('How_it_works_P1_title')}}
 
                                                     </button>
                                                 </h2>
@@ -72,12 +63,7 @@
                                                         <div class="text-sec">
                                                             <p>
 
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
+                                                                {{text('How_it_works_P1_content')}}
 
                                                             </p>
                                                         </div>
@@ -93,7 +79,7 @@
                             <div class="col-md-12 col-lg-8 item">
                                 <div class="row">
                                     <div class="image  col-7 col-md-5 col-lg-5">
-                                        <img src="assets/img/illustrations/works2.svg" alt="">
+                                        <img src="{{asset('img/illustrations/works2.svg')}}" alt="">
                                     </div>
                                     <div class="text col-md-12 col-lg-7">
                                         <div class="accordion" id="accordionExample">
@@ -103,9 +89,7 @@
                                                         data-bs-toggle="collapse" data-bs-target="#collapse4"
                                                         aria-expanded="false" aria-controls="collapse4">
 
-                                                        Write to us to get a quote for the product or service you
-                                                        have
-                                                        chosen.
+                                                        {{text('How_it_works_P2_title')}}
 
                                                     </button>
                                                 </h2>
@@ -114,12 +98,7 @@
                                                     <div class="accordion-body">
                                                         <div class="text-sec">
                                                             <p>
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
+                                                                {{text('How_it_works_P2_content')}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -134,7 +113,7 @@
                             <div class="col-md-12 col-lg-8 item">
                                 <div class="row">
                                     <div class="image  col-7 col-md-5 col-lg-5">
-                                        <img src="assets/img/illustrations/works4.svg" alt="">
+                                        <img src="{{asset('img/illustrations/works4.svg')}}" alt="">
                                     </div>
                                     <div class="text col-md-12 col-lg-7">
                                         <div class="accordion" id="accordionExample">
@@ -144,9 +123,7 @@
                                                         data-bs-toggle="collapse" data-bs-target="#collapse1"
                                                         aria-expanded="false" aria-controls="collapse1">
 
-                                                        Write to us to get a quote for the product or service you
-                                                        have
-                                                        chosen.
+                                                        {{text('How_it_works_P4_title')}}
 
                                                     </button>
                                                 </h2>
@@ -155,12 +132,7 @@
                                                     <div class="accordion-body">
                                                         <div class="text-sec">
                                                             <p>
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
+                                                                {{text('How_it_works_P4_content')}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -175,7 +147,7 @@
                             <div class="col-md-12 col-lg-8 item">
                                 <div class="row">
                                     <div class="image  col-7 col-md-5 col-lg-5">
-                                        <img src="assets/img/illustrations/works3.svg" alt="">
+                                        <img src="{{asset('img/illustrations/works3.svg')}}" alt="">
                                     </div>
                                     <div class="text col-md-12 col-lg-7">
                                         <div class="accordion" id="accordionExample">
@@ -185,9 +157,7 @@
                                                         data-bs-toggle="collapse" data-bs-target="#collapse3"
                                                         aria-expanded="false" aria-controls="collapse3">
 
-                                                        Write to us to get a quote for the product or service you
-                                                        have
-                                                        chosen.
+                                                        {{text('How_it_works_P3_title')}}
 
                                                     </button>
                                                 </h2>
@@ -196,12 +166,7 @@
                                                     <div class="accordion-body">
                                                         <div class="text-sec">
                                                             <p>
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
-                                                                Determine Your Needs,
-                                                                Check out our products and services.
+                                                                {{text('How_it_works_P3_content')}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -226,13 +191,12 @@
             <div class="container-content col-md-9 col-lg-6">
                 <div class="pr-text">
                     <h5>
-                        You can reliably reach <strong>the product or service</strong> you want <strong>from all
-                            over Turkey</strong> through us.
+                        {!! text('how_it_works_footer_brief') !!}
                     </h5>
                 </div>
                 <div class="image">
                     <div class="content">
-                        <img src="assets/img/illustrations/world.svg" alt="">
+                        <img src="{{asset('img/illustrations/world.svg')}}" alt="">
                     </div>
                 </div>
             </div>

@@ -69,6 +69,11 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::get('/'.transRoute('routeContact', $langTranslations).'', [ContactOrderController::class, 'index'])->name($lang->code.'.contactUs.index');
             Route::post('/'.transRoute('routeContact', $langTranslations).'', [ContactOrderController::class, 'store'])->name($lang->code.'.contactUs.store');
 
+            Route::get('/'.transRoute('routeHowitwork', $langTranslations).'', [HomeController::class, 'howItWork'])->name($lang->code.'.howItWork');
+            Route::get('/'.transRoute('routeWhyChoose', $langTranslations).'', [HomeController::class, 'WhyChoose'])->name($lang->code.'.WhyChoose');
+            Route::get('/'.transRoute('routeWhoweare', $langTranslations).'', [HomeController::class, 'Whoweare'])->name($lang->code.'.Whoweare');
+            Route::get('/'.transRoute('routeWhatweoffer', $langTranslations).'', [HomeController::class, 'Whatweoffer'])->name($lang->code.'.Whatweoffer');
+
         });
 
     }

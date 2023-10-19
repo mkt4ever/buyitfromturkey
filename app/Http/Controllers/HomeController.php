@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advantage;
 use App\Models\Brand;
+use App\Models\CoverImage;
 use App\Models\FAQ;
+use App\Models\Founder;
 use App\Models\Meta;
 use App\Models\OurOffer;
 use Illuminate\Http\Request;
@@ -57,4 +60,84 @@ class HomeController extends Controller
 
         return view('staticPage')->with($compact);
     }
+
+    public function howItWork(Request $request){
+
+        $compact = Cache::rememberForever("howItWork_".app()->getLocale(), function() use ($request){
+
+            $coverImage = CoverImage::where('title', 'nasıl_çalışır')->first()->translate(app()->getLocale());
+
+            return [
+                "coverImage" => $coverImage,
+
+            ];
+        });
+
+        
+        return view('howitwork')->with($compact);
+
+    }
+
+
+    public function WhyChoose(Request $request){
+
+        $compact = Cache::rememberForever("WhyChoose_".app()->getLocale(), function() use ($request){
+
+            $coverImage = CoverImage::where('title', 'neden_seçtin')->first()->translate(app()->getLocale());
+            $advantages = Advantage::withTranslation(app()->getLocale())->where('active', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
+
+            return [
+                "coverImage" => $coverImage,
+                "advantages" => $advantages,
+
+            ];
+        });
+
+        
+        return view('whychoose')->with($compact);
+
+    }
+
+    public function whoWeAre(Request $request){
+
+        $compact = Cache::rememberForever("whoWeAre_".app()->getLocale(), function() use ($request){
+
+            $coverImage = CoverImage::where('title', 'Biz_Kimiz')->first()->translate(app()->getLocale());
+            $founders = Founder::withTranslation(app()->getLocale())->get()->translate(app()->getLocale());
+
+            return [
+                "coverImage" => $coverImage,
+                "founders"=> $founders,
+
+            ];
+        });
+
+        return view('whoweare')->with($compact);
+
+    }
+
+    public function whatWeOffer(Request $request){
+
+        $compact = Cache::rememberForever("whatWeOffer_".app()->getLocale(), function() use ($request){
+
+            $coverImage = CoverImage::where('title', 'nasıl_çalışır')->first()->translate(app()->getLocale());
+            $our_offers = OurOffer::withTranslation(app()->getLocale())->where('active', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
+
+            return [
+                "coverImage" => $coverImage,
+                "our_offers"=> $our_offers,
+
+            ];
+        });
+
+        return view('whatweoffer')->with($compact);
+
+    }
+
+
+
+
+
+    
+
 }

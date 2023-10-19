@@ -104,6 +104,7 @@
 
     <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 
      {{-- {!! $seo->header_bottom !!} --}}
      {!! htmlScriptTagJsApi(['lang' => app()->getLocale()]) !!}
@@ -242,12 +243,12 @@
              </div>
              <div class="links">
                  <ul>
-                     <li><a href="">Why Choose Turkey?</a></li>
-                     <li><a href="">How it works?</a></li>
-                     <li><a href="">What we offer?</a></li>
-                     <li><a href="">Who Are We?</a></li>
+                     <li><a href="">{{text('Why_Choose_Turkey_header')}}</a></li>
+                     <li><a href="{{ localeRoute('howItWork') }}">{{text('How_it_works_header')}}</a></li>
+                     <li><a href="">{{text('What_we_offer_header')}}</a></li>
+                     <li><a href="">{{text('Who_Are_We_header')}}</a></li>
                      <li><a href="{{ localeRoute('blogs.index') }}">{{text('Blog')}}</a></li>
-                     <li><a href="{{localeRoute('contactUs.index')}}">Contact</a></li>
+                     <li><a href="{{localeRoute('contactUs.index')}}">{{text('Contact')}}</a></li>
                  </ul>
              </div>
              <div class="action">

@@ -7,7 +7,7 @@
 <!-- banner ==---------------------------- -->
 <section class="page-banner">
     <div class="content">
-        <div class="image" style="background-image: url('assets/img/banner1.png');">
+        <div class="image" style="background-image: url('{{Voyager::image($coverImage->image)}}');">
         </div>
     </div>
 </section>
@@ -20,47 +20,25 @@
             <div class="row">
                 <div class="col-5 col-md-5 col-lg-2 left">
                     <h5>
-                        WHO
-                        ARE <span>WE?</span>
+                        {!! text('who_we_are_page_title') !!}
                     </h5>
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-8 center">
-                    <h3>About Us</h3>
+                    <h3>{{text('About_Us')}}</h3>
                     <p>
-                        <strong>Turkey</strong> is an attractive option for international buyers with competitive
-                        prices and high-quality products. Its strategic location and technological expertise are
-                        also appealing factors. Additionally, the strong agriculture sector is noteworthy.
-                        <br>
-                        <br>
-                        Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia
-                        orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.
-                        Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur
-                        elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec
-                        eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit
-                        amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam
-                        interdum.
-                        <br>
-                        <br>
-                        Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at
-                        mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,
-                        lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.
-                        <br>
-                        <br>
-                        Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in
-                        vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean
-                        vestibulum nisl in nisi dignissim, eu semper diam interdum.
+                        {!! text('About_us_content') !!}
                     </p>
                 </div>
                 <div class="right">
-                    <img src="assets/img/about.png" alt="">
+                    <img src="{{asset('img/about.png')}}" alt="">
                 </div>
             </div>
         </div>
 
         <div class="video-sec">
             <div class="content">
-                <a href="https://www.youtube.com/embed/5qZ2u7ZratM" data-fancybox="gallery">
-                    <img src="assets/img/video.png" alt="">
+                <a href="{{$contactUs->aboutUs_video}}" data-fancybox="gallery">
+                    <img src="{{Voyager::image($contactUs->aboutUs_video_image)}}" alt="">
                     <div class="icon">
                         <i class="fa-solid fa-play"></i>
                     </div>
@@ -74,26 +52,18 @@
 
             <div class="row">
                 <div class="col-md-12 col-lg-4 text">
-                    <h3>Our Mission</h3>
+                    <h3>{{text('Our_Mission')}}</h3>
                     <p>
-                        Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at
-                        mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,
-                        lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.
-                        Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
-                        elementum, pulvinar justo ac, elementum lacus.
+                        {{text('Our_mission_content1')}}
                     </p>
                 </div>
                 <div class="col-md-12 col-lg-4 image">
-                    <img src="assets/img/aboutus.png" alt="">
+                    <img src="{{asset('img/aboutus.png')}}" alt="">
                 </div>
                 <div class="col-md-12 col-lg-4 text">
-                    <h3>Our Mission</h3>
+                    <h3>{{text('Our_Mission')}}</h3>
                     <p>
-                        Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at
-                        mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,
-                        lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.
-                        Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
-                        elementum, pulvinar justo ac, elementum lacus.
+                        {{text('Our_mission_content2')}}
                     </p>
                 </div>
             </div>
@@ -106,42 +76,40 @@
     <div class="ourvalue-section">
         <div class="container">
             <div class="m-title">
-                <h3>Our Values</h3>
+                <h3>{{text('Our_Values')}}</h3>
             </div>
             <div class="boxes">
                 <div class="row">
                     <div class="item col-md-2">
                         <div class="icon">
-                            <img src="assets/img/icon/global.svg" alt="">
+                            <img src="{{asset('img/icon/global.svg')}}" alt="">
                         </div>
                     </div>
                     <div class="item col-md-2">
                         <div class="icon">
-                            <img src="assets/img/icon/satisfaction.svg" alt="">
+                            <img src="{{asset('img/icon/satisfaction.svg')}}" alt="">
                         </div>
                     </div>
                     <div class="item col-md-2">
                         <div class="icon">
-                            <img src="assets/img/icon/quality.svg" alt="">
+                            <img src="{{asset('img/icon/quality.svg')}}" alt="">
                         </div>
                     </div>
                     <div class="item col-md-2">
                         <div class="icon">
-                            <img src="assets/img/icon/security.svg" alt="">
+                            <img src="{{asset('img/icon/security.svg')}}" alt="">
                         </div>
                     </div>
                     <div class="item col-md-2">
                         <div class="icon">
-                            <img src="assets/img/icon/sustanability.svg" alt="">
+                            <img src="{{asset('img/icon/sustanability.svg')}}" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="discreption">
-                <h4>Global Experience</h4>
-                <p>Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,
-                    pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis
-                    sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.</p>
+                <h4>{{text('Global_Experience')}}</h4>
+                <p>{!! text('Global_Experience_content') !!}</p>
             </div>
         </div>
 
@@ -152,14 +120,13 @@
         <div class="container">
             <div class="main-title">
                 <h3>
-                    You can reliably reach <span>the product or service</span> you want <br> <em>from all over
-                        Turkey</em> through us.
+                    {!! text('team_section_brief') !!}
                 </h3>
                 <div class="line">
                     <span></span>
                 </div>
                 <div class="action">
-                    <a href="" class="btn btn-primary icon-btn">More info <div class="icon"><i
+                    <a href="" class="btn btn-primary icon-btn">{{text('More_info')}} <div class="icon"><i
                                 class="fa-solid fa-arrow-right"></i></div></a>
                 </div>
             </div>
@@ -167,99 +134,40 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-3 text">
                         <div class="text-content">
-                        <h3><span>OUR</span> FOUNDERS</h3>
+                        <h3>{!! text('our_founders_title') !!}</h3>
                         <p>
-                            Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor
-                            elementum, pulvinar justo ac, elementum lacus.
+                            {!!text('our_founders_content') !!}
                         </p>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-9 boxes">
                         <div class="owl-carousel owl-theme" id="whoweare">
-                            <div class="item">
-                                <div class="details">
-                                    <div class="content">
-                                        <a href="">
-                                            <div class="image">
-                                                <img src="assets/img/team1.png" alt="">
-                                            </div>
-                                            <div class="bottom-s">  
-                                                <div class="left">
-                                                <h4>İsim Soyisim</h4>
-                                                <span>Title</span>
+
+                            @foreach ($founders as $founder)
+                                <div class="item">
+                                    <div class="details">
+                                        <div class="content">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{Voyager::image($founder->image)}}" alt="">
                                                 </div>
-                                               
-                                                <div class="icon">
-                                                    <img src="assets/img/icon/email.png" alt="">
+                                                <div class="bottom-s">  
+                                                    <div class="left">
+                                                    <h4>{{$founder->name}}</h4>
+                                                    <span>{{$founder->title}}</span>
+                                                    </div>
+                                                
+                                                    <div class="icon">
+                                                        <img src="{{asset('img/icon/email.png')}}" alt="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="details">
-                                    <div class="content">
-                                        <a href="">
-                                            <div class="image">
-                                                <img src="assets/img/team1.png" alt="">
-                                            </div>
-                                            <div class="bottom-s">  
-                                                <div class="left">
-                                                <h4>İsim Soyisim</h4>
-                                                <span>Title</span>
-                                                </div>
-                                               
-                                                <div class="icon">
-                                                    <img src="assets/img/icon/email.png" alt="">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="details">
-                                    <div class="content">
-                                        <a href="">
-                                            <div class="image">
-                                                <img src="assets/img/team1.png" alt="">
-                                            </div>
-                                            <div class="bottom-s">  
-                                                <div class="left">
-                                                <h4>İsim Soyisim</h4>
-                                                <span>Title</span>
-                                                </div>
-                                               
-                                                <div class="icon">
-                                                    <img src="assets/img/icon/email.png" alt="">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="details">
-                                    <div class="content">
-                                        <a href="">
-                                            <div class="image">
-                                                <img src="assets/img/team1.png" alt="">
-                                            </div>
-                                            <div class="bottom-s">  
-                                                <div class="left">
-                                                <h4>İsim Soyisim</h4>
-                                                <span>Title</span>
-                                                </div>
-                                               
-                                                <div class="icon">
-                                                    <img src="assets/img/icon/email.png" alt="">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            
+
                         </div>
                     </div>
                 </div>
@@ -271,3 +179,6 @@
 
 
 @endsection
+
+
+
