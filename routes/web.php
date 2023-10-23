@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\SiteText;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OfferOrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoyagerHelperController;
 use App\Models\Language;
@@ -78,6 +80,10 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::get('/'.transRoute('routeApplicationForm', $langTranslations).'', [ApplicationController::class, 'index'])->name($lang->code.'.application.index');
             Route::post('/'.transRoute('routeApplicationForm', $langTranslations).'', [ApplicationController::class, 'store'])->name($lang->code.'.application.store');
 
+            Route::get('/'.transRoute('routeOfferForm', $langTranslations).'', [OfferOrderController::class, 'index'])->name($lang->code.'.offer.index');
+            Route::post('/'.transRoute('routeOfferForm', $langTranslations).'', [OfferOrderController::class, 'store'])->name($lang->code.'.offer.store');
+
+            Route::post('/'.transRoute('routeQuestionStore', $langTranslations).'', [QuestionController::class, 'store'])->name($lang->code.'.question.store');
         });
 
     }

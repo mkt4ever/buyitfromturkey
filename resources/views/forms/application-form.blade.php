@@ -26,13 +26,13 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="last_name">{{ text('Last Name') }}</label>
+                            <label class="form-label" for="last_name">{{ text('Last_Name') }}</label>
                             <div class="inp-box">
                                 <input type="text" class="form-control" id="last_name" name="last_name" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="company_name">{{ text('Company Name') }}</label>
+                            <label class="form-label" for="company_name">{{ text('Company_Name') }}</label>
                             <div class="inp-box">
                                 <input type="text" class="form-control" id="company_name" name="company_name" required>
                             </div>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="products_services">{{ text('Products & Services') }}</label>
+                            <label class="form-label" for="products_services">{{ text('Products_Services') }}</label>
                             <div class="inp-box">
                                 <input type="text" class="form-control" id="products_services" name="products_services" required>
                             </div>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="price_terms">{{ text('Price & Terms') }}</label>
+                            <label class="form-label" for="price_terms">{{ text('Price_Terms') }}</label>
                             <div class="inp-box">
                                 <select class="nice-select" id="price_terms" name="price_terms">
                                     <option data-display="{{ text('Select') }}">Nothing</option>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="payment_method">{{ text('Select Payment') }}</label>
+                            <label class="form-label" for="payment_method">{{ text('Select_Payment') }}</label>
                             <div class="inp-box">
                                 <select class="nice-select" id="payment_method" name="payment_method">
                                     <option data-display="{{ text('Select') }}">Nothing</option>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="country">{{ text('Which Country do you reside in?') }}</label>
+                            <label class="form-label" for="country">{{ text('Which_Country_do_you_reside_in?') }}</label>
                             <div class="inp-box">
                                 <select class="nice-select" id="country" name="country">
                                     <option data-display="{{ text('Select') }}">Nothing</option>

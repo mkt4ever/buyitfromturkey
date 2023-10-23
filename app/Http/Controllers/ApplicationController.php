@@ -32,6 +32,9 @@ class ApplicationController extends Controller
             'terms_2' => 'required|in:true,1',
         ]);
 
+
+        // dd($validatedData);
+
         $application = new ApplicationOrder ;
         $application->name = $validatedData['name'];
         $application->last_name = $validatedData['last_name'];
