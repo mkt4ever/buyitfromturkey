@@ -90,6 +90,9 @@
     let msg_done = "{{text('msg_done')}}", msg_sent = "{{text('msg_sent')}}", msg_error = "{{text('msg_error')}}";
 </script>
 
+<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('lib/select2-4.1.0-rc.0/dist/js/select2.min.js')}}"></script>
@@ -101,6 +104,8 @@
 <script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput.min.js')}}"></script>
 <script src="{{asset('js/cookies.js')}}"></script>
 <script src="{{asset('lib/aos-master/dist/aos.js')}}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 
 <script>
