@@ -50,7 +50,7 @@
                             <h3>{!! $slider->title !!}</h3>
                             <p>{{ $slider->brief }}</p>
                             <ul>
-                                <li><a href="{{ $slider->slug }}" class="btn btn-primary icon-btn">Get an Offer <div class="icon"><i
+                                <li><a href="{{ $slider->slug }}" class="btn btn-primary icon-btn">{{text('Get_an_Offer')}} <div class="icon"><i
                                                 class="fa-solid fa-arrow-right"></i></div></a></li>
                             </ul>
                         </div>

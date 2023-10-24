@@ -34,8 +34,6 @@ class OfferOrderController extends Controller
         ]);
 
 
-        // dd($validatedData);
-
         $offer = new OfferOrder ;
         $offer->name = $validatedData['name'];
         $offer->last_name = $validatedData['last_name'];

@@ -12,17 +12,17 @@
                         <div class="row">
 
                             <div class="item col-md-12 col-xl-6">
-                                <label for="" class="form-label">Name</label>
-                                <input name="first_name" type="text" required class="form-control" placeholder="Your name">
+                                <label for="" class="form-label">{{text('Name')}}</label>
+                                <input name="first_name" type="text" required class="form-control" placeholder="{{text('Your_name')}}">
                             </div>
                             <div class="item col-md-12 col-xl-6">
-                                <label for="" class="form-label">Email</label>
-                                <input name="email" type="email" required class="form-control" placeholder="@">
+                                <label for="" class="form-label">{{text('Email')}}</label>
+                                <input name="email" type="email" required class="form-control" placeholder="{{text('@')}}">
                             </div>
                             <div class="item col-md-12">
-                                <label for="" class="form-label">Your Question</label>
+                                <label for="" class="form-label">{{text('Your_Question')}}</label>
                                 <textarea name="message" required id="" cols="30" rows="3" class="form-control"
-                                    placeholder="Write a your question"></textarea>
+                                    placeholder="{{text('Write_a_your_question')}}"></textarea>
                             </div>
                         </div>
                         {!! htmlFormButton('Send <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-secondary icon-btn"]) !!}

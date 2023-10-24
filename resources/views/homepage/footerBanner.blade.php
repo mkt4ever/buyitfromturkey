@@ -12,10 +12,10 @@
                             <img src="{{asset('img/icon/shopper.svg')}}" alt="shopper">
                         </div>
                         <div class="text">
-                            <h1>What Would You Like To Get <br> From Türkiye ?</h1>
+                            <h1>{!! text('homepage_get_an_offer_title') !!}</h1>
                         </div>
                         <div class="action">
-                            <a href="" class="btn btn-primary icon-btn">Get an Offer <div class="icon"><i
+                            <a href="{{localeRoute('offer.store')}}" class="btn btn-primary icon-btn">{{text('Get_an_Offer')}} <div class="icon"><i
                                         class="fa-solid fa-arrow-right"></i></div></a>
                         </div>
                     </div>
@@ -26,10 +26,10 @@
                             <img src="{{asset('img/icon/seller.svg')}}" alt="seller">
                         </div>
                         <div class="text">
-                            <h1>What Would You Like To Get <br> From Türkiye ?</h1>
+                            <h1>{!! text('homepage_make_an_application_title') !!}</h1>
                         </div>
                         <div class="action">
-                            <a href="" class="btn btn-secondary icon-btn"><span>Make an application</span>
+                            <a href="{{localeRoute('application.store')}}" class="btn btn-secondary icon-btn"><span>{{text('Make_an_application')}}</span>
                                 <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>
                             </a>
                         </div>
