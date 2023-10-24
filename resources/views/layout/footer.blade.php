@@ -28,13 +28,16 @@
             </ul>
         </div>
         <div class="form-sec col-md-4">
-            <div class="inp-sec">
-                <label for="" class="form-label">Name</label>
-                <input type="text" class="form-control" placeholder="Your name">
-            </div>
-            <div class="action">
-            <a href="" class="btn btn-secondary icon-btn">Send <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></a>
-            </div>
+            <form class="d-flex" method="POST" action="{{localeRoute('bulten')}}">
+                @csrf
+                <div class="inp-sec">
+                    <label for="" class="form-label">{{text('Email')}}</label>
+                    <input name="email" type="email" class="form-control" placeholder="Your Email @">
+                </div>
+                <div class="action">
+                    <button type="submit" class="btn btn-secondary icon-btn">{{text('Send')}} <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></button>
+                </div>
+            </form>
         </div>
         </div>
         </div>

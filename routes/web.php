@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BultenController;
 use App\Http\Controllers\ContactOrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -84,6 +85,8 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
             Route::post('/'.transRoute('routeOfferForm', $langTranslations).'', [OfferOrderController::class, 'store'])->name($lang->code.'.offer.store');
 
             Route::post('/'.transRoute('routeQuestionStore', $langTranslations).'', [QuestionController::class, 'store'])->name($lang->code.'.question.store');
+
+            Route::post('/'.transRoute('routeBulten', $langTranslations).'', [BultenController::class, 'store'])->name($lang->code.'.bulten');
         });
 
     }

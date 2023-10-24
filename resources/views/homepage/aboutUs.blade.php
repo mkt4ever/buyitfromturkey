@@ -13,7 +13,7 @@
                             <p>
                                 {!! text('homepage_aboutUs_brief') !!}
                             </p>
-                            <a href="" class="btn btn-primary icon-btn">{{ text('More_info') }} <div class="icon"><i
+                            <a href="{{localeRoute('WhyChoose')}}" class="btn btn-primary icon-btn">{{ text('More_info') }} <div class="icon"><i
                                         class="fa-solid fa-arrow-right"></i></div></a>
                         </div>
                         <div class="sm-boxes col-md-12" data-aos="fade-up" data-aos-duration="1000">
