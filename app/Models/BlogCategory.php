@@ -12,4 +12,9 @@ class BlogCategory extends Model implements Auditable
     use HasFactory, \OwenIt\Auditing\Auditable, Translatable;
     protected $translatable= ['title','slug'];
     protected $with= ['translations'];
+
+    public function blogs(){
+
+        return $this->hasMany(Blog::class,'blog_category_id');
+    }
 }

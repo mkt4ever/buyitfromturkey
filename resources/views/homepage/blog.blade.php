@@ -13,12 +13,15 @@
                         </li>
 
                         @foreach ($blogCategories as $category)
-
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link " data-bs-toggle="tab" data-bs-target="#tab{{$category->id}}" type="button"
-                                    role="tab" aria-controls="tab{{$category->id}}" aria-selected="true">{{$category->title}}</button>
-                            </li>
-
+                            @if ($category->blogs_count != 0)
+                            
+                        
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link " data-bs-toggle="tab" data-bs-target="#tab{{$category->id}}" type="button"
+                                        role="tab" aria-controls="tab{{$category->id}}" aria-selected="true">{{$category->title}}</button>
+                                </li>
+                                
+                            @endif
                         @endforeach
                         
                     </ul>

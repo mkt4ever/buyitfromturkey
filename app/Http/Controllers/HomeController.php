@@ -27,7 +27,7 @@ class HomeController extends Controller
             $offers = OurOffer::withTranslation(app()->getLocale())->where('active', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
             $brands = Brand::withTranslation(app()->getLocale())->where('active', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
             $faqs = FAQ::withTranslation(app()->getLocale())->where('is_homepage', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
-            $blogCategories = BlogCategory::get()->translate(app()->getLocale());
+            $blogCategories = BlogCategory::withCount('blogs')->get()->translate(app()->getLocale());
             $blogs = Blog::withTranslation(app()->getLocale())->where('is_featured', 1)->orderByDesc('date')->get()->translate(app()->getLocale());
 
             return [
