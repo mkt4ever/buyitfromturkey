@@ -21,9 +21,9 @@
                             <div class="links">
                                 <ul>
                                     <li><a href="{{localeRoute('profile')}}">Account Settings</a></li>
-                                    <li><a href="">Billing Details</a></li>
-                                    <li><a href="">My Offers</a></li>
-                                    <li><a href="">My Applications</a></li>
+                                    <li><a href="{{localeRoute('billing')}}">Billing Details</a></li>
+                                    <li><a href="{{localeRoute('myOffers')}}">My Offers</a></li>
+                                    <li><a href="{{localeRoute('myApplications')}}">My Applications</a></li>
                                 </ul>
                             </div>
                             <div class="bottom">

@@ -50,4 +50,20 @@ class UserController extends Controller
         $user->save();
         return redirect()->back()->with('msg', 'done');
     }
+
+    public function billing(Request $request){
+
+        return view('users.billing');
+    }
+    public function myOffers(Request $request){
+
+        return view('users.myOffers');
+    }
+    public function myApplications(Request $request){
+
+        return view('users.myApplications') ;
+
+    }
+
+
 }
