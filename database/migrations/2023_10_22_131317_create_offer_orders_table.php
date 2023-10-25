@@ -15,6 +15,19 @@ class CreateOfferOrdersTable extends Migration
     {
         Schema::create('offer_orders', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('last_name')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('email');
+            $table->string('link')->nullable();
+            $table->integer('sectors')->nullable();
+            $table->integer('products_services')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('price_terms')->nullable();
+            $table->integer('payment_method')->nullable();
+            $table->integer('country')->nullable();
+            $table->longText('details')->nullable();
+            $table->longText('request')->nullable();
             $table->timestamps();
         });
     }

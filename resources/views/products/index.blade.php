@@ -33,58 +33,57 @@
                         </h3>
                     </div>
                     <div class="smsearch-box">
-                        <div class="action">
-                            <button>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </div>
-                        <div class="item">
-                            <div class="content">
-                                <select class="nice-select">
-                                    <option data-display="Sectors">{{text('Sectors')}}</option>
-
-                                    @foreach ($products_sectores as $sector)
-                                        <option value="{{$sector->id}}">{{$sector->title}}</option>
-                                    @endforeach
-                                    
-
-                                </select>
+                        <form class="d-flex" method="GET">
+                            <div class="action">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="content">
-                                <select class="nice-select">
-                                    <option data-display="Category">{{text('Category')}}</option>
-                                    @foreach ($products_category as $category)
-                                        <option value="{{$category->id}}">{{$category->title}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="item">
+                                <div class="content">
+                                    <select name="sectors" class="nice-select">
+                                        <option data-display="Sectors" {{ request('sectors') == 'All' ? 'selected' : '' }}>{{ text('All') }}</option>
+                                        @foreach ($products_sectores as $sector)
+                                            <option value="{{ $sector->slug }}" {{ request('sectors') == $sector->slug ? 'selected' : '' }}>{{ $sector->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="content">
-                                <select class="nice-select">
-                                    <option data-display="Tags">{{text('Tags')}}</option>
-                                    @foreach ($products_tags as $tag)
-                                        <option value="{{$tag->id}}">{{$tag->title}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="item">
+                                <div class="content">
+                                    <select name="category" class="nice-select">
+                                        <option data-display="Category" {{ request('category') == 'All' ? 'selected' : '' }}>{{ text('All') }}</option>
+                                        @foreach ($products_category as $category)
+                                            <option value="{{ $category->slug }}" {{ request('category') == $category->slug ? 'selected' : '' }}>{{ $category->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="search-inp">
-                            <input type="email" class="form-control" placeholder="{{text('Searching')}}">
-
-                        </div>
-                        <div class="action mobile">
-                            <button>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </div>
+                            <div class="item">
+                                <div class="content">
+                                    <select name="tag" class="nice-select">
+                                        <option data-display="Tags" {{ request('tag') == 'All' ? 'selected' : '' }}>{{ text('All') }}</option>
+                                        @foreach ($products_tags as $tag)
+                                            <option value="{{ $tag->slug }}" {{ request('tag') == $tag->slug ? 'selected' : '' }}>{{ $tag->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="search-inp">
+                                <input type="email" class="form-control" placeholder="{{ text('Searching') }}">
+                            </div>
+                            <div class="action mobile">
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
+                    
                     <div class="actions">
                         <ul>
-                            <li><a href="" class="direction">{{text('Clear_Selection')}}</a></li>
-                            <li><button>{{text('See_Results')}} (12) <i class="fa-solid fa-arrow-down"></i></button></li>
+                            <li><a href="{{localeRoute('products.index')}}" class="direction">{{text('Clear_Selection')}}</a></li>
+                            <li><button>{{text('See_Results')}} ({{$productCount}}) <i class="fa-solid fa-arrow-down"></i></button></li>
                         </ul>
                     </div>
                 </div>
@@ -95,7 +94,7 @@
                     </video> 
                     </div>
                     <div class="text">
-                        <h3>Buy it From Turkiye</h3>
+                        <h3>{{text('Buy_it_From_Turkiye')}}</h3>
                     </div>
                 </div>
                 {{-- <div class="bottom">
@@ -120,108 +119,63 @@
         <div class="products-boxes" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
                 <div class="title">
-                    <h3>Search Results</h3>
-                    <p>12 results are listed according to the information you selected.</p>
+                    <h3>{{text('Search_Results')}}</h3>
+                    <p>{{$productCount}} {{text('products_search_results')}}</p>
                     <div class="filter">
                         <ul>
-                            <li><a href="">Sectors: Real Estate <i class="fa-solid fa-xmark"></i></a></li>
-                            <li><a href="">Category: All <i class="fa-solid fa-xmark"></i></a></li>
+                            @if (!empty(request('sectors')) && request('sectors') !== 'All')
+                            <li>
+                                <a href="#">
+                                    Sectors: {{ request('sectors', 'All') }}
+                                    <i class="fa-solid fa-xmark" onclick="resetQuery('sectors')"></i>
+                                </a>
+                            </li>
+                            @endif
+                    
+                            @if (!empty(request('category')) && request('category') !== 'All')
+                            <li>
+                                <a href="#">
+                                    Category: {{ request('category', 'All') }}
+                                    <i class="fa-solid fa-xmark" onclick="resetQuery('category')"></i>
+                                </a>
+                            </li>
+                            @endif
+                    
+                            @if (!empty(request('tag')) && request('tag') !== 'All')
+                            <li>
+                                <a href="#">
+                                    Tag: {{ request('tag', 'All') }}
+                                    <i class="fa-solid fa-xmark" onclick="resetQuery('tag')"></i>
+                                </a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
                 <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
+                        @foreach ($products as $product)
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                <div class="details">
+                                    <div class="content">
+                                        <a href="">
+                                            <div class="image">
+                                                <img src="{{Voyager::image($product->thumbnail_image)}}" alt="">
                                             </div>
-                                        </div>
-                                    </a>
+                                            <div class="bottom-s">
+
+                                                <h4>{{$product->title}}</h4>
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
+                        @endforeach
+                        
 
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         
                     </div>
                 </div>
@@ -270,6 +224,15 @@
             }
         }
     });
+    </script>
+
+    <script>
+        function resetQuery(parameter) {
+            const currentUrl = window.location.href;
+            const updatedUrl = new URL(currentUrl);
+            updatedUrl.searchParams.set(parameter, 'All');
+            window.location.href = updatedUrl.toString();
+        }
     </script>
 
 @endsection
