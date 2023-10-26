@@ -149,7 +149,7 @@
      
                                  </li>
                                  <li class="">
-                                     <a href="{{localeRoute('products.index')}}">{{text('Products_and_Services')}}</a>
+                                     <a href="{{localeRoute('products.index')}}">{{text('Products_and_Services_header')}}</a>
      
                                  </li>
                              </ul>

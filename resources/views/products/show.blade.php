@@ -151,83 +151,32 @@
             <div class="container">
 
                 <div class="main-title" data-aos="fade-up" data-aos-duration="1000">
-                    <h3>Similar Items</h3>
+                    <h3>{{text('Similar_Items')}}</h3>
                 </div>
                 <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
+                        @foreach ($similars as $similar)
+                            <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                <div class="details">
+                                    <div class="content">
+                                        <a href="{{localeRoute('products.show',$similar->slug)}}">
+                                            <div class="image">
+                                                <img src="{{Voyager::image($similar->thumbnail_image)}}" alt="">
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
+                                            <div class="bottom-s">
 
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
+                                                <h4>{!!$similar->title!!}</h4>
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div> 
-                        </div>
-
-                        <div class="col-md-6 col-lg-4 col-xl-3 item">
-                            <div class="details">
-                                <div class="content">
-                                    <a href="">
-                                        <div class="image">
-                                            <img src="assets/img/blogtravel.png" alt="">
-                                        </div>
-                                        <div class="bottom-s">
-
-                                            <h4>Next Article</h4>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div> 
-                        </div>
+                                        </a>
+                                    </div>
+                                </div> 
+                            </div>
+                        @endforeach
+                        
+ 
                         
                     </div>
                 </div>

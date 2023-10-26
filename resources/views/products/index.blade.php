@@ -83,7 +83,7 @@
                     <div class="actions">
                         <ul>
                             <li><a href="{{localeRoute('products.index')}}" class="direction">{{text('Clear_Selection')}}</a></li>
-                            <li><button>{{text('See_Results')}} ({{$productCount}}) <i class="fa-solid fa-arrow-down"></i></button></li>
+                            <li><button id="scrollToProducts">{{ text('See_Results') }} ({{ $productCount }}) <i class="fa-solid fa-arrow-down"></i></button></li>
                         </ul>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
+                <div id="products" class="boxes" data-aos="fade-up" data-aos-duration="1000">
                     <div class="row">
                         @foreach ($products as $product)
                             <div class="col-md-6 col-lg-4 col-xl-3 item">
@@ -164,7 +164,7 @@
                                             </div>
                                             <div class="bottom-s">
 
-                                                <h4>{{$product->title}}</h4>
+                                                <h4>{!!$product->title!!}</h4>
                                                 <div class="icon">
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </div>
@@ -234,5 +234,16 @@
             window.location.href = updatedUrl.toString();
         }
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#scrollToProducts').click(function() {
+                $('html, body').animate({
+                    scrollTop: $('#products').offset().top
+                }, 1000); 
+            });
+        });
+    </script>
+
 
 @endsection

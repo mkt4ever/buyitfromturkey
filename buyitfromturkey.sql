@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 18 Eki 2023, 03:11:48
--- Sunucu sürümü: 10.4.22-MariaDB
--- PHP Sürümü: 7.4.27
+-- Host: 127.0.0.1
+-- Generation Time: Oct 26, 2023 at 08:48 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,77 +18,127 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `buyitfromturkey`
+-- Database: `buyitfromturkey`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
-  `settings` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT 'users/default.png',
+  `settings` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `avatar`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'admin', 'admin@smartwork.com.tr', '2023-10-17 20:15:40', '$2y$10$LW1XM91iMM6lNUwZdhVf3.amspnZwHqF/rNCdDXQJuj209Oc9l4TK', NULL, 'users/default.png', NULL, '2023-10-17 20:15:40', '2023-10-17 20:15:40');
+(2, 1, 'admin', 'admin@smartwork.com.tr', NULL, '$2y$10$h6Kou1XamQlSWRZw.LxL0.S38r487XxH.5NYz3IOFUWRWZurMbzuq', NULL, 'users/default.png', NULL, '2023-10-18 08:12:56', '2023-10-18 08:12:56');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `advantages`
+-- Table structure for table `advantages`
 --
 
 CREATE TABLE `advantages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` longtext DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `advantages`
+--
+
+INSERT INTO `advantages` (`id`, `title`, `content`, `active`, `order`, `created_at`, `updated_at`) VALUES
+(1, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(2, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(3, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(4, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(5, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(6, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(7, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(8, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(9, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(10, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(11, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31'),
+(12, 'In Sollicitudin Feugiat Enim Ut Ullamcorper', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', 1, NULL, '2023-10-19 05:32:00', '2023-10-19 05:32:31');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `audits`
+-- Table structure for table `application_orders`
 --
 
-CREATE TABLE `audits` (
+CREATE TABLE `application_orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `event` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `auditable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `auditable_id` bigint(20) UNSIGNED NOT NULL,
-  `old_values` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `new_values` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` varchar(1023) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tags` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `sectors` int(11) DEFAULT NULL,
+  `products_services` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price_terms` int(11) DEFAULT NULL,
+  `payment_method` int(11) DEFAULT NULL,
+  `country` int(11) DEFAULT NULL,
+  `details` longtext DEFAULT NULL,
+  `request` longtext DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `audits`
+-- Dumping data for table `application_orders`
+--
+
+INSERT INTO `application_orders` (`id`, `name`, `last_name`, `company_name`, `email`, `link`, `sectors`, `products_services`, `quantity`, `price_terms`, `payment_method`, `country`, `details`, `request`, `created_at`, `updated_at`) VALUES
+(1, 'Nicholas Jacobson', 'Moran', 'Ryan and Hartman Inc', 'wygep@mailinator.com', 'Et eligendi do illum', 1, 1, 695, 1, 1, 1, 'Occaecat ad sapiente', 'Error ducimus assum', '2023-10-23 06:03:51', '2023-10-23 06:03:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `audits`
+--
+
+CREATE TABLE `audits` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_type` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `event` varchar(255) NOT NULL,
+  `auditable_type` varchar(255) NOT NULL,
+  `auditable_id` bigint(20) UNSIGNED NOT NULL,
+  `old_values` text DEFAULT NULL,
+  `new_values` text DEFAULT NULL,
+  `url` text DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` varchar(1023) DEFAULT NULL,
+  `tags` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `audits`
 --
 
 INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `auditable_id`, `old_values`, `new_values`, `url`, `ip_address`, `user_agent`, `tags`, `created_at`, `updated_at`) VALUES
@@ -162,26 +212,142 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (68, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 33, '[]', '{\"content\":\"sayfa\",\"key\":\"routePage\",\"place\":\"sabit sayfa route\",\"id\":33}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:26:52', '2023-10-18 00:26:52'),
 (69, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 34, '[]', '{\"content\":\"iletisim\",\"key\":\"routeContact\",\"place\":\"iletisim sayfasi route\",\"id\":34}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:29:22', '2023-10-18 00:29:22'),
 (70, 'App\\Models\\User', 3, 'created', 'App\\Models\\SiteText', 35, '[]', '{\"content\":\"\\u0130leti\\u015fim Formunuz Ba\\u015far\\u0131yla G\\u00f6nderilmi\\u015ftir!\",\"key\":\"Contact_Order_submitted\",\"place\":\"\\u0130leti\\u015fim Sayfas\\u0131\",\"id\":35}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:39:22', '2023-10-18 00:39:22'),
-(71, 'App\\Models\\User', 3, 'updated', 'App\\Models\\ContactUs', 1, '{\"email\":\"belisipos@mailinator.com\",\"phone1\":\"+1 (203) 292-4061\",\"phone2\":\"+1 (593) 826-4718\",\"whatsapp\":\"Ea iure aut voluptat\",\"address\":\"Dolores a qui occaec\",\"facebook\":\"Iure eligendi simili\",\"youtube\":\"Ex corrupti asperna\",\"twitter\":\"Fugiat aut adipisci\",\"instagram\":\"Reprehenderit eu in\"}', '{\"email\":\"info@buyitfromturkiye.com\",\"phone1\":\"+90 500 000 00 00\",\"phone2\":\"+90 500 000 00 00\",\"whatsapp\":\"+90 500 000 00 00\",\"address\":\"Istanbul \\/ Turkiye\",\"facebook\":\"#\",\"youtube\":\"#\",\"twitter\":\"#\",\"instagram\":\"#\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:41:52', '2023-10-18 00:41:52');
+(71, 'App\\Models\\User', 3, 'updated', 'App\\Models\\ContactUs', 1, '{\"email\":\"belisipos@mailinator.com\",\"phone1\":\"+1 (203) 292-4061\",\"phone2\":\"+1 (593) 826-4718\",\"whatsapp\":\"Ea iure aut voluptat\",\"address\":\"Dolores a qui occaec\",\"facebook\":\"Iure eligendi simili\",\"youtube\":\"Ex corrupti asperna\",\"twitter\":\"Fugiat aut adipisci\",\"instagram\":\"Reprehenderit eu in\"}', '{\"email\":\"info@buyitfromturkiye.com\",\"phone1\":\"+90 500 000 00 00\",\"phone2\":\"+90 500 000 00 00\",\"whatsapp\":\"+90 500 000 00 00\",\"address\":\"Istanbul \\/ Turkiye\",\"facebook\":\"#\",\"youtube\":\"#\",\"twitter\":\"#\",\"instagram\":\"#\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 00:41:52', '2023-10-18 00:41:52'),
+(72, NULL, NULL, 'created', 'App\\Models\\SiteText', 36, '[]', '{\"content\":\"\\u00fcr\\u00fcnler\",\"key\":\"routeProducts\",\"place\":null,\"id\":36}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 08:16:56', '2023-10-18 08:16:56'),
+(73, NULL, NULL, 'created', 'App\\Models\\SiteText', 37, '[]', '{\"content\":\"\\u00dcr\\u00fcn_Detaylar\\u0131\",\"key\":\"routeProductDetails\",\"place\":null,\"id\":37}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 08:18:47', '2023-10-18 08:18:47'),
+(74, NULL, NULL, 'created', 'App\\Models\\SiteText', 38, '[]', '{\"content\":\"how_it_work\",\"key\":\"routeHowitwork\",\"place\":null,\"id\":38}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-18 19:57:49', '2023-10-18 19:57:49'),
+(75, NULL, NULL, 'created', 'App\\Models\\SiteText', 39, '[]', '{\"content\":\"Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.\",\"key\":\"how_it_works_brief\",\"place\":null,\"id\":39}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:13:03', '2023-10-19 00:13:03'),
+(76, NULL, NULL, 'created', 'App\\Models\\SiteText', 40, '[]', '{\"content\":\"You can reliably reach <strong>the product or service<\\/strong> you want <strong>from all                             over Turkey<\\/strong> through us.\",\"key\":\"how_it_works_footer_brief\",\"place\":null,\"id\":40}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:23:44', '2023-10-19 00:23:44'),
+(77, NULL, NULL, 'created', 'App\\Models\\SiteText', 41, '[]', '{\"content\":\"How it works?\",\"key\":\"How_it_works_header\",\"place\":null,\"id\":41}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:29:59', '2023-10-19 00:29:59'),
+(78, NULL, NULL, 'created', 'App\\Models\\SiteText', 42, '[]', '{\"content\":\"Contact\",\"key\":\"Contact\",\"place\":null,\"id\":42}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:30:10', '2023-10-19 00:30:10'),
+(79, NULL, NULL, 'created', 'App\\Models\\SiteText', 43, '[]', '{\"content\":\"What we offer?\",\"key\":\"What_we_offer_header\",\"place\":null,\"id\":43}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:31:38', '2023-10-19 00:31:38'),
+(80, NULL, NULL, 'created', 'App\\Models\\SiteText', 44, '[]', '{\"content\":\"Who Are We?\",\"key\":\"Who_Are_We_header\",\"place\":null,\"id\":44}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 00:31:59', '2023-10-19 00:31:59'),
+(81, NULL, NULL, 'created', 'App\\Models\\SiteText', 45, '[]', '{\"content\":\"Why Choose Turkey?\",\"key\":\"Why_Choose_Turkey_header\",\"place\":null,\"id\":45}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 01:15:19', '2023-10-19 01:15:19'),
+(82, NULL, NULL, 'created', 'App\\Models\\CoverImage', 1, '[]', '{\"title\":\"nas\\u0131l_\\u00e7al\\u0131\\u015f\\u0131r\",\"image\":\"cover-images\\\\October2023\\\\mUHlhYBI6SNf6ve380GH.png\",\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/cover-images', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 01:44:24', '2023-10-19 01:44:24'),
+(83, NULL, NULL, 'updated', 'App\\Models\\SiteText', 40, '[]', '[]', 'http://buyitfromturkey.localhost/buyitadmin/site-texts/40', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 01:59:28', '2023-10-19 01:59:28'),
+(84, NULL, NULL, 'created', 'App\\Models\\SiteText', 46, '[]', '{\"content\":\"why_choose\",\"key\":\"routeWhyChoose\",\"place\":null,\"id\":46}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:08:45', '2023-10-19 05:08:45'),
+(85, NULL, NULL, 'created', 'App\\Models\\SiteText', 47, '[]', '{\"content\":\"who_we_are\",\"key\":\"routeWhoweare\",\"place\":null,\"id\":47}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:09:08', '2023-10-19 05:09:08'),
+(86, NULL, NULL, 'created', 'App\\Models\\SiteText', 48, '[]', '{\"content\":\"What_we_offer\",\"key\":\"routeWhatweoffer\",\"place\":null,\"id\":48}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:09:29', '2023-10-19 05:09:29'),
+(87, NULL, NULL, 'created', 'App\\Models\\CoverImage', 2, '[]', '{\"title\":\"neden_se\\u00e7tin\",\"image\":\"cover-images\\\\October2023\\\\Pn42hmZlukcaeYES7fAW.png\",\"id\":2}', 'http://buyitfromturkey.localhost/buyitadmin/cover-images', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:13:23', '2023-10-19 05:13:23'),
+(88, NULL, NULL, 'created', 'App\\Models\\CoverImage', 3, '[]', '{\"title\":\"Biz_Kimiz\",\"image\":\"cover-images\\\\October2023\\\\yQdQDJ12yrtq8ETZLKPx.png\",\"id\":3}', 'http://buyitfromturkey.localhost/buyitadmin/cover-images', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:13:55', '2023-10-19 05:13:55'),
+(89, NULL, NULL, 'created', 'App\\Models\\CoverImage', 4, '[]', '{\"title\":\"teklifimiz\",\"image\":\"cover-images\\\\October2023\\\\EUHixm8n6JJNml5YGgLj.png\",\"id\":4}', 'http://buyitfromturkey.localhost/buyitadmin/cover-images', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:14:19', '2023-10-19 05:14:19'),
+(90, NULL, NULL, 'created', 'App\\Models\\SiteText', 49, '[]', '{\"content\":\"WHY CHOOSE <span>TURKEY?<\\/span>\",\"key\":\"why_choose_turkey_page_title\",\"place\":null,\"id\":49}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:23:38', '2023-10-19 05:23:38'),
+(91, NULL, NULL, 'created', 'App\\Models\\SiteText', 50, '[]', '{\"content\":\"<strong>Turkey<\\/strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.\",\"key\":\"why_choose_turkey_page_content\",\"place\":null,\"id\":50}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:28:04', '2023-10-19 05:28:04'),
+(92, NULL, NULL, 'created', 'App\\Models\\SiteText', 51, '[]', '{\"content\":\"Advantages\",\"key\":\"Advantages\",\"place\":null,\"id\":51}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:29:30', '2023-10-19 05:29:30');
+INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `auditable_id`, `old_values`, `new_values`, `url`, `ip_address`, `user_agent`, `tags`, `created_at`, `updated_at`) VALUES
+(93, NULL, NULL, 'created', 'App\\Models\\Advantage', 1, '[]', '{\"title\":\"\",\"content\":\"\",\"active\":1,\"order\":null,\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/advantages', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:32:10', '2023-10-19 05:32:10'),
+(94, NULL, NULL, 'updated', 'App\\Models\\Advantage', 1, '{\"title\":\"\",\"content\":\"\"}', '{\"title\":\"In Sollicitudin Feugiat Enim Ut Ullamcorper\",\"content\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu\"}', 'http://buyitfromturkey.localhost/buyitadmin/advantages/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(95, NULL, NULL, 'created', 'App\\Models\\SiteText', 52, '[]', '{\"content\":\"WHO ARE <span>WE?<\\/span>\",\"key\":\"who_we_are_page_title\",\"place\":null,\"id\":52}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:38:18', '2023-10-19 05:38:18'),
+(96, NULL, NULL, 'created', 'App\\Models\\SiteText', 53, '[]', '{\"content\":\"About Us\",\"key\":\"About_Us\",\"place\":null,\"id\":53}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:39:51', '2023-10-19 05:39:51'),
+(97, NULL, NULL, 'updated', 'App\\Models\\SiteText', 53, '[]', '[]', 'http://buyitfromturkey.localhost/buyitadmin/site-texts/53', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:39:57', '2023-10-19 05:39:57'),
+(98, NULL, NULL, 'created', 'App\\Models\\SiteText', 54, '[]', '{\"content\":\"<strong>Turkey<\\/strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.\",\"key\":\"About_us_content\",\"place\":null,\"id\":54}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:40:39', '2023-10-19 05:40:39'),
+(99, NULL, NULL, 'updated', 'App\\Models\\ContactUs', 1, '{\"aboutUs_video\":null}', '{\"aboutUs_video\":\"https:\\/\\/www.youtube.com\\/embed\\/5qZ2u7ZratM\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(100, NULL, NULL, 'updated', 'App\\Models\\ContactUs', 1, '{\"aboutUs_video\":null,\"aboutUs_video_image\":null}', '{\"aboutUs_video\":\"https:\\/\\/www.youtube.com\\/embed\\/5qZ2u7ZratM\",\"aboutUs_video_image\":\"contact-us\\\\October2023\\\\B6UopCfMq6sr8JRLM1gL.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:50:42', '2023-10-19 05:50:42'),
+(101, NULL, NULL, 'created', 'App\\Models\\SiteText', 55, '[]', '{\"content\":\"Our Mission\",\"key\":\"Our_Mission\",\"place\":null,\"id\":55}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:52:42', '2023-10-19 05:52:42'),
+(102, NULL, NULL, 'created', 'App\\Models\\SiteText', 56, '[]', '{\"content\":\"Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.\",\"key\":\"Our_mission_content1\",\"place\":null,\"id\":56}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:53:30', '2023-10-19 05:53:30'),
+(103, NULL, NULL, 'created', 'App\\Models\\SiteText', 57, '[]', '{\"key\":\"Our_mission_content2\",\"content\":\"\",\"place\":null,\"id\":57}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:53:41', '2023-10-19 05:53:41'),
+(104, NULL, NULL, 'created', 'App\\Models\\SiteText', 58, '[]', '{\"content\":\"Our Values\",\"key\":\"Our_Values\",\"place\":null,\"id\":58}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:54:42', '2023-10-19 05:54:42'),
+(105, NULL, NULL, 'created', 'App\\Models\\SiteText', 59, '[]', '{\"content\":\"Global Experience\",\"key\":\"Global_Experience\",\"place\":null,\"id\":59}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:56:03', '2023-10-19 05:56:03'),
+(106, NULL, NULL, 'updated', 'App\\Models\\SiteText', 57, '{\"content\":\"\"}', '{\"content\":\"Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.\"}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts/57', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:56:13', '2023-10-19 05:56:13'),
+(107, NULL, NULL, 'created', 'App\\Models\\SiteText', 60, '[]', '{\"content\":\"Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,                     pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis                     sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.\",\"key\":\"Global_Experience_content\",\"place\":null,\"id\":60}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 05:57:06', '2023-10-19 05:57:06'),
+(108, NULL, NULL, 'created', 'App\\Models\\SiteText', 61, '[]', '{\"content\":\"You can reliably reach <span>the product or service<\\/span> you want <br> <em>from all over                         Turkey<\\/em> through us.\",\"key\":\"team_section_brief\",\"place\":null,\"id\":61}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:00:49', '2023-10-19 06:00:49'),
+(109, NULL, NULL, 'created', 'App\\Models\\SiteText', 62, '[]', '{\"content\":\"More info\",\"key\":\"More_info\",\"place\":null,\"id\":62}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:01:29', '2023-10-19 06:01:29'),
+(110, NULL, NULL, 'created', 'App\\Models\\SiteText', 63, '[]', '{\"content\":\"<span>OUR<\\/span> FOUNDERS\",\"key\":\"our_founders_title\",\"place\":null,\"id\":63}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:02:39', '2023-10-19 06:02:39'),
+(111, NULL, NULL, 'created', 'App\\Models\\SiteText', 64, '[]', '{\"content\":\"Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                             elementum, pulvinar justo ac, elementum lacus.\",\"key\":\"our_founders_content\",\"place\":null,\"id\":64}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:02:55', '2023-10-19 06:02:55'),
+(112, NULL, NULL, 'created', 'App\\Models\\Founder', 1, '[]', '{\"name\":\"\\u0130sim Soyisim\",\"title\":\"CTO\",\"image\":\"founders\\\\October2023\\\\xE1btkMRwAcp8h1BBHTT.png\",\"email\":\"kharzom.mohammed@gmail.com\",\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/founders', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:10:48', '2023-10-19 06:10:48'),
+(113, NULL, NULL, 'created', 'App\\Models\\SiteText', 65, '[]', '{\"content\":\"Tags\",\"key\":\"Tags\",\"place\":null,\"id\":65}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:32:20', '2023-10-19 06:32:20'),
+(114, NULL, NULL, 'created', 'App\\Models\\SiteText', 66, '[]', '{\"content\":\"What We <span>Offer?<\\/span>\",\"key\":\"what_we_offer_page_title\",\"place\":null,\"id\":66}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:39:43', '2023-10-19 06:39:43'),
+(115, NULL, NULL, 'created', 'App\\Models\\SiteText', 67, '[]', '{\"content\":\"<strong>Turkey<\\/strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.\",\"key\":\"what_we_offer_page_content\",\"place\":null,\"id\":67}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:40:15', '2023-10-19 06:40:15'),
+(116, NULL, NULL, 'updated', 'App\\Models\\OurOffer', 2, '[]', '[]', 'http://buyitfromturkey.localhost/buyitadmin/our-offers/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:44:54', '2023-10-19 06:44:54'),
+(117, NULL, NULL, 'updated', 'App\\Models\\OurOffer', 1, '[]', '[]', 'http://buyitfromturkey.localhost/buyitadmin/our-offers/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:44:59', '2023-10-19 06:44:59'),
+(118, NULL, NULL, 'updated', 'App\\Models\\OurOffer', 2, '{\"content\":\"\"}', '{\"content\":\"Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp\"}', 'http://buyitfromturkey.localhost/buyitadmin/our-offers/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(119, NULL, NULL, 'updated', 'App\\Models\\OurOffer', 1, '{\"content\":\"\"}', '{\"content\":\"Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp\"}', 'http://buyitfromturkey.localhost/buyitadmin/our-offers/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(120, NULL, NULL, 'created', 'App\\Models\\SiteText', 68, '[]', '{\"content\":\"product and services\",\"key\":\"product_and_services\",\"place\":null,\"id\":68}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 07:18:36', '2023-10-19 07:18:36'),
+(121, NULL, NULL, 'updated', 'App\\Models\\ContactUs', 1, '{\"facebook\":\"#\",\"youtube\":\"#\",\"twitter\":\"#\",\"instagram\":\"#\"}', '{\"facebook\":\"Facebook\",\"youtube\":\"Youtube\",\"twitter\":\"Twitter\",\"instagram\":\"Instagram\"}', 'http://buyitfromturkey.localhost/buyitadmin/contact-us/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 07:25:06', '2023-10-19 07:25:06'),
+(122, NULL, NULL, 'created', 'App\\Models\\SiteText', 69, '[]', '{\"content\":\"Appl\\u0131cat\\u0131on <span>for sell<\\/span>\",\"key\":\"application_form_page_title\",\"place\":null,\"id\":69}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 08:15:58', '2023-10-19 08:15:58'),
+(123, NULL, NULL, 'created', 'App\\Models\\SiteText', 70, '[]', '{\"content\":\"Send us your questions and we\'ll answer them. All the answers you are looking for are here\",\"key\":\"application_form_page_brief\",\"place\":null,\"id\":70}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 08:16:30', '2023-10-19 08:16:30'),
+(124, NULL, NULL, 'created', 'App\\Models\\SiteText', 71, '[]', '{\"content\":\"application\",\"key\":\"routeApplicationForm\",\"place\":null,\"id\":71}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-19 08:56:22', '2023-10-19 08:56:22'),
+(125, NULL, NULL, 'created', 'App\\Models\\SiteText', 72, '[]', '{\"content\":\"get_an_offer\",\"key\":\"routeOfferForm\",\"place\":null,\"id\":72}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-23 07:05:39', '2023-10-23 07:05:39'),
+(126, NULL, NULL, 'created', 'App\\Models\\SiteText', 73, '[]', '{\"content\":\"What Would You Like To Get <br> From T\\u00fcrkiye ?\",\"key\":\"homepage_get_an_offer_title\",\"place\":null,\"id\":73}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 05:49:54', '2023-10-24 05:49:54'),
+(127, NULL, NULL, 'created', 'App\\Models\\SiteText', 74, '[]', '{\"content\":\"What Would You Like To Get <br> From T\\u00fcrkiye ?\",\"key\":\"homepage_make_an_application_title\",\"place\":null,\"id\":74}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 05:50:46', '2023-10-24 05:50:46'),
+(128, NULL, NULL, 'deleted', 'App\\Models\\Blog', 9, '{\"id\":9,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/9', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:06', '2023-10-24 08:56:06'),
+(129, NULL, NULL, 'deleted', 'App\\Models\\Blog', 4, '{\"id\":4,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:11', '2023-10-24 08:56:11'),
+(130, NULL, NULL, 'deleted', 'App\\Models\\Blog', 3, '{\"id\":3,\"author_id\":1,\"blog_category_id\":3,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"1985-07-10 00:00:00\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/3', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:16', '2023-10-24 08:56:16'),
+(131, NULL, NULL, 'deleted', 'App\\Models\\Blog', 6, '{\"id\":6,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/6', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:20', '2023-10-24 08:56:20'),
+(132, NULL, NULL, 'deleted', 'App\\Models\\Blog', 11, '{\"id\":11,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/11', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:26', '2023-10-24 08:56:26'),
+(133, NULL, NULL, 'deleted', 'App\\Models\\Blog', 7, '{\"id\":7,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/7', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:30', '2023-10-24 08:56:30'),
+(134, NULL, NULL, 'deleted', 'App\\Models\\Blog', 5, '{\"id\":5,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/5', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:35', '2023-10-24 08:56:35'),
+(135, NULL, NULL, 'deleted', 'App\\Models\\Blog', 12, '{\"id\":12,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/12', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:39', '2023-10-24 08:56:39');
+INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `auditable_id`, `old_values`, `new_values`, `url`, `ip_address`, `user_agent`, `tags`, `created_at`, `updated_at`) VALUES
+(136, NULL, NULL, 'deleted', 'App\\Models\\Blog', 10, '{\"id\":10,\"author_id\":1,\"blog_category_id\":2,\"title\":\"Why Do People Travel to Other Countries for                                                                 Medical Services?\",\"slug\":\"Why_Do\",\"brief\":\"Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.\",\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\",\"cover_image\":\"blogs\\\\October2023\\\\iq60XHnFwHJVSlHT0CMY.png\",\"content\":\"<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.<\\/p>\",\"is_featured\":1,\"meta_title\":\"Tempore doloremque \",\"meta_description\":\"Eum laborum Eligend\",\"meta_keyword\":\"Voluptatibus anim be\",\"meta_canonical\":\"Fugiat delectus fug\",\"meta_ogimage\":\"Quo earum magnam ea \"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/blogs/10', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:56:54', '2023-10-24 08:56:54'),
+(137, NULL, NULL, 'updated', 'App\\Models\\Blog', 8, '{\"blog_category_id\":2,\"date\":\"10-Jul-1985\"}', '{\"blog_category_id\":\"3\",\"date\":\"1985-07-09T21:00:00.000000Z\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/8', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:57:05', '2023-10-24 08:57:05'),
+(138, NULL, NULL, 'updated', 'App\\Models\\Blog', 8, '{\"date\":\"1985-07-10 00:00:00\"}', '{\"date\":\"1985-07-09T21:00:00.000000Z\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/8', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(139, NULL, NULL, 'updated', 'App\\Models\\Blog', 8, '{\"blog_category_id\":3,\"date\":\"1985-07-10 00:00:00\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\"}', '{\"blog_category_id\":\"4\",\"date\":\"1985-07-09T21:00:00.000000Z\",\"thumbnail_image\":\"blogs\\\\October2023\\\\c7O1ORxhfRr2YyhPUhAw.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/8', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 08:58:40', '2023-10-24 08:58:40'),
+(140, NULL, NULL, 'updated', 'App\\Models\\Blog', 1, '{\"date\":\"10-Jul-1985\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\"}', '{\"date\":\"1985-07-09T21:00:00.000000Z\",\"thumbnail_image\":\"blogs\\\\October2023\\\\0grfRD9yyxdhJve5Hqp0.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 09:03:27', '2023-10-24 09:03:27'),
+(141, NULL, NULL, 'updated', 'App\\Models\\Blog', 4, '{\"date\":\"1985-07-10 00:00:00\",\"thumbnail_image\":\"blogs\\\\October2023\\\\ye2wmXyjXMaj4mis3rSq.png\"}', '{\"date\":\"1985-07-09T21:00:00.000000Z\",\"thumbnail_image\":\"blogs\\\\October2023\\\\lawEUPYqe4a6iA2gYhRk.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(142, NULL, NULL, 'updated', 'App\\Models\\Blog', 1, '{\"date\":\"1985-07-10 00:00:00\"}', '{\"date\":\"1985-07-09T21:00:00.000000Z\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(143, NULL, NULL, 'updated', 'App\\Models\\Blog', 1, '{\"blog_category_id\":2,\"date\":\"1985-07-10 00:00:00\"}', '{\"blog_category_id\":\"4\",\"date\":\"1985-07-09T21:00:00.000000Z\"}', 'http://buyitfromturkey.localhost/buyitadmin/blogs/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 09:05:16', '2023-10-24 09:05:16'),
+(144, NULL, NULL, 'created', 'App\\Models\\SiteText', 75, '[]', '{\"content\":\"bulten\",\"key\":\"routeBulten\",\"place\":null,\"id\":75}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-24 09:57:02', '2023-10-24 09:57:02'),
+(145, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 76, '[]', '{\"content\":\"billing_details\",\"key\":\"routeBilling\",\"place\":null,\"id\":76}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 01:43:41', '2023-10-25 01:43:41'),
+(146, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 77, '[]', '{\"content\":\"myOffers\",\"key\":\"routeMyOffers\",\"place\":null,\"id\":77}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 01:50:03', '2023-10-25 01:50:03'),
+(147, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 78, '[]', '{\"content\":\"MyApplications\",\"key\":\"routeMyApplications\",\"place\":null,\"id\":78}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 01:51:00', '2023-10-25 01:51:00'),
+(148, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductTag', 1, '[]', '{\"title\":\"House\",\"slug\":\"house\",\"color\":null,\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/product-tags', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 03:53:17', '2023-10-25 03:53:17'),
+(149, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductTag', 2, '[]', '{\"title\":\"Flat\",\"slug\":\"flat\",\"color\":null,\"id\":2}', 'http://buyitfromturkey.localhost/buyitadmin/product-tags', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 03:53:44', '2023-10-25 03:53:44'),
+(150, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductCategory', 1, '[]', '{\"title\":\"Real Estate\",\"slug\":\"real_estate\",\"color\":null,\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/product-categories', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 03:54:20', '2023-10-25 03:54:20'),
+(151, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductSector', 1, '[]', '{\"title\":\"Secotr1\",\"slug\":\"secotr1\",\"color\":null,\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/product-sectors', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 03:55:16', '2023-10-25 03:55:16'),
+(152, 'App\\Models\\User', 4, 'created', 'App\\Models\\Product', 1, '[]', '{\"title\":\"Quaerat eius possimu\",\"slug\":\"Debitis soluta deser\",\"brief\":\"Soluta excepteur mai\",\"content\":\"<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s<\\/p>\",\"product_category_id\":\"1\",\"thumbnail_image\":null,\"Images\":\"products\\\\October2023\\\\D7fzIcvcej2aUVMgzcUY.png\",\"phone\":\"+1 (368) 527-5891\",\"meta_title\":\"Et a labore quo est\",\"meta_description\":\"Aut repudiandae reru\",\"meta_keyword\":\"Aliquid nesciunt er\",\"meta_canonical\":\"Culpa eu aliquid od\",\"meta_ogimage\":\"Dolore dolore beatae\",\"id\":1}', 'http://buyitfromturkey.localhost/buyitadmin/products', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:27:36', '2023-10-25 05:27:36'),
+(153, 'App\\Models\\User', 4, 'created', 'App\\Models\\Product', 2, '[]', '{\"title\":\"Quaerat eius possimu\",\"slug\":\"Debitis soluta deser\",\"brief\":\"Soluta excepteur mai\",\"content\":\"<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s<\\/p>\",\"product_category_id\":\"1\",\"thumbnail_image\":null,\"Images\":\"products\\\\October2023\\\\nt3QHOlzmupvScJhPaDN.png\",\"phone\":\"+1 (368) 527-5891\",\"meta_title\":\"Et a labore quo est\",\"meta_description\":\"Aut repudiandae reru\",\"meta_keyword\":\"Aliquid nesciunt er\",\"meta_canonical\":\"Culpa eu aliquid od\",\"meta_ogimage\":\"Dolore dolore beatae\",\"id\":2}', 'http://buyitfromturkey.localhost/buyitadmin/products', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:29:23', '2023-10-25 05:29:23'),
+(154, 'App\\Models\\User', 4, 'deleted', 'App\\Models\\Product', 1, '{\"id\":1,\"product_category_id\":1,\"title\":\"Quaerat eius possimu\",\"slug\":\"Debitis soluta deser\",\"thumbnail_image\":null,\"Images\":\"products\\\\October2023\\\\D7fzIcvcej2aUVMgzcUY.png\",\"phone\":\"+1 (368) 527-5891\",\"brief\":\"Soluta excepteur mai\",\"content\":\"<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s<\\/p>\",\"meta_title\":\"Et a labore quo est\",\"meta_description\":\"Aut repudiandae reru\",\"meta_keyword\":\"Aliquid nesciunt er\",\"meta_canonical\":\"Culpa eu aliquid od\",\"meta_ogimage\":\"Dolore dolore beatae\"}', '[]', 'http://buyitfromturkey.localhost/buyitadmin/products/1', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:29:30', '2023-10-25 05:29:30'),
+(155, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 2, '{\"thumbnail_image\":null}', '{\"thumbnail_image\":\"[\\\"products\\\\\\\\October2023\\\\\\\\dZOyzbqAP2j2KUzZctGf.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:36:41', '2023-10-25 05:36:41'),
+(156, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 2, '{\"thumbnail_image\":\"[\\\"products\\\\\\\\October2023\\\\\\\\dZOyzbqAP2j2KUzZctGf.png\\\"]\"}', '{\"thumbnail_image\":\"products\\\\October2023\\\\CsPdddx5i5I5o76iPpOz.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(157, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 2, '{\"Images\":\"products\\\\October2023\\\\nt3QHOlzmupvScJhPaDN.png\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Nx6xGzx8YUvcKZqvZOUS.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:37:58', '2023-10-25 05:37:58'),
+(158, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductCategory', 2, '[]', '{\"title\":\"Offer\",\"slug\":\"offer\",\"color\":null,\"id\":2}', 'http://buyitfromturkey.localhost/buyitadmin/product-categories', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:50:01', '2023-10-25 05:50:01'),
+(159, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 3, '{\"product_category_id\":1}', '{\"product_category_id\":\"2\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/3', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:50:30', '2023-10-25 05:50:30'),
+(160, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 3, '{\"thumbnail_image\":\"products\\\\October2023\\\\CsPdddx5i5I5o76iPpOz.png\"}', '{\"thumbnail_image\":\"products\\\\October2023\\\\inAscj0j8ynms27gFqpK.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/3', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 05:51:15', '2023-10-25 05:51:15'),
+(161, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 2, '{\"thumbnail_image\":\"products\\\\October2023\\\\CsPdddx5i5I5o76iPpOz.png\"}', '{\"thumbnail_image\":\"products\\\\October2023\\\\eO5aR3vvnYHiq1Z5ciK6.png\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 06:05:11', '2023-10-25 06:05:11'),
+(162, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 79, '[]', '{\"content\":\"results are listed according to the information you selected.\",\"key\":\"products_search_results\",\"place\":null,\"id\":79}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 07:05:31', '2023-10-25 07:05:31'),
+(163, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 80, '[]', '{\"content\":\"Buy it From Turkiye\",\"key\":\"Buy_it_From_Turkiye\",\"place\":null,\"id\":80}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 07:22:00', '2023-10-25 07:22:00'),
+(164, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 81, '[]', '{\"content\":\"Products                                 <br>                                 AND                                 <br>                                 SERVICES\",\"key\":\"products_and_services\",\"place\":null,\"id\":81}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 07:26:20', '2023-10-25 07:26:20'),
+(165, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 82, '[]', '{\"content\":\"Search Results\",\"key\":\"Search_Results\",\"place\":null,\"id\":82}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 07:27:12', '2023-10-25 07:27:12'),
+(166, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 83, '[]', '{\"content\":\"Minimizing Map\",\"key\":\"Minimizing_Map\",\"place\":null,\"id\":83}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:07:10', '2023-10-25 08:07:10'),
+(167, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductSector', 2, '[]', '{\"title\":\"Sector2\",\"slug\":\"sector2\",\"color\":null,\"id\":2}', 'http://buyitfromturkey.localhost/buyitadmin/product-sectors', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:19:51', '2023-10-25 08:19:51'),
+(168, 'App\\Models\\User', 4, 'created', 'App\\Models\\ProductTag', 3, '[]', '{\"title\":\"Appartment\",\"slug\":\"appartment\",\"color\":null,\"id\":3}', 'http://buyitfromturkey.localhost/buyitadmin/product-tags', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:23:48', '2023-10-25 08:23:48'),
+(169, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 3, '{\"title\":\"Quaerat eius possimu\"}', '{\"title\":\"offfe products\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/3', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:39:50', '2023-10-25 08:39:50'),
+(170, 'App\\Models\\User', 4, 'updated', 'App\\Models\\Product', 4, '{\"title\":\"Quaerat eius possimu\"}', '{\"title\":\"Sec2\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:40:03', '2023-10-25 08:40:03'),
+(171, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 84, '[]', '{\"content\":\"Phone\",\"key\":\"Phone\",\"place\":null,\"id\":84}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-25 08:58:30', '2023-10-25 08:58:30'),
+(172, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Nx6xGzx8YUvcKZqvZOUS.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/remove', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 00:06:24', '2023-10-26 00:06:24'),
+(173, NULL, NULL, 'updated', 'App\\Models\\Product', 2, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Nx6xGzx8YUvcKZqvZOUS.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/remove', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 00:23:50', '2023-10-26 00:23:50'),
+(174, NULL, NULL, 'updated', 'App\\Models\\Product', 2, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\DQ2dmUn432Rx1u2luIwH.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/2', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 00:23:59', '2023-10-26 00:23:59'),
+(175, NULL, NULL, 'created', 'App\\Models\\SiteText', 85, '[]', '{\"content\":\"No images available for this product.\",\"key\":\"no_images_avaliable\",\"place\":null,\"id\":85}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 00:26:21', '2023-10-26 00:26:21'),
+(176, NULL, NULL, 'updated', 'App\\Models\\Product', 2, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\DQ2dmUn432Rx1u2luIwH.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/remove', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 00:38:13', '2023-10-26 00:38:13'),
+(177, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:15:29', '2023-10-26 01:15:29'),
+(178, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\p44slnqYx8x791vnVebX.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:16:45', '2023-10-26 01:16:45'),
+(179, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"slug\":\"Sec2\",\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\p44slnqYx8x791vnVebX.png\\\"]\"}', '{\"slug\":\"Debitis soluta deser\",\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\p44slnqYx8x791vnVebX.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\uXBvzPjwEjpQ29N6mb2X.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\9STeBKUXaEd3gdqMRx1y.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:18:15', '2023-10-26 01:18:15'),
+(180, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\p44slnqYx8x791vnVebX.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\uXBvzPjwEjpQ29N6mb2X.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\9STeBKUXaEd3gdqMRx1y.png\\\"]\"}', '{\"Images\":\"[\\\"products\\\\\\\\October2023\\\\\\\\0dmJe4l7XdDGmMTiMGFv.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\EXh8yr7alljT3S6N7t1o.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Da4356hvT8lWcAl6mHXj.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\W9AWrpCvTSN1snJXKelt.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\p44slnqYx8x791vnVebX.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\uXBvzPjwEjpQ29N6mb2X.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\9STeBKUXaEd3gdqMRx1y.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\ghe5bboICde3hp2XTUQQ.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\lIUgQBdLsTEZPbN0kfSL.png\\\",\\\"products\\\\\\\\October2023\\\\\\\\Um2p57vsPJx41NU9VXkt.png\\\"]\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:19:15', '2023-10-26 01:19:15'),
+(181, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"brief\":\"Soluta excepteur mai\"}', '{\"brief\":\"<p>                             Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique                             lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel                             consectetur.                          <\\/p>                         <h4>Let us know the features of the house you want, and we will come to you with suitable                             houses and offers.<\\/h4>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:21:30', '2023-10-26 01:21:30'),
+(182, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"title\":\"Sec2\"}', '{\"title\":\"How can we buy                                 <span>a house?<\\/span>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:22:03', '2023-10-26 01:22:03'),
+(183, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"content\":\"<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s<\\/p>\"}', '{\"content\":\"<h4>Detailing<\\/h4>\\n<p>Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt<\\/p>\\n<p>&nbsp;<\\/p>\\n<h4>Technical &amp; Support<\\/h4>\\n<p>Uninterrupted technical support after sales.<\\/p>\\n<p>&nbsp;<\\/p>\\n<h4>Trustworthy Shopping<\\/h4>\\n<p>Safe shopping with 3D Secure services.<\\/p>\\n<p>&nbsp;<\\/p>\\n<p>If you want to know more about real estate companies in Turkiye, visit our website. Please do not hesitate to contact us by mail at <strong>info@buyitfromturkiye.com.tr<\\/strong> or to call\\/WhatsApp us at <strong>+90 500 000 00 00.<\\/strong> We can help you to get in direct contact with producers or provide you with everything that you need.<\\/p>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:22:59', '2023-10-26 01:22:59'),
+(184, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"title\":\"How can we buy                                 <span>a house?<\\/span>\"}', '{\"title\":\"How can we buy <span>a house?<\\/span>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:41:09', '2023-10-26 01:41:09'),
+(185, NULL, NULL, 'created', 'App\\Models\\SiteText', 86, '[]', '{\"content\":\"Products and Services \",\"key\":\"Products_and_Services_header\",\"place\":null,\"id\":86}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:43:57', '2023-10-26 01:43:57');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `authors`
+-- Table structure for table `authors`
 --
 
 CREATE TABLE `authors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `brief` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `brief` text DEFAULT NULL,
+  `slug` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `authors`
+-- Dumping data for table `authors`
 --
 
 INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `updated_at`) VALUES
@@ -190,7 +356,7 @@ INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `billing_details`
+-- Table structure for table `billing_details`
 --
 
 CREATE TABLE `billing_details` (
@@ -202,65 +368,57 @@ CREATE TABLE `billing_details` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `blogs`
+-- Table structure for table `blogs`
 --
 
 CREATE TABLE `blogs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `author_id` bigint(20) UNSIGNED NOT NULL,
   `blog_category_id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `brief` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `thumbnail_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cover_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(500) DEFAULT NULL,
+  `slug` varchar(500) NOT NULL,
+  `brief` text DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `thumbnail_image` varchar(255) DEFAULT NULL,
+  `cover_image` varchar(255) DEFAULT NULL,
+  `content` longtext DEFAULT NULL,
   `is_featured` tinyint(1) NOT NULL DEFAULT 0,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `blogs`
+-- Dumping data for table `blogs`
 --
 
 INSERT INTO `blogs` (`id`, `author_id`, `blog_category_id`, `title`, `slug`, `brief`, `date`, `thumbnail_image`, `cover_image`, `content`, `is_featured`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(2, 1, 4, 'test blog', 'Muhammed', 'Cum fugiat iusto ip', '31-May-1994', 'blogs\\October2023\\BZ04r1FRnzcOPg4TQ69l.png', 'blogs\\October2023\\5QPNwyGmw1GFkUfYRp6p.png', '<p>TESTSETETSTS<br>TETST<br>TESTS<br>sTES</p>', 1, 'Tempore doloremque ', 'Recusandae Optio c', 'Do quia nulla soluta', 'Vitae tempore elige', 'Quibusdam nihil volu', '2023-10-16 07:06:21', '2023-10-16 07:06:21'),
-(3, 1, 3, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-16 09:50:26'),
-(4, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(5, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(6, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(7, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(8, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(9, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(10, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(11, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05'),
-(12, 1, 2, 'Why Do People Travel to Other Countries for                                                                 Medical Services?', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '10-Jul-1985', 'blogs\\October2023\\ye2wmXyjXMaj4mis3rSq.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:05', '2023-10-16 06:51:05');
+(1, 1, 4, 'Blog1', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\0grfRD9yyxdhJve5Hqp0.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 09:05:16'),
+(2, 1, 4, 'Blog2', 'Muhammed', 'Cum fugiat iusto ip', '31-May-1994', 'blogs\\October2023\\BZ04r1FRnzcOPg4TQ69l.png', 'blogs\\October2023\\5QPNwyGmw1GFkUfYRp6p.png', '<p>TESTSETETSTS<br>TETST<br>TESTS<br>sTES</p>', 1, 'Tempore doloremque ', 'Recusandae Optio c', 'Do quia nulla soluta', 'Vitae tempore elige', 'Quibusdam nihil volu', '2023-10-16 07:06:21', '2023-10-16 07:06:21'),
+(4, 1, 3, 'Blog3', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\lawEUPYqe4a6iA2gYhRk.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 09:03:38'),
+(8, 1, 4, 'Blog4', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\c7O1ORxhfRr2YyhPUhAw.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 08:58:40');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `blog_categories`
+-- Table structure for table `blog_categories`
 --
 
 CREATE TABLE `blog_categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `blog_categories`
+-- Dumping data for table `blog_categories`
 --
 
 INSERT INTO `blog_categories` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
@@ -271,7 +429,7 @@ INSERT INTO `blog_categories` (`id`, `title`, `slug`, `color`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `blog_tag`
+-- Table structure for table `blog_tag`
 --
 
 CREATE TABLE `blog_tag` (
@@ -283,31 +441,32 @@ CREATE TABLE `blog_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `blog_tag`
+-- Dumping data for table `blog_tag`
 --
 
 INSERT INTO `blog_tag` (`id`, `blog_id`, `blog_tag_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 2, NULL, NULL),
 (2, 1, 3, NULL, NULL),
-(3, 2, 2, NULL, NULL);
+(3, 2, 2, NULL, NULL),
+(4, 8, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `blog_tags`
+-- Table structure for table `blog_tags`
 --
 
 CREATE TABLE `blog_tags` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `blog_tags`
+-- Dumping data for table `blog_tags`
 --
 
 INSERT INTO `blog_tags` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
@@ -317,13 +476,13 @@ INSERT INTO `blog_tags` (`id`, `title`, `slug`, `color`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `brands`
+-- Table structure for table `brands`
 --
 
 CREATE TABLE `brands` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -331,7 +490,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `brands`
+-- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`id`, `title`, `image`, `active`, `order`, `created_at`, `updated_at`) VALUES
@@ -349,27 +508,34 @@ INSERT INTO `brands` (`id`, `title`, `image`, `active`, `order`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `bultens`
+-- Table structure for table `bultens`
 --
 
 CREATE TABLE `bultens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `bultens`
+--
+
+INSERT INTO `bultens` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'sadsa@sad.cpm', '2023-10-24 10:13:15', '2023-10-24 10:13:15');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
   `blog_id` bigint(20) UNSIGNED DEFAULT NULL,
   `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -379,22 +545,22 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `contact_orders`
+-- Table structure for table `contact_orders`
 --
 
 CREATE TABLE `contact_orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `subject` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `contact_orders`
+-- Dumping data for table `contact_orders`
 --
 
 INSERT INTO `contact_orders` (`id`, `first_name`, `last_name`, `email`, `message`, `subject`, `created_at`, `updated_at`) VALUES
@@ -402,56 +568,61 @@ INSERT INTO `contact_orders` (`id`, `first_name`, `last_name`, `email`, `message
 (2, 'Robin', 'Walter', 'qylyw@mailinator.com', 'Optio nisi vel iste', 'Ruth Bell', '2023-10-18 00:52:03', '2023-10-18 00:52:03'),
 (3, 'Zane', '', 'kiluvifud@mailinator.com', 'Nostrud non ipsum nu', '', '2023-10-18 00:54:15', '2023-10-18 00:54:15'),
 (4, 'Colby', '', 'navutoleno@mailinator.com', 'Temporibus deleniti', '', '2023-10-18 01:09:21', '2023-10-18 01:09:21'),
-(5, 'Paki', 'Mccoy', 'hykynu@mailinator.com', 'Sint tenetur enim a', 'Fiona Noel', '2023-10-18 01:11:33', '2023-10-18 01:11:33');
+(5, 'Paki', 'Mccoy', 'hykynu@mailinator.com', 'Sint tenetur enim a', 'Fiona Noel', '2023-10-18 01:11:33', '2023-10-18 01:11:33'),
+(6, 'Cruz', '', 'noxasaq@mailinator.com', 'Magna cum et cum vol', '', '2023-10-24 19:55:27', '2023-10-24 19:55:27'),
+(7, 'Bell', '', 'busudi@mailinator.com', 'Dolor doloribus natu', '', '2023-10-24 19:55:36', '2023-10-24 19:55:36'),
+(8, 'Vance', '', 'hodixeq@mailinator.com', 'Corrupti officiis s', '', '2023-10-24 19:56:38', '2023-10-24 19:56:38');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `contact_us`
+-- Table structure for table `contact_us`
 --
 
 CREATE TABLE `contact_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `whatsapp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `map` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `site_logo_tr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `site_logo_en` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone1` varchar(255) DEFAULT NULL,
+  `phone2` varchar(255) DEFAULT NULL,
+  `whatsapp` varchar(255) DEFAULT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `map` varchar(500) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `youtube` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `instagram` varchar(255) DEFAULT NULL,
+  `site_logo_tr` varchar(255) DEFAULT NULL,
+  `site_logo_en` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `aboutUs_video` varchar(255) DEFAULT NULL,
+  `aboutUs_video_image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `contact_us`
+-- Dumping data for table `contact_us`
 --
 
-INSERT INTO `contact_us` (`id`, `email`, `phone1`, `phone2`, `whatsapp`, `address`, `map`, `facebook`, `youtube`, `twitter`, `instagram`, `site_logo_tr`, `site_logo_en`, `linkedin`, `created_at`, `updated_at`) VALUES
-(1, 'info@buyitfromturkiye.com', '+90 500 000 00 00', '+90 500 000 00 00', '+90 500 000 00 00', 'Istanbul / Turkiye', 'Animi voluptates fa', '#', '#', '#', '#', 'Excepturi deserunt v', 'Ea ut consequuntur n', 'Vel deserunt totam s', '2023-10-04 06:39:00', '2023-10-18 00:41:52');
+INSERT INTO `contact_us` (`id`, `email`, `phone1`, `phone2`, `whatsapp`, `address`, `map`, `facebook`, `youtube`, `twitter`, `instagram`, `site_logo_tr`, `site_logo_en`, `linkedin`, `created_at`, `updated_at`, `aboutUs_video`, `aboutUs_video_image`) VALUES
+(1, 'info@buyitfromturkiye.com', '+90 500 000 00 00', '+90 500 000 00 00', '+90 500 000 00 00', 'Istanbul / Turkiye', 'Animi voluptates fa', 'Facebook', 'Youtube', 'Twitter', 'Instagram', 'Excepturi deserunt v', 'Ea ut consequuntur n', 'Vel deserunt totam s', '2023-10-04 06:39:00', '2023-10-19 07:25:06', 'https://www.youtube.com/embed/5qZ2u7ZratM', 'contact-us\\October2023\\B6UopCfMq6sr8JRLM1gL.png');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `corporate_pages`
+-- Table structure for table `corporate_pages`
 --
 
 CREATE TABLE `corporate_pages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -459,41 +630,51 @@ CREATE TABLE `corporate_pages` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `cover_images`
+-- Table structure for table `cover_images`
 --
 
 CREATE TABLE `cover_images` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `cover_images`
+--
+
+INSERT INTO `cover_images` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'nasıl_çalışır', 'cover-images\\October2023\\mUHlhYBI6SNf6ve380GH.png', '2023-10-19 01:44:24', '2023-10-19 01:44:24'),
+(2, 'neden_seçtin', 'cover-images\\October2023\\Pn42hmZlukcaeYES7fAW.png', '2023-10-19 05:13:22', '2023-10-19 05:13:22'),
+(3, 'Biz_Kimiz', 'cover-images\\October2023\\yQdQDJ12yrtq8ETZLKPx.png', '2023-10-19 05:13:55', '2023-10-19 05:13:55'),
+(4, 'teklifimiz', 'cover-images\\October2023\\EUHixm8n6JJNml5YGgLj.png', '2023-10-19 05:14:19', '2023-10-19 05:14:19');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `data_rows`
+-- Table structure for table `data_rows`
 --
 
 CREATE TABLE `data_rows` (
   `id` int(10) UNSIGNED NOT NULL,
   `data_type_id` int(10) UNSIGNED NOT NULL,
-  `field` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `field` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `display_name` varchar(255) NOT NULL,
   `required` tinyint(1) NOT NULL DEFAULT 0,
   `browse` tinyint(1) NOT NULL DEFAULT 1,
   `read` tinyint(1) NOT NULL DEFAULT 1,
   `edit` tinyint(1) NOT NULL DEFAULT 1,
   `add` tinyint(1) NOT NULL DEFAULT 1,
   `delete` tinyint(1) NOT NULL DEFAULT 1,
-  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` text DEFAULT NULL,
   `order` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `data_rows`
+-- Dumping data for table `data_rows`
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
@@ -538,8 +719,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (39, 6, 'site_logo_tr', 'text', 'Site Logo Tr', 0, 1, 1, 1, 1, 1, '{}', 12),
 (40, 6, 'site_logo_en', 'text', 'Site Logo En', 0, 1, 1, 1, 1, 1, '{}', 13),
 (41, 6, 'linkedin', 'text', 'Linkedin', 0, 1, 1, 1, 1, 1, '{}', 14),
-(42, 6, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 15),
-(43, 6, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 16),
+(42, 6, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 17),
+(43, 6, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 18),
 (142, 14, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (143, 14, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
 (144, 14, 'meta', 'text', 'Meta', 0, 1, 1, 1, 1, 1, '{}', 3),
@@ -621,11 +802,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (220, 28, 'blog_category_id', 'text', 'Blog Category Id', 1, 1, 1, 1, 1, 1, '{}', 4),
 (221, 28, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 6),
 (222, 28, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{}', 7),
-(223, 28, 'brief', 'text', 'Brief', 0, 1, 1, 1, 1, 1, '{}', 8),
+(223, 28, 'brief', 'text', 'Brief', 0, 0, 0, 1, 1, 1, '{}', 8),
 (224, 28, 'date', 'date', 'Date', 0, 1, 1, 1, 1, 1, '{}', 9),
 (225, 28, 'thumbnail_image', 'image', 'Thumbnail Image', 0, 1, 1, 1, 1, 1, '{}', 10),
 (226, 28, 'cover_image', 'image', 'Cover Image', 0, 1, 1, 1, 1, 1, '{}', 11),
-(227, 28, 'content', 'rich_text_box', 'Content', 0, 1, 1, 1, 1, 1, '{}', 12),
+(227, 28, 'content', 'rich_text_box', 'Content', 0, 0, 0, 1, 1, 1, '{}', 12),
 (228, 28, 'is_featured', 'checkbox', 'Is Featured', 1, 1, 1, 1, 1, 1, '{}', 13),
 (229, 28, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 14),
 (230, 28, 'meta_description', 'text', 'Meta Description', 0, 1, 1, 1, 1, 1, '{}', 15),
@@ -675,34 +856,115 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (276, 32, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
 (277, 32, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 4),
 (278, 32, 'message', 'text_area', 'Message', 1, 1, 1, 1, 1, 1, '{}', 6),
-(279, 32, 'subject', 'text', 'Subject', 0, 1, 1, 1, 1, 1, '{}', 5);
+(279, 32, 'subject', 'text', 'Subject', 0, 1, 1, 1, 1, 1, '{}', 5),
+(280, 33, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(281, 33, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
+(282, 33, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{}', 3),
+(283, 33, 'color', 'text', 'Color', 0, 1, 1, 1, 1, 1, '{}', 4),
+(284, 33, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(285, 33, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(286, 34, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(287, 34, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
+(288, 34, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{}', 3),
+(289, 34, 'color', 'text', 'Color', 0, 1, 1, 1, 1, 1, '{}', 4),
+(290, 34, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(291, 34, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(292, 35, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(293, 35, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
+(294, 35, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{}', 3),
+(295, 35, 'color', 'text', 'Color', 0, 1, 1, 1, 1, 1, '{}', 4),
+(296, 35, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(297, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(298, 36, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(299, 36, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
+(300, 36, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{}', 3),
+(301, 36, 'active', 'checkbox', 'Active', 1, 1, 1, 1, 1, 1, '{}', 4),
+(302, 36, 'order', 'text', 'Order', 0, 1, 1, 1, 1, 1, '{}', 5),
+(303, 36, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
+(304, 36, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(305, 37, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(306, 37, 'product_category_id', 'text', 'Product Category Id', 1, 1, 1, 1, 1, 1, '{}', 3),
+(308, 37, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 4),
+(309, 37, 'thumbnail_image', 'image', 'Thumbnail Image', 0, 1, 1, 1, 1, 1, '{}', 5),
+(310, 37, 'Images', 'multiple_images', 'Images', 0, 1, 1, 1, 1, 1, '{}', 7),
+(311, 37, 'phone', 'text', 'Phone', 0, 1, 1, 1, 1, 1, '{}', 8),
+(312, 37, 'brief', 'text', 'Brief', 0, 1, 1, 1, 1, 1, '{}', 9),
+(313, 37, 'content', 'rich_text_box', 'Content', 0, 1, 1, 1, 1, 1, '{}', 10),
+(314, 37, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 11),
+(315, 37, 'meta_description', 'text', 'Meta Description', 0, 1, 1, 1, 1, 1, '{}', 12),
+(316, 37, 'meta_keyword', 'text', 'Meta Keyword', 0, 1, 1, 1, 1, 1, '{}', 13),
+(317, 37, 'meta_canonical', 'text', 'Meta Canonical', 0, 1, 1, 1, 1, 1, '{}', 14),
+(318, 37, 'meta_ogimage', 'text', 'Meta Ogimage', 0, 1, 1, 1, 1, 1, '{}', 15),
+(319, 37, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 16),
+(320, 37, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 17),
+(321, 38, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(322, 38, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
+(323, 38, 'content', 'text', 'Content', 0, 1, 1, 1, 1, 1, '{}', 3),
+(324, 38, 'active', 'checkbox', 'Active', 0, 1, 1, 1, 1, 1, '{}', 4),
+(325, 38, 'order', 'text', 'Order', 0, 1, 1, 1, 1, 1, '{}', 5),
+(326, 38, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
+(327, 38, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(328, 6, 'aboutUs_video', 'text', 'AboutUs Video', 0, 1, 1, 1, 1, 1, '{}', 15),
+(329, 6, 'aboutUs_video_image', 'image', 'AboutUs Video Image', 0, 1, 1, 1, 1, 1, '{}', 16),
+(330, 39, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(331, 39, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
+(332, 39, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 3),
+(333, 39, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{}', 4),
+(334, 39, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, '{}', 5),
+(335, 39, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
+(336, 39, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(337, 40, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(338, 40, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
+(339, 40, 'last_name', 'text', 'Last Name', 0, 1, 1, 1, 1, 1, '{}', 3),
+(340, 40, 'company_name', 'text', 'Company Name', 0, 1, 1, 1, 1, 1, '{}', 4),
+(341, 40, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 5),
+(342, 40, 'link', 'text', 'Link', 0, 1, 1, 1, 1, 1, '{}', 6),
+(343, 40, 'sectors', 'text', 'Sectors', 0, 1, 1, 1, 1, 1, '{}', 7),
+(344, 40, 'products_services', 'text', 'Products Services', 0, 1, 1, 1, 1, 1, '{}', 8),
+(345, 40, 'quantity', 'text', 'Quantity', 0, 1, 1, 1, 1, 1, '{}', 9),
+(346, 40, 'price_terms', 'text', 'Price Terms', 0, 1, 1, 1, 1, 1, '{}', 10),
+(347, 40, 'payment_method', 'text', 'Payment Method', 0, 1, 1, 1, 1, 1, '{}', 11),
+(348, 40, 'country', 'text', 'Country', 0, 1, 1, 1, 1, 1, '{}', 12),
+(349, 40, 'details', 'text', 'Details', 0, 1, 1, 1, 1, 1, '{}', 13),
+(350, 40, 'request', 'text', 'Request', 0, 1, 1, 1, 1, 1, '{}', 14),
+(351, 40, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 15),
+(352, 40, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 16),
+(353, 41, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(354, 41, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, '{}', 2),
+(355, 41, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
+(356, 41, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(357, 24, 'blog_category_hasmany_blog_relationship', 'relationship', 'blogs', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Blog\",\"table\":\"blogs\",\"type\":\"hasMany\",\"column\":\"blog_category_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"admins\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
+(358, 37, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{}', 6),
+(359, 37, 'product_belongsto_product_category_relationship', 'relationship', 'product_categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ProductCategory\",\"table\":\"product_categories\",\"type\":\"belongsTo\",\"column\":\"product_category_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"admins\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(360, 37, 'product_belongstomany_product_sector_relationship', 'relationship', 'product_sectors', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ProductSector\",\"table\":\"product_sectors\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"product_sector\",\"pivot\":\"1\",\"taggable\":\"on\"}', 18),
+(361, 37, 'product_belongstomany_product_tag_relationship', 'relationship', 'product_tags', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ProductTag\",\"table\":\"product_tags\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"product_tag\",\"pivot\":\"1\",\"taggable\":\"on\"}', 19);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `data_types`
+-- Table structure for table `data_types`
 --
 
 CREATE TABLE `data_types` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name_singular` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name_plural` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `model_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `policy_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `controller` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `display_name_singular` varchar(255) NOT NULL,
+  `display_name_plural` varchar(255) NOT NULL,
+  `icon` varchar(255) DEFAULT NULL,
+  `model_name` varchar(255) DEFAULT NULL,
+  `policy_name` varchar(255) DEFAULT NULL,
+  `controller` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `generate_permissions` tinyint(1) NOT NULL DEFAULT 0,
   `server_side` tinyint(4) NOT NULL DEFAULT 0,
-  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `data_types`
+-- Dumping data for table `data_types`
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
@@ -710,7 +972,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2023-09-12 07:29:31', '2023-09-12 07:29:31'),
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2023-09-12 07:29:31', '2023-09-12 07:29:31'),
 (4, 'site_texts', 'site-texts', 'Site Text', 'Site Texts', 'voyager-character', 'App\\Models\\SiteText', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-03 05:50:23', '2023-10-03 05:50:23'),
-(6, 'contact_us', 'contact-us', 'Contact U', 'Contact Us', 'voyager-telephone', 'App\\Models\\ContactUs', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-04 06:38:40', '2023-10-04 06:38:40'),
+(6, 'contact_us', 'contact-us', 'Contact U', 'Contact Us', 'voyager-telephone', 'App\\Models\\ContactUs', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-04 06:38:40', '2023-10-19 05:50:19'),
 (14, 'seo', 'seo', 'SEO', 'SEO', 'voyager-world', 'App\\Models\\SEO', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-04 10:11:56', '2023-10-04 10:11:56'),
 (15, 'services', 'services', 'Service', 'Services', 'voyager-trophy', 'App\\Models\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-10 09:48:35', '2023-10-10 10:04:09'),
 (16, 'sliders', 'sliders', 'Slider', 'Sliders', 'voyager-dot-3', 'App\\Models\\Slider', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-10 11:19:32', '2023-10-10 11:19:32'),
@@ -718,57 +980,73 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (18, 'brands', 'brands', 'Brand', 'Brands', 'voyager-ticket', 'App\\Models\\Brand', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-15 03:48:44', '2023-10-15 03:48:44'),
 (22, 'f_a_q_s', 'f-a-q-s', 'F A Q', 'F A Q', 'voyager-question', 'App\\Models\\FAQ', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-15 04:48:25', '2023-10-15 04:48:25'),
 (23, 'languages', 'languages', 'Language', 'Languages', 'voyager-font', 'App\\Models\\Language', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-15 10:16:51', '2023-10-15 10:16:51'),
-(24, 'blog_categories', 'blog-categories', 'Blog Category', 'Blog Categories', 'voyager-categories', 'App\\Models\\BlogCategory', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-15 10:45:51', '2023-10-16 09:51:27'),
+(24, 'blog_categories', 'blog-categories', 'Blog Category', 'Blog Categories', 'voyager-categories', 'App\\Models\\BlogCategory', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-15 10:45:51', '2023-10-24 20:06:42'),
 (25, 'cover_images', 'cover-images', 'Cover Image', 'Cover Images', 'voyager-photo', 'App\\Models\\CoverImage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-15 10:55:32', '2023-10-15 10:55:32'),
 (27, 'blog_tags', 'blog-tags', 'Blog Tag', 'Blog Tags', 'voyager-tag', 'App\\Models\\BlogTag', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-16 06:37:18', '2023-10-16 06:37:18'),
-(28, 'blogs', 'blogs', 'Blog', 'Blogs', 'voyager-file-text', 'App\\Models\\Blog', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-16 06:39:01', '2023-10-16 09:36:15'),
+(28, 'blogs', 'blogs', 'Blog', 'Blogs', 'voyager-file-text', 'App\\Models\\Blog', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-16 06:39:01', '2023-10-24 08:55:42'),
 (29, 'authors', 'authors', 'Author', 'Authors', 'voyager-person', 'App\\Models\\Author', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-16 06:41:26', '2023-10-16 06:41:26'),
 (30, 'admins', 'admins', 'Admin', 'Admins', 'voyager-people', 'App\\Models\\Admin', NULL, 'App\\Http\\Controllers\\VoyagerAdminController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":\"currentUser\"}', '2023-10-17 20:22:10', '2023-10-17 20:22:32'),
 (31, 'static_pages', 'static-pages', 'Sabit Sayfa', 'Sabit Sayfalar', 'voyager-file-text', 'App\\Models\\StaticPage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 00:23:26', '2023-10-18 00:23:26'),
-(32, 'contact_orders', 'contact-orders', 'İletişim Formu', 'İletişim Formları', 'voyager-mail', 'App\\Models\\ContactOrder', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-18 00:31:02', '2023-10-18 00:33:35');
+(32, 'contact_orders', 'contact-orders', 'İletişim Formu', 'İletişim Formları', 'voyager-mail', 'App\\Models\\ContactOrder', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-18 00:31:02', '2023-10-18 00:33:35'),
+(33, 'product_tags', 'product-tags', 'Product Tag', 'Product Tags', 'voyager-tag', 'App\\Models\\ProductTag', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(34, 'product_categories', 'product-categories', 'Product Category', 'Product Categories', 'voyager-categories', 'App\\Models\\ProductCategory', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(35, 'product_sectors', 'product-sectors', 'Product Sector', 'Product Sectors', 'voyager-location', 'App\\Models\\ProductSector', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(36, 'products_sliders', 'products-sliders', 'Products Slider', 'Products Sliders', 'voyager-dot-3', 'App\\Models\\ProductsSlider', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(37, 'products', 'products', 'Product', 'Products', 'voyager-treasure', 'App\\Models\\Product', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2023-10-18 08:22:52', '2023-10-25 05:37:04'),
+(38, 'advantages', 'advantages', 'Advantage', 'Advantages', 'voyager-check', 'App\\Models\\Advantage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(39, 'founders', 'founders', 'Founder', 'Founders', 'voyager-people', 'App\\Models\\Founder', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(40, 'application_orders', 'application-orders', 'Application Order', 'Application Orders', 'voyager-receipt', 'App\\Models\\ApplicationOrder', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(41, 'bultens', 'bultens', 'Bulten', 'Bultens', 'voyager-mail', 'App\\Models\\Bulten', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2023-10-24 10:14:20', '2023-10-24 10:14:20');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `founders`
+-- Table structure for table `founders`
 --
 
 CREATE TABLE `founders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `founders`
+--
+
+INSERT INTO `founders` (`id`, `name`, `title`, `image`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'İsim Soyisim', 'CTO', 'founders\\October2023\\xE1btkMRwAcp8h1BBHTT.png', 'kharzom.mohammed@gmail.com', '2023-10-19 06:10:48', '2023-10-19 06:10:48');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `f_a_q_s`
+-- Table structure for table `f_a_q_s`
 --
 
 CREATE TABLE `f_a_q_s` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
   `order` int(11) DEFAULT NULL,
   `is_homepage` tinyint(1) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -776,7 +1054,7 @@ CREATE TABLE `f_a_q_s` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `f_a_q_s`
+-- Dumping data for table `f_a_q_s`
 --
 
 INSERT INTO `f_a_q_s` (`id`, `title`, `content`, `order`, `is_homepage`, `created_at`, `updated_at`) VALUES
@@ -789,7 +1067,7 @@ INSERT INTO `f_a_q_s` (`id`, `title`, `content`, `order`, `is_homepage`, `create
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `get_offers`
+-- Table structure for table `get_offers`
 --
 
 CREATE TABLE `get_offers` (
@@ -801,7 +1079,7 @@ CREATE TABLE `get_offers` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `institutionals`
+-- Table structure for table `institutionals`
 --
 
 CREATE TABLE `institutionals` (
@@ -813,21 +1091,21 @@ CREATE TABLE `institutionals` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `languages`
+-- Table structure for table `languages`
 --
 
 CREATE TABLE `languages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `locale` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `locale` varchar(255) DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `languages`
+-- Dumping data for table `languages`
 --
 
 INSERT INTO `languages` (`id`, `code`, `title`, `locale`, `active`, `created_at`, `updated_at`) VALUES
@@ -841,18 +1119,18 @@ INSERT INTO `languages` (`id`, `code`, `title`, `locale`, `active`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `menus`
+-- Dumping data for table `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -861,27 +1139,27 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `menu_items`
+-- Table structure for table `menu_items`
 --
 
 CREATE TABLE `menu_items` (
   `id` int(10) UNSIGNED NOT NULL,
   `menu_id` int(10) UNSIGNED DEFAULT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `target` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '_self',
-  `icon_class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `target` varchar(255) NOT NULL DEFAULT '_self',
+  `icon_class` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `order` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `route` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `parameters` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `route` varchar(255) DEFAULT NULL,
+  `parameters` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `menu_items`
+-- Dumping data for table `menu_items`
 --
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
@@ -911,22 +1189,32 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (34, 1, 'Authors', '', '_self', 'voyager-person', NULL, NULL, 21, '2023-10-16 06:41:26', '2023-10-17 20:22:48', 'voyager.authors.index', NULL),
 (35, 1, 'Admins', '', '_self', 'voyager-people', NULL, NULL, 3, '2023-10-17 20:22:10', '2023-10-17 20:22:48', 'voyager.admins.index', NULL),
 (36, 1, 'Sabit Sayfalar', '', '_self', 'voyager-file-text', NULL, NULL, 22, '2023-10-18 00:23:26', '2023-10-18 00:23:26', 'voyager.static-pages.index', NULL),
-(37, 1, 'İletişim Formları', '', '_self', 'voyager-mail', NULL, NULL, 23, '2023-10-18 00:31:02', '2023-10-18 00:31:02', 'voyager.contact-orders.index', NULL);
+(37, 1, 'İletişim Formları', '', '_self', 'voyager-mail', NULL, NULL, 23, '2023-10-18 00:31:02', '2023-10-18 00:31:02', 'voyager.contact-orders.index', NULL),
+(38, 1, 'Product Tags', '', '_self', 'voyager-tag', NULL, 43, 1, '2023-10-18 08:20:39', '2023-10-18 08:24:07', 'voyager.product-tags.index', NULL),
+(39, 1, 'Product Categories', '', '_self', 'voyager-categories', NULL, 43, 2, '2023-10-18 08:21:01', '2023-10-18 08:24:08', 'voyager.product-categories.index', NULL),
+(40, 1, 'Product Sectors', '', '_self', 'voyager-location', NULL, 43, 3, '2023-10-18 08:21:27', '2023-10-18 08:24:09', 'voyager.product-sectors.index', NULL),
+(41, 1, 'Products Sliders', '', '_self', 'voyager-dot-3', NULL, 43, 4, '2023-10-18 08:22:13', '2023-10-18 08:24:10', 'voyager.products-sliders.index', NULL),
+(42, 1, 'Products', '', '_self', 'voyager-treasure', NULL, 43, 5, '2023-10-18 08:22:52', '2023-10-18 08:24:12', 'voyager.products.index', NULL),
+(43, 1, 'Products Management', '', '_self', 'voyager-treasure', '#000000', NULL, 24, '2023-10-18 08:23:34', '2023-10-18 08:24:06', NULL, ''),
+(44, 1, 'Advantages', '', '_self', 'voyager-check', NULL, NULL, 25, '2023-10-19 05:19:19', '2023-10-19 05:19:19', 'voyager.advantages.index', NULL),
+(45, 1, 'Founders', '', '_self', 'voyager-people', NULL, NULL, 26, '2023-10-19 06:09:09', '2023-10-19 06:09:09', 'voyager.founders.index', NULL),
+(46, 1, 'Application Orders', '', '_self', 'voyager-receipt', NULL, NULL, 27, '2023-10-22 05:08:52', '2023-10-22 05:08:52', 'voyager.application-orders.index', NULL),
+(47, 1, 'Bultens', '', '_self', 'voyager-mail', NULL, NULL, 28, '2023-10-24 10:14:20', '2023-10-24 10:14:20', 'voyager.bultens.index', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `metas`
+-- Table structure for table `metas`
 --
 
 CREATE TABLE `metas` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `page_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_name` varchar(255) DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -934,17 +1222,17 @@ CREATE TABLE `metas` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1010,19 +1298,49 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (73, '2023_10_17_225949_create_admins_table', 20),
 (74, '2023_10_17_230016_drop_role_id_column_from_users_table', 20),
 (75, '2023_10_18_004239_add_info_to_users_table', 21),
-(76, '2023_10_18_033125_add_email_to_contact_orders_table', 22);
+(76, '2023_10_18_033125_add_email_to_contact_orders_table', 22),
+(78, '2023_10_19_134551_add_video_contact_us', 23),
+(79, '2023_10_22_123501_create_application_orders_table', 24),
+(83, '2023_10_22_131317_create_offer_orders_table', 25),
+(84, '2023_10_25_125917_add_slug_products', 25),
+(86, '2023_10_25_131624_create_product_sector_table', 26);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `our_offers`
+-- Table structure for table `offer_orders`
+--
+
+CREATE TABLE `offer_orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `sectors` int(11) DEFAULT NULL,
+  `products_services` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price_terms` int(11) DEFAULT NULL,
+  `payment_method` int(11) DEFAULT NULL,
+  `country` int(11) DEFAULT NULL,
+  `details` longtext DEFAULT NULL,
+  `request` longtext DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `our_offers`
 --
 
 CREATE TABLE `our_offers` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `content` longtext DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1030,41 +1348,41 @@ CREATE TABLE `our_offers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `our_offers`
+-- Dumping data for table `our_offers`
 --
 
 INSERT INTO `our_offers` (`id`, `title`, `logo`, `content`, `active`, `order`, `created_at`, `updated_at`) VALUES
-(1, 'Competitive Prices', '[{\"download_link\":\"our-offers\\\\October2023\\\\BprvzNLOZJw6to1FvHiF.svg\",\"original_name\":\"i1.svg\"}]', '', 1, NULL, '2023-10-15 01:25:43', '2023-10-15 01:25:43'),
-(2, 'Quality Handicrafts                                                         and Products', '[{\"download_link\":\"our-offers\\\\October2023\\\\C0qlomS8qXmhYznsYxP5.svg\",\"original_name\":\"i2.svg\"}]', '', 1, NULL, '2023-10-15 01:58:49', '2023-10-15 01:58:49');
+(1, 'Competitive Prices', '[{\"download_link\":\"our-offers\\\\October2023\\\\BprvzNLOZJw6to1FvHiF.svg\",\"original_name\":\"i1.svg\"}]', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', 1, NULL, '2023-10-15 01:25:00', '2023-10-19 06:48:09'),
+(2, 'Quality Handicrafts                                                         and Products', '[{\"download_link\":\"our-offers\\\\October2023\\\\C0qlomS8qXmhYznsYxP5.svg\",\"original_name\":\"i2.svg\"}]', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', 1, NULL, '2023-10-15 01:58:00', '2023-10-19 06:47:41');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `key` varchar(255) NOT NULL,
+  `table_name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`) VALUES
@@ -1177,12 +1495,57 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (157, 'read_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
 (158, 'edit_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
 (159, 'add_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
-(160, 'delete_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02');
+(160, 'delete_contact_orders', 'contact_orders', '2023-10-18 00:31:02', '2023-10-18 00:31:02'),
+(161, 'browse_product_tags', 'product_tags', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(162, 'read_product_tags', 'product_tags', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(163, 'edit_product_tags', 'product_tags', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(164, 'add_product_tags', 'product_tags', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(165, 'delete_product_tags', 'product_tags', '2023-10-18 08:20:39', '2023-10-18 08:20:39'),
+(166, 'browse_product_categories', 'product_categories', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(167, 'read_product_categories', 'product_categories', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(168, 'edit_product_categories', 'product_categories', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(169, 'add_product_categories', 'product_categories', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(170, 'delete_product_categories', 'product_categories', '2023-10-18 08:21:01', '2023-10-18 08:21:01'),
+(171, 'browse_product_sectors', 'product_sectors', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(172, 'read_product_sectors', 'product_sectors', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(173, 'edit_product_sectors', 'product_sectors', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(174, 'add_product_sectors', 'product_sectors', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(175, 'delete_product_sectors', 'product_sectors', '2023-10-18 08:21:27', '2023-10-18 08:21:27'),
+(176, 'browse_products_sliders', 'products_sliders', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(177, 'read_products_sliders', 'products_sliders', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(178, 'edit_products_sliders', 'products_sliders', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(179, 'add_products_sliders', 'products_sliders', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(180, 'delete_products_sliders', 'products_sliders', '2023-10-18 08:22:13', '2023-10-18 08:22:13'),
+(181, 'browse_products', 'products', '2023-10-18 08:22:52', '2023-10-18 08:22:52'),
+(182, 'read_products', 'products', '2023-10-18 08:22:52', '2023-10-18 08:22:52'),
+(183, 'edit_products', 'products', '2023-10-18 08:22:52', '2023-10-18 08:22:52'),
+(184, 'add_products', 'products', '2023-10-18 08:22:52', '2023-10-18 08:22:52'),
+(185, 'delete_products', 'products', '2023-10-18 08:22:52', '2023-10-18 08:22:52'),
+(186, 'browse_advantages', 'advantages', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(187, 'read_advantages', 'advantages', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(188, 'edit_advantages', 'advantages', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(189, 'add_advantages', 'advantages', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(190, 'delete_advantages', 'advantages', '2023-10-19 05:19:19', '2023-10-19 05:19:19'),
+(191, 'browse_founders', 'founders', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(192, 'read_founders', 'founders', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(193, 'edit_founders', 'founders', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(194, 'add_founders', 'founders', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(195, 'delete_founders', 'founders', '2023-10-19 06:09:09', '2023-10-19 06:09:09'),
+(196, 'browse_application_orders', 'application_orders', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(197, 'read_application_orders', 'application_orders', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(198, 'edit_application_orders', 'application_orders', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(199, 'add_application_orders', 'application_orders', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(200, 'delete_application_orders', 'application_orders', '2023-10-22 05:08:52', '2023-10-22 05:08:52'),
+(201, 'browse_bultens', 'bultens', '2023-10-24 10:14:20', '2023-10-24 10:14:20'),
+(202, 'read_bultens', 'bultens', '2023-10-24 10:14:20', '2023-10-24 10:14:20'),
+(203, 'edit_bultens', 'bultens', '2023-10-24 10:14:20', '2023-10-24 10:14:20'),
+(204, 'add_bultens', 'bultens', '2023-10-24 10:14:20', '2023-10-24 10:14:20'),
+(205, 'delete_bultens', 'bultens', '2023-10-24 10:14:20', '2023-10-24 10:14:20');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `permission_role`
+-- Table structure for table `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -1191,7 +1554,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `permission_role`
+-- Dumping data for table `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -1375,21 +1738,66 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (157, 1),
 (158, 1),
 (159, 1),
-(160, 1);
+(160, 1),
+(161, 1),
+(162, 1),
+(163, 1),
+(164, 1),
+(165, 1),
+(166, 1),
+(167, 1),
+(168, 1),
+(169, 1),
+(170, 1),
+(171, 1),
+(172, 1),
+(173, 1),
+(174, 1),
+(175, 1),
+(176, 1),
+(177, 1),
+(178, 1),
+(179, 1),
+(180, 1),
+(181, 1),
+(182, 1),
+(183, 1),
+(184, 1),
+(185, 1),
+(186, 1),
+(187, 1),
+(188, 1),
+(189, 1),
+(190, 1),
+(191, 1),
+(192, 1),
+(193, 1),
+(194, 1),
+(195, 1),
+(196, 1),
+(197, 1),
+(198, 1),
+(199, 1),
+(200, 1),
+(201, 1),
+(202, 1),
+(203, 1),
+(204, 1),
+(205, 1);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1398,38 +1806,47 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_category_id` bigint(20) UNSIGNED NOT NULL,
-  `product_sector_id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thumbnail_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Images` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `brief` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `thumbnail_image` varchar(255) DEFAULT NULL,
+  `Images` longtext DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `brief` longtext DEFAULT NULL,
+  `content` longtext DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `product_category_id`, `title`, `slug`, `thumbnail_image`, `Images`, `phone`, `brief`, `content`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Quaerat eius possimu', 'Quaerat eius possimu', 'products\\October2023\\eO5aR3vvnYHiq1Z5ciK6.png', '[\"products\\\\October2023\\\\0dmJe4l7XdDGmMTiMGFv.png\",\"products\\\\October2023\\\\EXh8yr7alljT3S6N7t1o.png\",\"products\\\\October2023\\\\Da4356hvT8lWcAl6mHXj.png\"]', '+1 (368) 527-5891', 'Soluta excepteur mai', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', 'Et a labore quo est', 'Aut repudiandae reru', 'Aliquid nesciunt er', 'Culpa eu aliquid od', 'Dolore dolore beatae', '2023-10-25 05:29:00', '2023-10-26 00:38:13'),
+(3, 2, 'offfe products', 'offfe products', 'products\\October2023\\inAscj0j8ynms27gFqpK.png', '[\"products\\\\October2023\\\\0dmJe4l7XdDGmMTiMGFv.png\",\"products\\\\October2023\\\\EXh8yr7alljT3S6N7t1o.png\",\"products\\\\October2023\\\\Da4356hvT8lWcAl6mHXj.png\",\"products\\\\October2023\\\\Nx6xGzx8YUvcKZqvZOUS.png\"]', '+1 (368) 527-5891', 'Soluta excepteur mai', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', 'Et a labore quo est', 'Aut repudiandae reru', 'Aliquid nesciunt er', 'Culpa eu aliquid od', 'Dolore dolore beatae', '2023-10-25 05:29:00', '2023-10-25 08:39:50'),
+(4, 2, 'How can we buy <span>a house?</span>', 'Sec2', 'products\\October2023\\inAscj0j8ynms27gFqpK.png', '[\"products\\\\October2023\\\\0dmJe4l7XdDGmMTiMGFv.png\",\"products\\\\October2023\\\\EXh8yr7alljT3S6N7t1o.png\",\"products\\\\October2023\\\\Da4356hvT8lWcAl6mHXj.png\",\"products\\\\October2023\\\\W9AWrpCvTSN1snJXKelt.png\",\"products\\\\October2023\\\\p44slnqYx8x791vnVebX.png\",\"products\\\\October2023\\\\uXBvzPjwEjpQ29N6mb2X.png\",\"products\\\\October2023\\\\9STeBKUXaEd3gdqMRx1y.png\",\"products\\\\October2023\\\\ghe5bboICde3hp2XTUQQ.png\",\"products\\\\October2023\\\\lIUgQBdLsTEZPbN0kfSL.png\",\"products\\\\October2023\\\\Um2p57vsPJx41NU9VXkt.png\"]', '+1 (368) 527-5891', '<p>                             Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique                             lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel                             consectetur.                          </p>                         <h4>Let us know the features of the house you want, and we will come to you with suitable                             houses and offers.</h4>', '<h4>Detailing</h4>\n<p>Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt</p>\n<p>&nbsp;</p>\n<h4>Technical &amp; Support</h4>\n<p>Uninterrupted technical support after sales.</p>\n<p>&nbsp;</p>\n<h4>Trustworthy Shopping</h4>\n<p>Safe shopping with 3D Secure services.</p>\n<p>&nbsp;</p>\n<p>If you want to know more about real estate companies in Turkiye, visit our website. Please do not hesitate to contact us by mail at <strong>info@buyitfromturkiye.com.tr</strong> or to call/WhatsApp us at <strong>+90 500 000 00 00.</strong> We can help you to get in direct contact with producers or provide you with everything that you need.</p>', 'Et a labore quo est', 'Aut repudiandae reru', 'Aliquid nesciunt er', 'Culpa eu aliquid od', 'Dolore dolore beatae', '2023-10-25 05:29:00', '2023-10-26 01:41:09');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `products_sliders`
+-- Table structure for table `products_sliders`
 --
 
 CREATE TABLE `products_sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1439,37 +1856,76 @@ CREATE TABLE `products_sliders` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `product_categories`
+-- Table structure for table `product_categories`
 --
 
 CREATE TABLE `product_categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `product_categories`
+--
+
+INSERT INTO `product_categories` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
+(1, 'Real Estate', 'real_estate', NULL, '2023-10-25 03:54:20', '2023-10-25 03:54:20'),
+(2, 'Offer', 'offer', NULL, '2023-10-25 05:50:01', '2023-10-25 05:50:01');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `product_sectors`
+-- Table structure for table `product_sector`
+--
+
+CREATE TABLE `product_sector` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `product_sector_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_sector`
+--
+
+INSERT INTO `product_sector` (`id`, `product_id`, `product_sector_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, NULL, NULL),
+(2, 3, 1, NULL, NULL),
+(3, 4, 2, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_sectors`
 --
 
 CREATE TABLE `product_sectors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `product_sectors`
+--
+
+INSERT INTO `product_sectors` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
+(1, 'Secotr1', 'secotr1', NULL, '2023-10-25 03:55:16', '2023-10-25 03:55:16'),
+(2, 'Sector2', 'sector2', NULL, '2023-10-25 08:19:51', '2023-10-25 08:19:51');
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `product_tag`
+-- Table structure for table `product_tag`
 --
 
 CREATE TABLE `product_tag` (
@@ -1480,37 +1936,56 @@ CREATE TABLE `product_tag` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `product_tag`
+--
+
+INSERT INTO `product_tag` (`id`, `product_id`, `product_tag_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, NULL, NULL),
+(2, 2, 2, NULL, NULL),
+(3, 3, 2, NULL, NULL),
+(4, 4, 3, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `product_tags`
+-- Table structure for table `product_tags`
 --
 
 CREATE TABLE `product_tags` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_tags`
+--
+
+INSERT INTO `product_tags` (`id`, `title`, `slug`, `color`, `created_at`, `updated_at`) VALUES
+(1, 'House', 'house', NULL, '2023-10-25 03:53:17', '2023-10-25 03:53:17'),
+(2, 'Flat', 'flat', NULL, '2023-10-25 03:53:44', '2023-10-25 03:53:44'),
+(3, 'Appartment', 'appartment', NULL, '2023-10-25 08:23:48', '2023-10-25 08:23:48');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `display_name` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
@@ -1521,7 +1996,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `sell_offers`
+-- Table structure for table `sell_offers`
 --
 
 CREATE TABLE `sell_offers` (
@@ -1533,28 +2008,28 @@ CREATE TABLE `sell_offers` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `seo`
+-- Table structure for table `seo`
 --
 
 CREATE TABLE `seo` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `header_bottom` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `body_top` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `body_bottom` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `site_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `meta` longtext DEFAULT NULL,
+  `header_bottom` longtext DEFAULT NULL,
+  `body_top` longtext DEFAULT NULL,
+  `body_bottom` longtext DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `seo`
+-- Dumping data for table `seo`
 --
 
 INSERT INTO `seo` (`id`, `title`, `meta`, `header_bottom`, `body_top`, `body_bottom`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `site_name`, `created_at`, `updated_at`) VALUES
@@ -1563,21 +2038,21 @@ INSERT INTO `seo` (`id`, `title`, `meta`, `header_bottom`, `body_top`, `body_bot
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `services`
+-- Table structure for table `services`
 --
 
 CREATE TABLE `services` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `services`
+-- Dumping data for table `services`
 --
 
 INSERT INTO `services` (`id`, `title`, `color`, `image`, `slug`, `created_at`, `updated_at`) VALUES
@@ -1587,22 +2062,22 @@ INSERT INTO `services` (`id`, `title`, `color`, `image`, `slug`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
   `id` int(10) UNSIGNED NOT NULL,
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) NOT NULL,
+  `display_name` varchar(255) NOT NULL,
+  `value` text DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `type` varchar(255) NOT NULL,
   `order` int(11) NOT NULL DEFAULT 1,
-  `group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `group` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
@@ -1620,7 +2095,7 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `similar_products`
+-- Table structure for table `similar_products`
 --
 
 CREATE TABLE `similar_products` (
@@ -1634,20 +2109,20 @@ CREATE TABLE `similar_products` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `site_texts`
+-- Table structure for table `site_texts`
 --
 
 CREATE TABLE `site_texts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `place` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) NOT NULL,
+  `place` varchar(255) DEFAULT NULL,
+  `content` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `site_texts`
+-- Dumping data for table `site_texts`
 --
 
 INSERT INTO `site_texts` (`id`, `key`, `place`, `content`, `created_at`, `updated_at`) VALUES
@@ -1682,20 +2157,71 @@ INSERT INTO `site_texts` (`id`, `key`, `place`, `content`, `created_at`, `update
 (32, 'routeProfile', 'profil route', 'profil', '2023-10-18 00:26:35', '2023-10-18 00:26:35'),
 (33, 'routePage', 'sabit sayfa route', 'sayfa', '2023-10-18 00:26:52', '2023-10-18 00:26:52'),
 (34, 'routeContact', 'iletisim sayfasi route', 'iletisim', '2023-10-18 00:29:22', '2023-10-18 00:29:22'),
-(35, 'Contact_Order_submitted', 'İletişim Sayfası', 'İletişim Formunuz Başarıyla Gönderilmiştir!', '2023-10-18 00:39:22', '2023-10-18 00:39:22');
+(35, 'Contact_Order_submitted', 'İletişim Sayfası', 'İletişim Formunuz Başarıyla Gönderilmiştir!', '2023-10-18 00:39:22', '2023-10-18 00:39:22'),
+(36, 'routeProducts', NULL, 'ürünler', '2023-10-18 08:16:56', '2023-10-18 08:16:56'),
+(37, 'routeProductDetails', NULL, 'Ürün_Detayları', '2023-10-18 08:18:47', '2023-10-18 08:18:47'),
+(38, 'routeHowitwork', NULL, 'how_it_work', '2023-10-18 19:57:49', '2023-10-18 19:57:49'),
+(39, 'how_it_works_brief', NULL, 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-19 00:13:03', '2023-10-19 00:13:03'),
+(40, 'how_it_works_footer_brief', NULL, 'You can reliably reach <strong>the product or service</strong> you want <strong>from all                             over Turkey</strong> through us.', '2023-10-19 00:23:00', '2023-10-19 01:59:28'),
+(41, 'How_it_works_header', NULL, 'How it works?', '2023-10-19 00:29:59', '2023-10-19 00:29:59'),
+(42, 'Contact', NULL, 'Contact', '2023-10-19 00:30:10', '2023-10-19 00:30:10'),
+(43, 'What_we_offer_header', NULL, 'What we offer?', '2023-10-19 00:31:38', '2023-10-19 00:31:38'),
+(44, 'Who_Are_We_header', NULL, 'Who Are We?', '2023-10-19 00:31:59', '2023-10-19 00:31:59'),
+(45, 'Why_Choose_Turkey_header', NULL, 'Why Choose Turkey?', '2023-10-19 01:15:19', '2023-10-19 01:15:19'),
+(46, 'routeWhyChoose', NULL, 'why_choose', '2023-10-19 05:08:45', '2023-10-19 05:08:45'),
+(47, 'routeWhoweare', NULL, 'who_we_are', '2023-10-19 05:09:08', '2023-10-19 05:09:08'),
+(48, 'routeWhatweoffer', NULL, 'What_we_offer', '2023-10-19 05:09:29', '2023-10-19 05:09:29'),
+(49, 'why_choose_turkey_page_title', NULL, 'WHY CHOOSE <span>TURKEY?</span>', '2023-10-19 05:23:38', '2023-10-19 05:23:38'),
+(50, 'why_choose_turkey_page_content', NULL, '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:28:04', '2023-10-19 05:28:04'),
+(51, 'Advantages', NULL, 'Advantages', '2023-10-19 05:29:30', '2023-10-19 05:29:30'),
+(52, 'who_we_are_page_title', NULL, 'WHO ARE <span>WE?</span>', '2023-10-19 05:38:18', '2023-10-19 05:38:18'),
+(53, 'About_Us', NULL, 'About Us', '2023-10-19 05:39:00', '2023-10-19 05:39:57'),
+(54, 'About_us_content', NULL, '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:40:39', '2023-10-19 05:40:39'),
+(55, 'Our_Mission', NULL, 'Our Mission', '2023-10-19 05:52:42', '2023-10-19 05:52:42'),
+(56, 'Our_mission_content1', NULL, 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:53:30', '2023-10-19 05:53:30'),
+(57, 'Our_mission_content2', NULL, 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:53:00', '2023-10-19 05:56:13'),
+(58, 'Our_Values', NULL, 'Our Values', '2023-10-19 05:54:42', '2023-10-19 05:54:42'),
+(59, 'Global_Experience', NULL, 'Global Experience', '2023-10-19 05:56:03', '2023-10-19 05:56:03'),
+(60, 'Global_Experience_content', NULL, 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,                     pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis                     sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:57:06', '2023-10-19 05:57:06'),
+(61, 'team_section_brief', NULL, 'You can reliably reach <span>the product or service</span> you want <br> <em>from all over                         Turkey</em> through us.', '2023-10-19 06:00:49', '2023-10-19 06:00:49'),
+(62, 'More_info', NULL, 'More info', '2023-10-19 06:01:29', '2023-10-19 06:01:29'),
+(63, 'our_founders_title', NULL, '<span>OUR</span> FOUNDERS', '2023-10-19 06:02:39', '2023-10-19 06:02:39'),
+(64, 'our_founders_content', NULL, 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                             elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 06:02:55', '2023-10-19 06:02:55'),
+(65, 'Tags', NULL, 'Tags', '2023-10-19 06:32:20', '2023-10-19 06:32:20'),
+(66, 'what_we_offer_page_title', NULL, 'What We <span>Offer?</span>', '2023-10-19 06:39:43', '2023-10-19 06:39:43'),
+(67, 'what_we_offer_page_content', NULL, '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-19 06:40:15', '2023-10-19 06:40:15'),
+(68, 'product_and_services', NULL, 'product and services', '2023-10-19 07:18:36', '2023-10-19 07:18:36'),
+(69, 'application_form_page_title', NULL, 'Applıcatıon <span>for sell</span>', '2023-10-19 08:15:58', '2023-10-19 08:15:58'),
+(70, 'application_form_page_brief', NULL, 'Send us your questions and we\'ll answer them. All the answers you are looking for are here', '2023-10-19 08:16:30', '2023-10-19 08:16:30'),
+(71, 'routeApplicationForm', NULL, 'application', '2023-10-19 08:56:22', '2023-10-19 08:56:22'),
+(72, 'routeOfferForm', NULL, 'get_an_offer', '2023-10-23 07:05:39', '2023-10-23 07:05:39'),
+(73, 'homepage_get_an_offer_title', NULL, 'What Would You Like To Get <br> From Türkiye ?', '2023-10-24 05:49:53', '2023-10-24 05:49:53'),
+(74, 'homepage_make_an_application_title', NULL, 'What Would You Like To Get <br> From Türkiye ?', '2023-10-24 05:50:46', '2023-10-24 05:50:46'),
+(75, 'routeBulten', NULL, 'bulten', '2023-10-24 09:57:02', '2023-10-24 09:57:02'),
+(76, 'routeBilling', NULL, 'billing_details', '2023-10-25 01:43:41', '2023-10-25 01:43:41'),
+(77, 'routeMyOffers', NULL, 'myOffers', '2023-10-25 01:50:03', '2023-10-25 01:50:03'),
+(78, 'routeMyApplications', NULL, 'MyApplications', '2023-10-25 01:51:00', '2023-10-25 01:51:00'),
+(79, 'products_search_results', NULL, 'results are listed according to the information you selected.', '2023-10-25 07:05:31', '2023-10-25 07:05:31'),
+(80, 'Buy_it_From_Turkiye', NULL, 'Buy it From Turkiye', '2023-10-25 07:22:00', '2023-10-25 07:22:00'),
+(81, 'products_and_services', NULL, 'Products                                 <br>                                 AND                                 <br>                                 SERVICES', '2023-10-25 07:26:20', '2023-10-25 07:26:20'),
+(82, 'Search_Results', NULL, 'Search Results', '2023-10-25 07:27:12', '2023-10-25 07:27:12'),
+(83, 'Minimizing_Map', NULL, 'Minimizing Map', '2023-10-25 08:07:10', '2023-10-25 08:07:10'),
+(84, 'Phone', NULL, 'Phone', '2023-10-25 08:58:30', '2023-10-25 08:58:30'),
+(85, 'no_images_avaliable', NULL, 'No images available for this product.', '2023-10-26 00:26:21', '2023-10-26 00:26:21'),
+(86, 'Products_and_Services_header', NULL, 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `sliders`
+-- Table structure for table `sliders`
 --
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `brief` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `brief` longtext DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `order` int(11) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1703,7 +2229,7 @@ CREATE TABLE `sliders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `sliders`
+-- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `title`, `brief`, `slug`, `image`, `order`, `active`, `created_at`, `updated_at`) VALUES
@@ -1713,25 +2239,25 @@ INSERT INTO `sliders` (`id`, `title`, `brief`, `slug`, `image`, `order`, `active
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `static_pages`
+-- Table structure for table `static_pages`
 --
 
 CREATE TABLE `static_pages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_ogimage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `content` longtext NOT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keyword` varchar(255) DEFAULT NULL,
+  `meta_canonical` varchar(255) DEFAULT NULL,
+  `meta_ogimage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `static_pages`
+-- Dumping data for table `static_pages`
 --
 
 INSERT INTO `static_pages` (`id`, `title`, `slug`, `content`, `meta_title`, `meta_description`, `meta_keyword`, `meta_canonical`, `meta_ogimage`, `created_at`, `updated_at`) VALUES
@@ -1740,22 +2266,22 @@ INSERT INTO `static_pages` (`id`, `title`, `slug`, `content`, `meta_title`, `met
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `translations`
+-- Table structure for table `translations`
 --
 
 CREATE TABLE `translations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `column_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `table_name` varchar(255) NOT NULL,
+  `column_name` varchar(255) NOT NULL,
   `foreign_key` int(10) UNSIGNED NOT NULL,
-  `locale` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `locale` varchar(255) NOT NULL,
+  `value` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `translations`
+-- Dumping data for table `translations`
 --
 
 INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
@@ -1846,15 +2372,6 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (91, 'blog_categories', 'slug', 3, 'en', 'food', '2023-10-16 09:49:44', '2023-10-16 09:49:44'),
 (92, 'blog_categories', 'title', 2, 'en', 'Travel', '2023-10-16 09:49:54', '2023-10-16 09:49:54'),
 (93, 'blog_categories', 'slug', 2, 'en', 'travel', '2023-10-16 09:49:54', '2023-10-16 09:49:54'),
-(94, 'blogs', 'title', 3, 'en', 'Why Do People Travel to Other Countries for                                                                 Medical Services?', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(95, 'blogs', 'slug', 3, 'en', 'Why_Do', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(96, 'blogs', 'brief', 3, 'en', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(97, 'blogs', 'content', 3, 'en', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(98, 'blogs', 'meta_title', 3, 'en', 'Tempore doloremque ', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(99, 'blogs', 'meta_description', 3, 'en', 'Eum laborum Eligend', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(100, 'blogs', 'meta_keyword', 3, 'en', 'Voluptatibus anim be', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(101, 'blogs', 'meta_canonical', 3, 'en', 'Fugiat delectus fug', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
-(102, 'blogs', 'meta_ogimage', 3, 'en', 'Quo earum magnam ea ', '2023-10-16 09:50:26', '2023-10-16 09:50:26'),
 (103, 'data_rows', 'display_name', 246, 'en', 'Id', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
 (104, 'data_rows', 'display_name', 247, 'en', 'Role Id', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
 (105, 'data_rows', 'display_name', 248, 'en', 'Ad', '2023-10-17 20:22:33', '2023-10-17 20:22:33'),
@@ -1902,40 +2419,561 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (147, 'contact_us', 'youtube', 1, 'en', 'Ex corrupti asperna', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
 (148, 'contact_us', 'twitter', 1, 'en', 'Fugiat aut adipisci', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
 (149, 'contact_us', 'instagram', 1, 'en', 'Reprehenderit eu in', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
-(150, 'contact_us', 'linkedin', 1, 'en', 'Vel deserunt totam s', '2023-10-18 00:41:53', '2023-10-18 00:41:53');
+(150, 'contact_us', 'linkedin', 1, 'en', 'Vel deserunt totam s', '2023-10-18 00:41:53', '2023-10-18 00:41:53'),
+(151, 'site_texts', 'content', 36, 'en', 'products', '2023-10-18 08:16:57', '2023-10-18 08:16:57'),
+(152, 'site_texts', 'content', 37, 'en', 'product_details', '2023-10-18 08:18:47', '2023-10-18 08:18:47'),
+(153, 'menu_items', 'title', 43, 'en', 'Products', '2023-10-18 08:24:02', '2023-10-18 08:24:02'),
+(154, 'site_texts', 'content', 38, 'en', 'how_it_work', '2023-10-18 19:57:49', '2023-10-18 19:57:49'),
+(155, 'site_texts', 'content', 39, 'en', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-19 00:13:03', '2023-10-19 00:13:03'),
+(156, 'site_texts', 'content', 40, 'en', 'You can reliably reach <strong>the product or service</strong> you want <strong>from all                             over Turkey</strong> through us.', '2023-10-19 00:23:44', '2023-10-19 00:23:44'),
+(157, 'site_texts', 'content', 41, 'en', 'How it works?', '2023-10-19 00:29:59', '2023-10-19 00:29:59'),
+(158, 'site_texts', 'content', 42, 'en', 'Contact', '2023-10-19 00:30:11', '2023-10-19 00:30:11'),
+(159, 'site_texts', 'content', 43, 'en', 'What we offer?', '2023-10-19 00:31:38', '2023-10-19 00:31:38'),
+(160, 'site_texts', 'content', 44, 'en', 'Who Are We?', '2023-10-19 00:31:59', '2023-10-19 00:31:59'),
+(161, 'site_texts', 'content', 45, 'en', 'Why Choose Turkey?', '2023-10-19 01:15:19', '2023-10-19 01:15:19'),
+(162, 'site_texts', 'content', 40, 'fr', 'You can reliably reach <strong>the product or service</strong> you want <strong>from all                             over Turkey</strong> through us.', '2023-10-19 01:59:29', '2023-10-19 01:59:29'),
+(163, 'site_texts', 'content', 40, 'de', 'You can reliably reach <strong>the product or service</strong> you want <strong>from all                             over Turkey</strong> through us.', '2023-10-19 01:59:29', '2023-10-19 01:59:29'),
+(164, 'site_texts', 'content', 40, 'ar', 'You can reliably reach <strong>the product or service</strong> you want <strong>from all                             over Turkey</strong> through us.', '2023-10-19 01:59:29', '2023-10-19 01:59:29'),
+(165, 'site_texts', 'content', 46, 'en', 'why_choose', '2023-10-19 05:08:45', '2023-10-19 05:08:45'),
+(166, 'site_texts', 'content', 47, 'en', 'who_we_are', '2023-10-19 05:09:08', '2023-10-19 05:09:08'),
+(167, 'site_texts', 'content', 48, 'en', 'What_we_offer', '2023-10-19 05:09:29', '2023-10-19 05:09:29'),
+(168, 'site_texts', 'content', 49, 'en', 'WHY CHOOSE <span>TURKEY?</span>', '2023-10-19 05:23:38', '2023-10-19 05:23:38'),
+(169, 'site_texts', 'content', 50, 'en', '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:28:04', '2023-10-19 05:28:04'),
+(170, 'site_texts', 'content', 51, 'en', 'Advantages', '2023-10-19 05:29:30', '2023-10-19 05:29:30'),
+(171, 'advantages', 'title', 1, 'en', 'In Sollicitudin Feugiat Enim Ut Ullamcorper', '2023-10-19 05:32:10', '2023-10-19 05:32:10'),
+(172, 'advantages', 'content', 1, 'en', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', '2023-10-19 05:32:10', '2023-10-19 05:32:10'),
+(173, 'advantages', 'title', 1, 'fr', 'In Sollicitudin Feugiat Enim Ut Ullamcorper', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(174, 'advantages', 'title', 1, 'de', 'In Sollicitudin Feugiat Enim Ut Ullamcorper', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(175, 'advantages', 'title', 1, 'ar', 'In Sollicitudin Feugiat Enim Ut Ullamcorper', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(176, 'advantages', 'content', 1, 'fr', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(177, 'advantages', 'content', 1, 'de', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(178, 'advantages', 'content', 1, 'ar', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper mollis at id massa. Fusce eu', '2023-10-19 05:32:31', '2023-10-19 05:32:31'),
+(179, 'site_texts', 'content', 52, 'en', 'WHO ARE <span>WE?</span>', '2023-10-19 05:38:18', '2023-10-19 05:38:18'),
+(180, 'site_texts', 'content', 53, 'en', 'About Us', '2023-10-19 05:39:51', '2023-10-19 05:39:57'),
+(181, 'site_texts', 'content', 53, 'fr', 'About_Us', '2023-10-19 05:39:57', '2023-10-19 05:39:57'),
+(182, 'site_texts', 'content', 53, 'de', 'About_Us', '2023-10-19 05:39:57', '2023-10-19 05:39:57'),
+(183, 'site_texts', 'content', 53, 'ar', 'About_Us', '2023-10-19 05:39:57', '2023-10-19 05:39:57'),
+(184, 'site_texts', 'content', 54, 'en', '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:40:39', '2023-10-19 05:40:39'),
+(185, 'data_rows', 'display_name', 28, 'en', 'Id', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(186, 'data_rows', 'display_name', 29, 'en', 'Email', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(187, 'data_rows', 'display_name', 30, 'en', 'Phone1', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(188, 'data_rows', 'display_name', 31, 'en', 'Phone2', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(189, 'data_rows', 'display_name', 32, 'en', 'Whatsapp', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(190, 'data_rows', 'display_name', 33, 'en', 'Address', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(191, 'data_rows', 'display_name', 34, 'en', 'Map', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(192, 'data_rows', 'display_name', 35, 'en', 'Facebook', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(193, 'data_rows', 'display_name', 36, 'en', 'Youtube', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(194, 'data_rows', 'display_name', 37, 'en', 'Twitter', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(195, 'data_rows', 'display_name', 38, 'en', 'Instagram', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(196, 'data_rows', 'display_name', 39, 'en', 'Site Logo Tr', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(197, 'data_rows', 'display_name', 40, 'en', 'Site Logo En', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(198, 'data_rows', 'display_name', 41, 'en', 'Linkedin', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(199, 'data_rows', 'display_name', 42, 'en', 'Created At', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(200, 'data_rows', 'display_name', 43, 'en', 'Updated At', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(201, 'data_types', 'display_name_singular', 6, 'en', 'Contact U', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(202, 'data_types', 'display_name_plural', 6, 'en', 'Contact Us', '2023-10-19 05:47:14', '2023-10-19 05:47:14'),
+(203, 'data_rows', 'display_name', 28, 'fr', 'Id', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(204, 'data_rows', 'display_name', 28, 'de', 'Id', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(205, 'data_rows', 'display_name', 28, 'ar', 'Id', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(206, 'data_rows', 'display_name', 29, 'fr', 'Email', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(207, 'data_rows', 'display_name', 29, 'de', 'Email', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(208, 'data_rows', 'display_name', 29, 'ar', 'Email', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(209, 'data_rows', 'display_name', 30, 'fr', 'Phone1', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(210, 'data_rows', 'display_name', 30, 'de', 'Phone1', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(211, 'data_rows', 'display_name', 30, 'ar', 'Phone1', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(212, 'data_rows', 'display_name', 31, 'fr', 'Phone2', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(213, 'data_rows', 'display_name', 31, 'de', 'Phone2', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(214, 'data_rows', 'display_name', 31, 'ar', 'Phone2', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(215, 'data_rows', 'display_name', 32, 'fr', 'Whatsapp', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(216, 'data_rows', 'display_name', 32, 'de', 'Whatsapp', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(217, 'data_rows', 'display_name', 32, 'ar', 'Whatsapp', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(218, 'data_rows', 'display_name', 33, 'fr', 'Address', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(219, 'data_rows', 'display_name', 33, 'de', 'Address', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(220, 'data_rows', 'display_name', 33, 'ar', 'Address', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(221, 'data_rows', 'display_name', 34, 'fr', 'Map', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(222, 'data_rows', 'display_name', 34, 'de', 'Map', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(223, 'data_rows', 'display_name', 34, 'ar', 'Map', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(224, 'data_rows', 'display_name', 35, 'fr', 'Facebook', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(225, 'data_rows', 'display_name', 35, 'de', 'Facebook', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(226, 'data_rows', 'display_name', 35, 'ar', 'Facebook', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(227, 'data_rows', 'display_name', 36, 'fr', 'Youtube', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(228, 'data_rows', 'display_name', 36, 'de', 'Youtube', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(229, 'data_rows', 'display_name', 36, 'ar', 'Youtube', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(230, 'data_rows', 'display_name', 37, 'fr', 'Twitter', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(231, 'data_rows', 'display_name', 37, 'de', 'Twitter', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(232, 'data_rows', 'display_name', 37, 'ar', 'Twitter', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(233, 'data_rows', 'display_name', 38, 'fr', 'Instagram', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(234, 'data_rows', 'display_name', 38, 'de', 'Instagram', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(235, 'data_rows', 'display_name', 38, 'ar', 'Instagram', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(236, 'data_rows', 'display_name', 39, 'fr', 'Site Logo Tr', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(237, 'data_rows', 'display_name', 39, 'de', 'Site Logo Tr', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(238, 'data_rows', 'display_name', 39, 'ar', 'Site Logo Tr', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(239, 'data_rows', 'display_name', 40, 'fr', 'Site Logo En', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(240, 'data_rows', 'display_name', 40, 'de', 'Site Logo En', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(241, 'data_rows', 'display_name', 40, 'ar', 'Site Logo En', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(242, 'data_rows', 'display_name', 41, 'fr', 'Linkedin', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(243, 'data_rows', 'display_name', 41, 'de', 'Linkedin', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(244, 'data_rows', 'display_name', 41, 'ar', 'Linkedin', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(245, 'data_rows', 'display_name', 42, 'fr', 'Created At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(246, 'data_rows', 'display_name', 42, 'de', 'Created At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(247, 'data_rows', 'display_name', 42, 'ar', 'Created At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(248, 'data_rows', 'display_name', 43, 'fr', 'Updated At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(249, 'data_rows', 'display_name', 43, 'de', 'Updated At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(250, 'data_rows', 'display_name', 43, 'ar', 'Updated At', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(251, 'data_rows', 'display_name', 328, 'en', 'AboutUs Video', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(252, 'data_types', 'display_name_singular', 6, 'fr', 'Contact U', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(253, 'data_types', 'display_name_singular', 6, 'de', 'Contact U', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(254, 'data_types', 'display_name_singular', 6, 'ar', 'Contact U', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(255, 'data_types', 'display_name_plural', 6, 'fr', 'Contact Us', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(256, 'data_types', 'display_name_plural', 6, 'de', 'Contact Us', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(257, 'data_types', 'display_name_plural', 6, 'ar', 'Contact Us', '2023-10-19 05:48:15', '2023-10-19 05:48:15'),
+(258, 'contact_us', 'email', 1, 'fr', 'belisipos@mailinator.com', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(259, 'contact_us', 'email', 1, 'de', 'belisipos@mailinator.com', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(260, 'contact_us', 'email', 1, 'ar', 'belisipos@mailinator.com', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(261, 'contact_us', 'phone1', 1, 'fr', '+1 (203) 292-4061', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(262, 'contact_us', 'phone1', 1, 'de', '+1 (203) 292-4061', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(263, 'contact_us', 'phone1', 1, 'ar', '+1 (203) 292-4061', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(264, 'contact_us', 'phone2', 1, 'fr', '+1 (593) 826-4718', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(265, 'contact_us', 'phone2', 1, 'de', '+1 (593) 826-4718', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(266, 'contact_us', 'phone2', 1, 'ar', '+1 (593) 826-4718', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(267, 'contact_us', 'whatsapp', 1, 'fr', 'Ea iure aut voluptat', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(268, 'contact_us', 'whatsapp', 1, 'de', 'Ea iure aut voluptat', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(269, 'contact_us', 'whatsapp', 1, 'ar', 'Ea iure aut voluptat', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(270, 'contact_us', 'address', 1, 'fr', 'Dolores a qui occaec', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(271, 'contact_us', 'address', 1, 'de', 'Dolores a qui occaec', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(272, 'contact_us', 'address', 1, 'ar', 'Dolores a qui occaec', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(273, 'contact_us', 'map', 1, 'fr', 'Animi voluptates fa', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(274, 'contact_us', 'map', 1, 'de', 'Animi voluptates fa', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(275, 'contact_us', 'map', 1, 'ar', 'Animi voluptates fa', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(276, 'contact_us', 'facebook', 1, 'fr', 'Iure eligendi simili', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(277, 'contact_us', 'facebook', 1, 'de', 'Iure eligendi simili', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(278, 'contact_us', 'facebook', 1, 'ar', 'Iure eligendi simili', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(279, 'contact_us', 'youtube', 1, 'fr', 'Ex corrupti asperna', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(280, 'contact_us', 'youtube', 1, 'de', 'Ex corrupti asperna', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(281, 'contact_us', 'youtube', 1, 'ar', 'Ex corrupti asperna', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(282, 'contact_us', 'twitter', 1, 'fr', 'Fugiat aut adipisci', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(283, 'contact_us', 'twitter', 1, 'de', 'Fugiat aut adipisci', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(284, 'contact_us', 'twitter', 1, 'ar', 'Fugiat aut adipisci', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(285, 'contact_us', 'instagram', 1, 'fr', 'Reprehenderit eu in', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(286, 'contact_us', 'instagram', 1, 'de', 'Reprehenderit eu in', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(287, 'contact_us', 'instagram', 1, 'ar', 'Reprehenderit eu in', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(288, 'contact_us', 'linkedin', 1, 'fr', 'Vel deserunt totam s', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(289, 'contact_us', 'linkedin', 1, 'de', 'Vel deserunt totam s', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(290, 'contact_us', 'linkedin', 1, 'ar', 'Vel deserunt totam s', '2023-10-19 05:48:26', '2023-10-19 05:48:26'),
+(291, 'data_rows', 'display_name', 328, 'fr', 'AboutUs Video', '2023-10-19 05:50:19', '2023-10-19 05:50:19'),
+(292, 'data_rows', 'display_name', 328, 'de', 'AboutUs Video', '2023-10-19 05:50:19', '2023-10-19 05:50:19'),
+(293, 'data_rows', 'display_name', 328, 'ar', 'AboutUs Video', '2023-10-19 05:50:19', '2023-10-19 05:50:19'),
+(294, 'site_texts', 'content', 55, 'en', 'Our Mission', '2023-10-19 05:52:43', '2023-10-19 05:52:43'),
+(295, 'site_texts', 'content', 56, 'en', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:53:31', '2023-10-19 05:53:31'),
+(296, 'site_texts', 'content', 57, 'en', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:53:41', '2023-10-19 05:53:41'),
+(297, 'site_texts', 'content', 58, 'en', 'Our Values', '2023-10-19 05:54:42', '2023-10-19 05:54:42'),
+(298, 'site_texts', 'content', 59, 'en', 'Global Experience', '2023-10-19 05:56:03', '2023-10-19 05:56:03'),
+(299, 'site_texts', 'content', 57, 'fr', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:56:13', '2023-10-19 05:56:13'),
+(300, 'site_texts', 'content', 57, 'de', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:56:13', '2023-10-19 05:56:13'),
+(301, 'site_texts', 'content', 57, 'ar', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-19 05:56:13', '2023-10-19 05:56:13'),
+(302, 'site_texts', 'content', 60, 'en', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,                     pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis                     sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-19 05:57:06', '2023-10-19 05:57:06'),
+(303, 'site_texts', 'content', 61, 'en', 'You can reliably reach <span>the product or service</span> you want <br> <em>from all over                         Turkey</em> through us.', '2023-10-19 06:00:49', '2023-10-19 06:00:49'),
+(304, 'site_texts', 'content', 62, 'en', 'More info', '2023-10-19 06:01:29', '2023-10-19 06:01:29'),
+(305, 'site_texts', 'content', 63, 'en', '<span>OUR</span> FOUNDERS', '2023-10-19 06:02:39', '2023-10-19 06:02:39'),
+(306, 'site_texts', 'content', 65, 'en', 'Tags', '2023-10-19 06:32:20', '2023-10-19 06:32:20'),
+(307, 'site_texts', 'content', 66, 'en', 'What We <span>Offer?</span>', '2023-10-19 06:39:43', '2023-10-19 06:39:43'),
+(308, 'site_texts', 'content', 67, 'en', '<strong>Turkey</strong> is an attractive option for international buyers with competitive                         prices and high-quality products. Its strategic location and technological expertise are                         also appealing factors. Additionally, the strong agriculture sector is noteworthy.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-19 06:40:15', '2023-10-19 06:40:15'),
+(309, 'our_offers', 'title', 2, 'en', 'Quality Handicrafts                                                         and Products', '2023-10-19 06:44:54', '2023-10-19 06:44:54'),
+(310, 'our_offers', 'content', 2, 'en', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:44:54', '2023-10-19 06:44:54'),
+(311, 'our_offers', 'title', 1, 'en', 'Competitive Prices', '2023-10-19 06:44:59', '2023-10-19 06:44:59'),
+(312, 'our_offers', 'content', 1, 'en', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:44:59', '2023-10-19 06:44:59'),
+(313, 'our_offers', 'title', 2, 'fr', 'Quality Handicrafts                                                         and Products', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(314, 'our_offers', 'title', 2, 'de', 'Quality Handicrafts                                                         and Products', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(315, 'our_offers', 'title', 2, 'ar', 'Quality Handicrafts                                                         and Products', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(316, 'our_offers', 'content', 2, 'fr', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(317, 'our_offers', 'content', 2, 'de', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(318, 'our_offers', 'content', 2, 'ar', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:47:41', '2023-10-19 06:47:41'),
+(319, 'our_offers', 'title', 1, 'fr', 'Competitive Prices', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(320, 'our_offers', 'title', 1, 'de', 'Competitive Prices', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(321, 'our_offers', 'title', 1, 'ar', 'Competitive Prices', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(322, 'our_offers', 'content', 1, 'fr', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(323, 'our_offers', 'content', 1, 'de', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(324, 'our_offers', 'content', 1, 'ar', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulp', '2023-10-19 06:48:09', '2023-10-19 06:48:09'),
+(325, 'site_texts', 'content', 68, 'en', 'product and services', '2023-10-19 07:18:36', '2023-10-19 07:18:36'),
+(326, 'site_texts', 'content', 69, 'en', 'Applıcatıon <span>for sell</span>', '2023-10-19 08:15:58', '2023-10-19 08:15:58'),
+(327, 'site_texts', 'content', 70, 'en', 'Send us your questions and we\'ll answer them. All the answers you are looking for are here', '2023-10-19 08:16:30', '2023-10-19 08:16:30'),
+(328, 'site_texts', 'content', 71, 'en', 'application', '2023-10-19 08:56:22', '2023-10-19 08:56:22'),
+(329, 'site_texts', 'content', 72, 'en', 'get_an_offer', '2023-10-23 07:05:39', '2023-10-23 07:05:39'),
+(330, 'site_texts', 'content', 73, 'en', 'What Would You Like To Get <br> From Türkiye ?', '2023-10-24 05:49:54', '2023-10-24 05:49:54'),
+(331, 'site_texts', 'content', 74, 'en', 'What Would You Like To Get <br> From Türkiye ?', '2023-10-24 05:50:46', '2023-10-24 05:50:46'),
+(332, 'data_rows', 'display_name', 218, 'fr', 'Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(333, 'data_rows', 'display_name', 218, 'de', 'Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(334, 'data_rows', 'display_name', 218, 'ar', 'Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(335, 'data_rows', 'display_name', 219, 'fr', 'Author Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(336, 'data_rows', 'display_name', 219, 'de', 'Author Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(337, 'data_rows', 'display_name', 219, 'ar', 'Author Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06');
+INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
+(338, 'data_rows', 'display_name', 220, 'fr', 'Blog Category Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(339, 'data_rows', 'display_name', 220, 'de', 'Blog Category Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(340, 'data_rows', 'display_name', 220, 'ar', 'Blog Category Id', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(341, 'data_rows', 'display_name', 221, 'fr', 'Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(342, 'data_rows', 'display_name', 221, 'de', 'Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(343, 'data_rows', 'display_name', 221, 'ar', 'Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(344, 'data_rows', 'display_name', 222, 'fr', 'Slug', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(345, 'data_rows', 'display_name', 222, 'de', 'Slug', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(346, 'data_rows', 'display_name', 222, 'ar', 'Slug', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(347, 'data_rows', 'display_name', 223, 'fr', 'Brief', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(348, 'data_rows', 'display_name', 223, 'de', 'Brief', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(349, 'data_rows', 'display_name', 223, 'ar', 'Brief', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(350, 'data_rows', 'display_name', 224, 'fr', 'Date', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(351, 'data_rows', 'display_name', 224, 'de', 'Date', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(352, 'data_rows', 'display_name', 224, 'ar', 'Date', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(353, 'data_rows', 'display_name', 225, 'fr', 'Thumbnail Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(354, 'data_rows', 'display_name', 225, 'de', 'Thumbnail Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(355, 'data_rows', 'display_name', 225, 'ar', 'Thumbnail Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(356, 'data_rows', 'display_name', 226, 'fr', 'Cover Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(357, 'data_rows', 'display_name', 226, 'de', 'Cover Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(358, 'data_rows', 'display_name', 226, 'ar', 'Cover Image', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(359, 'data_rows', 'display_name', 227, 'fr', 'Content', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(360, 'data_rows', 'display_name', 227, 'de', 'Content', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(361, 'data_rows', 'display_name', 227, 'ar', 'Content', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(362, 'data_rows', 'display_name', 228, 'fr', 'Is Featured', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(363, 'data_rows', 'display_name', 228, 'de', 'Is Featured', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(364, 'data_rows', 'display_name', 228, 'ar', 'Is Featured', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(365, 'data_rows', 'display_name', 229, 'fr', 'Meta Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(366, 'data_rows', 'display_name', 229, 'de', 'Meta Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(367, 'data_rows', 'display_name', 229, 'ar', 'Meta Title', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(368, 'data_rows', 'display_name', 230, 'fr', 'Meta Description', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(369, 'data_rows', 'display_name', 230, 'de', 'Meta Description', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(370, 'data_rows', 'display_name', 230, 'ar', 'Meta Description', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(371, 'data_rows', 'display_name', 231, 'fr', 'Meta Keyword', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(372, 'data_rows', 'display_name', 231, 'de', 'Meta Keyword', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(373, 'data_rows', 'display_name', 231, 'ar', 'Meta Keyword', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(374, 'data_rows', 'display_name', 232, 'fr', 'Meta Canonical', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(375, 'data_rows', 'display_name', 232, 'de', 'Meta Canonical', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(376, 'data_rows', 'display_name', 232, 'ar', 'Meta Canonical', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(377, 'data_rows', 'display_name', 233, 'fr', 'Meta Ogimage', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(378, 'data_rows', 'display_name', 233, 'de', 'Meta Ogimage', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(379, 'data_rows', 'display_name', 233, 'ar', 'Meta Ogimage', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(380, 'data_rows', 'display_name', 234, 'fr', 'Created At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(381, 'data_rows', 'display_name', 234, 'de', 'Created At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(382, 'data_rows', 'display_name', 234, 'ar', 'Created At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(383, 'data_rows', 'display_name', 235, 'fr', 'Updated At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(384, 'data_rows', 'display_name', 235, 'de', 'Updated At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(385, 'data_rows', 'display_name', 235, 'ar', 'Updated At', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(386, 'data_rows', 'display_name', 243, 'fr', 'authors', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(387, 'data_rows', 'display_name', 243, 'de', 'authors', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(388, 'data_rows', 'display_name', 243, 'ar', 'authors', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(389, 'data_rows', 'display_name', 244, 'fr', 'blog_categories', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(390, 'data_rows', 'display_name', 244, 'de', 'blog_categories', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(391, 'data_rows', 'display_name', 244, 'ar', 'blog_categories', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(392, 'data_rows', 'display_name', 245, 'fr', 'blog_tags', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(393, 'data_rows', 'display_name', 245, 'de', 'blog_tags', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(394, 'data_rows', 'display_name', 245, 'ar', 'blog_tags', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(395, 'data_types', 'display_name_singular', 28, 'fr', 'Blog', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(396, 'data_types', 'display_name_singular', 28, 'de', 'Blog', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(397, 'data_types', 'display_name_singular', 28, 'ar', 'Blog', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(398, 'data_types', 'display_name_plural', 28, 'fr', 'Blogs', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(399, 'data_types', 'display_name_plural', 28, 'de', 'Blogs', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(400, 'data_types', 'display_name_plural', 28, 'ar', 'Blogs', '2023-10-24 08:55:06', '2023-10-24 08:55:06'),
+(401, 'blogs', 'title', 8, 'en', 'Why Do People Travel to Other Countries for                                                                 Medical Services?', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(402, 'blogs', 'slug', 8, 'en', 'Why_Do', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(403, 'blogs', 'brief', 8, 'en', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(404, 'blogs', 'content', 8, 'en', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(405, 'blogs', 'meta_title', 8, 'en', 'Tempore doloremque ', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(406, 'blogs', 'meta_description', 8, 'en', 'Eum laborum Eligend', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(407, 'blogs', 'meta_keyword', 8, 'en', 'Voluptatibus anim be', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(408, 'blogs', 'meta_canonical', 8, 'en', 'Fugiat delectus fug', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(409, 'blogs', 'meta_ogimage', 8, 'en', 'Quo earum magnam ea ', '2023-10-24 08:57:06', '2023-10-24 08:57:06'),
+(410, 'blogs', 'title', 8, 'fr', 'Why Do People Travel to Other Countries for                                                                 Medical Services?', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(411, 'blogs', 'title', 8, 'de', 'Why Do People Travel to Other Countries for                                                                 Medical Services?', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(412, 'blogs', 'title', 8, 'ar', 'Why Do People Travel to Other Countries for                                                                 Medical Services?', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(413, 'blogs', 'slug', 8, 'fr', 'Why_Do', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(414, 'blogs', 'slug', 8, 'de', 'Why_Do', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(415, 'blogs', 'slug', 8, 'ar', 'Why_Do', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(416, 'blogs', 'brief', 8, 'fr', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(417, 'blogs', 'brief', 8, 'de', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(418, 'blogs', 'brief', 8, 'ar', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(419, 'blogs', 'content', 8, 'fr', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(420, 'blogs', 'content', 8, 'de', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(421, 'blogs', 'content', 8, 'ar', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(422, 'blogs', 'meta_title', 8, 'fr', 'Tempore doloremque ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(423, 'blogs', 'meta_title', 8, 'de', 'Tempore doloremque ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(424, 'blogs', 'meta_title', 8, 'ar', 'Tempore doloremque ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(425, 'blogs', 'meta_description', 8, 'fr', 'Eum laborum Eligend', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(426, 'blogs', 'meta_description', 8, 'de', 'Eum laborum Eligend', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(427, 'blogs', 'meta_description', 8, 'ar', 'Eum laborum Eligend', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(428, 'blogs', 'meta_keyword', 8, 'fr', 'Voluptatibus anim be', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(429, 'blogs', 'meta_keyword', 8, 'de', 'Voluptatibus anim be', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(430, 'blogs', 'meta_keyword', 8, 'ar', 'Voluptatibus anim be', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(431, 'blogs', 'meta_canonical', 8, 'fr', 'Fugiat delectus fug', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(432, 'blogs', 'meta_canonical', 8, 'de', 'Fugiat delectus fug', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(433, 'blogs', 'meta_canonical', 8, 'ar', 'Fugiat delectus fug', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(434, 'blogs', 'meta_ogimage', 8, 'fr', 'Quo earum magnam ea ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(435, 'blogs', 'meta_ogimage', 8, 'de', 'Quo earum magnam ea ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(436, 'blogs', 'meta_ogimage', 8, 'ar', 'Quo earum magnam ea ', '2023-10-24 08:57:13', '2023-10-24 08:57:13'),
+(437, 'blogs', 'title', 1, 'en', 'Blog1', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(438, 'blogs', 'slug', 1, 'en', 'Why_Do', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(439, 'blogs', 'brief', 1, 'en', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(440, 'blogs', 'content', 1, 'en', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(441, 'blogs', 'meta_title', 1, 'en', 'Tempore doloremque ', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(442, 'blogs', 'meta_description', 1, 'en', 'Eum laborum Eligend', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(443, 'blogs', 'meta_keyword', 1, 'en', 'Voluptatibus anim be', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(444, 'blogs', 'meta_canonical', 1, 'en', 'Fugiat delectus fug', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(445, 'blogs', 'meta_ogimage', 1, 'en', 'Quo earum magnam ea ', '2023-10-24 09:03:28', '2023-10-24 09:03:28'),
+(446, 'blogs', 'title', 4, 'en', 'Blog3', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(447, 'blogs', 'slug', 4, 'en', 'Why_Do', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(448, 'blogs', 'brief', 4, 'en', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(449, 'blogs', 'content', 4, 'en', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(450, 'blogs', 'meta_title', 4, 'en', 'Tempore doloremque ', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(451, 'blogs', 'meta_description', 4, 'en', 'Eum laborum Eligend', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(452, 'blogs', 'meta_keyword', 4, 'en', 'Voluptatibus anim be', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(453, 'blogs', 'meta_canonical', 4, 'en', 'Fugiat delectus fug', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(454, 'blogs', 'meta_ogimage', 4, 'en', 'Quo earum magnam ea ', '2023-10-24 09:03:38', '2023-10-24 09:03:38'),
+(455, 'blogs', 'title', 1, 'fr', 'Blog1', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(456, 'blogs', 'title', 1, 'de', 'Blog1', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(457, 'blogs', 'title', 1, 'ar', 'Blog1', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(458, 'blogs', 'slug', 1, 'fr', 'Why_Do', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(459, 'blogs', 'slug', 1, 'de', 'Why_Do', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(460, 'blogs', 'slug', 1, 'ar', 'Why_Do', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(461, 'blogs', 'brief', 1, 'fr', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(462, 'blogs', 'brief', 1, 'de', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(463, 'blogs', 'brief', 1, 'ar', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(464, 'blogs', 'content', 1, 'fr', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(465, 'blogs', 'content', 1, 'de', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(466, 'blogs', 'content', 1, 'ar', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(467, 'blogs', 'meta_title', 1, 'fr', 'Tempore doloremque ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(468, 'blogs', 'meta_title', 1, 'de', 'Tempore doloremque ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(469, 'blogs', 'meta_title', 1, 'ar', 'Tempore doloremque ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(470, 'blogs', 'meta_description', 1, 'fr', 'Eum laborum Eligend', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(471, 'blogs', 'meta_description', 1, 'de', 'Eum laborum Eligend', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(472, 'blogs', 'meta_description', 1, 'ar', 'Eum laborum Eligend', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(473, 'blogs', 'meta_keyword', 1, 'fr', 'Voluptatibus anim be', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(474, 'blogs', 'meta_keyword', 1, 'de', 'Voluptatibus anim be', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(475, 'blogs', 'meta_keyword', 1, 'ar', 'Voluptatibus anim be', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(476, 'blogs', 'meta_canonical', 1, 'fr', 'Fugiat delectus fug', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(477, 'blogs', 'meta_canonical', 1, 'de', 'Fugiat delectus fug', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(478, 'blogs', 'meta_canonical', 1, 'ar', 'Fugiat delectus fug', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(479, 'blogs', 'meta_ogimage', 1, 'fr', 'Quo earum magnam ea ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(480, 'blogs', 'meta_ogimage', 1, 'de', 'Quo earum magnam ea ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(481, 'blogs', 'meta_ogimage', 1, 'ar', 'Quo earum magnam ea ', '2023-10-24 09:04:13', '2023-10-24 09:04:13'),
+(482, 'site_texts', 'content', 75, 'en', 'bulten', '2023-10-24 09:57:02', '2023-10-24 09:57:02'),
+(483, 'data_rows', 'display_name', 201, 'fr', 'Id', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(484, 'data_rows', 'display_name', 201, 'de', 'Id', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(485, 'data_rows', 'display_name', 201, 'ar', 'Id', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(486, 'data_rows', 'display_name', 202, 'fr', 'Title', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(487, 'data_rows', 'display_name', 202, 'de', 'Title', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(488, 'data_rows', 'display_name', 202, 'ar', 'Title', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(489, 'data_rows', 'display_name', 203, 'fr', 'Slug', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(490, 'data_rows', 'display_name', 203, 'de', 'Slug', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(491, 'data_rows', 'display_name', 203, 'ar', 'Slug', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(492, 'data_rows', 'display_name', 204, 'fr', 'Color', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(493, 'data_rows', 'display_name', 204, 'de', 'Color', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(494, 'data_rows', 'display_name', 204, 'ar', 'Color', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(495, 'data_rows', 'display_name', 205, 'fr', 'Created At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(496, 'data_rows', 'display_name', 205, 'de', 'Created At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(497, 'data_rows', 'display_name', 205, 'ar', 'Created At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(498, 'data_rows', 'display_name', 206, 'fr', 'Updated At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(499, 'data_rows', 'display_name', 206, 'de', 'Updated At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(500, 'data_rows', 'display_name', 206, 'ar', 'Updated At', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(501, 'data_rows', 'display_name', 357, 'en', 'blogs', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(502, 'data_types', 'display_name_singular', 24, 'fr', 'Blog Category', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(503, 'data_types', 'display_name_singular', 24, 'de', 'Blog Category', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(504, 'data_types', 'display_name_singular', 24, 'ar', 'Blog Category', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(505, 'data_types', 'display_name_plural', 24, 'fr', 'Blog Categories', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(506, 'data_types', 'display_name_plural', 24, 'de', 'Blog Categories', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(507, 'data_types', 'display_name_plural', 24, 'ar', 'Blog Categories', '2023-10-24 20:06:43', '2023-10-24 20:06:43'),
+(508, 'site_texts', 'content', 76, 'en', 'billing_details', '2023-10-25 01:43:41', '2023-10-25 01:43:41'),
+(509, 'site_texts', 'content', 77, 'en', 'myOffers', '2023-10-25 01:50:03', '2023-10-25 01:50:03'),
+(510, 'site_texts', 'content', 78, 'en', 'MyApplications', '2023-10-25 01:51:01', '2023-10-25 01:51:01'),
+(511, 'product_tags', 'title', 1, 'en', 'House', '2023-10-25 03:53:17', '2023-10-25 03:53:17'),
+(512, 'product_tags', 'slug', 1, 'en', 'house', '2023-10-25 03:53:18', '2023-10-25 03:53:18'),
+(513, 'product_tags', 'title', 2, 'en', 'Flat', '2023-10-25 03:53:44', '2023-10-25 03:53:44'),
+(514, 'product_tags', 'slug', 2, 'en', 'flat', '2023-10-25 03:53:45', '2023-10-25 03:53:45'),
+(515, 'product_categories', 'title', 1, 'en', 'Real Estate', '2023-10-25 03:54:20', '2023-10-25 03:54:20'),
+(516, 'product_categories', 'slug', 1, 'en', 'real_estate', '2023-10-25 03:54:20', '2023-10-25 03:54:20'),
+(517, 'product_sectors', 'title', 1, 'en', 'Secotr1', '2023-10-25 03:55:16', '2023-10-25 03:55:16'),
+(518, 'product_sectors', 'slug', 1, 'en', 'secotr1', '2023-10-25 03:55:16', '2023-10-25 03:55:16'),
+(519, 'data_rows', 'display_name', 305, 'en', 'Id', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(520, 'data_rows', 'display_name', 306, 'en', 'Product Category Id', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(521, 'data_rows', 'display_name', 307, 'en', 'Product Sector Id', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(522, 'data_rows', 'display_name', 308, 'en', 'Title', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(523, 'data_rows', 'display_name', 309, 'en', 'Thumbnail Image', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(524, 'data_rows', 'display_name', 310, 'en', 'Images', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(525, 'data_rows', 'display_name', 311, 'en', 'Phone', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(526, 'data_rows', 'display_name', 312, 'en', 'Brief', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(527, 'data_rows', 'display_name', 313, 'en', 'Content', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(528, 'data_rows', 'display_name', 314, 'en', 'Meta Title', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(529, 'data_rows', 'display_name', 315, 'en', 'Meta Description', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(530, 'data_rows', 'display_name', 316, 'en', 'Meta Keyword', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(531, 'data_rows', 'display_name', 317, 'en', 'Meta Canonical', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(532, 'data_rows', 'display_name', 318, 'en', 'Meta Ogimage', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(533, 'data_rows', 'display_name', 319, 'en', 'Created At', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(534, 'data_rows', 'display_name', 320, 'en', 'Updated At', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(535, 'data_types', 'display_name_singular', 37, 'en', 'Product', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(536, 'data_types', 'display_name_plural', 37, 'en', 'Products', '2023-10-25 05:05:51', '2023-10-25 05:05:51'),
+(537, 'data_rows', 'display_name', 305, 'fr', 'Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(538, 'data_rows', 'display_name', 305, 'de', 'Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(539, 'data_rows', 'display_name', 305, 'ar', 'Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(540, 'data_rows', 'display_name', 306, 'fr', 'Product Category Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(541, 'data_rows', 'display_name', 306, 'de', 'Product Category Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(542, 'data_rows', 'display_name', 306, 'ar', 'Product Category Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(543, 'data_rows', 'display_name', 307, 'fr', 'Product Sector Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(544, 'data_rows', 'display_name', 307, 'de', 'Product Sector Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(545, 'data_rows', 'display_name', 307, 'ar', 'Product Sector Id', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(546, 'data_rows', 'display_name', 308, 'fr', 'Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(547, 'data_rows', 'display_name', 308, 'de', 'Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(548, 'data_rows', 'display_name', 308, 'ar', 'Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(549, 'data_rows', 'display_name', 358, 'en', 'Slug', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(550, 'data_rows', 'display_name', 309, 'fr', 'Thumbnail Image', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(551, 'data_rows', 'display_name', 309, 'de', 'Thumbnail Image', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(552, 'data_rows', 'display_name', 309, 'ar', 'Thumbnail Image', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(553, 'data_rows', 'display_name', 310, 'fr', 'Images', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(554, 'data_rows', 'display_name', 310, 'de', 'Images', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(555, 'data_rows', 'display_name', 310, 'ar', 'Images', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(556, 'data_rows', 'display_name', 311, 'fr', 'Phone', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(557, 'data_rows', 'display_name', 311, 'de', 'Phone', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(558, 'data_rows', 'display_name', 311, 'ar', 'Phone', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(559, 'data_rows', 'display_name', 312, 'fr', 'Brief', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(560, 'data_rows', 'display_name', 312, 'de', 'Brief', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(561, 'data_rows', 'display_name', 312, 'ar', 'Brief', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(562, 'data_rows', 'display_name', 313, 'fr', 'Content', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(563, 'data_rows', 'display_name', 313, 'de', 'Content', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(564, 'data_rows', 'display_name', 313, 'ar', 'Content', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(565, 'data_rows', 'display_name', 314, 'fr', 'Meta Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(566, 'data_rows', 'display_name', 314, 'de', 'Meta Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(567, 'data_rows', 'display_name', 314, 'ar', 'Meta Title', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(568, 'data_rows', 'display_name', 315, 'fr', 'Meta Description', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(569, 'data_rows', 'display_name', 315, 'de', 'Meta Description', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(570, 'data_rows', 'display_name', 315, 'ar', 'Meta Description', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(571, 'data_rows', 'display_name', 316, 'fr', 'Meta Keyword', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(572, 'data_rows', 'display_name', 316, 'de', 'Meta Keyword', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(573, 'data_rows', 'display_name', 316, 'ar', 'Meta Keyword', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(574, 'data_rows', 'display_name', 317, 'fr', 'Meta Canonical', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(575, 'data_rows', 'display_name', 317, 'de', 'Meta Canonical', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(576, 'data_rows', 'display_name', 317, 'ar', 'Meta Canonical', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(577, 'data_rows', 'display_name', 318, 'fr', 'Meta Ogimage', '2023-10-25 05:19:23', '2023-10-25 05:19:23');
+INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
+(578, 'data_rows', 'display_name', 318, 'de', 'Meta Ogimage', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(579, 'data_rows', 'display_name', 318, 'ar', 'Meta Ogimage', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(580, 'data_rows', 'display_name', 319, 'fr', 'Created At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(581, 'data_rows', 'display_name', 319, 'de', 'Created At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(582, 'data_rows', 'display_name', 319, 'ar', 'Created At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(583, 'data_rows', 'display_name', 320, 'fr', 'Updated At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(584, 'data_rows', 'display_name', 320, 'de', 'Updated At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(585, 'data_rows', 'display_name', 320, 'ar', 'Updated At', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(586, 'data_types', 'display_name_singular', 37, 'fr', 'Product', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(587, 'data_types', 'display_name_singular', 37, 'de', 'Product', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(588, 'data_types', 'display_name_singular', 37, 'ar', 'Product', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(589, 'data_types', 'display_name_plural', 37, 'fr', 'Products', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(590, 'data_types', 'display_name_plural', 37, 'de', 'Products', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(591, 'data_types', 'display_name_plural', 37, 'ar', 'Products', '2023-10-25 05:19:23', '2023-10-25 05:19:23'),
+(592, 'data_rows', 'display_name', 358, 'fr', 'Slug', '2023-10-25 05:22:05', '2023-10-25 05:22:05'),
+(593, 'data_rows', 'display_name', 358, 'de', 'Slug', '2023-10-25 05:22:05', '2023-10-25 05:22:05'),
+(594, 'data_rows', 'display_name', 358, 'ar', 'Slug', '2023-10-25 05:22:05', '2023-10-25 05:22:05'),
+(595, 'data_rows', 'display_name', 359, 'en', 'product_categories', '2023-10-25 05:23:32', '2023-10-25 05:23:32'),
+(596, 'data_rows', 'display_name', 359, 'fr', 'product_categories', '2023-10-25 05:25:36', '2023-10-25 05:25:36'),
+(597, 'data_rows', 'display_name', 359, 'de', 'product_categories', '2023-10-25 05:25:37', '2023-10-25 05:25:37'),
+(598, 'data_rows', 'display_name', 359, 'ar', 'product_categories', '2023-10-25 05:25:37', '2023-10-25 05:25:37'),
+(599, 'data_rows', 'display_name', 360, 'en', 'product_sectors', '2023-10-25 05:25:37', '2023-10-25 05:25:37'),
+(600, 'data_rows', 'display_name', 360, 'fr', 'product_sectors', '2023-10-25 05:26:33', '2023-10-25 05:26:33'),
+(601, 'data_rows', 'display_name', 360, 'de', 'product_sectors', '2023-10-25 05:26:33', '2023-10-25 05:26:33'),
+(602, 'data_rows', 'display_name', 360, 'ar', 'product_sectors', '2023-10-25 05:26:33', '2023-10-25 05:26:33'),
+(603, 'data_rows', 'display_name', 361, 'en', 'product_tags', '2023-10-25 05:26:33', '2023-10-25 05:26:33'),
+(604, 'products', 'title', 2, 'en', 'Quaerat eius possimu', '2023-10-25 05:36:41', '2023-10-25 05:36:41'),
+(605, 'products', 'slug', 2, 'en', 'Debitis soluta deser', '2023-10-25 05:36:41', '2023-10-25 05:36:41'),
+(606, 'products', 'brief', 2, 'en', 'Soluta excepteur mai', '2023-10-25 05:36:41', '2023-10-25 05:36:41'),
+(607, 'products', 'content', 2, 'en', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:36:41', '2023-10-25 05:36:41'),
+(608, 'data_rows', 'display_name', 361, 'fr', 'product_tags', '2023-10-25 05:37:04', '2023-10-25 05:37:04'),
+(609, 'data_rows', 'display_name', 361, 'de', 'product_tags', '2023-10-25 05:37:04', '2023-10-25 05:37:04'),
+(610, 'data_rows', 'display_name', 361, 'ar', 'product_tags', '2023-10-25 05:37:04', '2023-10-25 05:37:04'),
+(611, 'products', 'title', 2, 'fr', 'Quaerat eius possimu', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(612, 'products', 'title', 2, 'de', 'Quaerat eius possimu', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(613, 'products', 'title', 2, 'ar', 'Quaerat eius possimu', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(614, 'products', 'slug', 2, 'fr', 'Debitis soluta deser', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(615, 'products', 'slug', 2, 'de', 'Debitis soluta deser', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(616, 'products', 'slug', 2, 'ar', 'Debitis soluta deser', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(617, 'products', 'brief', 2, 'fr', 'Soluta excepteur mai', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(618, 'products', 'brief', 2, 'de', 'Soluta excepteur mai', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(619, 'products', 'brief', 2, 'ar', 'Soluta excepteur mai', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(620, 'products', 'content', 2, 'fr', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(621, 'products', 'content', 2, 'de', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(622, 'products', 'content', 2, 'ar', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:37:44', '2023-10-25 05:37:44'),
+(623, 'product_categories', 'title', 2, 'en', 'Offer', '2023-10-25 05:50:01', '2023-10-25 05:50:01'),
+(624, 'product_categories', 'slug', 2, 'en', 'offer', '2023-10-25 05:50:01', '2023-10-25 05:50:01'),
+(625, 'products', 'title', 3, 'en', 'offfe products', '2023-10-25 05:50:30', '2023-10-25 05:51:15'),
+(626, 'products', 'slug', 3, 'en', 'Debitis soluta deser', '2023-10-25 05:50:30', '2023-10-25 05:50:30'),
+(627, 'products', 'brief', 3, 'en', 'Soluta excepteur mai', '2023-10-25 05:50:30', '2023-10-25 05:50:30'),
+(628, 'products', 'content', 3, 'en', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:50:30', '2023-10-25 05:50:30'),
+(629, 'products', 'title', 3, 'fr', 'Quaerat eius possimu', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(630, 'products', 'title', 3, 'de', 'Quaerat eius possimu', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(631, 'products', 'title', 3, 'ar', 'Quaerat eius possimu', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(632, 'products', 'slug', 3, 'fr', 'Debitis soluta deser', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(633, 'products', 'slug', 3, 'de', 'Debitis soluta deser', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(634, 'products', 'slug', 3, 'ar', 'Debitis soluta deser', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(635, 'products', 'brief', 3, 'fr', 'Soluta excepteur mai', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(636, 'products', 'brief', 3, 'de', 'Soluta excepteur mai', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(637, 'products', 'brief', 3, 'ar', 'Soluta excepteur mai', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(638, 'products', 'content', 3, 'fr', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(639, 'products', 'content', 3, 'de', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(640, 'products', 'content', 3, 'ar', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 05:51:16', '2023-10-25 05:51:16'),
+(641, 'site_texts', 'content', 79, 'en', 'results are listed according to the information you selected.', '2023-10-25 07:05:31', '2023-10-25 07:05:31'),
+(642, 'site_texts', 'content', 80, 'en', 'Buy it From Turkiye', '2023-10-25 07:22:00', '2023-10-25 07:22:00'),
+(643, 'site_texts', 'content', 81, 'en', 'Products                                 <br>                                 AND                                 <br>                                 SERVICES', '2023-10-25 07:26:21', '2023-10-25 07:26:21'),
+(644, 'site_texts', 'content', 82, 'en', 'Search Results', '2023-10-25 07:27:12', '2023-10-25 07:27:12'),
+(645, 'site_texts', 'content', 83, 'en', 'Minimizing Map', '2023-10-25 08:07:10', '2023-10-25 08:07:10'),
+(646, 'product_sectors', 'title', 2, 'en', 'Sector2', '2023-10-25 08:19:51', '2023-10-25 08:19:51'),
+(647, 'product_sectors', 'slug', 2, 'en', 'sector2', '2023-10-25 08:19:51', '2023-10-25 08:19:51'),
+(648, 'product_tags', 'title', 3, 'en', 'Appartment', '2023-10-25 08:23:48', '2023-10-25 08:23:48'),
+(649, 'product_tags', 'slug', 3, 'en', 'appartment', '2023-10-25 08:23:48', '2023-10-25 08:23:48'),
+(650, 'products', 'title', 4, 'en', 'Sec2', '2023-10-25 08:27:09', '2023-10-25 08:27:25'),
+(651, 'products', 'slug', 4, 'en', 'Debitis soluta deser', '2023-10-25 08:27:10', '2023-10-25 08:27:10'),
+(652, 'products', 'brief', 4, 'en', 'Soluta excepteur mai', '2023-10-25 08:27:10', '2023-10-25 08:27:10'),
+(653, 'products', 'content', 4, 'en', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 08:27:10', '2023-10-25 08:27:10'),
+(654, 'products', 'title', 4, 'fr', 'Quaerat eius possimu', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(655, 'products', 'title', 4, 'de', 'Quaerat eius possimu', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(656, 'products', 'title', 4, 'ar', 'Quaerat eius possimu', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(657, 'products', 'slug', 4, 'fr', 'Debitis soluta deser', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(658, 'products', 'slug', 4, 'de', 'Debitis soluta deser', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(659, 'products', 'slug', 4, 'ar', 'Debitis soluta deser', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(660, 'products', 'brief', 4, 'fr', 'Soluta excepteur mai', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(661, 'products', 'brief', 4, 'de', 'Soluta excepteur mai', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(662, 'products', 'brief', 4, 'ar', 'Soluta excepteur mai', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(663, 'products', 'content', 4, 'fr', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(664, 'products', 'content', 4, 'de', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(665, 'products', 'content', 4, 'ar', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
+(666, 'site_texts', 'content', 84, 'en', 'Phone', '2023-10-25 08:58:30', '2023-10-25 08:58:30'),
+(667, 'site_texts', 'content', 85, 'en', 'No images available for this product.', '2023-10-26 00:26:21', '2023-10-26 00:26:21'),
+(668, 'site_texts', 'content', 86, 'en', 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `birth_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `birth_date` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT 'users/default.png',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `birth_date`, `country`, `phone`, `avatar`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'MKT3', 'mktarakji@smartwork.com.tr', '10/01/2023', 'US', '+90563523432', 'users/default.png', NULL, '$2y$10$TlsQ/YH6wo/mPmQNCWteGuyHk3D8PvVySkLzXYsiWH3LQt/HDBvi2', 'XIqb2WXbRJRFFlrpMuPkC12lfvW9j6AMeqTVNJmt5TOZJogJdgIOiXUMYrLp', '2023-10-17 21:51:39', '2023-10-17 23:22:19');
+(3, 'MKT3', 'mktarakji@smartwork.com.tr', '10/01/2023', 'US', '+90563523432', 'users/default.png', NULL, '$2y$10$TlsQ/YH6wo/mPmQNCWteGuyHk3D8PvVySkLzXYsiWH3LQt/HDBvi2', 'XIqb2WXbRJRFFlrpMuPkC12lfvW9j6AMeqTVNJmt5TOZJogJdgIOiXUMYrLp', '2023-10-17 21:51:39', '2023-10-17 23:22:19'),
+(4, 'Mohammed Kharzom', 'kharzom.mohammed@gmail.com', NULL, NULL, NULL, 'users/default.png', NULL, '$2y$10$DvJ1cm2P6Uts9XuVWUjOe.27YbGBMCqCW8V29Fp.tf11GWuuA/vCS', NULL, '2023-10-25 01:32:44', '2023-10-25 01:32:44');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `user_roles`
+-- Table structure for table `user_roles`
 --
 
 CREATE TABLE `user_roles` (
@@ -1944,11 +2982,11 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Indexes for dumped tables
 --
 
 --
--- Tablo için indeksler `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
@@ -1956,13 +2994,19 @@ ALTER TABLE `admins`
   ADD KEY `admins_role_id_foreign` (`role_id`);
 
 --
--- Tablo için indeksler `advantages`
+-- Indexes for table `advantages`
 --
 ALTER TABLE `advantages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `audits`
+-- Indexes for table `application_orders`
+--
+ALTER TABLE `application_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `audits`
 --
 ALTER TABLE `audits`
   ADD PRIMARY KEY (`id`),
@@ -1970,19 +3014,19 @@ ALTER TABLE `audits`
   ADD KEY `audits_user_id_user_type_index` (`user_id`,`user_type`);
 
 --
--- Tablo için indeksler `authors`
+-- Indexes for table `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `billing_details`
+-- Indexes for table `billing_details`
 --
 ALTER TABLE `billing_details`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `blogs`
+-- Indexes for table `blogs`
 --
 ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`),
@@ -1990,13 +3034,13 @@ ALTER TABLE `blogs`
   ADD KEY `blogs_blog_category_id_foreign` (`blog_category_id`);
 
 --
--- Tablo için indeksler `blog_categories`
+-- Indexes for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `blog_tag`
+-- Indexes for table `blog_tag`
 --
 ALTER TABLE `blog_tag`
   ADD PRIMARY KEY (`id`),
@@ -2004,25 +3048,25 @@ ALTER TABLE `blog_tag`
   ADD KEY `blog_tag_blog_tag_id_foreign` (`blog_tag_id`);
 
 --
--- Tablo için indeksler `blog_tags`
+-- Indexes for table `blog_tags`
 --
 ALTER TABLE `blog_tags`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `brands`
+-- Indexes for table `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `bultens`
+-- Indexes for table `bultens`
 --
 ALTER TABLE `bultens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -2030,38 +3074,38 @@ ALTER TABLE `comments`
   ADD KEY `comments_parent_id_foreign` (`parent_id`);
 
 --
--- Tablo için indeksler `contact_orders`
+-- Indexes for table `contact_orders`
 --
 ALTER TABLE `contact_orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `contact_us`
+-- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `corporate_pages`
+-- Indexes for table `corporate_pages`
 --
 ALTER TABLE `corporate_pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `cover_images`
+-- Indexes for table `cover_images`
 --
 ALTER TABLE `cover_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `data_rows`
+-- Indexes for table `data_rows`
 --
 ALTER TABLE `data_rows`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_rows_data_type_id_foreign` (`data_type_id`);
 
 --
--- Tablo için indeksler `data_types`
+-- Indexes for table `data_types`
 --
 ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
@@ -2069,89 +3113,95 @@ ALTER TABLE `data_types`
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
 
 --
--- Tablo için indeksler `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Tablo için indeksler `founders`
+-- Indexes for table `founders`
 --
 ALTER TABLE `founders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `f_a_q_s`
+-- Indexes for table `f_a_q_s`
 --
 ALTER TABLE `f_a_q_s`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `get_offers`
+-- Indexes for table `get_offers`
 --
 ALTER TABLE `get_offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `institutionals`
+-- Indexes for table `institutionals`
 --
 ALTER TABLE `institutionals`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `languages`
+-- Indexes for table `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `menus_name_unique` (`name`);
 
 --
--- Tablo için indeksler `menu_items`
+-- Indexes for table `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `menu_items_menu_id_foreign` (`menu_id`);
 
 --
--- Tablo için indeksler `metas`
+-- Indexes for table `metas`
 --
 ALTER TABLE `metas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `our_offers`
+-- Indexes for table `offer_orders`
+--
+ALTER TABLE `offer_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `our_offers`
 --
 ALTER TABLE `our_offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Tablo için indeksler `permissions`
+-- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `permissions_key_index` (`key`);
 
 --
--- Tablo için indeksler `permission_role`
+-- Indexes for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
@@ -2159,7 +3209,7 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_role_role_id_index` (`role_id`);
 
 --
--- Tablo için indeksler `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -2167,33 +3217,40 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Tablo için indeksler `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `products_product_category_id_foreign` (`product_category_id`),
-  ADD KEY `products_product_sector_id_foreign` (`product_sector_id`);
+  ADD KEY `products_product_category_id_foreign` (`product_category_id`);
 
 --
--- Tablo için indeksler `products_sliders`
+-- Indexes for table `products_sliders`
 --
 ALTER TABLE `products_sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `product_categories`
+-- Indexes for table `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `product_sectors`
+-- Indexes for table `product_sector`
+--
+ALTER TABLE `product_sector`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_sector_product_id_foreign` (`product_id`),
+  ADD KEY `product_sector_product_sector_id_foreign` (`product_sector_id`);
+
+--
+-- Indexes for table `product_sectors`
 --
 ALTER TABLE `product_sectors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `product_tag`
+-- Indexes for table `product_tag`
 --
 ALTER TABLE `product_tag`
   ADD PRIMARY KEY (`id`),
@@ -2201,45 +3258,45 @@ ALTER TABLE `product_tag`
   ADD KEY `product_tag_product_tag_id_foreign` (`product_tag_id`);
 
 --
--- Tablo için indeksler `product_tags`
+-- Indexes for table `product_tags`
 --
 ALTER TABLE `product_tags`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Tablo için indeksler `sell_offers`
+-- Indexes for table `sell_offers`
 --
 ALTER TABLE `sell_offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `seo`
+-- Indexes for table `seo`
 --
 ALTER TABLE `seo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `services`
+-- Indexes for table `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `settings_key_unique` (`key`);
 
 --
--- Tablo için indeksler `similar_products`
+-- Indexes for table `similar_products`
 --
 ALTER TABLE `similar_products`
   ADD PRIMARY KEY (`id`),
@@ -2247,39 +3304,39 @@ ALTER TABLE `similar_products`
   ADD KEY `similar_products_semi_product_id_foreign` (`semi_product_id`);
 
 --
--- Tablo için indeksler `site_texts`
+-- Indexes for table `site_texts`
 --
 ALTER TABLE `site_texts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `sliders`
+-- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `static_pages`
+-- Indexes for table `static_pages`
 --
 ALTER TABLE `static_pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `translations`
+-- Indexes for table `translations`
 --
 ALTER TABLE `translations`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `translations_table_name_column_name_foreign_key_locale_unique` (`table_name`,`column_name`,`foreign_key`,`locale`);
 
 --
--- Tablo için indeksler `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Tablo için indeksler `user_roles`
+-- Indexes for table `user_roles`
 --
 ALTER TABLE `user_roles`
   ADD PRIMARY KEY (`user_id`,`role_id`),
@@ -2287,370 +3344,394 @@ ALTER TABLE `user_roles`
   ADD KEY `user_roles_role_id_index` (`role_id`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `advantages`
+--
+ALTER TABLE `advantages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `application_orders`
+--
+ALTER TABLE `application_orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `advantages`
---
-ALTER TABLE `advantages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- Tablo için AUTO_INCREMENT değeri `audits`
+-- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 
 --
--- Tablo için AUTO_INCREMENT değeri `authors`
+-- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `billing_details`
+-- AUTO_INCREMENT for table `billing_details`
 --
 ALTER TABLE `billing_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `blogs`
+-- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Tablo için AUTO_INCREMENT değeri `blog_categories`
+-- AUTO_INCREMENT for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `blog_tag`
+-- AUTO_INCREMENT for table `blog_tag`
 --
 ALTER TABLE `blog_tag`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `blog_tags`
+-- AUTO_INCREMENT for table `blog_tags`
 --
 ALTER TABLE `blog_tags`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `brands`
+-- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Tablo için AUTO_INCREMENT değeri `bultens`
+-- AUTO_INCREMENT for table `bultens`
 --
 ALTER TABLE `bultens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `contact_orders`
+-- AUTO_INCREMENT for table `contact_orders`
 --
 ALTER TABLE `contact_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Tablo için AUTO_INCREMENT değeri `contact_us`
+-- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `corporate_pages`
+-- AUTO_INCREMENT for table `corporate_pages`
 --
 ALTER TABLE `corporate_pages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `cover_images`
+-- AUTO_INCREMENT for table `cover_images`
 --
 ALTER TABLE `cover_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `data_rows`
+-- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=362;
 
 --
--- Tablo için AUTO_INCREMENT değeri `data_types`
+-- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- Tablo için AUTO_INCREMENT değeri `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `founders`
+-- AUTO_INCREMENT for table `founders`
 --
 ALTER TABLE `founders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `f_a_q_s`
+-- AUTO_INCREMENT for table `f_a_q_s`
 --
 ALTER TABLE `f_a_q_s`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Tablo için AUTO_INCREMENT değeri `get_offers`
+-- AUTO_INCREMENT for table `get_offers`
 --
 ALTER TABLE `get_offers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `institutionals`
+-- AUTO_INCREMENT for table `institutionals`
 --
 ALTER TABLE `institutionals`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `languages`
+-- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Tablo için AUTO_INCREMENT değeri `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `menu_items`
+-- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- Tablo için AUTO_INCREMENT değeri `metas`
+-- AUTO_INCREMENT for table `metas`
 --
 ALTER TABLE `metas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
--- Tablo için AUTO_INCREMENT değeri `our_offers`
+-- AUTO_INCREMENT for table `offer_orders`
+--
+ALTER TABLE `offer_orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `our_offers`
 --
 ALTER TABLE `our_offers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `permissions`
+-- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
 
 --
--- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `products_sliders`
+-- AUTO_INCREMENT for table `products_sliders`
 --
 ALTER TABLE `products_sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `product_categories`
+-- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `product_sectors`
+-- AUTO_INCREMENT for table `product_sector`
+--
+ALTER TABLE `product_sector`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `product_sectors`
 --
 ALTER TABLE `product_sectors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `product_tag`
+-- AUTO_INCREMENT for table `product_tag`
 --
 ALTER TABLE `product_tag`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `product_tags`
+-- AUTO_INCREMENT for table `product_tags`
 --
 ALTER TABLE `product_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `sell_offers`
+-- AUTO_INCREMENT for table `sell_offers`
 --
 ALTER TABLE `sell_offers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `seo`
+-- AUTO_INCREMENT for table `seo`
 --
 ALTER TABLE `seo`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `services`
+-- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Tablo için AUTO_INCREMENT değeri `similar_products`
+-- AUTO_INCREMENT for table `similar_products`
 --
 ALTER TABLE `similar_products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `site_texts`
+-- AUTO_INCREMENT for table `site_texts`
 --
 ALTER TABLE `site_texts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
--- Tablo için AUTO_INCREMENT değeri `sliders`
+-- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `static_pages`
+-- AUTO_INCREMENT for table `static_pages`
 --
 ALTER TABLE `static_pages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `translations`
+-- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=669;
 
 --
--- Tablo için AUTO_INCREMENT değeri `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Dökümü yapılmış tablolar için kısıtlamalar
+-- Constraints for dumped tables
 --
 
 --
--- Tablo kısıtlamaları `admins`
+-- Constraints for table `admins`
 --
 ALTER TABLE `admins`
   ADD CONSTRAINT `admins_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
 --
--- Tablo kısıtlamaları `blogs`
+-- Constraints for table `blogs`
 --
 ALTER TABLE `blogs`
   ADD CONSTRAINT `blogs_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`),
   ADD CONSTRAINT `blogs_blog_category_id_foreign` FOREIGN KEY (`blog_category_id`) REFERENCES `blog_categories` (`id`);
 
 --
--- Tablo kısıtlamaları `blog_tag`
+-- Constraints for table `blog_tag`
 --
 ALTER TABLE `blog_tag`
   ADD CONSTRAINT `blog_tag_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`),
   ADD CONSTRAINT `blog_tag_blog_tag_id_foreign` FOREIGN KEY (`blog_tag_id`) REFERENCES `blog_tags` (`id`);
 
 --
--- Tablo kısıtlamaları `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`),
   ADD CONSTRAINT `comments_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `comments` (`id`);
 
 --
--- Tablo kısıtlamaları `data_rows`
+-- Constraints for table `data_rows`
 --
 ALTER TABLE `data_rows`
   ADD CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Tablo kısıtlamaları `menu_items`
+-- Constraints for table `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE;
 
 --
--- Tablo kısıtlamaları `permission_role`
+-- Constraints for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Tablo kısıtlamaları `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_product_category_id_foreign` FOREIGN KEY (`product_category_id`) REFERENCES `product_categories` (`id`),
-  ADD CONSTRAINT `products_product_sector_id_foreign` FOREIGN KEY (`product_sector_id`) REFERENCES `product_sectors` (`id`);
+  ADD CONSTRAINT `products_product_category_id_foreign` FOREIGN KEY (`product_category_id`) REFERENCES `product_categories` (`id`);
 
 --
--- Tablo kısıtlamaları `product_tag`
+-- Constraints for table `product_sector`
+--
+ALTER TABLE `product_sector`
+  ADD CONSTRAINT `product_sector_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `product_sector_product_sector_id_foreign` FOREIGN KEY (`product_sector_id`) REFERENCES `product_sectors` (`id`);
+
+--
+-- Constraints for table `product_tag`
 --
 ALTER TABLE `product_tag`
   ADD CONSTRAINT `product_tag_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `product_tag_product_tag_id_foreign` FOREIGN KEY (`product_tag_id`) REFERENCES `product_tags` (`id`);
 
 --
--- Tablo kısıtlamaları `similar_products`
+-- Constraints for table `similar_products`
 --
 ALTER TABLE `similar_products`
   ADD CONSTRAINT `similar_products_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `similar_products_semi_product_id_foreign` FOREIGN KEY (`semi_product_id`) REFERENCES `products` (`id`);
 
 --
--- Tablo kısıtlamaları `user_roles`
+-- Constraints for table `user_roles`
 --
 ALTER TABLE `user_roles`
   ADD CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
