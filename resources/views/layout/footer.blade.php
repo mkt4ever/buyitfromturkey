@@ -200,7 +200,42 @@ $('.categories-carousel').owlCarousel({
         }
     }
 });
-
+$('#gallery-carousel').owlCarousel({
+    dots: false,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    nav: true, // Show next and prev buttons
+    slideSpeed: 500,
+    autoplayHoverPause: true,
+    smartSpeed: 1000,
+    responsiveClass: true,
+    navText: [
+        "<i class='fa-solid fa-chevron-left'></i>",
+        "<i class='fa-solid fa-chevron-right'></i>"
+    ],
+    responsive: {
+        0: {
+            items: 1,
+        },
+        400: {
+            items: 1,
+        },
+        600: {
+            items: 2,
+        },
+        768: {
+            items: 3,
+        },
+        1000: {
+            items: 3,
+        },
+        1200: {
+            items: 3,
+        }
+    }
+});
 
 $('.brans-carousel').owlCarousel({
     dots: false,

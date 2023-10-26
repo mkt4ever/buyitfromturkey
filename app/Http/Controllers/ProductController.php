@@ -31,34 +31,35 @@ class ProductController extends Controller
             ];
 
         });
-        $category = null ;
-        if($request->category && $request->category != 'All') {
-            $category = ProductCategory::withTranslations(app()->getLocale())->where('slug', $request->category)->first();
 
-        }   
-            
-        $products = Product::withTranslation(app()->getLocale())->with(['product_tags','product_sectors','product_category'])
-
-        ->when($request->category && $request->category != 'All', function($query) use($request, $category){
-            $query->whereRelation('product_category', 'product_categories.id', $category->id);
-        })
-
-        // ->when($request->tag, function($query) use($request){
-        //     $query->whereRelation('product_tags', 'product_tags.id', $request->unit);
-        // })
-
-        // ->when($request->search, function($query) use($request){
-        //     $query->whereTranslation('title', 'like', "%$request->search%")
-        //           ->orWhere(function ($query2) use($request){
-        //             $query2->whereTranslation('content', 'like', "%$request->search%");
-        //           })
-        //           ->orWhere(function ($query2) use($request){
-        //             $query2->whereTranslation('brief', 'like', "%$request->search%");
-        //           });
-
-        // })
-
-        ->orderByDesc('created_at')->get()->all();
+        $products = Product::withTranslation(app()->getLocale())
+            ->with(['product_tags', 'product_sectors', 'product_category'])
+            ->when($request->category && $request->category != 'All', function ($query) use ($request) {
+                $query->whereRelation('product_category', 'product_categories.slug', $request->category);
+            })
+            ->when($request->tag && $request->tag != 'All', function ($query) use ($request) {
+                $query->whereHas('product_tags', function ($tagQuery) use ($request) {
+                    $tagQuery->where('product_tags.slug', $request->tag);
+                });
+            })
+            ->when($request->sector && $request->sector != 'All', function ($query) use ($request) {
+                $query->whereHas('product_sectors', function ($sectorQuery) use ($request) {
+                    $sectorQuery->where('product_sectors.slug', $request->sector);
+                });
+            })
+            // ->when($request->search, function ($query) use ($request) {
+            //     $query->whereTranslation('title', 'like', "%$request->search%")
+            //         ->orWhere(function ($query2) use ($request) {
+            //             $query2->whereTranslation('content', 'like', "%$request->search%");
+            //         })
+            //         ->orWhere(function ($query2) use ($request) {
+            //             $query2->whereTranslation('brief', 'like', "%$request->search%");
+            //         });
+            // })
+            ->orderByDesc('created_at')
+            ->get()
+            ->all();
+// dd($products) ;
 
         $productCount = count($products);
 
@@ -67,7 +68,19 @@ class ProductController extends Controller
 
     public function show(Request $request){
 
-        return view('products.show') ;
+        $compact = Cache::rememberForever("products_show_{$request->slug}_".app()->getLocale(), function() use ($request){
+            $product = Product::with(['product_tags', 'product_sectors','product_category'])->whereTranslation('slug', '=', $request->slug, [app()->getLocale()], app()->getLocale() == 'tr')->firstOrFail()->translate(app()->getLocale());
+            $images = json_decode($product->Images);
+
+            return [
+                "product" => $product,
+                "images" => $images,
+
+            ];
+
+
+        });
+        return view('products.show')->with($compact);
 
     }
 }

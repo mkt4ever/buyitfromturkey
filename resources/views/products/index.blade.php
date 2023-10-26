@@ -18,7 +18,7 @@
                             <div class="icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
                         </button>
                         <button class="btn btn-primary icon-btn small">
-                            Haritayı Küçült
+                            {{text('Minimizing_Map')}}
                             <div class="icon"><i class="fa-solid fa-down-left-and-up-right-to-center"></i></div>
                         </button>
                     </div>
@@ -41,10 +41,10 @@
                             </div>
                             <div class="item">
                                 <div class="content">
-                                    <select name="sectors" class="nice-select">
-                                        <option data-display="Sectors" {{ request('sectors') == 'All' ? 'selected' : '' }}>{{ text('All') }}</option>
+                                    <select name="sector" class="nice-select">
+                                        <option data-display="Sector" {{ request('sector') == 'All' ? 'selected' : '' }}>{{ text('All') }}</option>
                                         @foreach ($products_sectores as $sector)
-                                            <option value="{{ $sector->slug }}" {{ request('sectors') == $sector->slug ? 'selected' : '' }}>{{ $sector->title }}</option>
+                                            <option value="{{ $sector->slug }}" {{ request('sector') == $sector->slug ? 'selected' : '' }}>{{ $sector->title }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -123,11 +123,11 @@
                     <p>{{$productCount}} {{text('products_search_results')}}</p>
                     <div class="filter">
                         <ul>
-                            @if (!empty(request('sectors')) && request('sectors') !== 'All')
+                            @if (!empty(request('sector')) && request('sector') !== 'All')
                             <li>
                                 <a href="#">
-                                    Sectors: {{ request('sectors', 'All') }}
-                                    <i class="fa-solid fa-xmark" onclick="resetQuery('sectors')"></i>
+                                    {{text('Sectors')}}: {{ request('sector', 'All') }}
+                                    <i class="fa-solid fa-xmark" onclick="resetQuery('sector')"></i>
                                 </a>
                             </li>
                             @endif
@@ -135,7 +135,7 @@
                             @if (!empty(request('category')) && request('category') !== 'All')
                             <li>
                                 <a href="#">
-                                    Category: {{ request('category', 'All') }}
+                                    {{text('Category')}}: {{ request('category', 'All') }}
                                     <i class="fa-solid fa-xmark" onclick="resetQuery('category')"></i>
                                 </a>
                             </li>
@@ -144,7 +144,7 @@
                             @if (!empty(request('tag')) && request('tag') !== 'All')
                             <li>
                                 <a href="#">
-                                    Tag: {{ request('tag', 'All') }}
+                                    {{text('Tag')}}: {{ request('tag', 'All') }}
                                     <i class="fa-solid fa-xmark" onclick="resetQuery('tag')"></i>
                                 </a>
                             </li>
@@ -158,7 +158,7 @@
                             <div class="col-md-6 col-lg-4 col-xl-3 item">
                                 <div class="details">
                                     <div class="content">
-                                        <a href="">
+                                        <a href="{{localeRoute('products.show',$product->slug)}}">
                                             <div class="image">
                                                 <img src="{{Voyager::image($product->thumbnail_image)}}" alt="">
                                             </div>

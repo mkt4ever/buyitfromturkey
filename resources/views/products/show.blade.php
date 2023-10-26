@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.app', ["header" => "inner-page"])
 
 @section('content')
 
@@ -9,29 +9,24 @@
                 <div class="row">
                     <div class="col-md-6 text" data-aos="fade-up" data-aos-duration="1000">
                         <h3>
-                            How can we buy
-                            <span>a house?</span>
+                            {!! $product->title !!}
                         </h3>
                         <p>
-                            Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique
-                            lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel
-                            consectetur.
+                            {!! $product->brief !!}
 
                         </p>
-                        <h4>Let us know the features of the house you want, and we will come to you with suitable
-                            houses and offers.</h4>
                         <ul>
                             <li>
-                                <a href="" class="btn btn-secondary icon-btn">Get an Offer <div class="icon"><i
+                                <a href="{{localeRoute('offer.store')}}" class="btn btn-secondary icon-btn">{{text('Get_an_Offer')}} <div class="icon"><i
                                             class="fa-solid fa-arrow-right"></i></div></a>
                             </li>
                             <li>
                                 <div class="icon">
-                                    <img src="assets/img/icon/about-phone.svg" alt="">
+                                    <img src="{{asset('img/icon/about-phone.svg')}}" alt="">
                                 </div>
                                 <div class="details">
-                                    <h4>Phone</h4>
-                                    <a href="">+90 500 000 00 00</a>
+                                    <h4>{{text('Phone')}}</h4>
+                                    <a href="tel:{{ $product->phone }}">{{ $product->phone }}</a>
                                 </div>
                             </li>
 
@@ -39,35 +34,35 @@
                     </div>
                     <div class="col-md-6 images" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-md-3 item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
+
+                            @php
+                                $firstImage = array_shift($images);
+                                $imageGroups = array_chunk($images, 2); 
+                            @endphp
+
+                            @if (count($imageGroups) > 0)
+                                <div class="col-md-3 item">
+                                    <div class="image">
+                                        <img src="{{ Voyager::image($firstImage) }}" alt="Product Image">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-3 item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-3 item">
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                                <div class="image">
-                                    <img src="assets/img/blogtravel.png" alt="">
-                                </div>
-                            </div>
+
+                                @for ($i = 0; $i < min(3, count($imageGroups)); $i++)
+                                    <div class="col-md-3 item">
+                                        @foreach ($imageGroups[$i] as $image)
+                                            <div class="image">
+                                                <img src="{{ Voyager::image($image) }}" alt="Product Image">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endfor
+                            @else
+                                <p>{!! text('no_images_avaliable') !!}</p>
+                            @endif
+
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -79,19 +74,22 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-5 text-sec" data-aos="fade-up" data-aos-duration="1000">
                         <div class="sectors">
-                            <h3>Sectors</h3>
+                            <h3>{{text('Sectors')}}</h3>
                             <ul>
-                                <li><a href="">Real Estate</a></li>
-                                <li><a href="">Real Estate</a></li>
-                                <li><a href="">Real Estate</a></li>
-                                <li><a href="">Real Estate</a></li>
+                                @foreach ($product->product_sectors as $sector)
+                                    <li><a href="">{{$sector->title}}</a></li>
+                                @endforeach
+                                
                             </ul>
                         </div>
                         <div class="tags">
-                            <h3>Tags</h3>
+                            <h3>{{text('Tags')}}</h3>
                             <ul>
-                                <li><a href=""><img src="assets/img/icon/tag.svg" alt=""><em>House</em></a></li>
-                                <li><a href=""><img src="assets/img/icon/tag.svg" alt=""><em>House</em></a></li>
+                                @foreach ($product->product_tags as $tag)
+                                    <li><a href=""><img src="{{asset('img/icon/tag.svg')}}" alt=""><em>{{$tag->title}}</em></a></li>
+                                @endforeach
+                                
+
                             </ul>
                         </div>
                         <div class="locations">
@@ -108,34 +106,16 @@
                                 </li>
                             </ul>
                             <div class="image">
-                                <img src="assets/img/product-map.png" alt="">
+                                <img src="{{asset('img/product-map.png')}}" alt="">
                             </div>
                         </div>
 
                     </div>
                     <div class="icon col-md-12 col-lg-2" >
-                        <img src="assets/img/illustrations/amblem.svg" alt="">
+                        <img src="{{asset('img/illustrations/amblem.svg')}}" alt="">
                     </div>
                     <div class="col-md-12 col-lg-5 discreption" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                        <h4>Detailing</h4>
-                        <p>Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus.
-                            Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet
-                            tincidunt</p>
-                        <br>
-                        <h4>Technical & Support</h4>
-                        <p>Uninterrupted technical support after sales.</p>
-                        <br>
-                        <h4>Trustworthy Shopping</h4>
-                        <p>Safe shopping with 3D Secure services.</p>
-                        <br>
-                        <p>
-                            If you want to know more about real estate companies in Turkiye, visit our website.
-                            Please do not hesitate to contact us by mail at
-                            <strong>info@buyitfromturkiye.com.tr</strong> or to
-                            call/WhatsApp us at <strong>+90 500 000 00 00.</strong> We can help you to get in direct
-                            contact with
-                            producers or provide you with everything that you need.
-                        </p>
+                        {!! $product->content !!}
                     </div>
                 </div>
             </div>
@@ -145,35 +125,23 @@
         <div class="gallery-sec" >
             <div class="container">
                 <div class="main-title" data-aos="fade-up" data-aos-duration="1000">
-                    <h3>Gallery</h3>
+                    <h3>{{text('Gallery')}}</h3>
                 </div>
                 <div class="boxes" data-aos="fade-up" data-aos-duration="1000">
                     <div class="owl-carousel owl-theme" id="gallery-carousel">
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="image">
-                                <img src="assets/img/blogtravel.png" alt="">
-                            </div>
-                        </div>
+
+                        @if(is_array($images))
+                            @foreach ($images as $image)
+                                <div class="item">
+                                    <div class="image">
+                                        <img src="{{Voyager::image($image)}}" alt="">
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <p>{!! text('no_images_avaliable') !!}</p>
+                        @endif
+                        
                     </div>
                 </div>
             </div>
@@ -270,5 +238,6 @@
 
     </div>
 </div>
+
 
 @endsection
