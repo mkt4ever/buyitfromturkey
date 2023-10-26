@@ -20,16 +20,16 @@
                             </div>
                             <div class="links">
                                 <ul>
-                                    <li><a href="{{localeRoute('profile')}}">Account Settings</a></li>
-                                    <li><a href="{{localeRoute('billing')}}">Billing Details</a></li>
-                                    <li><a href="{{localeRoute('myOffers')}}">My Offers</a></li>
-                                    <li><a href="{{localeRoute('myApplications')}}">My Applications</a></li>
+                                    <li><a href="{{localeRoute('profile')}}">{{text('Account_Settings')}}</a></li>
+                                    <li><a href="{{localeRoute('billing')}}">{{text('Billing_Details')}}</a></li>
+                                    <li><a href="{{localeRoute('myOffers')}}">{{text('My_Offers')}}</a></li>
+                                    <li><a href="{{localeRoute('myApplications')}}">{{text('My_Applications')}}</a></li>
                                 </ul>
                             </div>
                             <div class="bottom">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#logoutModal">
-                                    <span>Log out</span>
+                                    <span>{{text('Log_out')}}</span>
                                     <img src="{{asset('img/icon/logout.svg')}}" alt="">
                                 </button>
 
@@ -44,12 +44,12 @@
                                     <li>
                                         <a href=""><i class="fa-solid fa-house"></i></a>
                                     </li>
-                                    <li><a href="">Your Profile</a></li>
+                                    <li><a href="">{{text('Your_Profile')}}</a></li>
                                 </ul>
                                 <div class="bottom">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#logoutModal">
-                                    <span>Log out</span>
+                                    <span>{{text('Log_out')}}</span>
                                     <img src="{{asset('img/icon/logout.svg')}}" alt="">
                                 </button>
 
@@ -57,10 +57,10 @@
                             </div>
                             <div class="links">
                                 <ul>
-                                    <li class="active"><a href="">Account Settings</a></li>
-                                    <li class=""><a href="">Billing Details</a></li>
-                                    <li class=""><a href="">My Offers</a></li>
-                                    <li class=""><a href="">My Applications</a></li>
+                                    <li><a href="{{localeRoute('profile')}}">{{text('Account_Settings')}}</a></li>
+                                    <li><a href="{{localeRoute('billing')}}">{{text('Billing_Details')}}</a></li>
+                                    <li><a href="{{localeRoute('myOffers')}}">{{text('My_Offers')}}</a></li>
+                                    <li><a href="{{localeRoute('myApplications')}}">{{text('My_Applications')}}</a></li>
                                 </ul>
                             </div>
 
@@ -85,15 +85,15 @@
             <div class="modal-content"> 
                 <div class="modal-body">
                    <div class="text">
-                   <h3>Are you about logout</h3>
-                    <p>Turkey is an attractive option for international buyers with</p>
+                   <h3>{{text('Are_you_about_logout')}}</h3>
+                    <p>{{text('log_out_modal_message')}}</p>
                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{text('No')}}</button>
                     <a href="{{ localeRoute('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();" class="btn btn-primary">Yes</a>
+                    document.getElementById('logout-form').submit();" class="btn btn-primary">{{text('Yes')}}</a>
                 </div>
                 <form id="logout-form" action="{{ localeRoute('logout') }}" method="POST" class="d-none">
                     @csrf

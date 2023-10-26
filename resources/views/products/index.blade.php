@@ -240,7 +240,7 @@
             $('#scrollToProducts').click(function() {
                 $('html, body').animate({
                     scrollTop: $('#products').offset().top
-                }, 1000); 
+                }, 1); 
             });
         });
     </script>

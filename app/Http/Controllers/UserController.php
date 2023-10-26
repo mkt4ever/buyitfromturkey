@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BillingDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -53,7 +54,9 @@ class UserController extends Controller
 
     public function billing(Request $request){
 
-        return view('users.billing');
+        $billings = BillingDetail::where('user_id', Auth::user()->id)->get();
+
+        return view('users.billing',compact('billings'));
     }
     public function myOffers(Request $request){
 
@@ -63,6 +66,44 @@ class UserController extends Controller
 
         return view('users.myApplications') ;
 
+    }
+
+    public function storeBilling(Request $request){
+
+        $validatedData = $request->validate([
+
+            'billing_title' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'tax_number' => 'nullable|string',
+            'address' => 'required|string',
+            'type' => 'required|string|max:255',
+
+        ]);
+
+        $billing = new BillingDetail ;
+
+        $billing->user_id = Auth::user()->id;
+        $billing->name = $validatedData['name'];
+        $billing->title = $validatedData['billing_title'];
+        $billing->last_name = $validatedData['last_name'];
+        $billing->country = $validatedData['country'];
+        $billing->city = $validatedData['city'];
+        $billing->district = $validatedData['district'];
+        $billing->tax_number = $validatedData['tax_number'];
+        $billing->address = $validatedData['address'];
+        $billing->type = $validatedData['type'];
+
+        $billing->save();
+
+        // $targetMail = TargetMail::where('model' , 'BillingDetail')->first();
+
+        // if($targetMail) Mail::to($targetMail->email)->send(new BillingDetail($offer));
+
+        return redirect()->back()->with('success', text('BillingDetail_submitted'));
     }
 
 
