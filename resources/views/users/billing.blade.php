@@ -28,9 +28,9 @@
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">{{text('Mark_as_Defualt')}}</a></li>
+                                        <li><a class="dropdown-item" href="{{localeRoute('billing.markAsDefulat',$billing->id)}}">{{text('Mark_as_Defualt')}}</a></li>
                                         <li><a class="dropdown-item" href="#">{{text('Update')}}</a></li>
-                                        <li><a class="dropdown-item" href="#">{{text('Delete')}}</a>
+                                        <li><a class="dropdown-item" href="{{localeRoute('billing.delete',$billing->id)}}">{{text('Delete')}}</a>
                                         </li>
                                     </ul>
                                 </div>

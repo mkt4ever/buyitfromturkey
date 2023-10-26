@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BillingDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -104,6 +105,39 @@ class UserController extends Controller
         // if($targetMail) Mail::to($targetMail->email)->send(new BillingDetail($offer));
 
         return redirect()->back()->with('success', text('BillingDetail_submitted'));
+    }
+
+    public function markAsDefulat(Request $request){
+
+        $billing = BillingDetail::where('user_id', Auth::user()->id)->where('id', $request->id)->first();
+
+        if ($billing) {
+            $billing->defualt = true;
+            $billing->save();
+        
+            DB::table('billing_details')
+                ->where('user_id', Auth::user()->id)
+                ->where('id', '<>', $request->id)
+                ->update(['defualt' => false]);
+        }
+
+        return redirect()->back()->with('success', text('set_to_default'));
+
+
+    }
+
+    public function deleteBilling(Request $request){
+
+        $billing = BillingDetail::where('user_id', Auth::user()->id)->where('id', $request->id)->first();
+
+        if ($billing) {
+
+            $billing->delete();
+
+        }
+
+        return redirect()->back()->with('success', text('deleted_sucess'));
+
     }
 
 

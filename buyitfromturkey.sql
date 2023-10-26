@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2023 at 08:48 AM
+-- Generation Time: Oct 26, 2023 at 07:17 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -328,7 +328,13 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (182, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"title\":\"Sec2\"}', '{\"title\":\"How can we buy                                 <span>a house?<\\/span>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:22:03', '2023-10-26 01:22:03'),
 (183, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"content\":\"<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s<\\/p>\"}', '{\"content\":\"<h4>Detailing<\\/h4>\\n<p>Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt<\\/p>\\n<p>&nbsp;<\\/p>\\n<h4>Technical &amp; Support<\\/h4>\\n<p>Uninterrupted technical support after sales.<\\/p>\\n<p>&nbsp;<\\/p>\\n<h4>Trustworthy Shopping<\\/h4>\\n<p>Safe shopping with 3D Secure services.<\\/p>\\n<p>&nbsp;<\\/p>\\n<p>If you want to know more about real estate companies in Turkiye, visit our website. Please do not hesitate to contact us by mail at <strong>info@buyitfromturkiye.com.tr<\\/strong> or to call\\/WhatsApp us at <strong>+90 500 000 00 00.<\\/strong> We can help you to get in direct contact with producers or provide you with everything that you need.<\\/p>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:22:59', '2023-10-26 01:22:59'),
 (184, NULL, NULL, 'updated', 'App\\Models\\Product', 4, '{\"title\":\"How can we buy                                 <span>a house?<\\/span>\"}', '{\"title\":\"How can we buy <span>a house?<\\/span>\"}', 'http://buyitfromturkey.localhost/buyitadmin/products/4', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:41:09', '2023-10-26 01:41:09'),
-(185, NULL, NULL, 'created', 'App\\Models\\SiteText', 86, '[]', '{\"content\":\"Products and Services \",\"key\":\"Products_and_Services_header\",\"place\":null,\"id\":86}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:43:57', '2023-10-26 01:43:57');
+(185, NULL, NULL, 'created', 'App\\Models\\SiteText', 86, '[]', '{\"content\":\"Products and Services \",\"key\":\"Products_and_Services_header\",\"place\":null,\"id\":86}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 01:43:57', '2023-10-26 01:43:57'),
+(186, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 87, '[]', '{\"content\":\"Billing Details\",\"key\":\"Billing_Details\",\"place\":null,\"id\":87}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 07:45:15', '2023-10-26 07:45:15'),
+(187, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 88, '[]', '{\"content\":\"Yeni Adres Ekle\",\"key\":\"Add_new_address\",\"place\":null,\"id\":88}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 07:47:43', '2023-10-26 07:47:43'),
+(188, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 89, '[]', '{\"content\":\"Bireysel\",\"key\":\"Individual\",\"place\":null,\"id\":89}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:02:51', '2023-10-26 08:02:51'),
+(189, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 90, '[]', '{\"content\":\"Kurumsal\",\"key\":\"Institutional\",\"place\":null,\"id\":90}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:03:10', '2023-10-26 08:03:10'),
+(190, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 91, '[]', '{\"content\":\"T\\u00fcrkiye, uluslararas\\u0131 al\\u0131c\\u0131lar i\\u00e7in cazip bir se\\u00e7enek\",\"key\":\"log_out_modal_message\",\"place\":null,\"id\":91}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:54:23', '2023-10-26 08:54:23'),
+(191, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 92, '[]', '{\"content\":\"\\u00c7\\u0131k\\u0131\\u015f yapmak \\u00fczere misiniz?\",\"key\":\"Are_you_about_logout\",\"place\":null,\"id\":92}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:54:51', '2023-10-26 08:54:51');
 
 -- --------------------------------------------------------
 
@@ -362,8 +368,26 @@ INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `up
 CREATE TABLE `billing_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `district` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `tax_number` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `defualt` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `billing_details`
+--
+
+INSERT INTO `billing_details` (`id`, `created_at`, `updated_at`, `title`, `user_id`, `name`, `last_name`, `country`, `city`, `district`, `address`, `tax_number`, `type`, `defualt`) VALUES
+(3, '2023-10-26 08:50:04', '2023-10-26 11:32:30', 'Work', 4, 'Mohammed', 'Kharzom', 'Malaysia', 'Kuala Lumpur', 'Selangoer', 'Jalan Melawati 1 , Taman Melawati , 53100\r\nSerinin Tower 2 , 2-35-1', NULL, 'Institutional', 1);
 
 -- --------------------------------------------------------
 
@@ -1303,7 +1327,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (79, '2023_10_22_123501_create_application_orders_table', 24),
 (83, '2023_10_22_131317_create_offer_orders_table', 25),
 (84, '2023_10_25_125917_add_slug_products', 25),
-(86, '2023_10_25_131624_create_product_sector_table', 26);
+(86, '2023_10_25_131624_create_product_sector_table', 26),
+(87, '2023_10_26_155240_add_columns_billing_details', 27);
 
 -- --------------------------------------------------------
 
@@ -2208,7 +2233,13 @@ INSERT INTO `site_texts` (`id`, `key`, `place`, `content`, `created_at`, `update
 (83, 'Minimizing_Map', NULL, 'Minimizing Map', '2023-10-25 08:07:10', '2023-10-25 08:07:10'),
 (84, 'Phone', NULL, 'Phone', '2023-10-25 08:58:30', '2023-10-25 08:58:30'),
 (85, 'no_images_avaliable', NULL, 'No images available for this product.', '2023-10-26 00:26:21', '2023-10-26 00:26:21'),
-(86, 'Products_and_Services_header', NULL, 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57');
+(86, 'Products_and_Services_header', NULL, 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57'),
+(87, 'Billing_Details', NULL, 'Billing Details', '2023-10-26 07:45:15', '2023-10-26 07:45:15'),
+(88, 'Add_new_address', NULL, 'Yeni Adres Ekle', '2023-10-26 07:47:43', '2023-10-26 07:47:43'),
+(89, 'Individual', NULL, 'Bireysel', '2023-10-26 08:02:51', '2023-10-26 08:02:51'),
+(90, 'Institutional', NULL, 'Kurumsal', '2023-10-26 08:03:10', '2023-10-26 08:03:10'),
+(91, 'log_out_modal_message', NULL, 'Türkiye, uluslararası alıcılar için cazip bir seçenek', '2023-10-26 08:54:23', '2023-10-26 08:54:23'),
+(92, 'Are_you_about_logout', NULL, 'Çıkış yapmak üzere misiniz?', '2023-10-26 08:54:51', '2023-10-26 08:54:51');
 
 -- --------------------------------------------------------
 
@@ -2939,7 +2970,13 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (665, 'products', 'content', 4, 'ar', '<p>TESTSTES&nbsp; FSD FDS FDS Ff sdf s df sdf sdf s</p>', '2023-10-25 08:27:25', '2023-10-25 08:27:25'),
 (666, 'site_texts', 'content', 84, 'en', 'Phone', '2023-10-25 08:58:30', '2023-10-25 08:58:30'),
 (667, 'site_texts', 'content', 85, 'en', 'No images available for this product.', '2023-10-26 00:26:21', '2023-10-26 00:26:21'),
-(668, 'site_texts', 'content', 86, 'en', 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57');
+(668, 'site_texts', 'content', 86, 'en', 'Products and Services ', '2023-10-26 01:43:57', '2023-10-26 01:43:57'),
+(669, 'site_texts', 'content', 87, 'en', 'Billing Details', '2023-10-26 07:45:15', '2023-10-26 07:45:15'),
+(670, 'site_texts', 'content', 88, 'en', 'Add new address', '2023-10-26 07:47:44', '2023-10-26 07:47:44'),
+(671, 'site_texts', 'content', 89, 'en', 'Individual', '2023-10-26 08:02:51', '2023-10-26 08:02:51'),
+(672, 'site_texts', 'content', 90, 'en', 'Institutional', '2023-10-26 08:03:10', '2023-10-26 08:03:10'),
+(673, 'site_texts', 'content', 91, 'en', 'Turkey is an attractive option for international buyers with', '2023-10-26 08:54:23', '2023-10-26 08:54:23'),
+(674, 'site_texts', 'content', 92, 'en', 'Are you about logout', '2023-10-26 08:54:51', '2023-10-26 08:54:51');
 
 -- --------------------------------------------------------
 
@@ -3023,7 +3060,8 @@ ALTER TABLE `authors`
 -- Indexes for table `billing_details`
 --
 ALTER TABLE `billing_details`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `billing_details_user_id_foreign` (`user_id`);
 
 --
 -- Indexes for table `blogs`
@@ -3369,7 +3407,7 @@ ALTER TABLE `application_orders`
 -- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
 
 --
 -- AUTO_INCREMENT for table `authors`
@@ -3381,7 +3419,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `billing_details`
 --
 ALTER TABLE `billing_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -3519,7 +3557,7 @@ ALTER TABLE `metas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `offer_orders`
@@ -3627,7 +3665,7 @@ ALTER TABLE `similar_products`
 -- AUTO_INCREMENT for table `site_texts`
 --
 ALTER TABLE `site_texts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `sliders`
@@ -3645,7 +3683,7 @@ ALTER TABLE `static_pages`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=669;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=675;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -3662,6 +3700,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admins`
   ADD CONSTRAINT `admins_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+
+--
+-- Constraints for table `billing_details`
+--
+ALTER TABLE `billing_details`
+  ADD CONSTRAINT `billing_details_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `blogs`

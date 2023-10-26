@@ -71,6 +71,8 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
                 Route::post('/'.transRoute('routeProfile', $langTranslations).'/store', [UserController::class, 'storeBilling'])->name($lang->code.'.billing.store');
                 Route::post('/'.transRoute('routeProfile', $langTranslations).'/update', [UserController::class, 'updateProfile'])->name($lang->code.'.profile.update');
                 Route::post('/'.transRoute('routeProfile', $langTranslations).'/changePassword', [UserController::class, 'changePassword'])->name($lang->code.'.profile.changePassword');
+                Route::get('/'.transRoute('routeProfile', $langTranslations).'/markAsDefulat/{id}', [UserController::class, 'markAsDefulat'])->name($lang->code.'.billing.markAsDefulat');
+                Route::get('/'.transRoute('routeProfile', $langTranslations).'/delete/{id}', [UserController::class, 'deleteBilling'])->name($lang->code.'.billing.delete');
             });
 
             Route::get('/'.transRoute('routePage', $langTranslations).'/{slug}', [HomeController::class, 'staticPage'])->name($lang->code.'.staticPage');
