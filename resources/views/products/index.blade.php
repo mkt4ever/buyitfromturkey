@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="search-inp">
-                                <input type="email" class="form-control" placeholder="{{ text('Searching') }}">
+                                <input name="search" type="text" class="form-control" placeholder="{{ text('Searching') }}">
                             </div>
                             <div class="action mobile">
                                 <button>

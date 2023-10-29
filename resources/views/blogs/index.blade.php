@@ -14,31 +14,35 @@
                                 {!!text('blogs_index_title')!!}
                             </h3>
                         </div>
-                        <div class="search-sec">
-                            <div class="content">
-                                <div class="categoty-sec">
-                                    <select class="nice-select">
-                                        <option data-display="Category">{{text('Category')}}</option>
-                                        @foreach ($blogsCategories as $category)
-                                            <option value="{{$category->id}}">{{$category->title}}</option>
-                                        @endforeach
-                                        
-                                    </select>
-                                </div>
-                                <div class="input-sec">
-                                    <input type="email" class=  "form-control" required="">
-                                </div>
-                                <div class="action-sec">
-                                    <button>
-                                        <img src="assets/img/icon/search-red.svg" alt="">
-                                    </button>
+                        <form method="GET" action="{{localeRoute('blogs.index')}}">
+                            @csrf
+                            <div class="search-sec">
+                                <div class="content">
+                                    <div class="categoty-sec">
+                                        <select name="slug" class="nice-select">
+                                            <option data-display="Category" {{ request('slug') == 'All' ? 'selected' : '' }}>{{text('All')}}</option>
+                                            @foreach ($blogsCategories as $category)
+                                                <option value="{{$category->slug}}" {{ request('slug') == $category->slug ? 'selected' : '' }}>{{$category->title}}</option>
+                                            @endforeach
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="input-sec">
+                                        <input name="search" type="text" class="form-control" value="{{ request('search') }}">
+                                    </div>
+                                    <div class="action-sec">
+                                        <button>
+                                            <img src="{{asset('img/icon/search-red.svg')}}" alt="">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                         <div class="lists">
                             <ul>
+                                <li><a href="{{localeRoute('blogs.index')}}">{{text('All')}}</a></li>
                                 @foreach ($blogsCategories as $category)
-                                    <li><a href="">{{$category->title}}</a></li>
+                                    <li><a href="{{localeRoute('blogs.index',$category->slug)}}">{{$category->title}}</a></li>
                                 @endforeach
                                 
                             </ul>
@@ -74,7 +78,7 @@
                                                     <ul>
                                                         <li>
                                                             <div class="tag">
-                                                                <span class="budge danger">{{$blog->blog_category->title}}</span>
+                                                                <span class="budge {{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                                             </div>
                                                         </li>
                                                         <li>

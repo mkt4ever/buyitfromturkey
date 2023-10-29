@@ -13,53 +13,58 @@ class BlogController extends Controller
 {
     public function index(Request $request){
 
+
+        $category = null;
+        if($request->slug && $request->slug != 'All'){
+            $category = BlogCategory::whereTranslation('slug', '=', $request->slug, [app()->getLocale()], app()->getLocale() == 'tr')->firstOrFail();
+        }
+
+        $featured_blogs = Blog::withTranslation(app()->getLocale())
+                ->when($request->slug && $request->slug != 'All', function ($query) use ($request, $category) {
+                    $query->whereRelation('blog_category', 'blog_categories.id', $category->id);
+                })
+                ->where('is_featured', 1)
+                ->orderByDesc('date')
+                ->get()
+                ->translate(app()->getLocale());
+
         $compact = Cache::rememberForever('blogs_index_'.app()->getLocale(), function(){
 
             $blogsCategories = BlogCategory::get()->translate(app()->getLocale());
-
-            $featured_blogs = Blog::withTranslation(app()->getLocale())->where('is_featured', 1)->orderByDesc('date')->get()->translate(app()->getLocale());
-
             return [
                 "blogsCategories" => $blogsCategories ,
-                "featured_blogs" => $featured_blogs ,
             ];
 
         });
 
-        $category = null;
-        if($request->slug){
-            $category = BlogCategory::whereTranslation('slug', '=', $request->slug, [app()->getLocale()], app()->getLocale() == 'tr')->firstOrFail();
-        }
+        $blogs = Blog::withTranslation(app()->getLocale())
+            ->with(['author' => function ($query) {
+                $query->withTranslation(app()->getLocale());
+            }, 'blog_tags', 'blog_category'])
+            ->when($request->slug && $request->slug != 'All', function ($query) use ($request, $category) {
+                $query->whereRelation('blog_category', 'blog_categories.id', $category->id);
+            })
+            ->when($request->search, function ($query) use ($request) {
+                $query->where(function ($query2) use ($request) {
+                    $query2->whereTranslation('title', 'like', "%$request->search%")
+                        ->orWhere(function ($query3) use ($request) {
+                            $query3->whereTranslation('content', 'like', "%$request->search%");
+                        })
+                        ->orWhere(function ($query3) use ($request) {
+                            $query3->whereTranslation('brief', 'like', "%$request->search%");
+                        });
+                });
+            })
+            ->orderByDesc('date')
+            ->get()
+            ->all();
 
-        $blogs = Blog::withTranslation(app()->getLocale())->with(['author' => function ($query) {
-            $query->withTranslation(app()->getLocale());
-        }, 'blog_tags','blog_category'])
-
-        ->when($request->slug, function($query) use($request, $category){
-            $query->whereRelation('blog_category', 'blog_categories.id', $category->id);
-        })
-
-        ->when($request->tag, function($query) use($request){
-            $query->whereRelation('blog_tags', 'blog_tags.id', $request->unit);
-        })
-
-        ->when($request->search, function($query) use($request){
-            $query->whereTranslation('title', 'like', "%$request->search%")
-                  ->orWhere(function ($query2) use($request){
-                    $query2->whereTranslation('content', 'like', "%$request->search%");
-                  })
-                  ->orWhere(function ($query2) use($request){
-                    $query2->whereTranslation('brief', 'like', "%$request->search%");
-                  });
-
-        })
-        ->orderByDesc('date')->get()->all();
 
 
         $latest_blogs = collect($blogs)->take(8);
         $hiddenBlogs = collect($blogs)->splice(8);
 
-        return view('blogs.index', compact('latest_blogs','hiddenBlogs'))->with($compact);
+        return view('blogs.index', compact('latest_blogs','hiddenBlogs','featured_blogs'))->with($compact);
     }
 
     public function show(Request $request){

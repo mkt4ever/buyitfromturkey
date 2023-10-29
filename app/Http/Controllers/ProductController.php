@@ -47,19 +47,18 @@ class ProductController extends Controller
                     $sectorQuery->where('product_sectors.slug', $request->sector);
                 });
             })
-            // ->when($request->search, function ($query) use ($request) {
-            //     $query->whereTranslation('title', 'like', "%$request->search%")
-            //         ->orWhere(function ($query2) use ($request) {
-            //             $query2->whereTranslation('content', 'like', "%$request->search%");
-            //         })
-            //         ->orWhere(function ($query2) use ($request) {
-            //             $query2->whereTranslation('brief', 'like', "%$request->search%");
-            //         });
-            // })
+            ->when($request->search, function ($query) use ($request) {
+                $query->whereTranslation('title', 'like', "%$request->search%")
+                    ->orWhere(function ($query2) use ($request) {
+                        $query2->whereTranslation('content', 'like', "%$request->search%");
+                    })
+                    ->orWhere(function ($query2) use ($request) {
+                        $query2->whereTranslation('brief', 'like', "%$request->search%");
+                    });
+            })
             ->orderByDesc('created_at')
             ->get()
             ->all();
-// dd($products) ;
 
         $productCount = count($products);
 
