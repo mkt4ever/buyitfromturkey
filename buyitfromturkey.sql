@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2023 at 07:17 PM
+-- Generation Time: Oct 30, 2023 at 07:26 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -387,7 +387,8 @@ CREATE TABLE `billing_details` (
 --
 
 INSERT INTO `billing_details` (`id`, `created_at`, `updated_at`, `title`, `user_id`, `name`, `last_name`, `country`, `city`, `district`, `address`, `tax_number`, `type`, `defualt`) VALUES
-(3, '2023-10-26 08:50:04', '2023-10-26 11:32:30', 'Work', 4, 'Mohammed', 'Kharzom', 'Malaysia', 'Kuala Lumpur', 'Selangoer', 'Jalan Melawati 1 , Taman Melawati , 53100\r\nSerinin Tower 2 , 2-35-1', NULL, 'Institutional', 1);
+(3, '2023-10-26 08:50:04', '2023-10-26 11:32:30', 'Work', 4, 'Mohammed', 'Kharzom', 'Malaysia', 'Kuala Lumpur', 'Selangoer', 'Jalan Melawati 1 , Taman Melawati , 53100\r\nSerinin Tower 2 , 2-35-1', NULL, 'Institutional', 1),
+(5, '2023-10-27 03:29:17', '2023-10-27 03:29:17', 'Work', 4, 'Mohammed', 'Kharzom', 'Malaysia', 'Kuala Lumpur', 'KL', 'Jalan Melawati 1 , Taman Melawati , 53100\r\nSerinin Tower 2 , 2-35-1', NULL, 'Institutional', 0);
 
 -- --------------------------------------------------------
 
@@ -547,7 +548,8 @@ CREATE TABLE `bultens` (
 --
 
 INSERT INTO `bultens` (`id`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'sadsa@sad.cpm', '2023-10-24 10:13:15', '2023-10-24 10:13:15');
+(1, 'sadsa@sad.cpm', '2023-10-24 10:13:15', '2023-10-24 10:13:15'),
+(2, 'superadmin@tealive.com.my', '2023-10-29 10:45:30', '2023-10-29 10:45:30');
 
 -- --------------------------------------------------------
 
@@ -3419,7 +3421,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `billing_details`
 --
 ALTER TABLE `billing_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -3455,7 +3457,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `bultens`
 --
 ALTER TABLE `bultens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `comments`
