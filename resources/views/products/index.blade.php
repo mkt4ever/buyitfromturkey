@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="search-inp">
-                                <input name="search" type="text" class="form-control" placeholder="{{ text('Searching') }}">
+                                <input name="search" type="text" class="form-control" placeholder="{{ text('Searching') }}" value="{{request()->search}}">
                             </div>
                             <div class="action mobile">
                                 <button>

@@ -6,21 +6,23 @@
                 <div class="title">
                     <h3>{{ text('right-search-bar-title') }}</h3>
                 </div>
-                <div class="search-box">
-                    <input type="text" placeholder="{{ text('Searching') }}" class="form-control">
-                    <div class="icon">
-                        <img src="{{asset('img/icon/search.svg')}}" alt="">
+                <form action="{{localeRoute('products.index')}}" id="homepage_searchForm">
+                    <div class="search-box">
+                        <input type="text" name="search" placeholder="{{ text('Searching') }}" class="form-control">
+                        <div class="icon search-icon">
+                            <img src="{{asset('img/icon/search.svg')}}" alt="">
+                        </div>
                     </div>
-                </div>
+                </form>
                 <div class="boxes">
-                    @foreach ($services as $service)
+                    @foreach ($productSectors as $sector)
 
                         <div class="item">
                             <div class="content">
-                                <a href="{{ $service->slug }}">
-                                    <h5>{{ $service->title }}</h5>
+                                <a href="{{ localeRoute('products.index', ["sector" => $sector->slug]) }}">
+                                    <h5>{{ $sector->title }}</h5>
                                     <div class="icon">
-                                        <img src="{{ parse_file($service->image) }}" alt="">
+                                        <img src="{{ parse_file($sector->image) }}" alt="{{$sector->title}}">
                                     </div>
                                     <div class="action">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -82,14 +84,14 @@
         <div class="container">
             <div class="items">
                 <div class="boxes">
-                    @foreach ($services as $service)
+                    @foreach ($productSectors as $sector)
 
                         <div class="itemm">
                             <div class="content">
-                                <a href="{{ $service->slug }}">
-                                    <h5>{{ $service->title }}</h5>
+                                <a href="{{ localeRoute('products.index', ["sector" => $sector->slug]) }}">
+                                    <h5>{{ $sector->title }}</h5>
                                     <div class="icon">
-                                        <img src="{{ parse_file($service->image) }}" alt="">
+                                        <img src="{{ parse_file($sector->image) }}" alt="{{ $sector->title }}">
                                     </div>
                                     <div class="action">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -116,12 +118,12 @@
             </div>
             <div class="whoweare">
                 <div class="content">
-                    <a href="">
+                    <a href="{{ localeRoute('Whoweare') }}">
                         <div class="image">
-                            <img src="{{asset('img/weare.png')}}" alt="">
+                            <img src="{{Voyager::image($contactUs->whoarewe_image)}}" alt="">
                         </div>
                         <div class="title">
-                            <h3>{{ text('Who_are_we?') }}</h3>
+                            <h3>{{text('Who_Are_We_header')}}</h3>
                         </div>
                         <div class="icon">
                             <img src="{{asset('img/icon/zoom.png')}}" alt="">
