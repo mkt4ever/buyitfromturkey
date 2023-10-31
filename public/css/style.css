@@ -5108,10 +5108,9 @@ textarea.form-control {
   overflow: hidden;
 }
 
-.page-content .product-page .detailing-sec .text-sec .locations .image img {
+.page-content .product-page .detailing-sec .text-sec .locations .image #map {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .page-content .product-page .detailing-sec .text-sec .locations .icon {}
@@ -6940,7 +6939,7 @@ textarea.form-control {
   position: relative;
 }
 
-.products-section .map-sec iframe {
+.products-section .map-sec #map {
   width: 100%;
   height: 100%;
 }

@@ -105,7 +105,6 @@
     {{-- important script  --}}
     <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/custom.js')}}"></script>
 
      {{-- {!! $seo->header_bottom !!} --}}
      {!! htmlScriptTagJsApi(['lang' => app()->getLocale()]) !!}

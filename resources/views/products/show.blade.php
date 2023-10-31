@@ -77,7 +77,7 @@
                             <h3>{{text('Sectors')}}</h3>
                             <ul>
                                 @foreach ($product->product_sectors as $sector)
-                                    <li><a href="">{{$sector->title}}</a></li>
+                                    <li><a href="{{localeRoute('products.index', ["sector" => $sector->slug])}}">{{$sector->title}}</a></li>
                                 @endforeach
                                 
                             </ul>
@@ -86,15 +86,15 @@
                             <h3>{{text('Tags')}}</h3>
                             <ul>
                                 @foreach ($product->product_tags as $tag)
-                                    <li><a href=""><img src="{{asset('img/icon/tag.svg')}}" alt=""><em>{{$tag->title}}</em></a></li>
+                                    <li><a href="{{localeRoute('products.index', ["tag" => $tag->slug])}}"><img src="{{asset('img/icon/tag.svg')}}" alt=""><em>{{$tag->title}}</em></a></li>
                                 @endforeach
                                 
 
                             </ul>
                         </div>
                         <div class="locations">
-                            <h3>Location</h3>
-                            <ul>
+                            <h3>{{text("Location")}}</h3>
+                            {{-- <ul>
                                 <li>
                                     <h4>İstanbul (4)</h4>
                                 </li>
@@ -104,9 +104,9 @@
                                 <li>
                                     <h4>Manisa (1)</h4>
                                 </li>
-                            </ul>
+                            </ul> --}}
                             <div class="image">
-                                <img src="{{asset('img/product-map.png')}}" alt="">
+                                <div id="map"></div>
                             </div>
                         </div>
 
@@ -147,6 +147,7 @@
             </div>
         </div>
 
+        @if($similars->count() > 0)
         <div class="similaritems-sec">
             <div class="container">
 
@@ -183,10 +184,70 @@
             </div>
 
         </div>
+        @endif
 
 
     </div>
 </div>
-
-
 @endsection
+@push('js')
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('app.mapKey')}}&libraries=drawing&callback=initMap" type="text/javascript"></script>
+<script>
+    var map;
+    var markers = [];
+    function initMap() {
+        var customMapType = new google.maps.StyledMapType(
+            mapStyles , {
+                name: '{{text("general")}}'
+            });
+
+        var customMapTypeId = 'custom_style';
+
+        var locations = [
+            @if($product->coordinations)
+            @php($location = json_decode($product->coordinations, true)) {
+                content: `<div class="mapInfowindow">
+                                </div>`,
+                lat: {{$location[0]}},
+                lng: {{$location[1]}},
+                link: '{{localeRoute("products.show", ["slug" => $product->slug])}}',
+                productId: '{{$product->id}}'
+            },
+            @endif
+        ];
+
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: {
+                lat: {{$location[0] ?? 39.5152904}},
+                lng: {{$location[1] ?? 30.4062589}}
+            },
+            mapTypeControlOptions: {
+                mapTypeIds: [customMapTypeId, google.maps.MapTypeId.ROADMAP]
+            }
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+                map: map,
+                icon: '{{asset("img/marker.png")}}',
+                type: locations[i].type,
+                projectId: locations[i].projectId,
+                zIndex: 2,
+                animation: google.maps.Animation.DROP,
+            });
+
+            markers.push(marker);
+        }
+
+        map.mapTypes.set(customMapTypeId, customMapType);
+        map.setMapTypeId(customMapTypeId);
+    }
+</script>
+@endpush

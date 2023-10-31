@@ -71,7 +71,7 @@ class ProductController extends Controller
             $product = Product::with(['product_tags', 'product_sectors','product_category'])->whereTranslation('slug', '=', $request->slug, [app()->getLocale()], app()->getLocale() == 'tr')->firstOrFail()->translate(app()->getLocale());
             $images = json_decode($product->Images);
 
-            $similars = Product::withTranslations(app()->getLocale())->where('product_category_id', $product->product_category_id)->get();
+            $similars = Product::withTranslations(app()->getLocale())->where('product_category_id', $product->product_category_id)->where('id', '!=', $product->id)->get();
 
             return [
                 "product" => $product,
