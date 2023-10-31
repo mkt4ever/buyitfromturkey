@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2023 at 07:26 AM
+-- Generation Time: Oct 31, 2023 at 04:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -334,7 +334,9 @@ INSERT INTO `audits` (`id`, `user_type`, `user_id`, `event`, `auditable_type`, `
 (188, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 89, '[]', '{\"content\":\"Bireysel\",\"key\":\"Individual\",\"place\":null,\"id\":89}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:02:51', '2023-10-26 08:02:51'),
 (189, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 90, '[]', '{\"content\":\"Kurumsal\",\"key\":\"Institutional\",\"place\":null,\"id\":90}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:03:10', '2023-10-26 08:03:10'),
 (190, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 91, '[]', '{\"content\":\"T\\u00fcrkiye, uluslararas\\u0131 al\\u0131c\\u0131lar i\\u00e7in cazip bir se\\u00e7enek\",\"key\":\"log_out_modal_message\",\"place\":null,\"id\":91}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:54:23', '2023-10-26 08:54:23'),
-(191, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 92, '[]', '{\"content\":\"\\u00c7\\u0131k\\u0131\\u015f yapmak \\u00fczere misiniz?\",\"key\":\"Are_you_about_logout\",\"place\":null,\"id\":92}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:54:51', '2023-10-26 08:54:51');
+(191, 'App\\Models\\User', 4, 'created', 'App\\Models\\SiteText', 92, '[]', '{\"content\":\"\\u00c7\\u0131k\\u0131\\u015f yapmak \\u00fczere misiniz?\",\"key\":\"Are_you_about_logout\",\"place\":null,\"id\":92}', 'http://buyitfromturkey.localhost/buyitadmin/site-texts', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-26 08:54:51', '2023-10-26 08:54:51'),
+(192, NULL, NULL, 'created', 'App\\Models\\Blog', 13, '[]', '{\"author_id\":\"1\",\"blog_category_id\":\"3\",\"title\":\"\",\"slug\":\"\",\"brief\":\"\",\"date\":\"1993-12-30T22:00:00.000000Z\",\"thumbnail_image\":null,\"cover_image\":null,\"content\":\"\",\"is_featured\":1,\"meta_title\":\"\",\"meta_description\":\"\",\"meta_keyword\":\"\",\"meta_canonical\":\"\",\"meta_ogimage\":\"\",\"id\":13}', 'http://buyitfromturkey.localhost/buyitadmin/blogs', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(193, NULL, NULL, 'created', 'App\\Models\\Author', 3, '[]', '{\"name\":\"Harriet Goodman\",\"slug\":\"Irure unde id alias \",\"brief\":\"Ut ea in occaecat do\",\"image\":null,\"id\":3}', 'http://buyitfromturkey.localhost/buyitadmin/authors', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', NULL, '2023-10-30 04:24:49', '2023-10-30 04:24:49');
 
 -- --------------------------------------------------------
 
@@ -357,7 +359,8 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `brief`, `slug`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Mohammed Kharzom', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et magni temporibus voluptates adipisicing..', 'mk', NULL, '2023-10-16 06:47:17', '2023-10-16 06:47:17');
+(1, 'Mohammed Kharzom', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et magni temporibus voluptates adipisicing..', 'mk', NULL, '2023-10-16 06:47:17', '2023-10-16 06:47:17'),
+(3, 'Harriet Goodman', 'Ut ea in occaecat do', 'Irure unde id alias ', NULL, '2023-10-30 04:24:49', '2023-10-30 04:24:49');
 
 -- --------------------------------------------------------
 
@@ -425,7 +428,8 @@ INSERT INTO `blogs` (`id`, `author_id`, `blog_category_id`, `title`, `slug`, `br
 (1, 1, 4, 'Blog1', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\0grfRD9yyxdhJve5Hqp0.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 09:05:16'),
 (2, 1, 4, 'Blog2', 'Muhammed', 'Cum fugiat iusto ip', '31-May-1994', 'blogs\\October2023\\BZ04r1FRnzcOPg4TQ69l.png', 'blogs\\October2023\\5QPNwyGmw1GFkUfYRp6p.png', '<p>TESTSETETSTS<br>TETST<br>TESTS<br>sTES</p>', 1, 'Tempore doloremque ', 'Recusandae Optio c', 'Do quia nulla soluta', 'Vitae tempore elige', 'Quibusdam nihil volu', '2023-10-16 07:06:21', '2023-10-16 07:06:21'),
 (4, 1, 3, 'Blog3', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\lawEUPYqe4a6iA2gYhRk.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 09:03:38'),
-(8, 1, 4, 'Blog4', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\c7O1ORxhfRr2YyhPUhAw.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 08:58:40');
+(8, 1, 4, 'Blog4', 'Why_Do', 'Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper                                                             mollis at id                                                             massa. Fusce eu lorem sodales, elementum augue nec, fringilla                                                             leo.                                                             Phasellus metus mi, placerat sit amet lorem eu, vulputate                                                             scelerisque                                                             enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim                                                             ut                                                             ullamcorper.', '1985-07-10 00:00:00', 'blogs\\October2023\\c7O1ORxhfRr2YyhPUhAw.png', 'blogs\\October2023\\iq60XHnFwHJVSlHT0CMY.png', '<p>Sed sed tincidunt urna. Sed ac sapien id tortor ullamcorper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mollis at id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; massa. Fusce eu lorem sodales, elementum augue nec, fringilla &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leo. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phasellus metus mi, placerat sit amet lorem eu, vulputate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scelerisque &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; enim. Curabitur id rutrum turpis. In sollicitudin feugiat enim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ullamcorper.</p>', 1, 'Tempore doloremque ', 'Eum laborum Eligend', 'Voluptatibus anim be', 'Fugiat delectus fug', 'Quo earum magnam ea ', '2023-10-16 06:51:00', '2023-10-24 08:58:40'),
+(13, 1, 3, '', '', '', '1993-12-31 00:00:00', NULL, NULL, '', 1, '', '', '', '', '', '2023-10-30 04:22:35', '2023-10-30 04:22:35');
 
 -- --------------------------------------------------------
 
@@ -473,7 +477,9 @@ INSERT INTO `blog_tag` (`id`, `blog_id`, `blog_tag_id`, `created_at`, `updated_a
 (1, 1, 2, NULL, NULL),
 (2, 1, 3, NULL, NULL),
 (3, 2, 2, NULL, NULL),
-(4, 8, 2, NULL, NULL);
+(4, 8, 2, NULL, NULL),
+(5, 13, 2, NULL, NULL),
+(6, 13, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2978,7 +2984,295 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (671, 'site_texts', 'content', 89, 'en', 'Individual', '2023-10-26 08:02:51', '2023-10-26 08:02:51'),
 (672, 'site_texts', 'content', 90, 'en', 'Institutional', '2023-10-26 08:03:10', '2023-10-26 08:03:10'),
 (673, 'site_texts', 'content', 91, 'en', 'Turkey is an attractive option for international buyers with', '2023-10-26 08:54:23', '2023-10-26 08:54:23'),
-(674, 'site_texts', 'content', 92, 'en', 'Are you about logout', '2023-10-26 08:54:51', '2023-10-26 08:54:51');
+(674, 'site_texts', 'content', 92, 'en', 'Are you about logout', '2023-10-26 08:54:51', '2023-10-26 08:54:51'),
+(675, 'blogs', 'title', 13, 'de', 'Dolor itaque quia do', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(676, 'blogs', 'slug', 13, 'de', 'Quis mollit autem es', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(677, 'blogs', 'brief', 13, 'de', 'Magni exercitation r', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(678, 'blogs', 'meta_title', 13, 'de', 'Voluptas modi modi v', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(679, 'blogs', 'meta_description', 13, 'de', 'In praesentium quis ', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(680, 'blogs', 'meta_keyword', 13, 'de', 'Pariatur Odio dolor', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(681, 'blogs', 'meta_canonical', 13, 'de', 'Exercitation veniam', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(682, 'blogs', 'meta_ogimage', 13, 'de', 'Eos cumque non quae ', '2023-10-30 04:22:35', '2023-10-30 04:22:35'),
+(718, 'site_texts', 'content', 2, 'en', 'What Would You Like To Get From Turkey ?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(719, 'site_texts', 'content', 3, 'en', 'Searching', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(720, 'site_texts', 'content', 6, 'en', 'Get an Offer', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(721, 'site_texts', 'content', 7, 'en', 'Who are we', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(722, 'site_texts', 'content', 8, 'en', 'Why Choose <span>Turkey?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(723, 'site_texts', 'content', 9, 'en', '<em>Turkey</em> is an attractive option for international buyers with competitive prices and high-quality products. Its strategic location and technological expertise are also appealing factors. Additionally, the strong agriculture sector is noteworthy.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(724, 'site_texts', 'content', 10, 'en', 'What We Offer?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(725, 'site_texts', 'content', 11, 'en', 'How It <span>Works?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(726, 'site_texts', 'content', 12, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(727, 'site_texts', 'content', 13, 'en', 'Write to us to get a quote for the product or service you have chosen.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(728, 'site_texts', 'content', 14, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(729, 'site_texts', 'content', 15, 'en', 'Write to us to get a quote for the product or service you have chosen.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(730, 'site_texts', 'content', 16, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(731, 'site_texts', 'content', 17, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(732, 'site_texts', 'content', 18, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(733, 'site_texts', 'content', 19, 'en', 'Determine Your Needs, Check out our products and services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(734, 'site_texts', 'content', 20, 'en', 'Brands', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(735, 'site_texts', 'content', 21, 'en', 'FAQ', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(736, 'site_texts', 'content', 22, 'en', 'Send us your questions and we\'ll answer them. All the answers you are looking for are here', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(737, 'site_texts', 'content', 25, 'en', 'OUR<span>BLOG</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(738, 'site_texts', 'content', 26, 'en', 'Category', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(739, 'site_texts', 'content', 27, 'en', 'Show More', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(740, 'site_texts', 'content', 28, 'en', 'Show Less', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(741, 'site_texts', 'content', 64, 'en', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(742, 'site_texts', 'content', 2, 'fr', 'Qu\'aimeriez-vous obtenir de la Turquie ?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(743, 'site_texts', 'content', 3, 'fr', 'Recherche', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(744, 'site_texts', 'content', 6, 'fr', 'Obtenir une offre', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(745, 'site_texts', 'content', 7, 'fr', 'Qui sommes nous', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(746, 'site_texts', 'content', 8, 'fr', 'Pourquoi choisir <span>la Turquie</span>?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(747, 'site_texts', 'content', 9, 'fr', '<em>La Turquie</em> est une option attrayante pour les acheteurs internationaux avec des prix compétitifs et des produits de haute qualité. Sa situation stratégique et son expertise technologique sont également des facteurs attrayants. De plus, le secteur agricole est notable.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(748, 'site_texts', 'content', 10, 'fr', 'Que proposons-nous?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(749, 'site_texts', 'content', 11, 'fr', 'Comment ça <span>Marche?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(750, 'site_texts', 'content', 12, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(751, 'site_texts', 'content', 13, 'fr', 'Écrivez-nous pour obtenir un devis pour le produit ou le service que vous avez choisi.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(752, 'site_texts', 'content', 14, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(753, 'site_texts', 'content', 15, 'fr', 'Écrivez-nous pour obtenir un devis pour le produit ou le service que vous avez choisi.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(754, 'site_texts', 'content', 16, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(755, 'site_texts', 'content', 17, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(756, 'site_texts', 'content', 18, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(757, 'site_texts', 'content', 19, 'fr', 'Déterminez vos besoins, Consultez nos produits et services.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(758, 'site_texts', 'content', 20, 'fr', 'Les marques', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(759, 'site_texts', 'content', 21, 'fr', 'FAQ', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(760, 'site_texts', 'content', 22, 'fr', 'Envoyez-nous vos questions et nous y répondrons. Toutes les réponses que vous cherchez sont ici', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(761, 'site_texts', 'content', 23, 'fr', 'blogues', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(762, 'site_texts', 'content', 24, 'fr', 'détail', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(763, 'site_texts', 'content', 25, 'fr', '<span>BLOG</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(764, 'site_texts', 'content', 26, 'fr', 'Catégorie', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(765, 'site_texts', 'content', 27, 'fr', 'Montrer plus', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(766, 'site_texts', 'content', 28, 'fr', 'Montrer moins', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(767, 'site_texts', 'content', 29, 'fr', 'Page non trouvée', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(768, 'site_texts', 'content', 31, 'fr', 'Retour à la page d\'accueil', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(769, 'site_texts', 'content', 32, 'fr', 'profil', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(770, 'site_texts', 'content', 33, 'fr', 'page', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(771, 'site_texts', 'content', 34, 'fr', 'contact', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(772, 'site_texts', 'content', 35, 'fr', 'Votre formulaire de contact a été envoyé avec succès!', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(773, 'site_texts', 'content', 36, 'fr', 'produits', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(774, 'site_texts', 'content', 37, 'fr', 'Détails du produit', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(775, 'site_texts', 'content', 38, 'fr', 'comment ça fonctionne', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(776, 'site_texts', 'content', 39, 'fr', 'Le texte d\'exemple', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(777, 'site_texts', 'content', 41, 'fr', 'Comment ça fonctionne?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(778, 'site_texts', 'content', 42, 'fr', 'Contact', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(779, 'site_texts', 'content', 43, 'fr', 'Que proposons-nous?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(780, 'site_texts', 'content', 44, 'fr', 'Qui sommes-nous?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(781, 'site_texts', 'content', 45, 'fr', 'Pourquoi choisir la Turquie?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(782, 'site_texts', 'content', 46, 'fr', 'pourquoi_choisir', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(783, 'site_texts', 'content', 47, 'fr', 'qui_sommes_nous', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(784, 'site_texts', 'content', 48, 'fr', 'Que_proposons_nous', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(785, 'site_texts', 'content', 49, 'fr', 'POURQUOI CHOISIR <span>LA TURQUIE?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(786, 'site_texts', 'content', 50, 'fr', '<strong>La Turquie</strong> est une option attrayante pour les acheteurs internationaux avec des prix compétitifs et des produits de haute qualité. Son emplacement stratégique et son expertise technologique sont également des facteurs attrayants. De plus, le secteur agricole fort est remarquable.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(787, 'site_texts', 'content', 51, 'fr', 'Avantages', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(788, 'site_texts', 'content', 52, 'fr', 'QUI SOMMES <span>NOUS?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(789, 'site_texts', 'content', 54, 'fr', '<strong>La Turquie</strong> est une option attrayante pour les acheteurs internationaux avec des prix compétitifs et des produits de haute qualité. Son emplacement stratégique et son expertise technologique sont également des facteurs attrayants. De plus, le secteur agricole fort est remarquable.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(790, 'site_texts', 'content', 55, 'fr', 'Notre mission', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(791, 'site_texts', 'content', 56, 'fr', 'Le texte d\'éxemple', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(792, 'site_texts', 'content', 58, 'fr', 'Nos valeurs', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(793, 'site_texts', 'content', 59, 'fr', 'Expérience mondiale', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(794, 'site_texts', 'content', 60, 'fr', 'Le texte d\'exemple', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(795, 'site_texts', 'content', 61, 'fr', 'Vous pouvez atteindre de manière fiable <span>le produit ou le service</span> que vous souhaitez <br> <em>de partout en Turquie</em> à travers nous.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(796, 'site_texts', 'content', 62, 'fr', 'Plus d\'infos', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(797, 'site_texts', 'content', 63, 'fr', '<span>NOS</span> FONDATEURS', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(798, 'site_texts', 'content', 64, 'fr', 'Le texte d\'exemple', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(799, 'site_texts', 'content', 65, 'fr', 'Étiquettes', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(800, 'site_texts', 'content', 66, 'fr', 'Que proposons-nous <span>Offre?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(801, 'site_texts', 'content', 67, 'fr', '<strong>La Turquie</strong> est une option attrayante pour les acheteurs internationaux avec des prix compétitifs et des produits de haute qualité. Son emplacement stratégique et son expertise technologique sont également des facteurs attrayants. De plus, le secteur agricole fort est remarquable.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(802, 'site_texts', 'content', 68, 'fr', 'Produits et services', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(803, 'site_texts', 'content', 69, 'fr', 'Application <span>à vendre</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(804, 'site_texts', 'content', 70, 'fr', 'Envoyez-nous vos questions et nous y répondrons. Toutes les réponses que vous cherchez sont ici', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(805, 'site_texts', 'content', 71, 'fr', 'application', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(806, 'site_texts', 'content', 72, 'fr', 'obtenir_une_offre', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(807, 'site_texts', 'content', 73, 'fr', 'Qu\'aimeriez-vous obtenir <br> De la Turquie ?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(808, 'site_texts', 'content', 74, 'fr', 'Qu\'aimeriez-vous obtenir <br> De la Turquie ?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(809, 'site_texts', 'content', 75, 'fr', 'bullen', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(810, 'site_texts', 'content', 76, 'fr', 'détails_de_facturation', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(811, 'site_texts', 'content', 77, 'fr', 'mesOffres', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(812, 'site_texts', 'content', 78, 'fr', 'MesApplications', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(813, 'site_texts', 'content', 79, 'fr', 'Les résultats sont listés en fonction de l\'information que vous avez sélectionnée.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(814, 'site_texts', 'content', 80, 'fr', 'Achetez-le en Turquie', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(815, 'site_texts', 'content', 81, 'fr', 'Produits <br> ET <br> SERVICES', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(816, 'site_texts', 'content', 82, 'fr', 'Résultats de recherche', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(817, 'site_texts', 'content', 83, 'fr', 'Minimiser la carte', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(818, 'site_texts', 'content', 84, 'fr', 'Téléphone', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(819, 'site_texts', 'content', 85, 'fr', 'Aucune image disponible pour ce produit.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(820, 'site_texts', 'content', 86, 'fr', 'Produits et services', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(821, 'site_texts', 'content', 87, 'fr', 'Détails de facturation', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(822, 'site_texts', 'content', 88, 'fr', 'Ajouter une nouvelle adresse', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(823, 'site_texts', 'content', 89, 'fr', 'Individuel', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(824, 'site_texts', 'content', 90, 'fr', 'Entreprise', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(825, 'site_texts', 'content', 91, 'fr', 'La Turquie est une option attrayante pour les acheteurs internationaux', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(826, 'site_texts', 'content', 92, 'fr', 'Vous êtes sur le point de vous déconnecter?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(827, 'site_texts', 'content', 2, 'de', 'Was möchten Sie von der Türkei erhalten?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(828, 'site_texts', 'content', 3, 'de', 'Suchen', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(829, 'site_texts', 'content', 6, 'de', 'Ein Angebot erhalten', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(830, 'site_texts', 'content', 7, 'de', 'Wer sind wir', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(831, 'site_texts', 'content', 8, 'de', 'Warum wählen <span>Türkei?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(832, 'site_texts', 'content', 9, 'de', '<em>Türkei</em> ist eine attraktive Option für internationale Käufer mit wettbewerbsfähigen Preisen und hochwertigen Produkten. Seine strategische Lage und technologische Expertise sind ebenfalls ansprechende Faktoren. Darüber hinaus ist der starke Agrarsektor bemerkenswert.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(833, 'site_texts', 'content', 10, 'de', 'Was bieten wir an?', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(834, 'site_texts', 'content', 11, 'de', 'Wie funktioniert es <span>Arbeiten?</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(835, 'site_texts', 'content', 12, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(836, 'site_texts', 'content', 13, 'de', 'Schreiben Sie uns, um ein Angebot für das von Ihnen gewählte Produkt oder die Dienstleistung zu erhalten.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(837, 'site_texts', 'content', 14, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(838, 'site_texts', 'content', 15, 'de', 'Schreiben Sie uns, um ein Angebot für das von Ihnen gewählte Produkt oder die Dienstleistung zu erhalten.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(839, 'site_texts', 'content', 16, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(840, 'site_texts', 'content', 17, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(841, 'site_texts', 'content', 18, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(842, 'site_texts', 'content', 19, 'de', 'Bestimmen Sie Ihre Bedürfnisse, schauen Sie sich unsere Produkte und Dienstleistungen an.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(843, 'site_texts', 'content', 20, 'de', 'Marken', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(844, 'site_texts', 'content', 21, 'de', 'FAQ', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(845, 'site_texts', 'content', 22, 'de', 'Senden Sie uns Ihre Fragen und wir werden sie beantworten. Alle Antworten, die Sie suchen, finden Sie hier', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(846, 'site_texts', 'content', 23, 'de', 'blogs', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(847, 'site_texts', 'content', 24, 'de', 'detail', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(848, 'site_texts', 'content', 25, 'de', 'UNSER<span>BLOG</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(849, 'site_texts', 'content', 26, 'de', 'Kategorie', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(850, 'site_texts', 'content', 27, 'de', 'Show More', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(851, 'site_texts', 'content', 28, 'de', 'Show Less', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(852, 'site_texts', 'content', 29, 'de', 'Seite nicht gefunden', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(853, 'site_texts', 'content', 31, 'de', 'Zurück zur Startseite', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(854, 'site_texts', 'content', 32, 'de', 'Profil', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(855, 'site_texts', 'content', 33, 'de', 'Seite', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(856, 'site_texts', 'content', 34, 'de', 'Kontakt', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(857, 'site_texts', 'content', 35, 'de', 'Ihr Kontaktformular wurde erfolgreich gesendet!', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(858, 'site_texts', 'content', 36, 'de', 'Produkte', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(859, 'site_texts', 'content', 37, 'de', 'Produktdetails', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(860, 'site_texts', 'content', 38, 'de', 'wie_funktioniert_es', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(861, 'site_texts', 'content', 39, 'de', 'Vergroessern', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(862, 'site_texts', 'content', 2, 'ar', 'ماذا تود أن تحصل عليه من تركيا؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(863, 'site_texts', 'content', 3, 'ar', 'البحث', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(864, 'site_texts', 'content', 6, 'ar', 'احصل على عرض', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(865, 'site_texts', 'content', 7, 'ar', 'من نحن', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(866, 'site_texts', 'content', 8, 'ar', 'لماذا تختار <span>تركيا</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(867, 'site_texts', 'content', 9, 'ar', '<em>تركيا</em> هي خيار جذاب للمشترين الدوليين بأسعار تنافسية ومنتجات عالية الجودة. موقعها الاستراتيجي وخبرتها التكنولوجية هي عوامل جذابة أيضا. بالإضافة إلى ذلك، قطاع الزراعة القوي يستحق الذكر.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(868, 'site_texts', 'content', 10, 'ar', 'ماذا نقدم؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(869, 'site_texts', 'content', 11, 'ar', 'كيف <span>يعمل؟</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(870, 'site_texts', 'content', 12, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(871, 'site_texts', 'content', 13, 'ar', 'اكتب لنا للحصول على عرض سعر للمنتج أو الخدمة التي قمت بإختيارها.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(872, 'site_texts', 'content', 14, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(873, 'site_texts', 'content', 15, 'ar', 'اكتب لنا للحصول على عرض سعر للمنتج أو الخدمة التي قمت بإختيارها.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(874, 'site_texts', 'content', 16, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(875, 'site_texts', 'content', 17, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(876, 'site_texts', 'content', 18, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(877, 'site_texts', 'content', 19, 'ar', 'حدد احتياجاتك، اطلع على منتجاتنا وخدماتنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(878, 'site_texts', 'content', 20, 'ar', 'العلامات التجارية', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(879, 'site_texts', 'content', 21, 'ar', 'الأسئلة الشائعة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(880, 'site_texts', 'content', 22, 'ar', 'أرسل لنا أسئلتك وسنجيب عليها. كل الأجوبة التي تبحث عنها هنا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(881, 'site_texts', 'content', 23, 'ar', 'المدونات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(882, 'site_texts', 'content', 24, 'ar', 'تفاصيل', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(883, 'site_texts', 'content', 25, 'ar', '<span>مدونتنا</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(884, 'site_texts', 'content', 26, 'ar', 'الفئة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(885, 'site_texts', 'content', 27, 'ar', 'أظهر المزيد', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(886, 'site_texts', 'content', 28, 'ar', 'أظهر أقل', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(887, 'site_texts', 'content', 29, 'ar', 'الصفحة غير موجودة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(888, 'site_texts', 'content', 31, 'ar', 'العودة إلى الصفحة الرئيسية', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(889, 'site_texts', 'content', 32, 'ar', 'الملف الشخصي', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(890, 'site_texts', 'content', 33, 'ar', 'الصفحة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(891, 'site_texts', 'content', 34, 'ar', 'اتصل بنا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(892, 'site_texts', 'content', 35, 'ar', 'تم إرسال نموذج الاتصال بنجاح!', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(893, 'site_texts', 'content', 36, 'ar', 'المنتجات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(894, 'site_texts', 'content', 37, 'ar', 'تفاصيل المنتج', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(895, 'site_texts', 'content', 38, 'ar', 'كيف يعمل', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(896, 'site_texts', 'content', 39, 'ar', 'Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(897, 'site_texts', 'content', 41, 'ar', 'كيف يعمل؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(898, 'site_texts', 'content', 42, 'ar', 'اتصل', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(899, 'site_texts', 'content', 43, 'ar', 'ماذا نقدم؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(900, 'site_texts', 'content', 44, 'ar', 'من نحن؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(901, 'site_texts', 'content', 45, 'ar', 'لماذا تختار تركيا؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(902, 'site_texts', 'content', 46, 'ar', 'لماذا_اخترت', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(903, 'site_texts', 'content', 47, 'ar', 'من_نحن', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(904, 'site_texts', 'content', 48, 'ar', 'ماذا_نقدم', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(905, 'site_texts', 'content', 49, 'ar', 'لماذا تختار <span>تركيا؟</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(906, 'site_texts', 'content', 50, 'ar', '<strong>تركيا</strong> هي خيار جذاب للمشترين الدوليين بأسعار تنافسية                         prices ومنتجات عالية الجودة. موقعها الاستراتيجي وخبرتها التكنولوجية هي                         العوامل الجذابة أيضا. بالإضافة إلى ذلك، قطاع الزراعة القوي ملحوظ.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(907, 'site_texts', 'content', 51, 'ar', 'المزايا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(908, 'site_texts', 'content', 52, 'ar', 'من <span>نحن</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(909, 'site_texts', 'content', 54, 'ar', '<strong>تركيا</strong> هي خيار جذاب للمشترين الدوليين بأسعار تنافسية                         prices ومنتجات عالية الجودة. موقعها الاستراتيجي وخبرتها التكنولوجية هي                         العوامل الجذابة أيضا. بالإضافة إلى ذلك، قطاع الزراعة القوي ملحوظ.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.                         <br>                         <br>                         Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         <br>                         <br>                         Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in                         vulputate. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean                         vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(910, 'site_texts', 'content', 55, 'ar', 'مهمتنا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(911, 'site_texts', 'content', 56, 'ar', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at                         mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel,                         lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.                         Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                         elementum, pulvinar justo ac, elementum lacus.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(912, 'site_texts', 'content', 58, 'ar', 'قيمنا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(913, 'site_texts', 'content', 59, 'ar', 'الخبرة العالمية', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(914, 'site_texts', 'content', 60, 'ar', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum,                     pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis                     sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(915, 'site_texts', 'content', 61, 'ar', 'يمكنك الوصول بشكل موثوق إلى <span>المنتج أو الخدمة</span> التي تريدها <br> <em>من جميع أنحاء                         تركيا</em> من خلالنا.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(916, 'site_texts', 'content', 62, 'ar', 'مزيد من المعلومات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(917, 'site_texts', 'content', 63, 'ar', '<span>مؤسسينا</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(918, 'site_texts', 'content', 64, 'ar', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor                             elementum, pulvinar justo ac, elementum lacus.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(919, 'site_texts', 'content', 65, 'ar', 'الوسوم', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(920, 'site_texts', 'content', 66, 'ar', 'ماذا <span>نقدم؟</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(921, 'site_texts', 'content', 67, 'ar', '<strong>تركيا</strong> هي خيار جذاب للمشترين الدوليين بأسعار تنافسية                         prices ومنتجات عالية الجودة. موقعها الاستراتيجي وخبرتها التكنولوجية هي                         العوامل الجذابة أيضا. بالإضافة إلى ذلك، قطاع الزراعة القوي ملحوظ.                         <br>                         <br>                         Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia                         orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur.                         Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur                         elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec                         eu sem elit. Etiam commodo ut ante in vulputate. Morbi lectus felis, tincidunt sed dui sit                         amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam                         interdum.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(922, 'site_texts', 'content', 68, 'ar', 'المنتجات والخدمات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(923, 'site_texts', 'content', 69, 'ar', 'تطبيق <span>للبيع</span>', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(924, 'site_texts', 'content', 70, 'ar', 'أرسل لنا أسئلتك وسوف نجيب عليها. كل الأجوبة التي تبحث عنها هنا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(925, 'site_texts', 'content', 71, 'ar', 'تطبيق', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(926, 'site_texts', 'content', 72, 'ar', 'أحصل_على_عرض', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(927, 'site_texts', 'content', 73, 'ar', 'ماذا تود أن تحصل عليه <br> من تركيا؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(928, 'site_texts', 'content', 74, 'ar', 'ماذا تود أن تحصل عليه <br> من تركيا؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(929, 'site_texts', 'content', 75, 'ar', 'النشرة الإخبارية', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(930, 'site_texts', 'content', 76, 'ar', 'تفاصيل الفاتورة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(931, 'site_texts', 'content', 77, 'ar', 'عروضي', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(932, 'site_texts', 'content', 78, 'ar', 'تطبيقاتي', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(933, 'site_texts', 'content', 79, 'ar', 'النتائج مدرجة وفقًا للمعلومات التي اخترتها.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(934, 'site_texts', 'content', 80, 'ar', 'اشترِه من تركيا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(935, 'site_texts', 'content', 81, 'ar', 'المنتجات                                 <br>                                 و                                 <br>                                 الخدمات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(936, 'site_texts', 'content', 82, 'ar', 'نتائج البحث', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(937, 'site_texts', 'content', 83, 'ar', 'تصغير الخريطة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(938, 'site_texts', 'content', 84, 'ar', 'الهاتف', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(939, 'site_texts', 'content', 85, 'ar', 'لا توجد صور متاحة لهذا المنتج.', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(940, 'site_texts', 'content', 86, 'ar', 'المنتجات والخدمات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(941, 'site_texts', 'content', 87, 'ar', 'تفاصيل الفاتورة', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(942, 'site_texts', 'content', 88, 'ar', 'أضف عنوانًا جديدًا', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(943, 'site_texts', 'content', 89, 'ar', 'فردية', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(944, 'site_texts', 'content', 90, 'ar', 'الشركات', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(945, 'site_texts', 'content', 91, 'ar', 'تركيا، خيار جذاب للمشترين الدوليين', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(946, 'site_texts', 'content', 92, 'ar', 'هل ترغب في الخروج؟', '2023-10-31 15:32:10', '2023-10-31 15:32:10'),
+(947, 'site_texts', 'content', 41, 'de', 'Wie funktioniert es?', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(948, 'site_texts', 'content', 42, 'de', 'Kontakt', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(949, 'site_texts', 'content', 43, 'de', 'Was bieten wir an?', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(950, 'site_texts', 'content', 44, 'de', 'Wer sind wir?', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(951, 'site_texts', 'content', 45, 'de', 'Warum Türkei wählen?', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(952, 'site_texts', 'content', 46, 'de', 'warum_wählen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(953, 'site_texts', 'content', 47, 'de', 'wer_wir_sind', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(954, 'site_texts', 'content', 48, 'de', 'Was_wir_anbieten', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(955, 'site_texts', 'content', 49, 'de', 'WARUM <span>TÜRKEI?</span> WÄHLEN', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(956, 'site_texts', 'content', 50, 'de', '<strong>Türkei</strong> ist eine attraktive Option für internationale Käufer mit wettbewerbsfähigen Preisen und hochwertigen Produkten. Ihre strategische Lage und technologische Expertise sind ebenfalls ansprechende Faktoren. Darüber hinaus ist der starke Agrarsektor bemerkenswert. <br> <br> Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue, suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulputate.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(957, 'site_texts', 'content', 51, 'de', 'Vorteile', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(958, 'site_texts', 'content', 52, 'de', 'WER SIND <span>WIR?</span>', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(959, 'site_texts', 'content', 54, 'de', '<strong>Türkei</strong> ist eine attraktive Option für internationale Käufer mit wettbewerbsfähigen Preisen und hochwertigen Produkten. Ihre strategische Lage und technologische Expertise sind ebenfalls ansprechende Faktoren. Darüber hinaus ist der starke Agrarsektor bemerkenswert. <br> <br> Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue, suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulputate.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(960, 'site_texts', 'content', 55, 'de', 'Unsere Mission', '2023-10-31 15:37:04', '2023-10-31 15:37:04');
+INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
+(961, 'site_texts', 'content', 56, 'de', 'Aenean at lacinia est. Quisque eleifend mattis bibendum. In mattis turpis velit. Mauris at mattis ipsum. Nam sodales eu ante vel consectetur. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus. Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(962, 'site_texts', 'content', 58, 'de', 'Unsere Werte', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(963, 'site_texts', 'content', 59, 'de', 'Globale Erfahrung', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(964, 'site_texts', 'content', 60, 'de', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor elementum, pulvinar justo ac, elementum lacus. Morbi lectus felis, tincidunt sed dui sit amet, sagittis sagittis dui. Aenean vestibulum nisl in nisi dignissim, eu semper diam interdum.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(965, 'site_texts', 'content', 61, 'de', 'Sie können zuverlässig das <span>Produkt oder die Dienstleistung</span> erreichen, die Sie möchten <br> <em>aus ganz Türkei</em> durch uns.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(966, 'site_texts', 'content', 62, 'de', 'Mehr Info', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(967, 'site_texts', 'content', 63, 'de', '<span>UNSERE</span> GRÜNDER', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(968, 'site_texts', 'content', 64, 'de', 'Mauris purus lectus, finibus et leo vel, lacinia semper augue. Phasellus et tortor   elementum, pulvinar justo ac, elementum lacus.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(969, 'site_texts', 'content', 65, 'de', 'Tags', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(970, 'site_texts', 'content', 66, 'de', 'Was Wir <span>Anbieten?</span>', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(971, 'site_texts', 'content', 67, 'de', '<strong>Türkei</strong> ist eine attraktive Option für internationale Käufer mit wettbewerbsfähigen Preisen und hochwertigen Produkten. Ihre strategische Lage und technologische Expertise sind ebenfalls ansprechende Faktoren. Darüber hinaus ist der starke Agrarsektor bemerkenswert. <br> <br> Aenean sollicitudin arcu lorem, vel posuere augue finibus in. Phasellus tristique lacinia orci, vitae elementum metus condimentum vel. Morbi accumsan quis purus vel consectetur. Proin id dapibus erat. Nam quam sem, mollis in lectus ac, aliquam dapibus metus. Curabitur elementum mi id purus vehicula congue. Suspendisse vel arcu non mi laoreet tincidunt. Donec eu sem elit. Etiam commodo ut ante in vulputate.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(972, 'site_texts', 'content', 68, 'de', 'Produkte und Dienstleistungen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(973, 'site_texts', 'content', 69, 'de', 'Bewerbung <span>zum Verkauf</span>', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(974, 'site_texts', 'content', 70, 'de', 'Schicken Sie uns Ihre Fragen, wir werden sie beantworten. Alle Antworten, die Sie suchen, sind hier', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(975, 'site_texts', 'content', 71, 'de', 'Anwendung', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(976, 'site_texts', 'content', 72, 'de', 'bekommen_ein_angebot', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(977, 'site_texts', 'content', 73, 'de', 'Was Möchten Sie Von <br> Türkei Bekommen ? ', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(978, 'site_texts', 'content', 74, 'de', 'Was Möchten Sie Von <br> Türkei Bekommen ? ', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(979, 'site_texts', 'content', 75, 'de', 'bulten', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(980, 'site_texts', 'content', 76, 'de', 'Rechnungsdetails', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(981, 'site_texts', 'content', 77, 'de', 'meineAngebote', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(982, 'site_texts', 'content', 78, 'de', 'MeineBewerbungen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(983, 'site_texts', 'content', 79, 'de', 'Ergebnisse werden nach den ausgewählten Informationen aufgelistet.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(984, 'site_texts', 'content', 80, 'de', 'Kauf es aus der Türkei', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(985, 'site_texts', 'content', 81, 'de', 'Produkte <br> UND <br> Dienstleistungen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(986, 'site_texts', 'content', 82, 'de', 'Suchergebnisse', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(987, 'site_texts', 'content', 83, 'de', 'Karte minimieren', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(988, 'site_texts', 'content', 84, 'de', 'Telefon', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(989, 'site_texts', 'content', 85, 'de', 'Für dieses Produkt sind keine Bilder verfügbar.', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(990, 'site_texts', 'content', 86, 'de', 'Produkte und Dienstleistungen ', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(991, 'site_texts', 'content', 87, 'de', 'Rechnungsdetails', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(992, 'site_texts', 'content', 88, 'de', 'Neue Adresse hinzufügen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(993, 'site_texts', 'content', 89, 'de', 'Individuell', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(994, 'site_texts', 'content', 90, 'de', 'Unternehmen', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(995, 'site_texts', 'content', 91, 'de', 'Türkei, eine attraktive Option für internationale Käufer', '2023-10-31 15:37:04', '2023-10-31 15:37:04'),
+(996, 'site_texts', 'content', 92, 'de', 'Sind Sie dabei, sich abzumelden?', '2023-10-31 15:37:04', '2023-10-31 15:37:04');
 
 -- --------------------------------------------------------
 
@@ -3409,13 +3703,13 @@ ALTER TABLE `application_orders`
 -- AUTO_INCREMENT for table `audits`
 --
 ALTER TABLE `audits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `billing_details`
@@ -3427,7 +3721,7 @@ ALTER TABLE `billing_details`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
@@ -3439,7 +3733,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `blog_tag`
 --
 ALTER TABLE `blog_tag`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `blog_tags`
@@ -3685,7 +3979,7 @@ ALTER TABLE `static_pages`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=675;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=997;
 
 --
 -- AUTO_INCREMENT for table `users`
