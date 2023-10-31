@@ -9,24 +9,24 @@
             <div class="container">
                 <div class="top">
                     <div class="left">
-                        <a href="">
+                        <a href="{{localeRoute('blogs.index')}}">
                             <i class="fa-solid fa-angle-left"></i>
-                            Back
+                            {{text('Back')}}
                         </a>
                     </div>
                     <div class="right">
                         <div class="tree-links">
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="{{localeRoute('homepage')}}">
                                         <div class="icon"><i class="fa-solid fa-house"></i></div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">Blog</a>
+                                    <a href="{{localeRoute('blogs.index')}}">{{text('Blog')}}</a>
                                 </li>
                                 <li class="active">
-                                    <a href="">15 Best Museums in Istanbul, Turkey</a>
+                                    <a href="#">{{$blog->title}}</a>
                                 </li>
                             </ul>
                         </div>

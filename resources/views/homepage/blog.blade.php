@@ -38,13 +38,13 @@
                             <div class="content">
                                 <div class="details">
                                     <div class="link">
-                                        <a href=""><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
+                                        <a href="{{localeRoute('blogs.show', ["slug" => $blog->slug])}}"><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
                                     </div>
                                     <div class="tag">
                                         <span class="{{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                     </div>
                                     <div class="title">
-                                        <a href="">
+                                        <a href="{{localeRoute('blogs.show', ["slug" => $blog->slug])}}">
                                             {{$blog->title}}
                                         </a>
                                     </div>
@@ -78,13 +78,13 @@
                                 <div class="content">
                                     <div class="details">
                                         <div class="link">
-                                            <a href=""><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
+                                            <a href="{{localeRoute('blogs.show', ["slug" => $blog->slug])}}"><img src="{{asset('img/icon/right.svg')}}" alt=""></a>
                                         </div>
                                         <div class="tag">
                                             <span class="{{$blog->blog_category->color}}">{{$blog->blog_category->title}}</span>
                                         </div>
                                         <div class="title">
-                                            <a href="">
+                                            <a href="{{localeRoute('blogs.show', ["slug" => $blog->slug])}}">
                                                 {{$blog->title}}
                                             </a>
                                         </div>

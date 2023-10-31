@@ -172,7 +172,7 @@ $('#slider').owlCarousel({
 
 $('.categories-carousel').owlCarousel({
     dots: false,
-    loop: true,
+    loop: false,
     margin: 10,
     autoplay: true,
     autoplayTimeout: 6000,
