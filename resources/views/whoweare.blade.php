@@ -126,7 +126,7 @@
                     <span></span>
                 </div>
                 <div class="action">
-                    <a href="" class="btn btn-primary icon-btn">{{text('More_info')}} <div class="icon"><i
+                    <a href="{{localeRoute('products.index')}}" class="btn btn-primary icon-btn">{{text('More_info')}} <div class="icon"><i
                                 class="fa-solid fa-arrow-right"></i></div></a>
                 </div>
             </div>

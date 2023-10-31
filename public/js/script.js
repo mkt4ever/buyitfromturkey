@@ -206,7 +206,7 @@ $(window).on('load', function () {
 
 $('#whoweare').owlCarousel({
   dots: false,
-  loop: true,
+  loop: false,
   margin: 10,
   autoplay: true,
   autoplayTimeout: 6000,
