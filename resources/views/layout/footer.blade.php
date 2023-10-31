@@ -4,7 +4,7 @@
         <div class="container">
 
         <div class="col-md-6 col-lg-4 text">
-            <h4>Sign Up For The Newsletter, Be Informed About Us!</h4>
+            <h4>{{text('newsletter')}}</h4>
         </div>
         </div>
 
@@ -14,17 +14,13 @@
         <div class="row">
             
         <div class="text col-md-2">
-            <h4>Products And Services</h4>
+            <h4>{{text('Products_and_Services_header')}}</h4>
         </div>
         <div class="links col-md-6">
             <ul>
-                <li><a href="">Real Estate</a></li>
-                <li><a href="">Product Categories</a></li>
-                <li><a href="">Beauty</a></li>
-                <li><a href="">Others</a></li>
-                <li><a href="">Import</a></li>
-                <li><a href="">Travel</a></li>
-                <li><a href="">Health</a></li>
+                @foreach($productSectors as $sector)
+                <li><a href="{{localeRoute('products.index', ['sector' => $sector->slug])}}">{{$sector->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="form-sec col-md-4">
@@ -64,7 +60,7 @@
         <div class="container">
         <div class="row">
             <div class="col-md-4 left">
-                <p>COPYRIGHT (C) 2023, Buy it From Turkiye</p>
+                <p>{{text('copyright')}}</p>
             </div>
             <div class="col-md-4 center">
             <ul>

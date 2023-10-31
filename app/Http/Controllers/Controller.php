@@ -12,6 +12,7 @@ use App\Models\ContactUs;
 use App\Models\SEO;
 use App\Models\StaticPage;
 use App\Models\Language;
+use App\Models\ProductSector;
 
 class Controller extends BaseController
 {
@@ -25,6 +26,7 @@ class Controller extends BaseController
                 $contactUs = ContactUs::first()->translate(app()->getLocale());
                 $seo = SEO::withTranslation(app()->getLocale())->first()->translate(app()->getLocale());
                 $pages = StaticPage::withTranslation(app()->getLocale())->get()->translate(app()->getLocale());
+                $productSectors = ProductSector::withTranslation(app()->getLocale())->get()->translate(app()->getLocale());
 
                 $kvkk = $pages->where('is_KVKK', true)->first();
 
@@ -36,6 +38,7 @@ class Controller extends BaseController
                     "pages" => $pages,
                     "kvkk" => $kvkk,
                     "langs" => $langs,
+                    "productSectors" => $productSectors
                 ];
             });
 

@@ -25,7 +25,7 @@
                                     placeholder="{{text('Write_a_your_question')}}"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-secondary icon-btn">{{text('Send')}} <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></button>
+                        {!! htmlFormButton(text('Send').' <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                     </div>
                     </form>
                 </div>

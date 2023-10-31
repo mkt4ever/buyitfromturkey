@@ -98,14 +98,13 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 item">
-                            <label class="form-label" for="country">{{ text('Which_Country_do_you_reside_in?') }}</label>
+                            <label class="form-label" for="country">{{ text('Which_Country_do_you_reside_in') }}</label>
                             <div class="inp-box">
                                 <select class="nice-select" id="country" name="country">
                                     <option data-display="{{ text('Select') }}">Nothing</option>
-                                    <option value="1">{{ text('Some option') }}</option>
-                                    <option value="2">{{ text('Another option') }}</option>
-                                    <option value="3" disabled>{{ text('A disabled option') }}</option>
-                                    <option value="4">{{ text('Potato') }}</option>
+                                    @foreach($countries as $code => $country)
+                                    <option value="{{$code}}" {{old('country') == $code ? "selected" : ""}}>{{$country}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -138,13 +137,8 @@
                             </ul>
                         </div>
                         <div class="col-md-6 item mt-5 form-terms">
-                            <div class="row">
-                                <div class="col-md-6 captcha">
-                                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-                                </div>
-                                
-                                <div class="col-md-6 action text-end">
-                                    <button type="submit" class="btn btn-secondary icon-btn">{{text('Send')}} <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></button>
+                                <div class="action text-end">
+                                    {!! htmlFormButton(text('Send').' <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                                 </div>
                             </div>
                         </div>

@@ -91,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-md-6"></div>
                                     <div class="col-md-6 action">
-                                        {!! htmlFormButton('Send <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
+                                        {!! htmlFormButton(text('Send').' <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                                     </div>
                                 </div>
                             </div>

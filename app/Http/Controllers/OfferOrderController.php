@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\OfferOrder;
 use Illuminate\Http\Request;
+use Monarobase\CountryList\CountryListFacade as Countries;
 
 class OfferOrderController extends Controller
 {
     public function index(){
-
-        return view('forms.offer-form');
+        $countries = Countries::getList(app()->getLocale(), 'php');
+        return view('forms.offer-form', compact('countries'));
     }
 
 
@@ -31,6 +32,7 @@ class OfferOrderController extends Controller
             'request' => 'required|string',
             'terms_1' => 'required|in:true,1',
             'terms_2' => 'required|in:true,1',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
 

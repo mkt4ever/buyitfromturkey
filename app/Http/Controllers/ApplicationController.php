@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\ApplicationOrder;
 use Illuminate\Http\Request;
+use Monarobase\CountryList\CountryListFacade as Countries;
 
 class ApplicationController extends Controller
 {
     public function index(){
-
-        return view('forms.application-form');
+        $countries = Countries::getList(app()->getLocale(), 'php');
+        return view('forms.application-form', compact('countries'));
     }
 
     public function store(Request $request){
@@ -30,6 +31,7 @@ class ApplicationController extends Controller
             'request' => 'required|string',
             'terms_1' => 'required|in:true,1',
             'terms_2' => 'required|in:true,1',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
 

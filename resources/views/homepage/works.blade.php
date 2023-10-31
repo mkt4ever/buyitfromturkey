@@ -12,7 +12,7 @@
                                 <img src="{{asset('img/illustrations/works1.svg')}}" alt="">
                             </div>
                             <div class="text col-md-7">
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion" id="accordionExample1">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
@@ -46,7 +46,7 @@
                                 <img src="{{asset('img/illustrations/works2.svg')}}" alt="">
                             </div>
                             <div class="text col-md-7">
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion" id="accordionExample2">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
@@ -58,7 +58,7 @@
                                             </button>
                                         </h2>
                                         <div id="collapse1" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
+                                            data-bs-parent="#accordionExample2">
                                             <div class="accordion-body">
                                                 <div class="text-sec">
                                                     <p>
@@ -83,7 +83,7 @@
                                 <img src="{{asset('img/illustrations/works3.svg')}}" alt="">
                             </div>
                             <div class="text col-md-7">
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion" id="accordionExample3">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
@@ -95,7 +95,7 @@
                                             </button>
                                         </h2>
                                         <div id="collapse3" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
+                                            data-bs-parent="#accordionExample3">
                                             <div class="accordion-body">
                                                 <div class="text-sec">
                                                     <p>
@@ -115,7 +115,7 @@
                                 <img src="{{asset('img/illustrations/works4.svg')}}" alt="">
                             </div>
                             <div class="text col-md-7">
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion" id="accordionExample4">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
@@ -127,7 +127,7 @@
                                             </button>
                                         </h2>
                                         <div id="collapse4" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
+                                            data-bs-parent="#accordionExample4">
                                             <div class="accordion-body">
                                                 <div class="text-sec">
                                                     <p>
