@@ -82,6 +82,7 @@ class UserController extends Controller
             'tax_number' => 'nullable|string',
             'address' => 'required|string',
             'type' => 'required|string|max:255',
+            'g-recaptcha-response' => 'recaptcha',
 
         ]);
 
@@ -107,7 +108,7 @@ class UserController extends Controller
         return redirect()->back()->with('success', text('BillingDetail_submitted'));
     }
 
-    public function markAsDefulat(Request $request){
+    public function markAsDefault(Request $request){
 
         $billing = BillingDetail::where('user_id', Auth::user()->id)->where('id', $request->id)->first();
 

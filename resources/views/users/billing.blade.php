@@ -6,7 +6,7 @@
         <h3>{{text('Billing_Details')}}</h3>
 
         <div class="add-addres">
-            <a href="#" data-toggle="modal" data-target="#addressModal">
+            <a href="#" class="addNewAddressButton">
                 <span>{{ text('Add new address') }}</span>
                 <div class="icon">
                     <i class="fa-solid fa-plus"></i>
@@ -28,9 +28,9 @@
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{localeRoute('billing.markAsDefulat',$billing->id)}}">{{text('Mark_as_Defualt')}}</a></li>
-                                        <li><a class="dropdown-item" href="#">{{text('Update')}}</a></li>
-                                        <li><a class="dropdown-item" href="{{localeRoute('billing.delete',$billing->id)}}">{{text('Delete')}}</a>
+                                        <li><a class="dropdown-item" href="{{localeRoute('billing.markAsDefault', ["id" => $billing->id])}}">{{text('Mark_as_Default')}}</a></li>
+                                        {{-- <li><a class="dropdown-item" href="#">{{text('Update')}}</a></li> --}}
+                                        <li><a class="dropdown-item" href="{{localeRoute('billing.delete',["id" => $billing->id])}}">{{text('Delete')}}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -48,7 +48,7 @@
                                 </ul>
                             </div>
                             <div class="bottom">
-                                <a href="">{{text('Detail')}}</a>
+                                {{-- <a href="">{{text('Detail')}}</a> --}}
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                                 <textarea name="address" class="form-control" cols="30" rows="4" placeholder="{{ text('Your_Adress') }}"></textarea>
                             </div>
                             <div class="action-sec">
-                                <button type="submit" class="btn btn-secondary icon-btn">{{ text('Send') }} <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></button>
+                                {!! htmlFormButton(text('Send').' <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                             </div>
                             
                         </div>
@@ -150,7 +150,7 @@
                                 <textarea name="address" class="form-control" cols="30" rows="4" placeholder="{{ text('Your_Adress') }}"></textarea>
                             </div>
                             <div class="action-sec">
-                                <button type="submit" class="btn btn-secondary icon-btn">{{ text('Send') }} <div class="icon"><i class="fa-solid fa-arrow-right"></i></div></button>
+                                {!! htmlFormButton(text('Send').' <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>', ['class' => "btn btn-primary icon-btn"]) !!}
                             </div>
                             
                         </div>
@@ -163,7 +163,13 @@
 
 
 @endsection
-
+@push('js')
+<script>
+    $(".addNewAddressButton").click(function(){
+        $(".addres-type").slideToggle();
+    });
+</script>
+@endpush
 
 <!-- Modal -->
 {{-- <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="false">
