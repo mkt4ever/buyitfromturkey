@@ -302,8 +302,8 @@
       </div>
       <div class="btn-toolbar"> 
       <button class="btn btn-primary accept-cookies">Customize</button>
-            <button class="btn btn-secondary ">Accept All</button>
-            <button class="btn btn-secondary ">Reject All</button>
+            <button class="btn btn-secondary accept-cookies">Accept All</button>
+            <button class="btn btn-secondary accept-cookies">Reject All</button>
       </div>
    </div>
  </div>     

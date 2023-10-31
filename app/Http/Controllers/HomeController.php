@@ -87,7 +87,7 @@ class HomeController extends Controller
 
         $compact = Cache::rememberForever("WhyChoose_".app()->getLocale(), function() use ($request){
 
-            $coverImage = CoverImage::where('title', 'neden_seçtin')->first()->translate(app()->getLocale());
+            $coverImage = CoverImage::where('title', 'whyChoose')->first()->translate(app()->getLocale());
             $advantages = Advantage::withTranslation(app()->getLocale())->where('active', 1)->orderByDesc('order')->get()->translate(app()->getLocale());
 
             return [
