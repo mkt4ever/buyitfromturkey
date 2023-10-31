@@ -42,17 +42,19 @@
 
             <div class="item">
                 <div class="image">
-                    <img src="{{ Voyager::image($slider->image) }}" alt="{{ $slider->slug }}">
+                    <img src="{{ Voyager::image($slider->image) }}" alt="{{ $slider->title }}">
                 </div>
                 <div class="text">
                     <div class="container">
                         <div class="content">
                             <h3>{!! $slider->title !!}</h3>
                             <p>{{ $slider->brief }}</p>
+                            @if($slider->link)
                             <ul>
-                                <li><a href="{{ $slider->slug }}" class="btn btn-primary icon-btn">{{text('Get_an_Offer')}} <div class="icon"><i
+                                <li><a href="{{ $slider->link }}" class="btn btn-primary icon-btn">{{text('Get_an_Offer')}} <div class="icon"><i
                                                 class="fa-solid fa-arrow-right"></i></div></a></li>
                             </ul>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -131,10 +133,8 @@
     </div>
     <div class="slider-dots">
         <ul>
-            <li><a href="" class="active">01</a></li>
-            <li><a href="" class="">02</a></li>
-            <li><a href="" class="">03</a></li>
-            <li><a href="" class="">04</a></li>
+            <li class="active" id="active-item-indicator"></li>
+            <li>{{str_pad($sliders->count(), 2, '0', STR_PAD_LEFT)}}</li>
         </ul>
     </div>
 </section>

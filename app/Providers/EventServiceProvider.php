@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Language;
 use App\Models\SEO;
 use App\Models\SiteText;
+use App\Models\Slider;
 use App\Observers\AdminObserver;
 use App\Observers\CacheObserver;
 use Illuminate\Auth\Events\Registered;
@@ -38,9 +39,10 @@ class EventServiceProvider extends ServiceProvider
         Admin::observe(AdminObserver::class);
 
         Blog::observe(CacheObserver::class);
-
+        
         Language::observe(CacheObserver::class);
         SEO::observe(CacheObserver::class);
+        Slider::observe(CacheObserver::class);
         SiteText::observe(CacheObserver::class);
         Translation::observe(CacheObserver::class);
     }

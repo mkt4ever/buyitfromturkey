@@ -1974,18 +1974,18 @@ textarea.form-control {
 }
 .slider-section .slider-dots ul{}
 .slider-section .slider-dots ul li{}
-.slider-section .slider-dots ul li a{
+.slider-section .slider-dots ul li{
   font-size: 21px;
   font-weight: 700;
   opacity: 0.5;
   color: #fff;
   transition: 0.3s;
 }
-.slider-section .slider-dots ul li a:hover{
+.slider-section .slider-dots ul li:hover{
   transition: 0.3s;
   opacity: 1;
 }
-.slider-section .slider-dots ul li a.active{
+.slider-section .slider-dots ul li.active{
   color: #fff;
   opacity: 1;
   font-size: 26px;

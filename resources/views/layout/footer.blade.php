@@ -130,6 +130,15 @@
   </script>
 <script>
 AOS.init();
+function getRealIndex(totalItems, currentIndex) {
+    if(currentIndex == 0) return "01";
+
+    let index = (currentIndex - 1) % totalItems;
+    if(index == 0) index = totalItems;
+
+    return String(index).padStart(2, '0');
+}
+
 $('#slider').owlCarousel({
     dots: false,
     loop: true,
@@ -159,6 +168,9 @@ $('#slider').owlCarousel({
         1000: {
             items: 1,
         }
+    },
+    onChanged: function(event) {
+        $("#active-item-indicator").html(getRealIndex(event.item.count, event.item.index));
     }
 });
 
