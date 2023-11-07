@@ -105,7 +105,6 @@
     {{-- important script  --}}
     <script src="{{asset('lib/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/custom.js')}}"></script>
 
      {{-- {!! $seo->header_bottom !!} --}}
      {!! htmlScriptTagJsApi(['lang' => app()->getLocale()]) !!}
@@ -126,8 +125,8 @@
                          <div class="links">
                              <ul class="menu">
                                  <li class="submenulist">
-                                     <a href="how.php">Why Choose Türkiye?</a>
-                                     <ul class="sub-menu">
+                                     <a href="{{localeRoute('WhyChoose')}}">{{text('Why_Choose_Turkey_header')}}</a>
+                                     {{-- <ul class="sub-menu">
                                          <li>
                                              <a href="">
                                                  منيو</a>
@@ -145,7 +144,7 @@
                                          <li><a href="" target="_blank">
                                                  منيو 2</a>
                                          </li>
-                                     </ul>
+                                     </ul> --}}
      
                                  </li>
                                  <li class="">
@@ -158,7 +157,7 @@
                              <div class="mail">
                                  <div class="text">
                                      <h4>Contact Us</h4>
-                                     <a href="">{{$contactUs->email}}</a>
+                                     <a href="mailto:{{$contactUs->email}}">{{$contactUs->email}}</a>
                                  </div>
                                  <div class="icon">
                                      <img src="{{asset('img/icon/eposta'. (isset($header) && $header == "inner-page" ? 'red' : '') .'.svg')}}" alt="">

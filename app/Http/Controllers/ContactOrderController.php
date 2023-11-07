@@ -31,7 +31,7 @@ class ContactOrderController extends Controller
             'email' => 'required|max:255|email',
             'subject' => 'max:255',
             'message' => 'required',
-            // 'g-recaptcha-response' => 'recaptcha',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
 

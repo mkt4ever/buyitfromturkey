@@ -29,7 +29,7 @@
                             <div class="bottom">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#logoutModal">
-                                    <span>{{text('Log_out')}}</span>
+                                    <span>{{text('Logout')}}</span>
                                     <img src="{{asset('img/icon/logout.svg')}}" alt="">
                                 </button>
 

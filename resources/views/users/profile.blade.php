@@ -2,15 +2,15 @@
 @section('page-content')
     
 <div class="main-title">
-    <h3>Account Settings <a href="">Edit</a></h3>
-    <div class="add-addres">
+    <h3>{{text('Account_Settings')}}</h3>
+    {{-- <div class="add-addres">
         <a href="">
             <span>Yeni Adres Ekle</span>
             <div class="icon">
                 <i class="fa-solid fa-plus"></i>
             </div>
         </a>
-    </div>
+    </div> --}}
 </div>
 <div class="sec-content">
     <div class="from-sec border-bottom">

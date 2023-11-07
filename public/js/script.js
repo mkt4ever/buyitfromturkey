@@ -95,6 +95,9 @@ $(window).on('load', function() {
 // nice select --------------------
 $(document).ready(function() {
   $('.nice-select').niceSelect();
+  $(".search-icon").click(function(){
+    $('#homepage_searchForm').submit();
+  });
 });  
 // nice select --------------------
 

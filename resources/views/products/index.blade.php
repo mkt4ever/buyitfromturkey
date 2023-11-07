@@ -7,11 +7,8 @@
         <div class="row">
             <div class="col-md-12 col-xl-6 map-sec">
                 <div class="content">
-
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d96305.2103368212!2d28.921036800000003!3d41.03536640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1695209146020!5m2!1sen!2str"
-                        style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div id="map">
+                    </div>
                     <div class="zoom-btn d-xl-block">
                         <button class="btn btn-primary icon-btn large">
                             {{text('Expand_Map')}}
@@ -70,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="search-inp">
-                                <input name="search" type="text" class="form-control" placeholder="{{ text('Searching') }}">
+                                <input name="search" type="text" class="form-control" placeholder="{{ text('Searching') }}" value="{{request()->search}}">
                             </div>
                             <div class="action mobile">
                                 <button>
@@ -185,7 +182,95 @@
     </div>
 
 </div>
+@endsection
+@push('js')
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('app.mapKey')}}&libraries=drawing&callback=initMap" type="text/javascript"></script>
+<script src="{{asset('js/markerclusterer.min.js')}}"></script>
+<script>
+    var map;
+    var markers = [];
+    function initMap() {
+        var customMapType = new google.maps.StyledMapType(
+            mapStyles , {
+                name: '{{text("general")}}'
+            });
 
+        var customMapTypeId = 'custom_style';
+
+        var locations = [
+            @foreach($products as $product)
+            @continue(!$product->coordinations)
+            @php($location = json_decode($product->coordinations, true)) {
+                content: `<div class="mapInfowindow">
+                                </div>`,
+                lat: {{$location[0]}},
+                lng: {{$location[1]}},
+                link: '{{localeRoute("products.show", ["slug" => $product->slug])}}',
+                productId: '{{$product->id}}'
+            },
+            @endforeach
+        ];
+
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: {
+                lat: 39.5152904,
+                lng: 30.4062589
+            },
+            mapTypeControlOptions: {
+                mapTypeIds: [customMapTypeId, google.maps.MapTypeId.ROADMAP]
+            }
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+                map: map,
+                icon: '{{asset("img/marker.png")}}',
+                type: locations[i].type,
+                projectId: locations[i].projectId,
+                zIndex: 2,
+                animation: google.maps.Animation.DROP,
+            });
+
+            markers.push(marker);
+
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    $("#project"+locations[i].projectId).modal('show');
+                    location.href = locations[i].link;
+                    // infowindow.setContent(locations[i].content);
+                    // infowindow.open(map, marker);
+                    // console.log(marker.position);
+                }
+            })(marker, i));
+        }
+
+        var markerCluster = new MarkerClusterer(map, markers, {
+            gridSize: 40,
+            maxZoom: 25,
+            styles: [{
+                url: "{{asset('img/marker_total.png')}}",
+                height: 70,
+                lineHeight: 10,
+                width: 44,
+                anchor: [-15, 0],
+                textColor: '#ffffff',
+                textSize: 18,
+                iconAnchor: [5, 48]
+            }]
+        });
+
+        map.mapTypes.set(customMapTypeId, customMapType);
+        map.setMapTypeId(customMapTypeId);
+    }
+</script>
 <script>
     $('#product-carousel').owlCarousel({
         dots: false,
@@ -244,6 +329,4 @@
             });
         });
     </script>
-
-
-@endsection
+@endpush

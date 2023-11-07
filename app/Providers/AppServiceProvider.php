@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\FormFields\MapFormField;
 use App\Models\SiteText;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use TCG\Voyager\Facades\Voyager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('VoyagerGuard', function () {
             return 'admin';
         });
+        Voyager::addFormField(MapFormField::class);
     }
 
     /**

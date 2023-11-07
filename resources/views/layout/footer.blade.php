@@ -4,7 +4,7 @@
         <div class="container">
 
         <div class="col-md-6 col-lg-4 text">
-            <h4>Sign Up For The Newsletter, Be Informed About Us!</h4>
+            <h4>{{text('newsletter')}}</h4>
         </div>
         </div>
 
@@ -14,17 +14,13 @@
         <div class="row">
             
         <div class="text col-md-2">
-            <h4>Products And Services</h4>
+            <h4>{{text('Products_and_Services_header')}}</h4>
         </div>
         <div class="links col-md-6">
             <ul>
-                <li><a href="">Real Estate</a></li>
-                <li><a href="">Product Categories</a></li>
-                <li><a href="">Beauty</a></li>
-                <li><a href="">Others</a></li>
-                <li><a href="">Import</a></li>
-                <li><a href="">Travel</a></li>
-                <li><a href="">Health</a></li>
+                @foreach($productSectors as $sector)
+                <li><a href="{{localeRoute('products.index', ['sector' => $sector->slug])}}">{{$sector->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="form-sec col-md-4">
@@ -64,7 +60,7 @@
         <div class="container">
         <div class="row">
             <div class="col-md-4 left">
-                <p>COPYRIGHT (C) 2023, Buy it From Turkiye</p>
+                <p>{{text('copyright')}}</p>
             </div>
             <div class="col-md-4 center">
             <ul>
@@ -93,9 +89,7 @@
     let msg_done = "{{text('msg_done')}}", msg_sent = "{{text('msg_sent')}}", msg_error = "{{text('msg_error')}}";
 </script>
 
-<script src="{{asset('js/script.js')}}"></script>
 <script src="{{asset('lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
-<script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('lib/bootstrap-5.2.0/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('lib/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('lib/select2-4.1.0-rc.0/dist/js/select2.min.js')}}"></script>
@@ -105,10 +99,10 @@
 <script src="{{asset('lib/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput-jquery.min.js')}}"></script>
 <script src="{{asset('lib/intl-tel-input-master/build/js/intlTelInput.min.js')}}"></script>
-<script src="{{asset('js/cookies.js')}}"></script>
 <script src="{{asset('lib/aos-master/dist/aos.js')}}"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+<script src="{{asset('js/cookies.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 
 
 <script>
@@ -130,6 +124,15 @@
   </script>
 <script>
 AOS.init();
+function getRealIndex(totalItems, currentIndex) {
+    if(currentIndex == 0) return "01";
+
+    let index = (currentIndex - 1) % totalItems;
+    if(index == 0) index = totalItems;
+
+    return String(index).padStart(2, '0');
+}
+
 $('#slider').owlCarousel({
     dots: false,
     loop: true,
@@ -159,6 +162,9 @@ $('#slider').owlCarousel({
         1000: {
             items: 1,
         }
+    },
+    onChanged: function(event) {
+        $("#active-item-indicator").html(getRealIndex(event.item.count, event.item.index));
     }
 });
 
