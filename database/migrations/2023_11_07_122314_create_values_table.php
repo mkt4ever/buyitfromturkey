@@ -17,7 +17,6 @@ class CreateValuesTable extends Migration
             $table->id();
             $table->string('logo');
             $table->string('title')->nullable();
-            $table->string('slug');
             $table->longText('content')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();

@@ -13,7 +13,6 @@ class Value extends Model implements Auditable
 
     protected $translatable = [
         'title',
-        'slug',
         'content',
     ];
 }

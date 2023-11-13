@@ -79,14 +79,14 @@
                     <h3>{{text('Our_Values')}}</h3>
                 </div>
                 <div class="boxes">
-                    <div class="nav nav-tabs" id="myTab" role="tablist">
+                    <div class="nav nav-tabs our-values" id="myTab" role="tablist">
 
                         @foreach ($values as $key => $value)
                             <div class="item col-md-2 nav-item">
                                 <div class="icon">
-                                    <button class="nav-link @if ($key == 0) active @endif" id="{{$value->slug}}-tab" data-bs-toggle="tab"
-                                        data-bs-target="#{{$value->slug}}-tab-pane" type="button" role="tab"
-                                        aria-controls="{{$value->slug}}-tab-pane" aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
+                                    <button class="nav-link @if ($key == 0) active @endif" id="value{{$value->id}}-tab" data-bs-toggle="tab"
+                                        data-bs-target="#value{{$value->id}}-tab-pane" type="button" role="tab"
+                                        aria-controls="value{{$value->id}}-tab-pane" aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
 
                                         <img src="{{ parse_file($value->logo) }}" alt="">
 
@@ -103,9 +103,10 @@
                     <div class="tab-content" id="myTabContent">
 
                         @foreach ($values as $key => $value)
-                            <div class="tab-pane fade @if ($key == 0) show active @endif" id="{{$value->slug}}-tab-pane" role="tabpanel"
-                                aria-labelledby="{{$value->slug}}-tab" tabindex="0">
-                                {!! $value->content !!}
+                            <div class="tab-pane fade @if ($key == 0) show active @endif" id="value{{$value->id}}-tab-pane" role="tabpanel"
+                                aria-labelledby="value{{$value->id}}-tab" tabindex="0">
+                                <h4>{{ $value->title }}</h4>
+                                <p>{!! nl2br($value->content) !!}</p>
                             </div>
                         @endforeach
 
