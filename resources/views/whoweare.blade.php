@@ -73,47 +73,50 @@
 
 
 
-    <div class="ourvalue-section">
-        <div class="container">
-            <div class="m-title">
-                <h3>{{text('Our_Values')}}</h3>
-            </div>
-            <div class="boxes">
-                <div class="row">
-                    <div class="item col-md-2">
-                        <div class="icon">
-                            <img src="{{asset('img/icon/global.svg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="item col-md-2">
-                        <div class="icon">
-                            <img src="{{asset('img/icon/satisfaction.svg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="item col-md-2">
-                        <div class="icon">
-                            <img src="{{asset('img/icon/quality.svg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="item col-md-2">
-                        <div class="icon">
-                            <img src="{{asset('img/icon/security.svg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="item col-md-2">
-                        <div class="icon">
-                            <img src="{{asset('img/icon/sustanability.svg')}}" alt="">
-                        </div>
+    <div class="ourvalue-section" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <div class="m-title">
+                    <h3>{{text('Our_Values')}}</h3>
+                </div>
+                <div class="boxes">
+                    <div class="nav nav-tabs our-values" id="myTab" role="tablist">
+
+                        @foreach ($values as $key => $value)
+                            <div class="item col-md-2 nav-item">
+                                <div class="icon">
+                                    <button class="nav-link @if ($key == 0) active @endif" id="value{{$value->id}}-tab" data-bs-toggle="tab"
+                                        data-bs-target="#value{{$value->id}}-tab-pane" type="button" role="tab"
+                                        aria-controls="value{{$value->id}}-tab-pane" aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
+
+                                        <img src="{{ parse_file($value->logo) }}" alt="">
+
+                                    </button>
+
+                                </div>
+                            </div>
+                        @endforeach
+                        
+
                     </div>
                 </div>
-            </div>
-            <div class="discreption">
-                <h4>{{text('Global_Experience')}}</h4>
-                <p>{!! text('Global_Experience_content') !!}</p>
-            </div>
-        </div>
+                <div class="discreption">
+                    <div class="tab-content" id="myTabContent">
 
-    </div>
+                        @foreach ($values as $key => $value)
+                            <div class="tab-pane fade @if ($key == 0) show active @endif" id="value{{$value->id}}-tab-pane" role="tabpanel"
+                                aria-labelledby="value{{$value->id}}-tab" tabindex="0">
+                                <h4>{{ $value->title }}</h4>
+                                <p>{!! nl2br($value->content) !!}</p>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
 
 
     <div class="team-section">

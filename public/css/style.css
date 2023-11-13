@@ -2202,7 +2202,15 @@ textarea.form-control {
   width: 40px;
 
 }
-
+.our-values{
+  border: 0;
+}
+.our-values .icon .nav-link img{
+  filter: grayscale(1) brightness(3.5);
+}
+.our-values .icon .nav-link.active img{
+  filter: none !important;
+}
 /* right-search-bar ----------- */
 
 /* slider ---------------------------------- */

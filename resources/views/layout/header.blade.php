@@ -118,7 +118,7 @@
              <div class="bottom">
                  <div class="row">
                      <div class="logo">
-                         <a href="{{localeRoute('homepage')}}"><img src="{{asset('img/logo'. (isset($header) && $header == "inner-page" ? '-main' : '') .'.svg')}}" alt=""></a>
+                         <a href="{{localeRoute('homepage')}}"><img src="{{asset('img/'. (isset($header) && $header == "inner-page" ? 'logo-main' : 'Logo') .'.svg')}}" alt=""></a>
                      </div>
                      <div class="navbar">
                          <div class="overlay"></div>

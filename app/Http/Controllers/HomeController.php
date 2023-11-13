@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Cache;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\StaticPage;
+use App\Models\Value;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
@@ -108,10 +109,12 @@ class HomeController extends Controller
 
             $coverImage = CoverImage::where('title', 'Biz_Kimiz')->first()->translate(app()->getLocale());
             $founders = Founder::withTranslation(app()->getLocale())->get()->translate(app()->getLocale());
+            $values = Value::withTranslation(app()->getLocale())->get()->translate(app()->getLocale());
 
             return [
                 "coverImage" => $coverImage,
                 "founders"=> $founders,
+                "values" => $values,
 
             ];
         });
