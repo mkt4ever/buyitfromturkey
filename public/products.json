@@ -1,0 +1,33 @@
+{
+    "products": [
+      {
+        "name": "Product 1",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius aliquam justo, nec facilisis libero pulvinar ac.",
+        "price": 29.99,
+        "type": "Electronics",
+        "category": "Smartphones"
+      },
+      {
+        "name": "Product 2",
+        "details": "A high-quality product with advanced features and excellent performance.",
+        "price": 399.99,
+        "type": "Electronics",
+        "category": "Laptops"
+      },
+      {
+        "name": "Product 3",
+        "details": "Comfortable and stylish shoes for everyday wear.",
+        "price": 49.99,
+        "type": "Fashion",
+        "category": "Footwear"
+      },
+      {
+        "name": "Product 4",
+        "details": "A popular book by a renowned author that explores a fascinating topic.",
+        "price": 14.99,
+        "type": "Books",
+        "category": "Non-Fiction"
+      }
+    ]
+  }
+  

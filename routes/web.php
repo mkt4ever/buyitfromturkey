@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BultenController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ContactOrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,8 @@ Route::group(['prefix' => 'buyitadmin'], function () {
     })->name('setLastLang');
 });
 
+Route::get('/chatBot', [ChatbotController::class, 'chatBot']);
+Route::get('/destroy', [ChatbotController::class, 'destroy']);
 
 Auth::routes();
 Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translations){
@@ -57,7 +60,11 @@ Route::group(['middleware'=>['locale', 'ttl:8640']], function () use($translatio
 
             Route::get('/', [HomeController::class, 'index'])->name($lang->code.'.homepage');
 
-            Route::get('/test', [TransaiController::class, 'transalte'])->name($lang->code.'.test');
+            Route::get('/translate', [TransaiController::class, 'transalte'])->name($lang->code.'.test');
+
+            Route::get('/chat', [ChatbotController::class, 'startConversation'])->name($lang->code.'.chat');            
+
+
 
             Route::get('/'.transRoute('routeBlogs', $langTranslations).'/{slug?}', [BlogController::class, 'index'])->name($lang->code.'.blogs.index');
             Route::get('/'.transRoute('routeBlogDetails', $langTranslations).'/{slug}', [BlogController::class, 'show'])->name($lang->code.'.blogs.show');
